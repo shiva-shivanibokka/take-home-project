@@ -1,0 +1,20 @@
+[Unit]
+Description=Research Desk Orchestrator
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/research-desk/orchestrator
+EnvironmentFile=/home/ubuntu/research-desk/.env
+ExecStart=/usr/bin/node dist/index.js
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+# Give the orchestrator time to finish a tick before killing on stop
+TimeoutStopSec=15
+
+[Install]
+WantedBy=multi-user.target

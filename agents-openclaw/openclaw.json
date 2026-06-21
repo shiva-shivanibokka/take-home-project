@@ -1,0 +1,24 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/home/ubuntu/.openclaw/workspaces/collector"
+    },
+    "list": [
+      {
+        "id": "collector",
+        "workspace": "/home/ubuntu/.openclaw/workspaces/collector"
+      },
+      {
+        "id": "writer",
+        "workspace": "/home/ubuntu/.openclaw/workspaces/writer"
+      },
+      {
+        "id": "reviewer",
+        "workspace": "/home/ubuntu/.openclaw/workspaces/reviewer"
+      }
+    ]
+  },
+  "tools": {
+    "agentToAgent": false
+  }
+}

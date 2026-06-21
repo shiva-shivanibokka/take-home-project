@@ -1,0 +1,19 @@
+node_modules/
+.env
+.env.local
+.env.*.local
+*.env
+dist/
+.next/
+out/
+.DS_Store
+*.log
+npm-debug.log*
+.pnpm-debug.log*
+.turbo/
+coverage/
+.nyc_output/
+# OpenClaw session data (don't ship session transcripts)
+agents-openclaw/workspaces/*/sessions/
+# OS
+Thumbs.db

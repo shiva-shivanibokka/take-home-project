@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Multi-Agent Research Desk — Confer AI/ML Take-Home</title>
+<style>
+:root{--ink:#102033;--muted:#5e6b7a;--bg:#f6f8fb;--paper:#fff;--line:#dfe6ee;--accent:#246bfe;--good:#0d7a53;--bad:#9a2a2a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+.page{max-width:840px;margin:0 auto;padding:30px 20px 56px}
+.hero{background:linear-gradient(135deg,#0d1b2a,#123a68 62%,#0d7a78);color:#fff;border-radius:22px;padding:30px 32px;box-shadow:0 16px 44px rgba(13,27,42,.16)}
+.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:#b9d3ff;font-weight:700}
+.hero h1{margin:.3rem 0 .6rem;font-size:clamp(26px,4.6vw,42px);line-height:1.05}
+.lead{font-size:17px;color:#e7f0ff;max-width:700px;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:6px 11px;border-radius:999px;font-size:13px}
+section{margin-top:26px}h2{font-size:20px;margin:0 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+p{margin:0 0 10px}ul,ol{padding-left:22px;margin:8px 0}li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px}th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}th{background:#eef4ff}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#eef2f7;padding:1px 6px;border-radius:6px;font-size:13px}a{color:var(--accent)}
+.callout{border-left:4px solid var(--accent);background:#f3f7ff;border-radius:10px;padding:12px 14px;margin-top:10px;font-size:14px}
+.example{border-left:4px solid var(--good);background:#f0fbf6;border-radius:10px;padding:14px 16px;margin-top:10px}
+.g-fail{color:var(--bad);font-weight:800}.g-a{color:var(--good);font-weight:800}
+.footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}@media print{body{background:#fff}.hero{box-shadow:none}}
+</style>
+</head>
+<body>
+<main class="page">
+<header class="hero">
+  <div class="eyebrow">Confer Inc. · AI/ML Engineering Take-Home · 5 of 5</div>
+  <h1>Multi-Agent Research Desk</h1>
+  <p class="lead">Multiple agents talk to each other and work autonomously. Stand up a small team of agents that work together: a collector, a writer, and a reviewer hand a job through a shared store to produce a brief — escalating anything they're unsure about to a human. A deployed board shows each job moving through the stages.</p>
+  <div class="meta"><span class="pill">7 calendar days</span><span class="pill">Free tiers only</span><span class="pill">Flexible stack</span><span class="pill">Hand over: two URLs</span><span class="pill">Must stay live ~1 week</span></div>
+</header>
+
+<section>
+  <h2>Why this assignment</h2>
+  <p>The capstone. One prompt doing everything is easy; <strong>several agents cooperating through clean handoffs</strong>, escalating when unsure, and recovering from failure is the real test. We want to see your boundaries: what each agent owns, how they pass work, and where a human steps in.</p>
+  <p>Use any AI coding tools. We grade <strong>architecture and judgement</strong> — the handoff contract and the escalation logic — not the number of agents. <strong>Aim for production-grade</strong> — clean, reliable, something a teammate could actually run.</p>
+</section>
+
+<section>
+  <h2>The brief</h2>
+  <ol>
+    <li><strong>OpenClaw or Hermes</strong> on a free-tier <strong>VPS</strong> running <strong>≥3 cooperating agents</strong>.</li>
+    <li>Submit a <strong>research job</strong> (a topic/question). A <strong>Collector</strong> gathers sources, a <strong>Writer</strong> drafts a brief, a <strong>Reviewer</strong> checks it.</li>
+    <li>Agents <strong>hand off via a shared store</strong> (a <strong>database table</strong> is the queue) with a clear handoff record — <em>not</em> one prompt doing everything. The Reviewer <strong>escalates low-confidence briefs to a human-review lane</strong> instead of publishing. Failures <strong>retry</strong>.</li>
+    <li>A deployed <strong>frontend</strong> is a live board: jobs move <code>queued → collecting → writing → review → published / escalated</code>, with the artifact at each stage.</li>
+  </ol>
+  <p>Live, public URL, running ≥1 week unattended.</p>
+  <div class="example"><strong>Example — what a great submission looks like:</strong> we open your board, submit "State of on-device LLMs 2026," and watch a card move queued → collecting → writing → review. The Collector logs ~5 sources, the Writer drafts a brief, the Reviewer flags low confidence → the card lands in "Needs human" instead of publishing. We kill the Writer mid-run and it retries. Three distinct agents, each owning a stage, passing a JSON handoff record through the shared store. <em>(Going further: a durable workflow like Temporal, idempotent handoffs, pipeline observability.)</em></div>
+</section>
+
+<section>
+  <h2>What you hand over</h2>
+  <ol><li>A <strong>live board URL</strong> — we submit a job and watch it flow across the agents.</li>
+  <li>A <strong>public GitHub repo URL</strong> — code, README, commit history.</li></ol>
+</section>
+
+<section>
+  <h2>The stack (flexible)</h2>
+  <table><tr><th>Layer</th><th>What you use</th><th>What it tests</th></tr>
+  <tr><td>Compute</td><td>Any free-credit or always-free VPS you control</td><td>Real Linux ops</td></tr>
+  <tr><td>Agents</td><td><strong>OpenClaw or Hermes</strong> on that VPS — <strong>≥3 agents</strong> with a handoff contract</td><td>Multi-agent orchestration</td></tr>
+  <tr><td>Shared store</td><td>Any <strong>deployed, persistent</strong> store — hosted Postgres (Supabase / Neon / Railway) or SQLite on a volume — your call. It's the queue + stage records.</td><td>Handoffs + state + audit</td></tr>
+  <tr><td>Frontend</td><td>Any modern framework, <strong>deployed to a public URL</strong> (the board; Next.js + Vercel is a fine default)</td><td>Shipping + observability</td></tr></table>
+  <p class="callout"><strong>The stack is flexible.</strong> The only hard rules: it runs on a VPS, the agents are <strong>OpenClaw/Hermes</strong> handing off through a shared store, and everything is <strong>deployed, persistent, and public</strong>. Vendors are your choice. <strong>Stuck on infra or free credits? Ask us</strong> — figuring out <em>what</em> to build is the test; we'll happily help with <em>resources</em>.</p>
+  <p><strong>LLM provider:</strong> the agents need one. <a href="https://ollama.com">Ollama Cloud</a> free tier (rate-limited — design assuming it <em>will</em> throttle), or any LLM key you already have. Pick any job domain you like (e.g. "research a topic → draft → review/publish", or "triage an issue → propose a fix → review").</p>
+</section>
+
+<section>
+  <h2>Ground rules</h2>
+  <ol>
+    <li><strong>Free tiers only.</strong> Few agents, small models, sparing runs — cap tokens.</li>
+    <li><strong>Real handoffs, not one mega-prompt.</strong> Each agent owns a stage and passes a documented record to the next — graded directly.</li>
+    <li><strong>Escalate, don't auto-ship.</strong> Low-confidence results go to a human lane; failures retry, not crash.</li>
+    <li><strong>Keep it running ≥7 days.</strong> <strong>README</strong> must let us redeploy from scratch.</li>
+    <li><strong>Blocked? Tell us.</strong> We'd rather unblock you on infra/credits than have you stuck — just ask.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Rubric</h2>
+  <table><tr><th>Grade</th><th>What it looks like</th></tr>
+  <tr><td class="g-fail">Fail</td><td>No VPS, OpenClaw or Hermes won't boot, or no submission.</td></tr>
+  <tr><td>Pass (D)</td><td>One agent responds to a job. No real second agent, no handoff.</td></tr>
+  <tr><td>C</td><td>Multiple agents exist but no real handoff (one prompt fakes it), or output dies on disk, or there's no frontend.</td></tr>
+  <tr><td>B</td><td>Handoff via the shared store works across agents, but it isn't deployed publicly, or there's no escalation lane, or it only runs once manually.</td></tr>
+  <tr><td class="g-a">A</td><td>Live board shows jobs flowing across <strong>≥3 agents via the shared store</strong>; <strong>escalation to a human lane</strong> works; <strong>retries</strong> on an induced failure; README redeploys; stable a week.</td></tr>
+  <tr><td class="g-a">A+</td><td>A durable workflow (e.g. Temporal), idempotent handoffs, confidence-calibrated escalation, pipeline observability, a clean board UX, a cost story.</td></tr></table>
+</section>
+
+<section>
+  <h2>Resources</h2>
+  <p><strong>VPS (pick one):</strong> <a href="https://www.oracle.com/cloud/free">Oracle Always-Free</a> — Arm VM up to 4 cores / 24 GB, <em>free forever</em> (best for staying live a week) · <a href="https://www.digitalocean.com/pricing">DigitalOcean</a> $200 / 60 days (new accounts) · <a href="https://cloud.google.com/free">Google Cloud</a> $300 / 90 days · <a href="https://azure.microsoft.com/en-us/free">Azure</a> $200 / 30 days · <a href="https://aws.amazon.com/free">AWS</a> up to $200 in credits (new-account model since 2025).</p>
+  <p><strong>Agent runtime:</strong> <a href="https://www.npmjs.com/package/openclaw">OpenClaw (npm)</a>. <strong>LLM:</strong> <a href="https://ollama.com">Ollama Cloud</a>. <strong>Shared store:</strong> <a href="https://supabase.com/docs/guides/getting-started">Supabase</a> · <a href="https://neon.tech/docs">Neon</a> · <a href="https://www.postgresql.org/docs/">Postgres</a> · <a href="https://sqlite.org/docs.html">SQLite</a>. <strong>Frontend:</strong> <a href="https://nextjs.org/docs">Next.js</a> + <a href="https://vercel.com/docs/deployments/overview">Vercel</a> · <a href="https://ui.shadcn.com">shadcn/ui</a>.</p>
+  <p><strong>Durability (optional, for A+):</strong> <a href="https://temporal.io">Temporal OSS</a> (<code>temporal server start-dev</code>).</p>
+  <p><strong>Sources for the job (pick one):</strong> <a href="https://news.google.com/rss">Google News RSS</a> · <a href="https://github.com/HackerNews/API">Hacker News API</a> · any free search/RSS/API.</p>
+</section>
+
+<section>
+  <h2>Submission</h2>
+  <p>Email us (1) the live board URL and (2) the public GitHub repo URL. <strong>Deadline: 7 calendar days.</strong></p>
+</section>
+
+<p class="footer">Confer Inc. · one assignment per page · free tiers, synthetic/public data only.</p>
+</main>
+</body>
+</html>
