@@ -11,7 +11,6 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.46.0",
     "@radix-ui/react-dialog": "^1.1.2",
-    "@radix-ui/react-badge": "^1.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.462.0",
