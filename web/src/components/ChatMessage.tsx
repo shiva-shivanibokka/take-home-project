@@ -74,7 +74,6 @@ export function ChatMessage({ job, onDecision }: { job: Job; onDecision: () => v
   const [events,         setEvents]         = useState<Event[]>([]);
   const [reviews,        setReviews]        = useState<Review[]>([]);
   const [reasoningOpen,  setReasoningOpen]  = useState(true);
-  const [activeTab,      setActiveTab]      = useState<"reasoning" | "sources">("reasoning");
   const [reviewer,       setReviewer]       = useState("");
   const [notes,          setNotes]          = useState("");
   const [deciding,       setDeciding]       = useState(false);
@@ -178,95 +177,73 @@ export function ChatMessage({ job, onDecision }: { job: Job; onDecision: () => v
           </span>
         </div>
 
-        {/* ── Reasoning / Sources tabs ── */}
-        <div style={{ borderBottom: writerArt?.brief_markdown ? "1px solid #F1F5F9" : "none" }}>
-          {/* Toggle + tab strip */}
-          <div style={{ display: "flex", alignItems: "center", gap: "0", padding: "0 1.125rem" }}>
-            <button
-              onClick={() => setReasoningOpen((o) => !o)}
-              style={{
-                background: "none", border: "none",
-                display: "flex", alignItems: "center", gap: "0.45rem",
-                padding: "0.7rem 0.5rem 0.7rem 0",
-                cursor: "pointer",
-              }}
-            >
-              <span style={{
-                display: "inline-block",
-                transform: reasoningOpen ? "rotate(90deg)" : "rotate(0)",
-                transition: "transform 0.18s ease",
-                fontSize: "0.6rem", color: "#94A3B8",
-              }}>▶</span>
-              <span style={{ fontSize: "0.8rem", fontWeight: 600, color: isActive ? "#4361EE" : "#64748B" }}>
-                {reasoningLabel}
-              </span>
-              {isActive && (
-                <span className="dot-pulse" style={{
-                  display: "inline-block", width: "5px", height: "5px",
-                  borderRadius: "50%", background: "#4361EE",
-                }} />
-              )}
-            </button>
-
-            {/* Tabs — only shown when expanded and collector has data */}
-            {reasoningOpen && collectorH && (
-              <div style={{ marginLeft: "auto", display: "flex", gap: "0.125rem" }}>
-                {(["reasoning", "sources"] as const).map((tab) => (
-                  <button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
-                    style={{
-                      background: "none", border: "none",
-                      borderBottom: activeTab === tab ? "2px solid #4361EE" : "2px solid transparent",
-                      padding: "0.5rem 0.625rem",
-                      fontSize: "0.75rem", fontWeight: activeTab === tab ? 700 : 500,
-                      color: activeTab === tab ? "#4361EE" : "#94A3B8",
-                      cursor: "pointer", textTransform: "capitalize" as const,
-                    }}
-                  >
-                    {tab === "sources"
-                      ? `Sources (${(collectorH.artifact as unknown as CollectorArtifact).count ?? 0})`
-                      : "Reasoning"}
-                  </button>
-                ))}
-              </div>
+        {/* ── 1. COT Reasoning (collapsible) ── */}
+        <div style={{ borderBottom: "1px solid #F1F5F9" }}>
+          <button
+            onClick={() => setReasoningOpen((o) => !o)}
+            style={{
+              width: "100%", background: "none", border: "none",
+              display: "flex", alignItems: "center", gap: "0.45rem",
+              padding: "0.7rem 1.125rem", cursor: "pointer", textAlign: "left",
+            }}
+          >
+            <span style={{
+              display: "inline-block",
+              transform: reasoningOpen ? "rotate(90deg)" : "rotate(0)",
+              transition: "transform 0.18s ease",
+              fontSize: "0.6rem", color: "#94A3B8", flexShrink: 0,
+            }}>▶</span>
+            <span style={{ fontSize: "0.8rem", fontWeight: 600, color: isActive ? "#4361EE" : "#64748B" }}>
+              {reasoningLabel}
+            </span>
+            {isActive && (
+              <span className="dot-pulse" style={{
+                display: "inline-block", width: "5px", height: "5px",
+                borderRadius: "50%", background: "#4361EE", flexShrink: 0,
+              }} />
             )}
-          </div>
+          </button>
 
-          {/* Expanded content */}
           {reasoningOpen && (
             <div style={{ margin: "0 1.125rem 0.875rem" }}>
-              {activeTab === "reasoning" && (
-                <div style={{
-                  background: "#F8F9FC", border: "1px solid #E4E8F0",
-                  borderRadius: "10px", overflow: "hidden",
-                }}>
-                  <AgentSteps
-                    job={job}
-                    collectorH={collectorH ?? null}
-                    writerH={writerH ?? null}
-                    reviewerH={reviewerH ?? null}
-                  />
-                </div>
-              )}
-
-              {activeTab === "sources" && collectorH && (
-                <SourcesList handoff={collectorH} />
-              )}
+              <div style={{
+                background: "#F8F9FC", border: "1px solid #E4E8F0",
+                borderRadius: "10px", overflow: "hidden",
+              }}>
+                <AgentSteps
+                  job={job}
+                  collectorH={collectorH ?? null}
+                  writerH={writerH ?? null}
+                  reviewerH={reviewerH ?? null}
+                />
+              </div>
             </div>
           )}
         </div>
 
-        {/* ── Brief content ── */}
+        {/* ── 2. Sources (shown once collector finishes) ── */}
+        {collectorH && (
+          <div style={{ borderBottom: "1px solid #F1F5F9", padding: "1rem 1.125rem" }}>
+            <p style={{
+              margin: "0 0 0.75rem",
+              fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.07em",
+              color: "#94A3B8", textTransform: "uppercase" as const,
+            }}>
+              Sources ({(collectorH.artifact as unknown as CollectorArtifact).count ?? 0})
+            </p>
+            <SourcesList handoff={collectorH} />
+          </div>
+        )}
+
+        {/* ── 3. Brief + PDF download ── */}
         {writerArt?.brief_markdown && (
           <div style={{ padding: "1.25rem 1.5rem" }}>
             <div ref={briefRef} className="brief-content">
               <ReactMarkdown>{writerArt.brief_markdown}</ReactMarkdown>
             </div>
 
-            {/* Actions row */}
             <div style={{ marginTop: "1.25rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-              {job.status === "published" && (
+              {(job.status === "published" || job.status === "escalated") && (
                 <button
                   onClick={() => downloadPDF(job.topic, briefRef.current)}
                   style={{
