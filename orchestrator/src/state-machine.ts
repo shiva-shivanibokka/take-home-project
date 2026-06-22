@@ -143,11 +143,14 @@ export async function tick(): Promise<void> {
 export async function processHumanReviews(): Promise<void> {
   const { db } = await import("./db.js");
 
-  // Find escalated jobs that now have a review decision.
+  // Find unprocessed reviews on escalated jobs.
+  // processed_at IS NULL guard prevents re-processing old revise reviews when
+  // a job gets escalated a second time (which would create an infinite loop).
   const { data: reviews } = await db
     .from("reviews")
     .select("*, jobs!inner(status)")
     .eq("jobs.status", "escalated")
+    .is("processed_at", null)
     .order("created_at", { ascending: true });
 
   if (!reviews?.length) return;
@@ -162,6 +165,13 @@ export async function processHumanReviews(): Promise<void> {
       "failed";
 
     await advanceJob(review.job_id, nextStatus);
+
+    // Mark review as processed so it is never re-applied to a future escalation.
+    await db
+      .from("reviews")
+      .update({ processed_at: new Date().toISOString() })
+      .eq("id", review.id);
+
     await writeEvent(review.job_id, "human_decision", "review", {
       decision: review.decision,
       reviewer: review.reviewer,

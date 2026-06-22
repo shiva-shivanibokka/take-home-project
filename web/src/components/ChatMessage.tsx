@@ -154,6 +154,7 @@ export function ChatMessage({ job, onDecision, onRetry }: {
       status: "queued",
       attempts: 0,
       locked_at: null,
+      locked_by: null,
     }).eq("id", job.id);
     setRetrying(false);
     onRetry(job.id);
