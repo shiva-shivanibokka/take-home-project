@@ -125,7 +125,7 @@ async function main() {
         "- Include ## Summary (4-5 sentences giving a thorough overview)\n" +
         "- Include ## Key Findings with 6-8 bullet points. CRITICAL: each bullet point MUST contain a bold one-line title followed by 3-4 full sentences of analysis. The sentences must: (1) state the specific finding with evidence from the sources, (2) provide context or data that supports it, (3) explain why it matters or what it implies. Single-sentence bullets are not acceptable — write paragraphs.\n" +
         "- Include ## Analysis (2 substantial paragraphs synthesising what the findings mean together, identifying patterns and implications)\n" +
-        "- Aim for 700-900 words total\n" +
+        "- Aim for 900-1100 words total. Do not truncate early — write the full brief.\n" +
         "- Do NOT include a Sources or References section — sources are shown separately\n" +
         "- Do NOT invent facts beyond what the sources say\n" +
         "- Every claim in Key Findings must have a source citation like [1], [2]",
@@ -139,7 +139,7 @@ async function main() {
           ? `\n\n---\nA human reviewer has read a previous draft and requests these specific revisions:\n"${revisionInstructions}"\n\nPlease incorporate this feedback into your brief.`
           : ""),
     },
-  ], 2000);
+  ], 3000);
 
   // 4. Clean the brief — strip Sources/References section and inline [n] markers
   const cleanedBrief = brief
@@ -157,6 +157,7 @@ async function main() {
     citations,
     word_count: wordCount,
     tokens_used: tokensUsed,
+    model: OLLAMA_MODEL,
   };
 
   const { error: upsertErr } = await db.from("handoffs").upsert(

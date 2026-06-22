@@ -13,7 +13,7 @@ interface CollectorArtifact {
   sources: Source[]; count: number; notes: string;
 }
 interface WriterArtifact {
-  title: string; brief_markdown: string; citations: string[]; word_count: number;
+  title: string; brief_markdown: string; citations: string[]; word_count: number; model?: string;
 }
 interface ReviewerArtifact {
   confidence: number;
@@ -467,7 +467,9 @@ function AgentSteps({ job, collectorH, writerH, reviewerH }: {
 
       {/* ── Writer ── */}
       {(wDone || wActive || statusIdx >= order.indexOf("writing")) && <>
-        <AgentLabel label="Writer" color="#8B5CF6" active={wActive} done={wDone}
+        <AgentLabel
+          label={`Writer${(writerH?.artifact as unknown as WriterArtifact)?.model ? ` · ${((writerH?.artifact as unknown as WriterArtifact).model ?? "").replace("llama-3.3-70b-versatile", "70B").replace("llama-3.1-8b-instant", "8B")}` : ""}`}
+          color="#8B5CF6" active={wActive} done={wDone}
           tokens={writerH?.tokens_used} />
 
         {wActive && (
@@ -610,7 +612,8 @@ function HandoffDivider({ handoff }: { handoff: Handoff }) {
     detail = `${a.count ?? 0} sources`;
   } else if (handoff.from_stage === "writing") {
     const a = handoff.artifact as unknown as WriterArtifact;
-    detail = `${a.word_count ?? 0} words`;
+    const modelLabel = a.model ? ` · ${a.model.replace("llama-3.3-70b-versatile", "70B").replace("llama-3.1-8b-instant", "8B")}` : "";
+    detail = `${a.word_count ?? 0} words${modelLabel}`;
   }
 
   return (
