@@ -10,19 +10,23 @@ import {
 } from "@/lib/supabase";
 import { PipelineView } from "@/components/PipelineView";
 
+// ── Per-stage visual config ───────────────────────────────────────────────────
+
 const STAGE_CONF: Record<string, {
-  dot: string; colBg: string; headerBg: string; headerText: string; border: string;
+  dot: string; rowBg: string; labelBg: string; labelText: string; border: string; icon: string;
 }> = {
-  queued:     { dot:"#94A3B8", colBg:"#FAFBFC", headerBg:"#F1F5F9", headerText:"#475569", border:"#E2E8F0" },
-  collecting: { dot:"#4361EE", colBg:"#F6F8FF", headerBg:"#EEF2FF", headerText:"#3730A3", border:"#C7D2FE" },
-  writing:    { dot:"#8B5CF6", colBg:"#FAF8FF", headerBg:"#F5F3FF", headerText:"#6D28D9", border:"#DDD6FE" },
-  review:     { dot:"#F59E0B", colBg:"#FFFEF5", headerBg:"#FFFBEB", headerText:"#92400E", border:"#FDE68A" },
-  published:  { dot:"#059669", colBg:"#F5FEFA", headerBg:"#ECFDF5", headerText:"#065F46", border:"#A7F3D0" },
-  escalated:  { dot:"#EA580C", colBg:"#FFFCF8", headerBg:"#FFF7ED", headerText:"#9A3412", border:"#FED7AA" },
-  failed:     { dot:"#DC2626", colBg:"#FFF8F8", headerBg:"#FEF2F2", headerText:"#991B1B", border:"#FECACA" },
+  queued:     { dot:"#94A3B8", rowBg:"#FAFBFC", labelBg:"#F1F5F9", labelText:"#475569", border:"#E2E8F0", icon:"○" },
+  collecting: { dot:"#4361EE", rowBg:"#F6F8FF", labelBg:"#EEF2FF", labelText:"#3730A3", border:"#C7D2FE", icon:"◈" },
+  writing:    { dot:"#8B5CF6", rowBg:"#FAF8FF", labelBg:"#F5F3FF", labelText:"#6D28D9", border:"#DDD6FE", icon:"✦" },
+  review:     { dot:"#F59E0B", rowBg:"#FFFEF5", labelBg:"#FFFBEB", labelText:"#92400E", border:"#FDE68A", icon:"◉" },
+  published:  { dot:"#059669", rowBg:"#F5FEFA", labelBg:"#ECFDF5", labelText:"#065F46", border:"#A7F3D0", icon:"✓" },
+  escalated:  { dot:"#EA580C", rowBg:"#FFFCF8", labelBg:"#FFF7ED", labelText:"#9A3412", border:"#FED7AA", icon:"⚠" },
+  failed:     { dot:"#DC2626", rowBg:"#FFF8F8", labelBg:"#FEF2F2", labelText:"#991B1B", border:"#FECACA", icon:"✗" },
 };
 
 const PRIMARY: JobStatus[] = ["queued", "collecting", "writing", "review", "published", "escalated"];
+
+// ── Root ──────────────────────────────────────────────────────────────────────
 
 export default function BoardPage() {
   const [jobs, setJobs]                   = useState<Job[]>([]);
@@ -87,8 +91,8 @@ export default function BoardPage() {
   );
   jobs.forEach((j) => byStage[j.status]?.push(j));
 
-  const visibleCols = [...PRIMARY, ...(byStage.failed?.length > 0 ? (["failed"] as JobStatus[]) : [])];
-  const selectedJob  = selectedId ? jobs.find((j) => j.id === selectedId) ?? null : null;
+  const visibleRows = [...PRIMARY, ...(byStage.failed?.length > 0 ? (["failed"] as JobStatus[]) : [])];
+  const selectedJob = selectedId ? jobs.find((j) => j.id === selectedId) ?? null : null;
 
   const counts = STAGE_ORDER.reduce(
     (acc, s) => ({ ...acc, [s]: byStage[s]?.length ?? 0 }),
@@ -102,7 +106,7 @@ export default function BoardPage() {
       background: "var(--bg)", overflow: "hidden",
     }}>
 
-      {/* ── Header ──────────────────────────────────────────────── */}
+      {/* ── Header ─────────────────────────────────────────────── */}
       <header style={{
         height: "52px", flexShrink: 0,
         background: "rgba(255,255,255,0.95)",
@@ -124,42 +128,16 @@ export default function BoardPage() {
           </span>
         </div>
 
-        {/* Live pipeline indicator */}
-        <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", flexShrink: 0 }}>
-          {[
-            { key: "collecting", label: "Collect", color: "#4361EE" },
-            { key: "writing",    label: "Write",   color: "#8B5CF6" },
-            { key: "review",     label: "Review",  color: "#F59E0B" },
-          ].map((s, i) => {
-            const n = counts[s.key as JobStatus] ?? 0;
-            const active = n > 0;
-            return (
-              <span key={s.key} style={{ display: "flex", alignItems: "center", gap: "0.3rem" }}>
-                <span style={{
-                  display: "flex", alignItems: "center", gap: "0.28rem",
-                  fontSize: "0.72rem", fontWeight: 600,
-                  color: active ? s.color : "var(--text-muted)",
-                }}>
-                  {active && (
-                    <span className="dot-pulse" style={{
-                      display: "inline-block", width: "5px", height: "5px",
-                      borderRadius: "50%", background: s.color, flexShrink: 0,
-                    }} />
-                  )}
-                  {s.label}
-                  {active && <span style={{ fontWeight: 800 }}>{n}</span>}
-                </span>
-                {i < 2 && <span style={{ color: "var(--text-dim)", fontSize: "0.7rem" }}>→</span>}
-              </span>
-            );
-          })}
-        </div>
-
-        {/* Aggregate stats */}
+        {/* Live stats — only shown when there's something to say */}
         <div style={{ display: "flex", gap: "1.25rem" }}>
-          {running > 0           && <HeaderStat n={running}             label="running"     color="#4361EE" />}
+          {running > 0             && <HeaderStat n={running}             label="running"     color="#4361EE" />}
           {(counts.published ?? 0) > 0 && <HeaderStat n={counts.published} label="published"   color="#059669" />}
           {(counts.escalated ?? 0) > 0  && <HeaderStat n={counts.escalated} label="need review" color="#EA580C" />}
+          {jobs.length === 0 && (
+            <span style={{ fontSize: "0.78rem", color: "var(--text-muted)" }}>
+              No jobs yet — submit one to the right
+            </span>
+          )}
         </div>
 
         {/* Submit form */}
@@ -195,63 +173,81 @@ export default function BoardPage() {
         </form>
       </header>
 
-      {/* ── Kanban board ───────────────────────────────────────── */}
-      <div style={{
-        flexShrink: 0,
-        borderBottom: "1px solid var(--border)",
-        background: "#F8F9FD",
-        overflowX: "auto", overflowY: "hidden",
-      }}>
-        <div style={{ display: "flex", minWidth: "fit-content", height: "340px" }}>
-          {visibleCols.map((stage, i) => {
+      {/* ── Content area ───────────────────────────────────────── */}
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
+
+        {/* ── Swimlane board ─────────────────────────────────────── */}
+        <div style={{
+          flexShrink: 0, borderBottom: "2px solid var(--border)",
+          overflowY: "auto", maxHeight: "calc(50vh - 26px)",
+        }}>
+          {visibleRows.map((stage, i) => {
             const conf  = STAGE_CONF[stage];
             const cards = byStage[stage] ?? [];
+            const isLast = i === visibleRows.length - 1;
+
             return (
-              <div key={stage} style={{
-                minWidth: "210px", maxWidth: "210px", display: "flex", flexDirection: "column",
-                borderRight: i < visibleCols.length - 1 ? `1px solid ${conf.border}` : "none",
-              }}>
+              <div
+                key={stage}
+                style={{
+                  display: "flex",
+                  borderBottom: isLast ? "none" : `1px solid ${conf.border}`,
+                  minHeight: "72px",
+                }}
+              >
+                {/* Stage label — left column */}
                 <div style={{
-                  padding: "0.65rem 1rem", background: conf.headerBg,
-                  borderBottom: `1px solid ${conf.border}`,
-                  display: "flex", alignItems: "center", gap: "0.5rem", flexShrink: 0,
+                  width: "168px",
+                  flexShrink: 0,
+                  background: conf.labelBg,
+                  borderRight: `2px solid ${conf.border}`,
+                  padding: "0.875rem 1.125rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  gap: "0.2rem",
                 }}>
-                  <span style={{
-                    width: "7px", height: "7px", borderRadius: "50%",
-                    background: conf.dot, flexShrink: 0, display: "inline-block",
-                  }} />
-                  <span style={{
-                    fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.07em",
-                    color: conf.headerText, flex: 1, textTransform: "uppercase" as const,
-                  }}>
-                    {STAGE_LABELS[stage]}
-                  </span>
-                  {cards.length > 0 && (
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                    <span style={{ fontSize: "0.85rem", color: conf.dot, flexShrink: 0 }}>{conf.icon}</span>
                     <span style={{
-                      fontSize: "0.65rem", fontWeight: 800, color: conf.headerText,
-                      background: "rgba(255,255,255,0.7)", padding: "0.08rem 0.45rem",
-                      borderRadius: "999px",
+                      fontSize: "0.82rem", fontWeight: 800,
+                      color: conf.labelText, letterSpacing: "0.02em",
                     }}>
-                      {cards.length}
+                      {STAGE_LABELS[stage]}
                     </span>
-                  )}
+                  </div>
+                  <div style={{
+                    fontSize: "0.7rem", fontWeight: 600,
+                    color: cards.length > 0 ? conf.dot : "var(--text-dim)",
+                    paddingLeft: "1.5rem",
+                  }}>
+                    {cards.length === 0 ? "empty" : `${cards.length} job${cards.length !== 1 ? "s" : ""}`}
+                  </div>
                 </div>
 
+                {/* Horizontal card strip — right */}
                 <div style={{
-                  flex: 1, overflowY: "auto", padding: "0.5rem",
-                  background: conf.colBg, display: "flex", flexDirection: "column", gap: "0.4rem",
+                  flex: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  padding: "0.5rem 0.875rem",
+                  overflowX: "auto",
+                  background: conf.rowBg,
                 }}>
                   {cards.length === 0 ? (
                     <p style={{
-                      margin: "1.25rem 0 0", textAlign: "center",
-                      fontSize: "0.73rem", color: "var(--text-dim)", fontStyle: "italic",
+                      margin: 0, fontSize: "0.75rem",
+                      color: "var(--text-dim)", fontStyle: "italic",
                     }}>
-                      empty
+                      —
                     </p>
                   ) : (
                     cards.map((job) => (
-                      <KanbanCard
-                        key={job.id} job={job} conf={conf}
+                      <SwimlaneCard
+                        key={job.id}
+                        job={job}
+                        conf={conf}
                         isSelected={selectedId === job.id}
                         justMoved={recentlyMoved.has(job.id)}
                         onClick={() => setSelectedId((p) => p === job.id ? null : job.id)}
@@ -263,31 +259,31 @@ export default function BoardPage() {
             );
           })}
         </div>
-      </div>
 
-      {/* ── Detail / stats zone ─────────────────────────────────── */}
-      <div style={{ flex: 1, overflowY: "auto" }}>
-        {selectedJob ? (
-          <SelectedJobPanel job={selectedJob} onClose={() => setSelectedId(null)} onDecision={loadJobs} />
-        ) : (
-          <StatsPanel jobs={jobs} counts={counts} />
-        )}
+        {/* ── Detail / stats zone ─────────────────────────────────── */}
+        <div style={{ flex: 1, overflowY: "auto" }}>
+          {selectedJob ? (
+            <SelectedJobPanel job={selectedJob} onClose={() => setSelectedId(null)} onDecision={loadJobs} />
+          ) : (
+            <StatsPanel jobs={jobs} counts={counts} />
+          )}
+        </div>
       </div>
     </div>
   );
 }
 
-// ── Kanban card ───────────────────────────────────────────────────────────────
+// ── Swimlane card (horizontal filmstrip style) ─────────────────────────────────
 
-function KanbanCard({ job, conf, isSelected, justMoved, onClick }: {
+function SwimlaneCard({ job, conf, isSelected, justMoved, onClick }: {
   job: Job;
   conf: typeof STAGE_CONF[string];
   isSelected: boolean;
   justMoved: boolean;
   onClick: () => void;
 }) {
-  const ageMin = Math.round((Date.now() - new Date(job.created_at).getTime()) / 60_000);
-  const age    = ageMin < 60 ? `${ageMin}m` : `${Math.round(ageMin / 60)}h`;
+  const ageMin   = Math.round((Date.now() - new Date(job.created_at).getTime()) / 60_000);
+  const age      = ageMin < 60 ? `${ageMin}m` : `${Math.round(ageMin / 60)}h`;
   const isActive = ["collecting", "writing", "review"].includes(job.status);
 
   return (
@@ -295,7 +291,9 @@ function KanbanCard({ job, conf, isSelected, justMoved, onClick }: {
       onClick={onClick}
       className={justMoved ? "card-arrive" : isActive ? "card-glow" : undefined}
       style={{
-        width: "100%", textAlign: "left",
+        flexShrink: 0,
+        width: "175px",
+        textAlign: "left",
         background: "#fff",
         border: `1.5px solid ${isSelected ? "#4361EE" : justMoved ? conf.dot : "var(--border)"}`,
         borderRadius: "9px",
@@ -308,7 +306,7 @@ function KanbanCard({ job, conf, isSelected, justMoved, onClick }: {
       }}
     >
       <p style={{
-        fontSize: "0.8rem", fontWeight: 600, color: "var(--text)",
+        fontSize: "0.78rem", fontWeight: 600, color: "var(--text)",
         lineHeight: 1.4, margin: "0 0 0.35rem",
         overflow: "hidden",
         display: "-webkit-box" as const,
@@ -391,7 +389,7 @@ function SelectedJobPanel({ job, onClose, onDecision }: {
   );
 }
 
-// ── Stats dashboard (default panel — never empty) ─────────────────────────────
+// ── Stats dashboard (default — never empty) ───────────────────────────────────
 
 function StatsPanel({ jobs, counts }: { jobs: Job[]; counts: Record<JobStatus, number> }) {
   const running = (counts.collecting ?? 0) + (counts.writing ?? 0) + (counts.review ?? 0);
@@ -435,14 +433,14 @@ function StatsPanel({ jobs, counts }: { jobs: Job[]; counts: Record<JobStatus, n
         ))}
       </div>
 
-      {/* Pipeline flow */}
+      {/* Pipeline flow diagram */}
       <p style={{
         fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.09em",
         color: "var(--text-muted)", textTransform: "uppercase" as const, margin: "0 0 0.875rem",
       }}>
         Pipeline flow
       </p>
-      <div style={{ display: "flex", alignItems: "center", gap: "0", flexWrap: "wrap", rowGap: "0.75rem", marginBottom: "2rem" }}>
+      <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", rowGap: "0.75rem", marginBottom: "2rem" }}>
         {flowStages.map((s, i) => {
           const count  = counts[s.key as JobStatus] ?? 0;
           const active = count > 0;
