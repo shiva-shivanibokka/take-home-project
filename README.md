@@ -418,7 +418,7 @@ All infrastructure is permanently free:
 
 | Component | Provider | Cost |
 |---|---|---|
-| VPS (4 vCPUs / 24 GB RAM, ARM) | Oracle Cloud Always-Free | **$0 forever** |
+| VPS | Google Cloud ($300 free credit) | **$0** |
 | Postgres + Realtime | Supabase free tier (500 MB DB) | **$0** |
 | Frontend | Vercel Hobby tier | **$0** |
 | LLM API | Groq free tier | **$0** (14,400 tokens/min, 500K/day) |
