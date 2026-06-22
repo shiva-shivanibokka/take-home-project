@@ -95,10 +95,11 @@ export function ChatMessage({ job, onDecision, onRetry }: {
   const [revisePending,  setRevisePending]  = useState(false);
   const briefRef = useRef<HTMLDivElement>(null);
 
-  // Auto-collapse reasoning when job finishes
+  // Collapse reasoning when job finishes; re-open if it goes back to active (revision cycle)
   useEffect(() => {
     const isActive = ["queued", "collecting", "writing", "review"].includes(job.status);
     if (!isActive) setReasoningOpen(false);
+    else { setReasoningOpen(true); setRevisePending(false); }
   }, [job.status]);
 
   useEffect(() => {
@@ -118,6 +119,11 @@ export function ChatMessage({ job, onDecision, onRetry }: {
       .channel(`msg-${job.id}`)
       .on("postgres_changes", { event: "INSERT", schema: "public", table: "handoffs", filter: `job_id=eq.${job.id}` },
         (p) => setHandoffs((prev) => [...prev, p.new as Handoff])
+      )
+      // Revision re-runs UPSERT existing handoff rows → UPDATE event, not INSERT.
+      // Without this, the COT stays frozen on the first run's data after a revise cycle.
+      .on("postgres_changes", { event: "UPDATE", schema: "public", table: "handoffs", filter: `job_id=eq.${job.id}` },
+        (p) => setHandoffs((prev) => prev.map((h) => h.id === (p.new as Handoff).id ? p.new as Handoff : h))
       )
       .on("postgres_changes", { event: "INSERT", schema: "public", table: "events", filter: `job_id=eq.${job.id}` },
         (p) => setEvents((prev) => [...prev, p.new as Event])
