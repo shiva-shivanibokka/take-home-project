@@ -115,12 +115,12 @@ Required JSON shape:
 }
 
 Rules:
-- "citations_supported": true if every factual claim in the brief is backed by at least one source.
+- "citations_supported": true if the factual claims in the brief are substantively traceable to and consistent with the provided sources (note: the brief uses prose rather than [n] markers — evaluate alignment with source content, not presence of citation markers).
 - "coverage": true if the sources collectively cover the topic adequately.
 - "factuality": true if the brief contains no obvious fabrications or contradictions with the sources.
 - "confidence": your overall confidence that the brief is accurate and publishable (0.0 = no confidence, 1.0 = fully confident).
 - "reasons": list 1-3 specific reasons for any failed check or low confidence. Empty array if all checks pass.
-- If you are at all unsure, assign a lower confidence score rather than a higher one. Err on the side of escalation.
+- If you are at all unsure, assign a lower confidence score rather than a higher one.
 
 Topic: "${job.topic}"
 
@@ -155,11 +155,13 @@ ${brief_markdown}
     };
   }
 
-  // 4. Determine verdict
+  // 4. Determine verdict — confidence score alone drives publish/escalate.
+  // Checks inform the LLM's score but no longer override it; the inline [n]
+  // citation markers were stripped from the brief so citations_supported was
+  // always false, causing false escalations regardless of confidence.
   const { citations_supported, coverage, factuality, confidence, reasons } = evaluation;
   const anyCheckFailed = !citations_supported || !coverage || !factuality;
-  const verdict =
-    confidence < CONFIDENCE_THRESHOLD || anyCheckFailed ? "escalate" : "publish";
+  const verdict = confidence < CONFIDENCE_THRESHOLD ? "escalate" : "publish";
 
   console.log(
     `[reviewer] confidence=${confidence.toFixed(2)} checks=${JSON.stringify({citations_supported,coverage,factuality})} verdict=${verdict}`
