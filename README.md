@@ -429,9 +429,9 @@ All infrastructure is permanently free:
 | Agent | Max output tokens | Typical total |
 |---|---|---|
 | Collector (scoring) | 128 | ~400–600 |
-| Writer (brief) | 2,000 | ~1,500–2,500 |
+| Writer (brief) | 3,000 | ~1,500–3,500 |
 | Reviewer (evaluation) | 512 | ~800–1,200 |
-| **Per job** | | **~2,700–4,300** |
+| **Per job** | | **~2,700–5,300** |
 
 At Groq's free-tier rate of 14,400 tokens/minute, a typical job completes in under 60 seconds. The orchestrator backs off on 429 responses with exponential jitter. Token usage is stored in `handoffs.tokens_used` per stage.
 
