@@ -127,10 +127,16 @@ export function ChatMessage({ job, onDecision, onRetry }: {
 
   const decide = async (d: "approve" | "reject" | "revise") => {
     setDeciding(true);
-    await supabase.from("reviews").insert({
+    const { error: reviewErr } = await supabase.from("reviews").insert({
       job_id: job.id, decision: d,
       notes: notes || null, reviewer: reviewer || "anonymous",
     });
+    if (reviewErr) {
+      console.error("[decide] review insert failed:", reviewErr.message, reviewErr.code);
+      alert(`Review failed to save (${reviewErr.message}). Run db/004_rls_and_reviews_fix.sql in your Supabase SQL editor.`);
+      setDeciding(false);
+      return;
+    }
     if (d === "approve") {
       await supabase.from("jobs").update({ status: "published" }).eq("id", job.id);
       onDecision();
@@ -138,12 +144,13 @@ export function ChatMessage({ job, onDecision, onRetry }: {
       await supabase.from("jobs").update({ status: "failed" }).eq("id", job.id);
       onDecision();
     } else {
-      // revise: reset to writing — orchestrator's writer stage picks it up
-      // writer will read the revise review and inject instructions into its prompt
+      // revise: review is now inserted — orchestrator's processHumanReviews
+      // picks it up via service-role key and advances job to "writing".
+      // The direct job update below may be blocked by RLS but orchestrator handles it.
       await supabase.from("jobs").update({
         status: "writing", attempts: 0, locked_at: null,
       }).eq("id", job.id);
-      onRetry(job.id); // switch to live mode to watch the re-run
+      onRetry(job.id);
     }
     setDeciding(false);
   };
