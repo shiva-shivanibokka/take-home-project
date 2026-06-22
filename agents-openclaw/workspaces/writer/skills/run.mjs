@@ -118,9 +118,8 @@ async function main() {
 
   // 4. Clean the brief — strip Sources/References section and inline [n] markers
   const cleanedBrief = brief
-    .replace(/^##\s+(Sources|References|Bibliography|Citations|Further Reading)[^\n]*\n[\s\S]*/im, "")
-    .replace(/\[\d+(?:,\s*\d+)*\]/g, "")
-    .replace(/\s{2,}/g, " ")
+    .replace(/^##\s+(Sources|References|Bibliography|Citations|Further Reading)[^\n]*[\s\S]*/im, "")
+    .replace(/\s*\[\d+(?:[,\s]+\d+)*\]/g, "")
     .trim();
 
   const citations = sources.map((s) => s.url);

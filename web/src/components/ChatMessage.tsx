@@ -22,6 +22,15 @@ interface ReviewerArtifact {
   reasons: string[];
 }
 
+// ── Brief cleanup (strip Sources section + inline [n] citation markers) ───────
+
+function cleanBrief(md: string): string {
+  return md
+    .replace(/^##\s+(Sources|References|Bibliography|Citations|Further Reading)[^\n]*[\s\S]*/im, "")
+    .replace(/\s*\[\d+(?:[,\s]+\d+)*\]/g, "")
+    .trim();
+}
+
 // ── PDF download ───────────────────────────────────────────────────────────────
 
 function downloadPDF(topic: string, el: HTMLElement | null) {
@@ -255,7 +264,7 @@ export function ChatMessage({ job, onDecision }: { job: Job; onDecision: () => v
         {writerArt?.brief_markdown && (
           <div style={{ padding: "1.25rem 1.5rem" }}>
             <div ref={briefRef} className="brief-content">
-              <ReactMarkdown>{writerArt.brief_markdown}</ReactMarkdown>
+              <ReactMarkdown>{cleanBrief(writerArt.brief_markdown)}</ReactMarkdown>
             </div>
 
             <div style={{ marginTop: "1.25rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
