@@ -4,11 +4,11 @@
 
 A production-grade pipeline of three cooperating AI agents that research any topic, draft a structured brief, and review it for quality — escalating low-confidence work to a human instead of auto-publishing. Every job flows through a shared Postgres queue; a live board shows each stage in real time.
 
-**Live board:** `https://take-home-project-git-main-shiv-a.vercel.app/`
+**Live board:** https://take-home-project-git-main-shiv-a.vercel.app/
 
 
 
-**GitHub:** `https://github.com/shiva-shivanibokka/take-home-project`
+**GitHub:** https://github.com/shiva-shivanibokka/take-home-project
 
 ---
 
