@@ -580,8 +580,9 @@ SUPABASE_SERVICE_ROLE_KEY=eyJ...   # service_role key — server only
 
 # Groq (used as Ollama-compatible endpoint)
 OLLAMA_BASE_URL=https://api.groq.com/openai
-OLLAMA_MODEL=llama-3.1-8b-instant
-OLLAMA_API_KEY=gsk_...             # your Groq API key
+OLLAMA_MODEL=llama-3.1-8b-instant          # Collector + Reviewer
+WRITER_MODEL=llama-3.3-70b-versatile       # Writer uses larger model for brief quality
+OLLAMA_API_KEY=gsk_...                     # your Groq API key
 
 # OpenClaw workspaces
 OPENCLAW_WORKSPACES_ROOT=/home/<your-username>/take-home-project/agents-openclaw/workspaces
