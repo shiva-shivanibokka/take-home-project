@@ -36,6 +36,7 @@ const db = createClient(
 // ── Ollama Cloud ─────────────────────────────────────────────────────────────
 const OLLAMA_BASE = process.env.OLLAMA_BASE_URL ?? "https://api.ollama.ai";
 const OLLAMA_MODEL = process.env.OLLAMA_MODEL ?? "llama3.2:3b";
+console.log(`[collector] using model: ${OLLAMA_MODEL}`);
 
 async function ollamaChat(messages, maxTokens = 512) {
   // Retry up to 4 times with exponential backoff on 429/503
@@ -128,9 +129,14 @@ function dedupByDomain(items) {
   const seen = new Set();
   return items.filter((s) => {
     try {
-      const domain = new URL(s.url).hostname.replace(/^www\./, "");
-      if (seen.has(domain)) return false;
-      seen.add(domain);
+      const hostname = new URL(s.url).hostname.replace(/^www\./, "");
+      // Google News redirect URLs all share hostname news.google.com — use
+      // the source outlet name instead so each publisher gets one slot.
+      const key = hostname === "news.google.com"
+        ? `gnews:${(s.source ?? s.title).slice(0, 40)}`
+        : hostname;
+      if (seen.has(key)) return false;
+      seen.add(key);
       return true;
     } catch { return true; }
   });
@@ -190,10 +196,13 @@ async function main() {
     selectedIndices = Array.from({ length: Math.min(7, raw.length) }, (_, i) => i);
   }
 
-  const sources = selectedIndices
+  let sources = selectedIndices
     .filter((i) => i >= 0 && i < raw.length)
     .slice(0, 7)
     .map((i) => raw[i]);
+
+  // If LLM returned all out-of-range indices, fall back to all available
+  if (sources.length === 0) sources = raw.slice(0, 7);
 
   // 4. Write handoff record (idempotent upsert keyed by job_id + from_stage)
   const artifact = {
@@ -201,6 +210,7 @@ async function main() {
     count: sources.length,
     notes: `Fetched ${combined.length} candidates; deduped to ${raw.length}; selected ${sources.length} for Writer.`,
     tokens_used: tokensUsed,
+    model: OLLAMA_MODEL,
   };
 
   const { error: upsertErr } = await db.from("handoffs").upsert(

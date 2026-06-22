@@ -40,6 +40,7 @@ const db = createClient(
 const OLLAMA_BASE = process.env.OLLAMA_BASE_URL ?? "https://api.ollama.ai";
 const OLLAMA_MODEL = process.env.OLLAMA_MODEL ?? "llama3.2:3b";
 const CONFIDENCE_THRESHOLD = Number(process.env.CONFIDENCE_THRESHOLD ?? 0.70);
+console.log(`[reviewer] using model: ${OLLAMA_MODEL}`);
 
 async function ollamaChat(messages, maxTokens = 512) {
   for (let attempt = 0; attempt < 4; attempt++) {
@@ -174,6 +175,7 @@ ${brief_markdown}
     verdict,
     reasons: reasons ?? [],
     tokens_used: tokensUsed,
+    model: OLLAMA_MODEL,
   };
 
   const { error: upsertErr } = await db.from("handoffs").upsert(
