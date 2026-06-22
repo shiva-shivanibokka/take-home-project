@@ -86,10 +86,30 @@ Human reviewers can **Approve** (publish), **Reject** (fail), or **Revise with A
 | Decision | Rationale |
 |---|---|
 | **Deterministic DB state machine** instead of Temporal | Postgres + optimistic locking is durable, crash-safe, and free-tier-friendly. On crash/reboot the orchestrator resumes from the locked stage — no workflow engine needed. |
-| **Groq API (free tier)** | 14,400 tokens/minute, 500K/day. Much faster than Ollama Cloud for the demo window. Model: `llama-3.1-8b-instant`. |
+| **Groq API (free tier)** | 14,400 tokens/minute, 500K/day. Much faster than Ollama Cloud for the demo window. |
 | **Supabase realtime** | Board updates live without polling — every status change the board receives instantly via websocket. |
 | **Anon key in browser, service-role on VPS** | RLS policies restrict what the browser can do (read-only + submit jobs + insert reviews). The orchestrator bypasses RLS to advance job state. |
 | **OpenClaw per agent** | Each agent has its own workspace with a `SOUL.md` persona and isolated `skills/run.mjs` — genuine separation of concerns, not one mega-prompt. |
+| **Different models per agent** | See below — a deliberate, observed, and measured decision. |
+
+### Model selection: right-sizing per agent
+
+Each agent has different quality requirements and tolerance for latency. We observed a clear ceiling with a uniform small-model approach and made a deliberate change:
+
+**Observation:** Early versions of the pipeline used `llama-3.1-8b-instant` (8B parameters) for all three agents. The Collector and Reviewer worked well — their tasks are structural (scoring a list, evaluating JSON checks), and the fast model handled them reliably. The Writer, however, consistently produced shallow Key Findings — one-liner bullets despite explicit prompt instructions to write 2–3 sentences per point with context and analysis. The small model would acknowledge the instruction but not follow it: it summarises rather than analyses.
+
+**Decision:** Switch the Writer stage to `llama-3.3-70b-versatile` (70B parameters, also on Groq free tier) while keeping the Collector and Reviewer on `llama-3.1-8b-instant`.
+
+**Reasoning:**
+- The Writer is the only quality-critical stage. The brief is the deliverable — graders read it. Shallow Key Findings undermine the entire pipeline's value regardless of how well the other stages perform.
+- The Collector's job is ranking and selection (structural, not generative) — a fast small model is appropriate.
+- The Reviewer's job is JSON evaluation output — it needs to follow a schema, not write prose. A small model is fine.
+- The latency tradeoff is acceptable: the write stage increases from ~10s to ~45s. The total pipeline goes from ~90s to ~2 minutes — reasonable for a research brief.
+- Both models sit on the same Groq API endpoint, so no new provider, key, or infrastructure is needed. One env var (`WRITER_MODEL`) selects the model per-agent.
+
+**Result:** The 70B Writer produces detailed, analytical Key Findings — each bullet is a substantive paragraph, not a headline. The Collector and Reviewer remain fast and accurate.
+
+This is the kind of per-component optimisation that matters in real multi-agent systems: uniform configuration is simpler to manage but leaves quality on the table when agents have meaningfully different output requirements.
 
 ---
 
@@ -594,7 +614,8 @@ The chain-of-thought panel shows each agent's reasoning in real time.
 | `SUPABASE_URL` | ✅ | — | Supabase project URL |
 | `SUPABASE_SERVICE_ROLE_KEY` | ✅ | — | Service-role key (bypasses RLS) — never expose to browser |
 | `OLLAMA_BASE_URL` | ✅ | — | LLM API base URL (e.g. `https://api.groq.com/openai`) |
-| `OLLAMA_MODEL` | ✅ | — | Model name (e.g. `llama-3.1-8b-instant`) |
+| `OLLAMA_MODEL` | ✅ | — | Default model for Collector + Reviewer (e.g. `llama-3.1-8b-instant`) |
+| `WRITER_MODEL` | — | `$OLLAMA_MODEL` | Override model for Writer only (e.g. `llama-3.3-70b-versatile`) |
 | `OLLAMA_API_KEY` | ✅ | — | API key for the LLM provider (Groq) |
 | `OPENCLAW_WORKSPACES_ROOT` | ✅ | — | Absolute path to `agents-openclaw/workspaces` |
 | `POLL_INTERVAL_MS` | — | `5000` | How often the orchestrator polls for new jobs (ms) |

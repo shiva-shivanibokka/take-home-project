@@ -31,7 +31,15 @@ const db = createClient(
 );
 
 const OLLAMA_BASE = process.env.OLLAMA_BASE_URL ?? "https://api.ollama.ai";
-const OLLAMA_MODEL = process.env.OLLAMA_MODEL ?? "llama3.2:3b";
+// Writer uses a larger model than Collector/Reviewer when WRITER_MODEL is set.
+// Observation: 8B models (llama-3.1-8b-instant) consistently produce thin
+// one-liner Key Findings even with explicit "2-3 sentences" instructions.
+// A 70B model follows complex structural prompts faithfully and produces
+// genuinely analytical prose. Only the Writer stage is quality-critical enough
+// to warrant the latency tradeoff (~45s vs ~10s). Collector and Reviewer keep
+// the fast 8B model since their tasks are structural (scoring, JSON eval).
+const OLLAMA_MODEL = process.env.WRITER_MODEL ?? process.env.OLLAMA_MODEL ?? "llama3.2:3b";
+console.log(`[writer] using model: ${OLLAMA_MODEL}`);
 
 async function ollamaChat(messages, maxTokens = 1400) {
   for (let attempt = 0; attempt < 4; attempt++) {
