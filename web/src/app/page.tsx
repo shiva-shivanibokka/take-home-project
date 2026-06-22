@@ -159,31 +159,33 @@ export default function ChatPage() {
         <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
 
           {/* Chat area */}
-          <div style={{ flex: 1, overflowY: "auto", padding: "2rem 1rem" }}>
-            <div style={{ maxWidth: "880px", width: "100%", margin: "0 auto" }}>
+          <div style={{ flex: 1, overflowY: "auto", padding: "2rem 1rem", display: "flex", flexDirection: "column" }}>
+            <div style={{ maxWidth: "880px", width: "100%", margin: "0 auto", flex: 1, display: "flex", flexDirection: "column" }}>
 
-              {/* History mode: back button */}
-              {mode === "history" && (
-                <button
-                  onClick={() => setMode("live")}
-                  style={{
-                    display: "inline-flex", alignItems: "center", gap: "0.375rem",
-                    background: "none", border: "none",
-                    color: "#64748B", fontSize: "0.8rem", fontWeight: 600,
-                    cursor: "pointer", padding: "0 0 1.25rem",
-                  }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = "#4361EE"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.color = "#64748B"; }}
-                >
-                  ← Back to live
-                </button>
-              )}
-
-              {/* Job display */}
               {displayJob ? (
-                <ChatMessage key={displayJob.id} job={displayJob} onDecision={loadJobs} />
+                <>
+                  {/* History mode: back button */}
+                  {mode === "history" && (
+                    <button
+                      onClick={() => setMode("live")}
+                      style={{
+                        display: "inline-flex", alignItems: "center", gap: "0.375rem",
+                        background: "none", border: "none",
+                        color: "#64748B", fontSize: "0.8rem", fontWeight: 600,
+                        cursor: "pointer", padding: "0 0 1.25rem", alignSelf: "flex-start",
+                      }}
+                      onMouseEnter={(e) => { e.currentTarget.style.color = "#4361EE"; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.color = "#64748B"; }}
+                    >
+                      ← Back to live
+                    </button>
+                  )}
+                  <ChatMessage key={displayJob.id} job={displayJob} onDecision={loadJobs} />
+                </>
               ) : (
-                <EmptyState />
+                <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <EmptyState />
+                </div>
               )}
 
               <div ref={chatEndRef} />
@@ -263,8 +265,8 @@ function Sidebar({ jobs, selectedId, onSelect }: {
   onSelect: (id: string) => void;
 }) {
   const [open, setOpen] = useState<Record<string, boolean>>({
-    published: true,
-    escalated: true,
+    published: false,
+    escalated: false,
     failed: false,
   });
 
