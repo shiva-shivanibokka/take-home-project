@@ -33,7 +33,7 @@ const db = createClient(
 const OLLAMA_BASE = process.env.OLLAMA_BASE_URL ?? "https://api.ollama.ai";
 const OLLAMA_MODEL = process.env.OLLAMA_MODEL ?? "llama3.2:3b";
 
-async function ollamaChat(messages, maxTokens = 900) {
+async function ollamaChat(messages, maxTokens = 1400) {
   for (let attempt = 0; attempt < 4; attempt++) {
     try {
       const res = await fetch(`${OLLAMA_BASE}/v1/chat/completions`, {
@@ -101,9 +101,9 @@ async function main() {
         "Requirements:\n" +
         "- Start with a # Title\n" +
         "- Include ## Summary (3-5 sentences)\n" +
-        "- Include ## Key Findings (bullet points, each citing at least one source)\n" +
+        "- Include ## Key Findings (6-10 detailed bullet points, each citing at least one source — explain the finding, don't just name it)\n" +
         "- Include ## Sources (numbered list with URLs)\n" +
-        "- Be concise: 300-500 words total\n" +
+        "- Aim for 500-800 words total\n" +
         "- Do NOT invent facts beyond what the sources say\n" +
         "- Every claim in Key Findings must have a source citation like [1], [2]",
     },
@@ -113,7 +113,7 @@ async function main() {
         `Research topic: "${job.topic}"\n\n` +
         `Sources from Collector:\n\n${sourceContext}`,
     },
-  ], 900);
+  ], 1400);
 
   // 4. Extract citations (URLs actually referenced in the brief)
   const urlsInBrief = sources
