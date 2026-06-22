@@ -160,7 +160,7 @@ export default function ChatPage() {
 
           {/* Chat area */}
           <div style={{ flex: 1, overflowY: "auto", padding: "2rem 1rem" }}>
-            <div style={{ maxWidth: "720px", width: "100%", margin: "0 auto" }}>
+            <div style={{ maxWidth: "880px", width: "100%", margin: "0 auto" }}>
 
               {/* History mode: back button */}
               {mode === "history" && (
@@ -197,7 +197,7 @@ export default function ChatPage() {
             borderTop: "1px solid #E4E8F0",
             padding: "1rem 1rem 1.375rem",
           }}>
-            <form onSubmit={handleSubmit} style={{ maxWidth: "720px", margin: "0 auto" }}>
+            <form onSubmit={handleSubmit} style={{ maxWidth: "880px", margin: "0 auto" }}>
               <div style={{
                 display: "flex", gap: "0.625rem", alignItems: "flex-end",
                 background: "#fff", border: "1.5px solid #D1D9E6", borderRadius: "14px",

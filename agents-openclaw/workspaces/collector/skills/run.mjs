@@ -95,8 +95,7 @@ async function fetchGoogleNewsRSS(topic) {
   const q = encodeURIComponent(topic);
   const url = `https://news.google.com/rss/search?q=${q}&hl=en-US&gl=US&ceid=US:en`;
   const xml = await fetchUrl(url);
-  // Naive XML parse — good enough for RSS
-  const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0, 8);
+  const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0, 12);
   return items.map((m) => {
     const block = m[1];
     const title = block.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/)?.[1]
@@ -104,23 +103,37 @@ async function fetchGoogleNewsRSS(topic) {
     const link = block.match(/<link>(.*?)<\/link>/)?.[1]
       ?? block.match(/<guid[^>]*>(.*?)<\/guid>/)?.[1] ?? "";
     const pubDate = block.match(/<pubDate>(.*?)<\/pubDate>/)?.[1] ?? "";
+    // Extract source name from <source> tag if present
+    const sourceName = block.match(/<source[^>]*>(.*?)<\/source>/)?.[1] ?? "Google News";
     const snippet = block.match(/<description><!\[CDATA\[(.*?)\]\]><\/description>/)?.[1]
-      ?.replace(/<[^>]+>/g, "").slice(0, 200) ?? "";
-    return { title, url: link, snippet, published: pubDate, source: "google-news" };
-  }).filter((s) => s.url);
+      ?.replace(/<[^>]+>/g, "").slice(0, 350) ?? "";
+    return { title, url: link, snippet, published: pubDate, source: sourceName };
+  }).filter((s) => s.url && s.title);
 }
 
 async function fetchHackerNews(topic) {
   const q = encodeURIComponent(topic);
-  const url = `https://hn.algolia.com/api/v1/search?query=${q}&tags=story&hitsPerPage=5`;
+  const url = `https://hn.algolia.com/api/v1/search?query=${q}&tags=story&hitsPerPage=8`;
   const json = JSON.parse(await fetchUrl(url));
   return (json.hits ?? []).map((h) => ({
     title: h.title,
     url: h.url ?? `https://news.ycombinator.com/item?id=${h.objectID}`,
-    snippet: h.story_text?.replace(/<[^>]+>/g, "").slice(0, 200) ?? "",
+    snippet: h.story_text?.replace(/<[^>]+>/g, "").slice(0, 350) ?? "",
     published: h.created_at,
-    source: "hacker-news",
-  })).filter((s) => s.url);
+    source: "Hacker News",
+  })).filter((s) => s.url && s.title);
+}
+
+function dedupByDomain(items) {
+  const seen = new Set();
+  return items.filter((s) => {
+    try {
+      const domain = new URL(s.url).hostname.replace(/^www\./, "");
+      if (seen.has(domain)) return false;
+      seen.add(domain);
+      return true;
+    } catch { return true; }
+  });
 }
 
 // ── Main ─────────────────────────────────────────────────────────────────────
@@ -138,16 +151,19 @@ async function main() {
     fetchHackerNews(job.topic),
   ]);
 
-  const raw = [
+  const combined = [
     ...(newsItems.status === "fulfilled" ? newsItems.value : []),
     ...(hnItems.status === "fulfilled" ? hnItems.value : []),
-  ].slice(0, 10);
+  ];
+
+  // Deduplicate by domain and cap candidates
+  const raw = dedupByDomain(combined).slice(0, 15);
 
   if (!raw.length) throw new Error("No sources fetched from either API");
 
-  // 3. Ask Ollama to score relevance and pick the best 5
+  // 3. Ask Ollama to score relevance and pick the best 7
   const sourceList = raw.map((s, i) =>
-    `[${i}] title: ${s.title}\n    url: ${s.url}\n    snippet: ${s.snippet}`
+    `[${i}] ${s.title} (${s.source})\n    ${s.snippet || "(no snippet)"}`
   ).join("\n\n");
 
   const { content: scoredText, tokensUsed } = await ollamaChat([
@@ -155,35 +171,38 @@ async function main() {
       role: "system",
       content:
         "You are the Collector agent. Given a research topic and a list of candidate sources, " +
-        "select the 5 most relevant, recent, and credible ones. " +
-        "Respond ONLY with a JSON array of selected indices (0-based), e.g. [0,2,4,6,9]. " +
+        "select the 7 most relevant, informative, and credible ones. " +
+        "Prefer sources with substantive snippets over those with empty ones. " +
+        "Prefer diversity — avoid picking multiple articles covering the exact same angle. " +
+        "Respond ONLY with a JSON array of selected 0-based indices, e.g. [0,2,4,6,9,11,13]. " +
         "No other text.",
     },
     {
       role: "user",
-      content: `Topic: "${job.topic}"\n\nSources:\n${sourceList}`,
+      content: `Topic: "${job.topic}"\n\nCandidates:\n${sourceList}`,
     },
-  ], 64);
+  ], 128);
 
   let selectedIndices;
   try {
-    selectedIndices = JSON.parse(scoredText.trim());
+    const match = scoredText.match(/\[[\d,\s]+\]/);
+    selectedIndices = JSON.parse(match ? match[0] : scoredText.trim());
     if (!Array.isArray(selectedIndices)) throw new Error();
   } catch {
-    // Fallback: take first 5
-    selectedIndices = [0, 1, 2, 3, 4].filter((i) => i < raw.length);
+    // Fallback: take first 7
+    selectedIndices = Array.from({ length: Math.min(7, raw.length) }, (_, i) => i);
   }
 
   const sources = selectedIndices
     .filter((i) => i >= 0 && i < raw.length)
-    .map((i) => raw[i])
-    .slice(0, 5);
+    .slice(0, 7)
+    .map((i) => raw[i]);
 
   // 4. Write handoff record (idempotent upsert keyed by job_id + from_stage)
   const artifact = {
     sources,
     count: sources.length,
-    notes: `Fetched ${raw.length} candidates; selected ${sources.length} for Writer.`,
+    notes: `Fetched ${combined.length} candidates; deduped to ${raw.length}; selected ${sources.length} for Writer.`,
     tokens_used: tokensUsed,
   };
 
