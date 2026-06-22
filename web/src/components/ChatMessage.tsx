@@ -440,7 +440,8 @@ function AgentSteps({ job, collectorH, writerH, reviewerH }: {
 
       {/* ── Collector ── */}
       <AgentLabel label="Collector" color="#4361EE" active={cActive} done={cDone}
-        tokens={collectorH?.tokens_used} />
+        tokens={collectorH?.tokens_used}
+        model={(collectorH?.artifact as unknown as CollectorArtifact & { model?: string })?.model} />
 
       {cActive && (
         <StreamLines color="#4361EE" lines={[
@@ -467,10 +468,9 @@ function AgentSteps({ job, collectorH, writerH, reviewerH }: {
 
       {/* ── Writer ── */}
       {(wDone || wActive || statusIdx >= order.indexOf("writing")) && <>
-        <AgentLabel
-          label={`Writer${(writerH?.artifact as unknown as WriterArtifact)?.model ? ` · ${((writerH?.artifact as unknown as WriterArtifact).model ?? "").replace("llama-3.3-70b-versatile", "70B").replace("llama-3.1-8b-instant", "8B")}` : ""}`}
-          color="#8B5CF6" active={wActive} done={wDone}
-          tokens={writerH?.tokens_used} />
+        <AgentLabel label="Writer" color="#8B5CF6" active={wActive} done={wDone}
+          tokens={writerH?.tokens_used}
+          model={(writerH?.artifact as unknown as WriterArtifact)?.model} />
 
         {wActive && (
           <StreamLines color="#8B5CF6" lines={[
@@ -497,7 +497,8 @@ function AgentSteps({ job, collectorH, writerH, reviewerH }: {
       {/* ── Reviewer ── */}
       {(rDone || rActive || statusIdx >= order.indexOf("review")) && <>
         <AgentLabel label="Reviewer" color="#D97706" active={rActive} done={rDone}
-          tokens={reviewerH?.tokens_used} />
+          tokens={reviewerH?.tokens_used}
+          model={(reviewerH?.artifact as unknown as ReviewerArtifact & { model?: string })?.model} />
 
         {rActive && (
           <StreamLines color="#D97706" lines={[
@@ -547,32 +548,45 @@ function AgentSteps({ job, collectorH, writerH, reviewerH }: {
 
 // ── Agent label row ───────────────────────────────────────────────────────────
 
-function AgentLabel({ label, color, active, done, tokens }: {
-  label: string; color: string; active: boolean; done: boolean; tokens?: number | null;
+function AgentLabel({ label, color, active, done, tokens, model }: {
+  label: string; color: string; active: boolean; done: boolean;
+  tokens?: number | null; model?: string | null;
 }) {
-  const statusColor = done ? "#059669" : active ? color : "#CBD5E1";
+  const modelShort = model
+    ? model.replace("llama-3.3-70b-versatile", "llama-3.3-70b").replace("llama-3.1-8b-instant", "llama-3.1-8b")
+    : null;
   return (
-    <div style={{
-      display: "flex", alignItems: "center", gap: "0.5rem",
-      marginBottom: "0.375rem",
-      paddingBottom: "0.2rem",
-    }}>
-      <span style={{
-        fontSize: "0.65rem", fontWeight: 800, letterSpacing: "0.1em",
-        color: done ? "#059669" : active ? color : "#CBD5E1",
-        textTransform: "uppercase" as const,
-      }}>{label}</span>
-      {active && (
-        <span className="dot-pulse" style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", background: color }} />
-      )}
-      {done && <span style={{ fontSize: "0.65rem", color: "#059669" }}>✓</span>}
-      {tokens != null && tokens > 0 && (
-        <span style={{ fontSize: "0.65rem", color: "#CBD5E1", marginLeft: "auto" }}>
-          {tokens.toLocaleString()} tok
-        </span>
-      )}
-      {!done && !active && (
-        <span style={{ fontSize: "0.65rem", color: "#CBD5E1" }}>waiting</span>
+    <div style={{ marginBottom: "0.375rem" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+        <span style={{
+          fontSize: "0.65rem", fontWeight: 800, letterSpacing: "0.1em",
+          color: done ? "#059669" : active ? color : "#CBD5E1",
+          textTransform: "uppercase" as const,
+        }}>{label}</span>
+        {active && (
+          <span className="dot-pulse" style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", background: color }} />
+        )}
+        {done && <span style={{ fontSize: "0.65rem", color: "#059669" }}>✓</span>}
+        {tokens != null && tokens > 0 && (
+          <span style={{ fontSize: "0.65rem", color: "#CBD5E1", marginLeft: "auto" }}>
+            {tokens.toLocaleString()} tok
+          </span>
+        )}
+        {!done && !active && (
+          <span style={{ fontSize: "0.65rem", color: "#CBD5E1" }}>waiting</span>
+        )}
+      </div>
+      {modelShort && (
+        <div style={{ marginTop: "0.15rem" }}>
+          <span style={{
+            fontSize: "0.6rem", color: "#94A3B8",
+            background: "#F1F5F9", border: "1px solid #E2E8F0",
+            borderRadius: "4px", padding: "0.05rem 0.35rem",
+            fontFamily: "ui-monospace, monospace",
+          }}>
+            {modelShort}
+          </span>
+        </div>
       )}
     </div>
   );
@@ -612,8 +626,7 @@ function HandoffDivider({ handoff }: { handoff: Handoff }) {
     detail = `${a.count ?? 0} sources`;
   } else if (handoff.from_stage === "writing") {
     const a = handoff.artifact as unknown as WriterArtifact;
-    const modelLabel = a.model ? ` · ${a.model.replace("llama-3.3-70b-versatile", "70B").replace("llama-3.1-8b-instant", "8B")}` : "";
-    detail = `${a.word_count ?? 0} words${modelLabel}`;
+    detail = `${a.word_count ?? 0} words`;
   }
 
   return (
