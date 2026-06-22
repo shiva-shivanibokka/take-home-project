@@ -81,7 +81,6 @@ async function ollamaChat(messages, maxTokens = 512) {
 
 function fetchUrl(url) {
   return new Promise((resolve, reject) => {
-    const client = url.startsWith("https") ? https : (await import("node:http")).default;
     const req = https.get(url, (res) => {
       const chunks = [];
       res.on("data", (c) => chunks.push(c));
