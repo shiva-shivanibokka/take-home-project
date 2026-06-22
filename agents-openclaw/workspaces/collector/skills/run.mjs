@@ -162,24 +162,21 @@ async function main() {
   if (!raw.length) throw new Error("No sources fetched from either API");
 
   // 3. Ask Ollama to score relevance and pick the best 7
+  // Use short snippets for LLM scoring to keep token count low (full snippets stored below)
   const sourceList = raw.map((s, i) =>
-    `[${i}] ${s.title} (${s.source})\n    ${s.snippet || "(no snippet)"}`
-  ).join("\n\n");
+    `[${i}] ${s.title} (${s.source})${s.snippet ? " — " + s.snippet.slice(0, 120) : ""}`
+  ).join("\n");
 
   const { content: scoredText, tokensUsed } = await ollamaChat([
     {
       role: "system",
       content:
-        "You are the Collector agent. Given a research topic and a list of candidate sources, " +
-        "select the 7 most relevant, informative, and credible ones. " +
-        "Prefer sources with substantive snippets over those with empty ones. " +
-        "Prefer diversity — avoid picking multiple articles covering the exact same angle. " +
-        "Respond ONLY with a JSON array of selected 0-based indices, e.g. [0,2,4,6,9,11,13]. " +
-        "No other text.",
+        "You are the Collector agent. Select the 7 most relevant and diverse sources for the topic. " +
+        "Respond ONLY with a JSON array of 0-based indices, e.g. [0,2,4,6,9,11,13]. No other text.",
     },
     {
       role: "user",
-      content: `Topic: "${job.topic}"\n\nCandidates:\n${sourceList}`,
+      content: `Topic: "${job.topic}"\n\n${sourceList}`,
     },
   ], 128);
 
