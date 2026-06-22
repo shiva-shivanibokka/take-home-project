@@ -74,6 +74,7 @@ export function ChatMessage({ job, onDecision }: { job: Job; onDecision: () => v
   const [events,         setEvents]         = useState<Event[]>([]);
   const [reviews,        setReviews]        = useState<Review[]>([]);
   const [reasoningOpen,  setReasoningOpen]  = useState(true);
+  const [sourcesOpen,    setSourcesOpen]    = useState(false);
   const [reviewer,       setReviewer]       = useState("");
   const [notes,          setNotes]          = useState("");
   const [deciding,       setDeciding]       = useState(false);
@@ -221,17 +222,32 @@ export function ChatMessage({ job, onDecision }: { job: Job; onDecision: () => v
           )}
         </div>
 
-        {/* ── 2. Sources (shown once collector finishes) ── */}
+        {/* ── 2. Sources (collapsible, shown once collector finishes) ── */}
         {collectorH && (
-          <div style={{ borderBottom: "1px solid #F1F5F9", padding: "1rem 1.125rem" }}>
-            <p style={{
-              margin: "0 0 0.75rem",
-              fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.07em",
-              color: "#94A3B8", textTransform: "uppercase" as const,
-            }}>
-              Sources ({(collectorH.artifact as unknown as CollectorArtifact).count ?? 0})
-            </p>
-            <SourcesList handoff={collectorH} />
+          <div style={{ borderBottom: "1px solid #F1F5F9" }}>
+            <button
+              onClick={() => setSourcesOpen((o) => !o)}
+              style={{
+                width: "100%", background: "none", border: "none",
+                display: "flex", alignItems: "center", gap: "0.45rem",
+                padding: "0.7rem 1.125rem", cursor: "pointer", textAlign: "left",
+              }}
+            >
+              <span style={{
+                display: "inline-block",
+                transform: sourcesOpen ? "rotate(90deg)" : "rotate(0)",
+                transition: "transform 0.18s ease",
+                fontSize: "0.6rem", color: "#94A3B8", flexShrink: 0,
+              }}>▶</span>
+              <span style={{ fontSize: "0.8rem", fontWeight: 600, color: "#64748B" }}>
+                Sources ({(collectorH.artifact as unknown as CollectorArtifact).count ?? 0})
+              </span>
+            </button>
+            {sourcesOpen && (
+              <div style={{ padding: "0 1.125rem 0.875rem" }}>
+                <SourcesList handoff={collectorH} />
+              </div>
+            )}
           </div>
         )}
 
