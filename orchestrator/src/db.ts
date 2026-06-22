@@ -1,11 +1,13 @@
 import { createClient } from "@supabase/supabase-js";
+import ws from "ws";
 import { config } from "./config.js";
 
 // Service-role client: bypasses RLS, used only on the VPS (never in the browser).
+// ws polyfill required for Node <v22 (server runs v20).
 export const db = createClient(
   config.supabase.url,
   config.supabase.serviceKey,
-  { auth: { persistSession: false } }
+  { auth: { persistSession: false }, realtime: { transport: ws as any } }
 );
 
 export type JobStatus =

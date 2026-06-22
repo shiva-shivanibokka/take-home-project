@@ -19,6 +19,6 @@
     ]
   },
   "tools": {
-    "agentToAgent": false
+    "agentToAgent": { "enabled": false }
   }
 }
