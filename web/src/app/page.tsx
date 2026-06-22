@@ -180,7 +180,12 @@ export default function ChatPage() {
                       ← Back to live
                     </button>
                   )}
-                  <ChatMessage key={displayJob.id} job={displayJob} onDecision={loadJobs} />
+                  <ChatMessage
+                    key={displayJob.id}
+                    job={displayJob}
+                    onDecision={loadJobs}
+                    onRetry={(id) => { setLiveJobId(id); setMode("live"); loadJobs(); }}
+                  />
                 </>
               ) : (
                 <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>

@@ -100,10 +100,10 @@ async function main() {
         "Write a clear, well-structured research brief in Markdown. " +
         "Requirements:\n" +
         "- Start with a # Title\n" +
-        "- Include ## Summary (4-6 sentences giving a thorough overview)\n" +
-        "- Include ## Key Findings (8-12 detailed bullet points, each citing at least one source — explain the finding in depth, don't just name it)\n" +
-        "- Include ## Analysis (2-3 paragraphs synthesising what the findings mean together)\n" +
-        "- Aim for 700-1000 words total\n" +
+        "- Include ## Summary (4-5 sentences giving a thorough overview)\n" +
+        "- Include ## Key Findings (6-8 bullet points — each must be 2-3 sentences explaining the finding in depth with context, not just a one-liner)\n" +
+        "- Include ## Analysis (2 paragraphs synthesising what the findings mean together)\n" +
+        "- Aim for 600-800 words total\n" +
         "- Do NOT include a Sources or References section — sources are shown separately\n" +
         "- Do NOT invent facts beyond what the sources say\n" +
         "- Every claim in Key Findings must have a source citation like [1], [2]",
@@ -114,7 +114,7 @@ async function main() {
         `Research topic: "${job.topic}"\n\n` +
         `Sources from Collector:\n\n${sourceContext}`,
     },
-  ], 1800);
+  ], 2000);
 
   // 4. Clean the brief — strip Sources/References section and inline [n] markers
   const cleanedBrief = brief

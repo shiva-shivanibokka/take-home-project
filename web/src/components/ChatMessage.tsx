@@ -78,7 +78,11 @@ function StatusPill({ status }: { status: string }) {
 
 // ── Root ChatMessage ───────────────────────────────────────────────────────────
 
-export function ChatMessage({ job, onDecision }: { job: Job; onDecision: () => void }) {
+export function ChatMessage({ job, onDecision, onRetry }: {
+  job: Job;
+  onDecision: () => void;
+  onRetry: (jobId: string) => void;
+}) {
   const [handoffs,       setHandoffs]       = useState<Handoff[]>([]);
   const [events,         setEvents]         = useState<Event[]>([]);
   const [reviews,        setReviews]        = useState<Review[]>([]);
@@ -87,6 +91,7 @@ export function ChatMessage({ job, onDecision }: { job: Job; onDecision: () => v
   const [reviewer,       setReviewer]       = useState("");
   const [notes,          setNotes]          = useState("");
   const [deciding,       setDeciding]       = useState(false);
+  const [retrying,       setRetrying]       = useState(false);
   const briefRef = useRef<HTMLDivElement>(null);
 
   // Auto-collapse reasoning when job finishes
@@ -126,8 +131,23 @@ export function ChatMessage({ job, onDecision }: { job: Job; onDecision: () => v
       job_id: job.id, decision: d,
       notes: notes || null, reviewer: reviewer || "anonymous",
     });
+    // Immediately flip job status so sidebar updates without waiting for orchestrator
+    await supabase.from("jobs").update({
+      status: d === "approve" ? "published" : "failed",
+    }).eq("id", job.id);
     setDeciding(false);
     onDecision();
+  };
+
+  const handleRetry = async () => {
+    setRetrying(true);
+    await supabase.from("jobs").update({
+      status: "queued",
+      attempts: 0,
+      locked_at: null,
+    }).eq("id", job.id);
+    setRetrying(false);
+    onRetry(job.id);
   };
 
   const collectorH = handoffs.find((h) => h.from_stage === "collecting");
@@ -308,15 +328,43 @@ export function ChatMessage({ job, onDecision }: { job: Job; onDecision: () => v
           </div>
         )}
 
-        {/* Queued state — no brief yet, show waiting */}
+        {/* Queued state — no brief yet */}
         {job.status === "queued" && !writerArt && (
           <div style={{ padding: "1rem 1.125rem 1.25rem" }}>
-            <p style={{
-              margin: 0, fontSize: "0.83rem", color: "#94A3B8",
-              fontStyle: "italic",
-            }}>
+            <p style={{ margin: 0, fontSize: "0.83rem", color: "#94A3B8", fontStyle: "italic" }}>
               Queued — waiting for an agent to pick this up…
             </p>
+          </div>
+        )}
+
+        {/* Failed state — retry panel */}
+        {job.status === "failed" && (
+          <div style={{ padding: "1rem 1.125rem 1.25rem" }}>
+            <div style={{
+              border: "1.5px solid #FECACA", borderRadius: "12px",
+              background: "#FEF2F2", padding: "1rem 1.125rem",
+            }}>
+              <p style={{ margin: "0 0 0.25rem", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.07em", color: "#DC2626" }}>
+                PIPELINE FAILED
+              </p>
+              <p style={{ margin: "0 0 0.875rem", fontSize: "0.83rem", color: "#7F1D1D", lineHeight: 1.55 }}>
+                The job failed to complete. Click below to requeue it — the agents will run it from scratch.
+              </p>
+              <button
+                onClick={handleRetry}
+                disabled={retrying}
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: "0.375rem",
+                  padding: "0.5rem 1.125rem", borderRadius: "8px",
+                  background: retrying ? "#F3F4F6" : "#1E293B",
+                  border: "none", color: retrying ? "#9CA3AF" : "#fff",
+                  fontSize: "0.83rem", fontWeight: 700, cursor: retrying ? "default" : "pointer",
+                  transition: "background 0.15s",
+                }}
+              >
+                {retrying ? "Requeueing…" : "↺ Retry this job"}
+              </button>
+            </div>
           </div>
         )}
       </div>
@@ -611,8 +659,8 @@ function HumanPanel({ reviewer, notes, deciding, onReviewer, onNotes, onDecide }
   onDecide: (d: "approve" | "reject") => void;
 }) {
   const inp: React.CSSProperties = {
-    width: "100%", background: "#F8F9FC",
-    border: "1.5px solid #E4E8F0", borderRadius: "8px",
+    width: "100%", background: "#fff",
+    border: "1.5px solid #FED7AA", borderRadius: "8px",
     padding: "0.5rem 0.75rem", fontSize: "0.83rem",
     color: "#0D0F12", outline: "none", fontFamily: "inherit",
   };
@@ -620,40 +668,57 @@ function HumanPanel({ reviewer, notes, deciding, onReviewer, onNotes, onDecide }
     <div style={{
       marginTop: "1.25rem",
       border: "1.5px solid #EA580C", borderRadius: "12px",
-      background: "#FFF7ED", padding: "1.125rem",
+      background: "#FFF7ED", padding: "1.25rem",
     }}>
-      <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.08em", color: "#EA580C", margin: "0 0 0.375rem" }}>
+      <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.08em", color: "#EA580C", margin: "0 0 0.25rem" }}>
         ⚠ HUMAN REVIEW REQUIRED
       </p>
-      <p style={{ fontSize: "0.83rem", color: "#92400E", margin: "0 0 0.875rem", lineHeight: 1.55 }}>
-        The Reviewer escalated this brief. Read the draft above and decide.
+      <p style={{ fontSize: "0.83rem", color: "#92400E", margin: "0 0 1rem", lineHeight: 1.6 }}>
+        The AI Reviewer flagged this brief as low-confidence. Read the draft above and make a call.
       </p>
-      <input type="text" placeholder="Your name (optional)" value={reviewer}
-        onChange={(e) => onReviewer(e.target.value)}
-        style={{ ...inp, marginBottom: "0.5rem" }} />
-      <textarea placeholder="Notes (optional)" value={notes} rows={2}
-        onChange={(e) => onNotes(e.target.value)}
-        style={{ ...inp, resize: "none", marginBottom: "0.75rem" }} />
-      <div style={{ display: "flex", gap: "0.5rem" }}>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "1rem" }}>
+        <input type="text" placeholder="Your name (optional)" value={reviewer}
+          onChange={(e) => onReviewer(e.target.value)}
+          style={inp} />
+        <textarea placeholder="Notes on your decision (optional)" value={notes} rows={2}
+          onChange={(e) => onNotes(e.target.value)}
+          style={{ ...inp, resize: "none" }} />
+      </div>
+
+      <div style={{ display: "flex", gap: "0.625rem" }}>
         <button onClick={() => onDecide("approve")} disabled={deciding}
           style={{
-            flex: 1, padding: "0.6rem", borderRadius: "8px",
-            background: "#059669", color: "#fff", border: "none",
+            flex: 1, padding: "0.625rem", borderRadius: "8px",
+            background: deciding ? "#D1FAE5" : "#059669",
+            color: "#fff", border: "none",
             fontSize: "0.85rem", fontWeight: 700,
-            cursor: deciding ? "default" : "pointer", opacity: deciding ? 0.5 : 1,
+            cursor: deciding ? "default" : "pointer",
+            transition: "background 0.15s",
           }}>
           ✓ Approve &amp; Publish
         </button>
         <button onClick={() => onDecide("reject")} disabled={deciding}
           style={{
-            flex: 1, padding: "0.6rem", borderRadius: "8px",
+            flex: 1, padding: "0.625rem", borderRadius: "8px",
             background: "#fff", color: "#DC2626",
             border: "1.5px solid #DC2626",
             fontSize: "0.85rem", fontWeight: 700,
             cursor: deciding ? "default" : "pointer", opacity: deciding ? 0.5 : 1,
+            transition: "opacity 0.15s",
           }}>
           ✗ Reject
         </button>
+      </div>
+
+      {/* Outcome labels */}
+      <div style={{ display: "flex", gap: "0.625rem", marginTop: "0.5rem" }}>
+        <p style={{ flex: 1, margin: 0, fontSize: "0.68rem", color: "#059669", textAlign: "center" }}>
+          → moves to Published
+        </p>
+        <p style={{ flex: 1, margin: 0, fontSize: "0.68rem", color: "#DC2626", textAlign: "center" }}>
+          → moves to Failed
+        </p>
       </div>
     </div>
   );
