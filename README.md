@@ -78,7 +78,8 @@ Human reviewers can **Approve** (publish), **Reject** (fail), or **Revise with A
     │ Domain dedup│ │            │ │ → publish or │
     │ 7 sources   │ │            │ │   escalate   │
     └─────────────┘ └────────────┘ └──────────────┘
-              All three agents: Groq API (llama-3.1-8b-instant)
+        Groq API — Collector+Reviewer: llama-3.1-8b-instant (fast)
+                    Writer: llama-3.3-70b-versatile (quality)
 ```
 
 ### Key design decisions
