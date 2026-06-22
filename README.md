@@ -25,10 +25,11 @@ A production-grade pipeline of three cooperating AI agents that research any top
 9. [Frontend features](#frontend-features)
 10. [Cost and token discipline](#cost-and-token-discipline)
 11. [A+ rubric mapping](#a-rubric-mapping)
-12. [Redeploy from scratch](#redeploy-from-scratch)
-13. [Environment variables reference](#environment-variables-reference)
-14. [Repo structure](#repo-structure)
-15. [Verification steps](#verification-steps)
+12. [Challenges and engineering decisions](#challenges-and-engineering-decisions)
+13. [Redeploy from scratch](#redeploy-from-scratch)
+14. [Environment variables reference](#environment-variables-reference)
+15. [Repo structure](#repo-structure)
+16. [Verification steps](#verification-steps)
 
 ---
 
@@ -37,7 +38,7 @@ A production-grade pipeline of three cooperating AI agents that research any top
 Submit a research topic (e.g. *"Anthropic Claude vs GPT-4o enterprise adoption 2025"*) and watch three AI agents cooperate to produce a published brief:
 
 1. **Collector** — searches Google News RSS and Hacker News, deduplicates by domain, asks an LLM to score relevance, and selects the 7 best sources.
-2. **Writer** — reads the curated sources and drafts a 600–800-word Markdown brief with Summary, Key Findings, and Analysis sections.
+2. **Writer** — reads the curated sources and drafts a 900–1,100-word Markdown brief with Summary, Key Findings, and Analysis sections.
 3. **Reviewer** — evaluates the brief against the sources on three checks (citation support, coverage, factuality) and emits a calibrated confidence score. Briefs above 70% confidence auto-publish; below 70% → escalated to a human.
 
 Human reviewers can **Approve** (publish), **Reject** (fail), or **Revise with AI** — typing specific instructions that are injected directly into the Writer's LLM prompt for a targeted re-draft. If the revision passes the 70% bar it auto-publishes; if not, it escalates again for another round.
@@ -74,7 +75,7 @@ Human reviewers can **Approve** (publish), **Reject** (fail), or **Revise with A
     │  (OpenClaw) │ │ (OpenClaw) │ │  (OpenClaw)  │
     │             │ │            │ │              │
     │ Google News │ │ LLM draft  │ │ LLM evaluate │
-    │ HN Algolia  │ │ 600-800 wds│ │ confidence   │
+    │ HN Algolia  │ │ 900-1100 wd│ │ confidence   │
     │ Domain dedup│ │            │ │ → publish or │
     │ 7 sources   │ │            │ │   escalate   │
     └─────────────┘ └────────────┘ └──────────────┘
@@ -136,7 +137,7 @@ This is the kind of per-component optimisation that matters in real multi-agent 
        ▼ Writer agent runs
        │   · Reads collector handoff from DB
        │   · If a "revise" review exists → injects human instructions into prompt
-       │   · Drafts 600–800 word Markdown brief (2000 max tokens)
+       │   · Drafts 900–1,100 word Markdown brief (3000 max tokens)
        │   · Strips Sources section and [n] markers (stored clean)
        │   · Writes handoff artifact to DB
   status = review
@@ -254,7 +255,7 @@ created_at   timestamptz
 - Strips `## Sources` sections and inline `[n]` markers before storing (sources shown separately in UI)
 - Emits handoff: `{ title, brief_markdown, citations: [url, ...], word_count, tokens_used }`
 
-**Token budget:** ~1,500–2,500 tokens per job (2000 max output).
+**Token budget:** ~1,500–2,500 tokens per job (3,000 max output).
 
 **Revision-aware:** On a revise cycle, the Writer appends:
 > *"A human reviewer has read a previous draft and requests these specific revisions: [instructions]. Please incorporate this feedback into your brief."*
@@ -443,6 +444,46 @@ At Groq's free-tier rate of 14,400 tokens/minute, a typical job completes in und
 | **Clean board UX** | Chat-style layout with sidebar job history, collapsible COT, sources, brief, PDF export, and a human review panel with three actions. |
 | **Cost story** | $0/week total. Per-job token counts stored and visible. Model and token caps chosen to fit within the Groq free tier. |
 | **Human-in-the-loop revision** *(beyond A+)* | Reviewer can type specific revision instructions; Writer re-runs with them injected into the LLM prompt; auto-publishes if confidence recovers. |
+
+---
+
+## Challenges and engineering decisions
+
+Real obstacles encountered during development — documented for anyone building similar multi-agent systems on free-tier infrastructure.
+
+### 1. Infrastructure: Oracle Cloud availability → Google Cloud
+
+The initial plan used Oracle Always-Free ARM instances (4 vCPUs / 24 GB RAM, permanently free). West-coast Oracle regions had no available Ampere A1 capacity — a well-known constraint on the free tier. Rather than waiting for capacity or switching to a paid tier, we moved to Google Cloud, which provided a reliable instance immediately. **Lesson:** validate free-tier instance availability in your target region before building your ops story around a specific provider. Always have a fallback provider in mind.
+
+### 2. Choosing a free LLM provider
+
+Starting with Ollama Cloud, we hit reliability and latency issues that made it unsuitable for a time-sensitive demo. We evaluated alternatives against two constraints: free tier, and an OpenAI-compatible `/v1/chat/completions` API (so no code changes would be needed to switch). Groq satisfied both — 14,400 tokens/minute and 500K/day free, with a drop-in compatible endpoint. The entire migration was one env var: `OLLAMA_BASE_URL=https://api.groq.com/openai`. **Lesson:** design LLM calls against the OpenAI API contract from day one. Switching providers becomes a configuration change, not a code change.
+
+### 3. Model sizing: why the Writer got a larger model
+
+Using `llama-3.1-8b-instant` uniformly across all three agents kept the pipeline fast but produced shallow briefs. The Key Findings section consistently had one-liner bullets regardless of how explicit the prompt was — the 8B model would acknowledge the instruction to "write 3–4 sentences with analysis" and immediately produce a single sentence anyway. Tested `llama-3.3-70b-versatile` on the Writer stage and the difference was immediate: full analytical paragraphs, structured use of evidence, proper argumentation. The Collector (relevance scoring) and Reviewer (JSON evaluation) stayed on 8B — their tasks are structural, not generative, and speed matters more there. See the [Model selection](#model-selection-right-sizing-per-agent) section for the full reasoning.
+
+### 4. Supabase RLS: silent failures
+
+Row Level Security policies can fail silently in ways that look identical to application logic bugs. Three specific issues hit during development:
+
+- **CHECK constraint missing `'revise'`** — the `reviews` table originally only allowed `decision IN ('approve', 'reject')`. Adding the `'revise'` action required dropping and recreating the constraint. The error surfaced only in the browser console.
+- **RLS INSERT policy also excluded `'revise'`** — a separate RLS policy had the same gap in its `WITH CHECK` clause. The insert failed silently. Fixed by dropping and recreating the policy to include all three decision values.
+- **No UPDATE policy on `jobs` for retry** — the browser's anon key couldn't reset a failed job's status to `'queued'`. Fixed by adding an explicit RLS policy allowing only the `failed → queued` transition.
+
+**Lesson:** Test every RLS path explicitly with the exact values in every `WITH CHECK` clause. Silent policy failures are indistinguishable from application bugs without careful console inspection.
+
+### 5. Google News RSS deduplication bug
+
+The Collector deduplicates sources by domain to avoid five articles from the same outlet. The bug: Google News RSS returns redirect URLs in the format `https://news.google.com/rss/articles/CBMi...` — every article has the same hostname, `news.google.com`. The dedup function kept exactly one item and discarded the rest, reducing 12 candidates to 1 every time. The fix: for `news.google.com` URLs, use the outlet name from the RSS `<source>` tag as the dedup key. **Lesson:** domain dedup assumes URLs point to their actual host. Aggregator redirect URLs break that assumption.
+
+### 6. Stale skill copies (OPENCLAW_WORKSPACES_ROOT)
+
+The VPS setup script originally copied agent skills to `~/.openclaw/workspaces/` and set `OPENCLAW_WORKSPACES_ROOT` to that path. Every `git pull` updated the repo's skill files — but the orchestrator loaded from `~/.openclaw/`, which was never updated. Code changes had no effect on the running pipeline. The symptom was confusing: PM2 logs showed the orchestrator running, jobs completing, but prompt changes and token limit increases were invisible. The fix: point `OPENCLAW_WORKSPACES_ROOT` directly at the repo's workspaces directory. No separate copy, git is the single source of truth. **Lesson:** never maintain a manually copied version of a file that already lives in the repo.
+
+### 7. PM2 over systemd
+
+The original ops plan used systemd units. In practice, PM2 was simpler for a Node.js process running from a user home directory: built-in log rotation, `--update-env` to pick up `.env` changes on restart, and reboot persistence via two commands (`pm2 startup` + `pm2 save`) rather than writing a unit file, placing it in `/etc/systemd/system/`, and managing `systemctl enable`. The systemd unit remains in `infra/` as an alternative. **Lesson:** systemd is the right tool for system services owned by root; PM2 is the right tool for Node.js application processes owned by a non-root user.
 
 ---
 
