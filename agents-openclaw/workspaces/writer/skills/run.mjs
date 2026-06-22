@@ -86,6 +86,20 @@ async function main() {
   const { sources } = collectorHandoff.artifact;
   console.log(`[writer] processing job "${job.topic}" — ${sources.length} sources`);
 
+  // Check for human reviewer revision instructions (from a prior "revise" decision)
+  const { data: revisionReview } = await db
+    .from("reviews")
+    .select("notes")
+    .eq("job_id", jobId)
+    .eq("decision", "revise")
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  const revisionInstructions = revisionReview?.notes ?? null;
+  if (revisionInstructions) {
+    console.log(`[writer] applying human revision instructions: "${revisionInstructions.slice(0, 80)}"`);
+  }
+
   // 2. Build source context for the LLM
   const sourceContext = sources.map((s, i) =>
     `[${i + 1}] ${s.title}\n    URL: ${s.url}\n    Snippet: ${s.snippet}`
@@ -112,7 +126,10 @@ async function main() {
       role: "user",
       content:
         `Research topic: "${job.topic}"\n\n` +
-        `Sources from Collector:\n\n${sourceContext}`,
+        `Sources from Collector:\n\n${sourceContext}` +
+        (revisionInstructions
+          ? `\n\n---\nA human reviewer has read a previous draft and requests these specific revisions:\n"${revisionInstructions}"\n\nPlease incorporate this feedback into your brief.`
+          : ""),
     },
   ], 2000);
 

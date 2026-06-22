@@ -153,8 +153,13 @@ export async function processHumanReviews(): Promise<void> {
   if (!reviews?.length) return;
 
   for (const review of reviews) {
+    // approve   → published
+    // revise    → writing (writer re-runs with human instructions injected)
+    // reject    → failed
     const nextStatus: JobStatus =
-      review.decision === "approve" ? "published" : "writing";
+      review.decision === "approve" ? "published" :
+      review.decision === "revise"  ? "writing"   :
+      "failed";
 
     await advanceJob(review.job_id, nextStatus);
     await writeEvent(review.job_id, "human_decision", "review", {

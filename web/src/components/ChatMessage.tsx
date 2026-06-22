@@ -125,18 +125,27 @@ export function ChatMessage({ job, onDecision, onRetry }: {
     return () => { supabase.removeChannel(ch); };
   }, [job.id]);
 
-  const decide = async (d: "approve" | "reject") => {
+  const decide = async (d: "approve" | "reject" | "revise") => {
     setDeciding(true);
     await supabase.from("reviews").insert({
       job_id: job.id, decision: d,
       notes: notes || null, reviewer: reviewer || "anonymous",
     });
-    // Immediately flip job status so sidebar updates without waiting for orchestrator
-    await supabase.from("jobs").update({
-      status: d === "approve" ? "published" : "failed",
-    }).eq("id", job.id);
+    if (d === "approve") {
+      await supabase.from("jobs").update({ status: "published" }).eq("id", job.id);
+      onDecision();
+    } else if (d === "reject") {
+      await supabase.from("jobs").update({ status: "failed" }).eq("id", job.id);
+      onDecision();
+    } else {
+      // revise: reset to writing — orchestrator's writer stage picks it up
+      // writer will read the revise review and inject instructions into its prompt
+      await supabase.from("jobs").update({
+        status: "writing", attempts: 0, locked_at: null,
+      }).eq("id", job.id);
+      onRetry(job.id); // switch to live mode to watch the re-run
+    }
     setDeciding(false);
-    onDecision();
   };
 
   const handleRetry = async () => {
@@ -656,7 +665,7 @@ function SourcesList({ handoff }: { handoff: Handoff }) {
 function HumanPanel({ reviewer, notes, deciding, onReviewer, onNotes, onDecide }: {
   reviewer: string; notes: string; deciding: boolean;
   onReviewer: (v: string) => void; onNotes: (v: string) => void;
-  onDecide: (d: "approve" | "reject") => void;
+  onDecide: (d: "approve" | "reject" | "revise") => void;
 }) {
   const inp: React.CSSProperties = {
     width: "100%", background: "#fff",
@@ -664,6 +673,8 @@ function HumanPanel({ reviewer, notes, deciding, onReviewer, onNotes, onDecide }
     padding: "0.5rem 0.75rem", fontSize: "0.83rem",
     color: "#0D0F12", outline: "none", fontFamily: "inherit",
   };
+  const canRevise = notes.trim().length > 0;
+
   return (
     <div style={{
       marginTop: "1.25rem",
@@ -674,51 +685,72 @@ function HumanPanel({ reviewer, notes, deciding, onReviewer, onNotes, onDecide }
         ⚠ HUMAN REVIEW REQUIRED
       </p>
       <p style={{ fontSize: "0.83rem", color: "#92400E", margin: "0 0 1rem", lineHeight: 1.6 }}>
-        The AI Reviewer flagged this brief as low-confidence. Read the draft above and make a call.
+        The AI Reviewer flagged this brief as low-confidence. Read the draft above, then approve, reject, or send it back to the Writer with specific instructions.
       </p>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "1rem" }}>
         <input type="text" placeholder="Your name (optional)" value={reviewer}
           onChange={(e) => onReviewer(e.target.value)}
           style={inp} />
-        <textarea placeholder="Notes on your decision (optional)" value={notes} rows={2}
+        <textarea
+          placeholder="Revision instructions — e.g. &quot;Add more detail on cost, focus on enterprise use cases&quot; (required for Revise)"
+          value={notes} rows={3}
           onChange={(e) => onNotes(e.target.value)}
-          style={{ ...inp, resize: "none" }} />
+          style={{ ...inp, resize: "none", lineHeight: 1.55 }} />
       </div>
 
-      <div style={{ display: "flex", gap: "0.625rem" }}>
-        <button onClick={() => onDecide("approve")} disabled={deciding}
-          style={{
-            flex: 1, padding: "0.625rem", borderRadius: "8px",
-            background: deciding ? "#D1FAE5" : "#059669",
-            color: "#fff", border: "none",
-            fontSize: "0.85rem", fontWeight: 700,
-            cursor: deciding ? "default" : "pointer",
-            transition: "background 0.15s",
-          }}>
-          ✓ Approve &amp; Publish
-        </button>
-        <button onClick={() => onDecide("reject")} disabled={deciding}
-          style={{
-            flex: 1, padding: "0.625rem", borderRadius: "8px",
-            background: "#fff", color: "#DC2626",
-            border: "1.5px solid #DC2626",
-            fontSize: "0.85rem", fontWeight: 700,
-            cursor: deciding ? "default" : "pointer", opacity: deciding ? 0.5 : 1,
-            transition: "opacity 0.15s",
-          }}>
-          ✗ Reject
-        </button>
-      </div>
+      {/* Three action buttons */}
+      <div style={{ display: "flex", gap: "0.5rem" }}>
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.375rem" }}>
+          <button onClick={() => onDecide("approve")} disabled={deciding}
+            style={{
+              width: "100%", padding: "0.6rem", borderRadius: "8px",
+              background: "#059669", color: "#fff", border: "none",
+              fontSize: "0.82rem", fontWeight: 700,
+              cursor: deciding ? "default" : "pointer", opacity: deciding ? 0.6 : 1,
+              transition: "opacity 0.15s",
+            }}>
+            ✓ Approve &amp; Publish
+          </button>
+          <p style={{ margin: 0, fontSize: "0.67rem", color: "#059669", textAlign: "center" }}>
+            → Published
+          </p>
+        </div>
 
-      {/* Outcome labels */}
-      <div style={{ display: "flex", gap: "0.625rem", marginTop: "0.5rem" }}>
-        <p style={{ flex: 1, margin: 0, fontSize: "0.68rem", color: "#059669", textAlign: "center" }}>
-          → moves to Published
-        </p>
-        <p style={{ flex: 1, margin: 0, fontSize: "0.68rem", color: "#DC2626", textAlign: "center" }}>
-          → moves to Failed
-        </p>
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.375rem" }}>
+          <button onClick={() => onDecide("revise")} disabled={deciding || !canRevise}
+            title={!canRevise ? "Add revision instructions above to enable" : undefined}
+            style={{
+              width: "100%", padding: "0.6rem", borderRadius: "8px",
+              background: canRevise && !deciding ? "#4361EE" : "#E0E7FF",
+              color: canRevise && !deciding ? "#fff" : "#A5B4FC",
+              border: "none", fontSize: "0.82rem", fontWeight: 700,
+              cursor: canRevise && !deciding ? "pointer" : "default",
+              transition: "background 0.15s, color 0.15s",
+            }}>
+            ↺ Revise with AI
+          </button>
+          <p style={{ margin: 0, fontSize: "0.67rem", color: "#4361EE", textAlign: "center" }}>
+            → Writer re-runs with your instructions
+          </p>
+        </div>
+
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.375rem" }}>
+          <button onClick={() => onDecide("reject")} disabled={deciding}
+            style={{
+              width: "100%", padding: "0.6rem", borderRadius: "8px",
+              background: "#fff", color: "#DC2626",
+              border: "1.5px solid #DC2626",
+              fontSize: "0.82rem", fontWeight: 700,
+              cursor: deciding ? "default" : "pointer", opacity: deciding ? 0.5 : 1,
+              transition: "opacity 0.15s",
+            }}>
+            ✗ Reject
+          </button>
+          <p style={{ margin: 0, fontSize: "0.67rem", color: "#DC2626", textAlign: "center" }}>
+            → Failed
+          </p>
+        </div>
       </div>
     </div>
   );
