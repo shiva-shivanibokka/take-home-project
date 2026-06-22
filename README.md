@@ -62,7 +62,7 @@ Human reviewers can **Approve** (publish), **Reject** (fail), or **Revise with A
                         │  service-role key (server-side only)
                         ▼
 ┌─────────────────────────────────────────────────────────────┐
-│           Orchestrator — Oracle Always-Free VPS              │
+│              Orchestrator — Google Cloud VPS                 │
 │   TypeScript poll-loop · state machine · optimistic locking  │
 │   Retries · exponential backoff · heartbeat                  │
 │   Managed by PM2 (auto-restart on crash/reboot)              │
@@ -87,6 +87,7 @@ Human reviewers can **Approve** (publish), **Reject** (fail), or **Revise with A
 
 | Decision | Rationale |
 |---|---|
+| **Google Cloud VPS** over Oracle Always-Free | Oracle Always-Free ARM instances had no available capacity in west-coast regions. Google Cloud provided a reliable instance immediately with $300 free credits. See [Challenges](#challenges-and-engineering-decisions). |
 | **Deterministic DB state machine** instead of Temporal | Postgres + optimistic locking is durable, crash-safe, and free-tier-friendly. On crash/reboot the orchestrator resumes from the locked stage — no workflow engine needed. |
 | **Groq API (free tier)** | 14,400 tokens/minute, 500K/day. Much faster than Ollama Cloud for the demo window. |
 | **Supabase realtime** | Board updates live without polling — every status change the board receives instantly via websocket. |
@@ -127,17 +128,20 @@ This is the kind of per-component optimisation that matters in real multi-agent 
   status = collecting
        │
        ▼ Collector agent runs (node skills/run.mjs --job <id>)
-       │   · Fetches 12 Google News + 8 HN items
-       │   · Deduplicates by domain
+       │   · Fetches up to 12 Google News + 8 HN items (cap chosen to fit
+       │     all candidates in the 128-token LLM scoring call)
+       │   · Deduplicates by domain (outlet name for news.google.com URLs)
        │   · Scores relevance via LLM (128 max tokens)
-       │   · Selects 7 best sources
+       │   · Selects up to 7 best sources; falls back to all if LLM returns
+       │     no valid indices
        │   · Writes handoff artifact to DB
   status = writing
        │
        ▼ Writer agent runs
        │   · Reads collector handoff from DB
        │   · If a "revise" review exists → injects human instructions into prompt
-       │   · Drafts 900–1,100 word Markdown brief (3000 max tokens)
+       │   · Targets 900–1,100 words (3,000 max output tokens; briefs on
+       │     rich topics may run longer)
        │   · Strips Sources section and [n] markers (stored clean)
        │   · Writes handoff artifact to DB
   status = review
@@ -232,10 +236,10 @@ created_at   timestamptz
 **Persona (`SOUL.md`):** Only gathers. Never writes prose. Never invents sources. Either a URL is real or it isn't.
 
 **What it does:**
-- Fetches up to 12 items from Google News RSS and 8 from HN Algolia search
-- Deduplicates candidates by domain (`new URL(src.url).hostname`) — prevents 5 items from the same outlet
-- Scores relevance with the LLM using 120-char snippets (short to stay within token limits) and stores 350-char snippets in the artifact
-- Selects the 7 highest-relevance sources; falls back to top-7 if LLM returns malformed JSON
+- Fetches up to 12 items from Google News RSS and 8 from HN Algolia (caps chosen so all candidates fit in the 128-token LLM scoring budget)
+- Deduplicates by outlet name for `news.google.com` URLs (all Google News redirect URLs share the same hostname — using the source outlet prevents collapsing all 12 to 1)
+- Scores relevance with the LLM using 120-char snippets; stores 350-char snippets in the artifact
+- Selects the 7 highest-relevance sources; falls back to all available if LLM returns out-of-range indices
 - Emits handoff: `{ sources: [{title, url, snippet, published, source}], count, notes, tokens_used }`
 
 **Token budget:** ~400–600 tokens per job (128 max for LLM scoring call).
@@ -493,11 +497,14 @@ Everything needed to stand up a fresh instance from zero.
 
 ### Prerequisites
 
-- Oracle Cloud Always-Free account → Ampere A1 ARM instance (Ubuntu 22.04/24.04, 1–4 vCPUs, 6–24 GB RAM)
+- A VPS running Ubuntu 22.04/24.04 — any of these work:
+  - **Google Cloud** — $300 free credit (90 days); used in this deployment
+  - **Oracle Always-Free** — Ampere A1 ARM (4 vCPUs / 24 GB), free forever where capacity is available (west-coast regions are often full — see [Challenges](#challenges-and-engineering-decisions))
+  - **DigitalOcean / AWS / Azure** — all offer free credits for new accounts
 - [Supabase](https://supabase.com) free-tier project
 - [Vercel](https://vercel.com) account (connect your GitHub fork)
 - [Groq](https://console.groq.com) account (free API key)
-- Node.js 22 on the VPS (installed by setup script)
+- Node.js 22 on the VPS (installed in Step 3)
 
 ---
 
@@ -537,7 +544,7 @@ Vercel auto-deploys on every push to `main`.
 
 ---
 
-### Step 3 — Oracle VPS: install Node, PM2, and dependencies
+### Step 3 — VPS: install Node, PM2, and dependencies
 
 SSH in:
 
@@ -632,6 +639,26 @@ Verify it's running:
 pm2 status
 pm2 logs orchestrator --lines 30
 ```
+
+---
+
+### PM2 day-to-day operations
+
+These are the only PM2 commands you need after the initial setup:
+
+| When | Command |
+|---|---|
+| After `git pull` (code update) | `cd ~/take-home-project && git pull origin main && pm2 restart orchestrator --update-env` |
+| After editing `.env` on the VPS | `pm2 restart orchestrator --update-env` |
+| After any restart or config change | `pm2 save` (persists the process list across reboots) |
+| Check status | `pm2 status` |
+| Follow logs | `pm2 logs orchestrator --lines 30` |
+| Errors only | `pm2 logs orchestrator --err --lines 50` |
+| Stop without removing | `pm2 stop orchestrator` |
+
+> **Why `--update-env`?** PM2 caches environment variables. Without this flag, restarting picks up the old env even if `.env` changed. Always use it when pulling new code or editing `.env`.
+
+> **Why `pm2 save` after changes?** `pm2 save` snapshots the current process list to disk. If the VPS reboots, PM2 restores exactly what was saved. Forgetting to save means the orchestrator won't start automatically after a reboot.
 
 ---
 
