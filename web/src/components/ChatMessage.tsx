@@ -315,7 +315,7 @@ export function ChatMessage({ job, onDecision }: { job: Job; onDecision: () => v
   );
 }
 
-// ── Agent steps (the chain-of-thought reasoning block) ────────────────────────
+// ── Agent steps — flat flowing stream (Claude / ChatGPT style) ───────────────
 
 function AgentSteps({ job, collectorH, writerH, reviewerH }: {
   job: Job;
@@ -326,166 +326,191 @@ function AgentSteps({ job, collectorH, writerH, reviewerH }: {
   const order = ["queued", "collecting", "writing", "review", "published", "escalated", "failed"];
   const statusIdx = order.indexOf(job.status);
 
-  const cDone    = !!collectorH;
-  const wDone    = !!writerH;
-  const rDone    = !!reviewerH;
-  const cActive  = !cDone && statusIdx >= order.indexOf("collecting");
-  const wActive  = !wDone && statusIdx >= order.indexOf("writing");
-  const rActive  = !rDone && (job.status === "review" || job.status === "published" || job.status === "escalated");
+  const cDone   = !!collectorH;
+  const wDone   = !!writerH;
+  const rDone   = !!reviewerH;
+  const cActive = !cDone && statusIdx >= order.indexOf("collecting");
+  const wActive = !wDone && statusIdx >= order.indexOf("writing");
+  const rActive = !rDone && ["review", "published", "escalated"].includes(job.status);
+
+  const mono: React.CSSProperties = { fontFamily: "var(--font-mono, monospace)", fontSize: "0.79rem", lineHeight: 1.7 };
 
   return (
-    <div style={{ fontFamily: "var(--font-mono, monospace)", fontSize: "0.78rem" }}>
+    <div style={{
+      ...mono,
+      background: "#F8F9FC",
+      borderLeft: "3px solid #C7D2FE",
+      borderRadius: "0 8px 8px 0",
+      padding: "1rem 1.125rem",
+      display: "flex", flexDirection: "column", gap: 0,
+    }}>
 
       {/* ── Collector ── */}
-      <AgentSection
-        icon="◈" label="Collector" color="#4361EE"
-        done={cDone} active={cActive} pending={!cDone && !cActive}
-        tokens={collectorH?.tokens_used}
-        summary={cDone ? (() => {
-          const a = collectorH!.artifact as unknown as CollectorArtifact;
-          return `Found ${a.count ?? 0} sources`;
-        })() : undefined}
-      >
-        {cDone && collectorH && <CollectorSteps handoff={collectorH} topic={job.topic} />}
-        {cActive && <ThinkingSteps steps={[
+      <AgentLabel label="Collector" color="#4361EE" active={cActive} done={cDone}
+        tokens={collectorH?.tokens_used} />
+
+      {cActive && (
+        <StreamLines color="#4361EE" lines={[
           `Searching Google News RSS for "${job.topic}"`,
           "Querying Hacker News Algolia API",
           "Scoring candidates for relevance",
           "Selecting top sources",
-        ]} />}
-      </AgentSection>
-
-      {/* Handoff pill: Collector → Writer */}
-      {cDone && <HandoffLine handoff={collectorH!} />}
-
-      {/* ── Writer ── */}
-      {(wDone || wActive || statusIdx >= order.indexOf("writing")) && (
-        <AgentSection
-          icon="✦" label="Writer" color="#8B5CF6"
-          done={wDone} active={wActive} pending={!wDone && !wActive}
-          tokens={writerH?.tokens_used}
-          summary={wDone ? (() => {
-            const a = writerH!.artifact as unknown as WriterArtifact;
-            return `${a.word_count ?? 0} words · ${a.citations?.length ?? 0} citations`;
-          })() : undefined}
-        >
-          {wDone && writerH && <WriterSteps handoff={writerH} />}
-          {wActive && <ThinkingSteps steps={[
-            "Reading sources from Collector",
-            "Drafting research brief in Markdown",
-            "Adding citations",
-          ]} />}
-        </AgentSection>
+        ]} showCursor />
       )}
 
-      {/* Handoff pill: Writer → Reviewer */}
-      {wDone && <HandoffLine handoff={writerH!} />}
+      {cDone && collectorH && (() => {
+        const a = collectorH.artifact as unknown as CollectorArtifact;
+        return (
+          <StreamLines color="#4361EE" lines={[
+            `Searched Google News & Hacker News`,
+            a.notes ? a.notes : null,
+            `Selected ${a.count ?? 0} source${a.count !== 1 ? "s" : ""}`,
+          ].filter(Boolean) as string[]} />
+        );
+      })()}
+
+      {/* Handoff divider: Collector → Writer */}
+      {cDone && collectorH && <HandoffDivider handoff={collectorH} />}
+
+      {/* ── Writer ── */}
+      {(wDone || wActive || statusIdx >= order.indexOf("writing")) && <>
+        <AgentLabel label="Writer" color="#8B5CF6" active={wActive} done={wDone}
+          tokens={writerH?.tokens_used} />
+
+        {wActive && (
+          <StreamLines color="#8B5CF6" lines={[
+            "Reading source list from Collector",
+            "Drafting research brief in Markdown",
+            "Weaving in citations",
+          ]} showCursor />
+        )}
+
+        {wDone && writerH && (() => {
+          const a = writerH.artifact as unknown as WriterArtifact;
+          return (
+            <StreamLines color="#8B5CF6" lines={[
+              `Drafted "${a.title || "Research Brief"}"`,
+              `${a.word_count ?? "—"} words · ${a.citations?.length ?? 0} citations`,
+            ]} />
+          );
+        })()}
+      </>}
+
+      {/* Handoff divider: Writer → Reviewer */}
+      {wDone && writerH && <HandoffDivider handoff={writerH} />}
 
       {/* ── Reviewer ── */}
-      {(rDone || rActive || statusIdx >= order.indexOf("review")) && (
-        <AgentSection
-          icon="◉" label="Reviewer" color="#F59E0B"
-          done={rDone} active={rActive} pending={!rDone && !rActive}
-          tokens={reviewerH?.tokens_used}
-          summary={rDone ? (() => {
-            const a = reviewerH!.artifact as unknown as ReviewerArtifact;
-            return `${((a.confidence ?? 0) * 100).toFixed(0)}% confidence · ${a.verdict}`;
-          })() : undefined}
-        >
-          {rDone && reviewerH && <ReviewerSteps handoff={reviewerH} />}
-          {rActive && <ThinkingSteps steps={[
+      {(rDone || rActive || statusIdx >= order.indexOf("review")) && <>
+        <AgentLabel label="Reviewer" color="#D97706" active={rActive} done={rDone}
+          tokens={reviewerH?.tokens_used} />
+
+        {rActive && (
+          <StreamLines color="#D97706" lines={[
             "Checking citation support",
             "Evaluating topic coverage",
             "Verifying factuality",
             "Computing confidence score",
-          ]} />}
-        </AgentSection>
-      )}
-    </div>
-  );
-}
-
-// ── Agent section shell ────────────────────────────────────────────────────────
-
-function AgentSection({ icon, label, color, done, active, pending, tokens, summary, children }: {
-  icon: string; label: string; color: string;
-  done: boolean; active: boolean; pending: boolean;
-  tokens?: number | null; summary?: string;
-  children?: React.ReactNode;
-}) {
-  const [open, setOpen] = useState(active || done);
-
-  useEffect(() => {
-    if (active) setOpen(true);
-  }, [active]);
-
-  const statusColor = done ? "#059669" : active ? color : "#CBD5E1";
-  const statusText  = done ? "done" : active ? "running" : "waiting";
-
-  return (
-    <div style={{ borderBottom: "1px solid #E4E8F0" }}>
-      {/* Section header — always visible */}
-      <button
-        onClick={() => !pending && setOpen((o) => !o)}
-        style={{
-          width: "100%", background: "none", border: "none",
-          display: "flex", alignItems: "center", gap: "0.5rem",
-          padding: "0.625rem 0.875rem",
-          cursor: pending ? "default" : "pointer",
-          textAlign: "left",
-        }}
-      >
-        {/* Expand/collapse arrow */}
-        <span style={{
-          display: "inline-block", fontSize: "0.6rem", color: "#CBD5E1", flexShrink: 0,
-          transform: open ? "rotate(90deg)" : "rotate(0)",
-          transition: "transform 0.15s", opacity: pending ? 0.4 : 1,
-        }}>▶</span>
-
-        {/* Agent icon + name */}
-        <span style={{ color, fontSize: "0.85rem", flexShrink: 0 }}>{icon}</span>
-        <span style={{
-          fontWeight: 700, color: pending ? "#CBD5E1" : "#1E293B",
-          fontSize: "0.78rem", letterSpacing: "0.02em",
-        }}>{label}</span>
-
-        {/* Summary (when collapsed + done) */}
-        {summary && !open && (
-          <span style={{ fontSize: "0.72rem", color: "#94A3B8", marginLeft: "0.25rem" }}>
-            — {summary}
-          </span>
+          ]} showCursor />
         )}
 
-        {/* Right: tokens + status */}
-        <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "0.625rem" }}>
-          {tokens != null && tokens > 0 && (
-            <span style={{ fontSize: "0.67rem", color: "#94A3B8" }}>{tokens.toLocaleString()} tok</span>
-          )}
-          <span style={{
-            display: "flex", alignItems: "center", gap: "0.25rem",
-            fontSize: "0.67rem", fontWeight: 600, color: statusColor,
-          }}>
-            {active && (
-              <span className="dot-pulse" style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", background: color }} />
-            )}
-            {statusText}
-          </span>
-        </div>
-      </button>
+        {rDone && reviewerH && (() => {
+          const a = reviewerH.artifact as unknown as ReviewerArtifact;
+          const conf = (a.confidence ?? 0) * 100;
+          const passed = a.verdict !== "escalate" && conf >= 70;
+          const checkLabels: Record<string, string> = {
+            citations_supported: "Citations supported",
+            coverage:            "Topic coverage",
+            factuality:          "Factuality",
+          };
+          const checkLines = a.checks
+            ? Object.entries(a.checks).map(([k, v]) => ({ text: `${checkLabels[k] || k}: ${v ? "pass" : "fail"}`, ok: v as boolean }))
+            : [];
+          return (
+            <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+              {checkLines.map((c, i) => (
+                <div key={i} style={{ display: "flex", gap: "0.5rem", color: c.ok ? "#059669" : "#DC2626" }}>
+                  <span style={{ flexShrink: 0, fontSize: "0.7rem" }}>{c.ok ? "✓" : "✗"}</span>
+                  <span>{c.text}</span>
+                </div>
+              ))}
+              <div style={{ display: "flex", gap: "0.5rem", color: "#64748B", marginTop: "0.2rem" }}>
+                <span style={{ flexShrink: 0, fontSize: "0.7rem" }}>◈</span>
+                <span>Confidence {conf.toFixed(0)}% · verdict: <strong style={{ color: passed ? "#059669" : "#DC2626" }}>{a.verdict}</strong></span>
+              </div>
+              {a.reasons?.map((r, i) => (
+                <div key={i} style={{ display: "flex", gap: "0.5rem", color: "#94A3B8", paddingLeft: "1.1rem" }}>
+                  <span>— {r}</span>
+                </div>
+              ))}
+            </div>
+          );
+        })()}
+      </>}
+    </div>
+  );
+}
 
-      {/* Expanded content */}
-      {open && children && (
-        <div style={{ padding: "0 0.875rem 0.75rem 2.25rem" }}>
-          {children}
+// ── Agent label row ───────────────────────────────────────────────────────────
+
+function AgentLabel({ label, color, active, done, tokens }: {
+  label: string; color: string; active: boolean; done: boolean; tokens?: number | null;
+}) {
+  const statusColor = done ? "#059669" : active ? color : "#CBD5E1";
+  return (
+    <div style={{
+      display: "flex", alignItems: "center", gap: "0.5rem",
+      marginBottom: "0.375rem",
+      paddingBottom: "0.2rem",
+    }}>
+      <span style={{
+        fontSize: "0.65rem", fontWeight: 800, letterSpacing: "0.1em",
+        color: done ? "#059669" : active ? color : "#CBD5E1",
+        textTransform: "uppercase" as const,
+      }}>{label}</span>
+      {active && (
+        <span className="dot-pulse" style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", background: color }} />
+      )}
+      {done && <span style={{ fontSize: "0.65rem", color: "#059669" }}>✓</span>}
+      {tokens != null && tokens > 0 && (
+        <span style={{ fontSize: "0.65rem", color: "#CBD5E1", marginLeft: "auto" }}>
+          {tokens.toLocaleString()} tok
+        </span>
+      )}
+      {!done && !active && (
+        <span style={{ fontSize: "0.65rem", color: "#CBD5E1" }}>waiting</span>
+      )}
+    </div>
+  );
+}
+
+// ── Stream lines ──────────────────────────────────────────────────────────────
+
+function StreamLines({ lines, color, showCursor }: { lines: string[]; color?: string; showCursor?: boolean }) {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 0, marginBottom: "0.625rem" }}>
+      {lines.map((line, i) => (
+        <div key={i} className="thought" style={{
+          display: "flex", alignItems: "baseline", gap: "0.5rem",
+          color: "#64748B", animationDelay: `${i * 0.06}s`,
+          paddingLeft: "0.75rem",
+        }}>
+          <span style={{ color: color ?? "#94A3B8", flexShrink: 0, fontSize: "0.6rem" }}>▸</span>
+          <span>{line}</span>
+        </div>
+      ))}
+      {showCursor && (
+        <div style={{ display: "flex", alignItems: "baseline", gap: "0.5rem", paddingLeft: "0.75rem" }}>
+          <span style={{ color: color ?? "#94A3B8", fontSize: "0.6rem" }}>▸</span>
+          <span className="cursor" />
         </div>
       )}
     </div>
   );
 }
 
-// ── Handoff line between agents ────────────────────────────────────────────────
+// ── Handoff divider ───────────────────────────────────────────────────────────
 
-function HandoffLine({ handoff }: { handoff: Handoff }) {
+function HandoffDivider({ handoff }: { handoff: Handoff }) {
   let detail = "";
   if (handoff.from_stage === "collecting") {
     const a = handoff.artifact as unknown as CollectorArtifact;
@@ -493,150 +518,29 @@ function HandoffLine({ handoff }: { handoff: Handoff }) {
   } else if (handoff.from_stage === "writing") {
     const a = handoff.artifact as unknown as WriterArtifact;
     detail = `${a.word_count ?? 0} words`;
-  } else if (handoff.from_stage === "review") {
-    const a = handoff.artifact as unknown as ReviewerArtifact;
-    detail = `${((a.confidence ?? 0) * 100).toFixed(0)}% confidence`;
   }
 
   return (
     <div className="handoff-record" style={{
       display: "flex", alignItems: "center", gap: "0.5rem",
-      padding: "0.35rem 0.875rem 0.35rem 2.25rem",
-      background: "#F0F4FF",
-      borderBottom: "1px solid #E4E8F0",
+      margin: "0.5rem 0",
       fontSize: "0.7rem",
     }}>
-      <span style={{ color: "#94A3B8" }}>↓</span>
+      <div style={{ flex: 1, height: "1px", background: "#E0E7FF" }} />
       <span style={{
-        fontWeight: 700, color: "#4361EE",
-        fontFamily: "var(--font-mono, monospace)",
-      }}>handoff</span>
-      <span style={{ color: "#94A3B8" }}>
-        {handoff.from_stage} → {handoff.to_stage}
+        display: "inline-flex", alignItems: "center", gap: "0.375rem",
+        padding: "0.2rem 0.625rem", borderRadius: "999px",
+        background: "#EEF2FF", border: "1px solid #C7D2FE",
+        color: "#4361EE", fontWeight: 700, fontFamily: "var(--font-mono, monospace)",
+        whiteSpace: "nowrap" as const,
+      }}>
+        handoff
+        <span style={{ color: "#94A3B8", fontWeight: 400 }}>
+          {handoff.from_stage} → {handoff.to_stage}
+        </span>
+        {detail && <span style={{ color: "#6366F1" }}>· {detail}</span>}
       </span>
-      {detail && (
-        <>
-          <span style={{ color: "#D1D5DB" }}>·</span>
-          <span style={{ fontWeight: 600, color: "#374151" }}>{detail}</span>
-        </>
-      )}
-      <span style={{ color: "#CBD5E1", marginLeft: "auto" }}>
-        {new Date(handoff.created_at).toLocaleTimeString()}
-      </span>
-    </div>
-  );
-}
-
-// ── Thinking steps (active agent) ─────────────────────────────────────────────
-
-function ThinkingSteps({ steps }: { steps: string[] }) {
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
-      {steps.map((s, i) => (
-        <div key={i} className="thought" style={{
-          display: "flex", alignItems: "baseline", gap: "0.5rem",
-          color: "#94A3B8", animationDelay: `${i * 0.07}s`,
-        }}>
-          <span style={{ color: "#4361EE", flexShrink: 0, fontSize: "0.65rem" }}>▸</span>
-          <span>{s}</span>
-        </div>
-      ))}
-      <div style={{ display: "flex", alignItems: "baseline", gap: "0.5rem", marginTop: "0.1rem" }}>
-        <span style={{ color: "#4361EE", fontSize: "0.65rem" }}>▸</span>
-        <span className="cursor" />
-      </div>
-    </div>
-  );
-}
-
-// ── Collector steps (completed) ────────────────────────────────────────────────
-
-function CollectorSteps({ handoff, topic }: { handoff: Handoff; topic: string }) {
-  const a = handoff.artifact as unknown as CollectorArtifact;
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
-      <ThoughtLine text={`Searched Google News RSS for "${topic}"`} tone="done" />
-      <ThoughtLine text="Queried Hacker News Algolia API" tone="done" />
-      {a.notes && <ThoughtLine text={a.notes} tone="info" />}
-      <ThoughtLine text={`Selected ${a.count ?? 0} source${a.count !== 1 ? "s" : ""}`} tone="done" />
-
-      {/* Sources list */}
-      {a.sources?.length > 0 && (
-        <div style={{ marginTop: "0.5rem", display: "flex", flexDirection: "column", gap: "0.3rem" }}>
-          {a.sources.map((s, i) => (
-            <a key={i} href={s.url} target="_blank" rel="noopener noreferrer"
-              style={{
-                display: "flex", alignItems: "baseline", gap: "0.5rem",
-                textDecoration: "none", color: "inherit",
-                padding: "0.25rem 0.375rem", borderRadius: "5px",
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = "#EEF2FF"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = "none"; }}
-            >
-              <span style={{ color: "#94A3B8", flexShrink: 0 }}>[{i + 1}]</span>
-              <span style={{ color: "#4361EE", fontFamily: "inherit", fontSize: "0.78rem", lineHeight: 1.4 }}>
-                {s.title || s.url}
-              </span>
-              {s.source && <span style={{ color: "#CBD5E1", flexShrink: 0 }}>— {s.source}</span>}
-            </a>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ── Writer steps (completed) ───────────────────────────────────────────────────
-
-function WriterSteps({ handoff }: { handoff: Handoff }) {
-  const a = handoff.artifact as unknown as WriterArtifact;
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
-      <ThoughtLine text="Read sources from Collector" tone="done" />
-      <ThoughtLine text={`Drafted "${a.title || "Research Brief"}"`} tone="done" />
-      <ThoughtLine text={`${a.word_count ?? "—"} words · ${a.citations?.length ?? 0} citation${a.citations?.length !== 1 ? "s" : ""}`} tone="info" />
-    </div>
-  );
-}
-
-// ── Reviewer steps (completed) ─────────────────────────────────────────────────
-
-function ReviewerSteps({ handoff }: { handoff: Handoff }) {
-  const a = handoff.artifact as unknown as ReviewerArtifact;
-  const conf = (a.confidence ?? 0) * 100;
-  const passed = a.verdict !== "escalate" && conf >= 70;
-
-  const checkLabels: Record<string, string> = {
-    citations_supported: "Citations supported",
-    coverage:            "Topic coverage",
-    factuality:          "Factuality",
-  };
-
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
-      {a.checks && Object.entries(a.checks).map(([k, v]) => (
-        <ThoughtLine key={k} text={`${checkLabels[k] || k}: ${v ? "PASS" : "FAIL"}`} tone={v ? "done" : "fail"} />
-      ))}
-      <ThoughtLine text={`Confidence: ${conf.toFixed(0)}%`} tone="info" />
-      <ThoughtLine text={`Verdict: ${(a.verdict ?? "unknown").toUpperCase()}`} tone={passed ? "done" : "fail"} />
-      {a.reasons?.map((r, i) => (
-        <ThoughtLine key={i} text={r} tone="info" />
-      ))}
-    </div>
-  );
-}
-
-// ── Thought line ───────────────────────────────────────────────────────────────
-
-function ThoughtLine({ text, tone }: { text: string; tone: "done" | "fail" | "info" }) {
-  const color = { done: "#059669", fail: "#DC2626", info: "#64748B" }[tone];
-  const arrow = { done: "✓", fail: "✗", info: "▸" }[tone];
-  return (
-    <div style={{ display: "flex", alignItems: "baseline", gap: "0.5rem" }}>
-      <span style={{ color, flexShrink: 0, fontSize: "0.68rem", fontWeight: tone === "info" ? 400 : 700 }}>
-        {arrow}
-      </span>
-      <span style={{ color }}>{text}</span>
+      <div style={{ flex: 1, height: "1px", background: "#E0E7FF" }} />
     </div>
   );
 }

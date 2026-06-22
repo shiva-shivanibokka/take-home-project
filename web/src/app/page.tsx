@@ -137,6 +137,11 @@ export default function ChatPage() {
               {counts.escalated} need review
             </span>
           )}
+          {(counts.failed ?? 0) > 0 && (
+            <span style={{ fontSize: "0.78rem", color: "#DC2626", fontWeight: 600 }}>
+              {counts.failed} failed
+            </span>
+          )}
         </div>
       </header>
 
@@ -286,7 +291,7 @@ function Sidebar({ jobs, selectedId, onSelect }: {
 
   return (
     <div style={{
-      width: "252px", flexShrink: 0,
+      width: "290px", flexShrink: 0,
       borderRight: "1px solid #E4E8F0",
       background: "#FAFBFE",
       display: "flex", flexDirection: "column",
