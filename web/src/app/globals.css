@@ -4,21 +4,37 @@
 
 @layer base {
   :root {
-    --bg:          #07111E;
-    --surface:     #0C1929;
-    --surface-2:   #101F2E;
-    --border:      #172638;
-    --border-2:    #1E3348;
-    --accent:      #4B9EF5;
-    --green:       #2EC47A;
-    --amber:       #F5A623;
-    --orange:      #EF7444;
-    --red:         #E05252;
-    --purple:      #A78BFA;
-    --text:        #D8E8F5;
-    --text-2:      #7A9DB8;
-    --text-muted:  #3D5972;
-    --text-dim:    #243344;
+    /* ── Page ── */
+    --bg:         #F1F3F8;
+    --surface:    #FFFFFF;
+    --surface-2:  #F8F9FC;
+    --border:     #E2E6F2;
+    --border-2:   #C9D0E4;
+
+    /* ── Brand ── */
+    --accent:         #5B5FFF;
+    --accent-light:   #EEEEFF;
+    --accent-mid:     #A5A7FF;
+
+    /* ── Stage colours ── */
+    --blue:        #3B82F6;
+    --blue-light:  #EFF6FF;
+    --purple:      #8B5CF6;
+    --purple-light:#F5F3FF;
+    --amber:       #F59E0B;
+    --amber-light: #FFFBEB;
+    --green:       #10B981;
+    --green-light: #ECFDF5;
+    --orange:      #EF4444;
+    --orange-light:#FEF2F2;
+    --red:         #DC2626;
+    --red-light:   #FEF2F2;
+
+    /* ── Text ── */
+    --text:        #18181B;
+    --text-2:      #52525B;
+    --text-muted:  #A1A1AA;
+    --text-dim:    #D4D4D8;
   }
 }
 
@@ -28,92 +44,94 @@
   body {
     background: var(--bg);
     color: var(--text);
+    font-family: var(--font-dm, 'DM Sans', sans-serif);
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
   input, textarea, button { font-family: inherit; }
 }
 
-/* ─── Brief markdown ────────────────────────────────────────────── */
+/* ─── Brief (Spectral editorial serif) ──────────────────────── */
+.brief-content {
+  font-family: var(--font-spectral, 'Spectral', Georgia, serif);
+}
 .brief-content h1 {
-  font-family: var(--font-space, 'Space Grotesk', sans-serif);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 0.75rem;
-  line-height: 1.3;
+  font-size: 1.25rem; font-weight: 700;
+  color: var(--text); margin-bottom: 0.75rem; line-height: 1.3;
 }
 .brief-content h2 {
-  font-family: var(--font-space, 'Space Grotesk', sans-serif);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text);
-  margin: 1.25rem 0 0.5rem;
-  padding-bottom: 0.25rem;
-  border-bottom: 1px solid var(--border);
+  font-size: 1rem; font-weight: 600;
+  color: var(--text); margin: 1.5rem 0 0.5rem;
+  padding-bottom: 0.25rem; border-bottom: 1px solid var(--border);
+}
+.brief-content h3 {
+  font-size: 0.9rem; font-weight: 600;
+  color: var(--text-2); margin: 1rem 0 0.35rem;
 }
 .brief-content p {
-  font-size: 0.84rem;
-  line-height: 1.75;
-  color: var(--text-2);
-  margin-bottom: 0.75rem;
+  font-size: 0.95rem; line-height: 1.8;
+  color: var(--text-2); margin-bottom: 0.875rem;
 }
 .brief-content ul, .brief-content ol {
-  padding-left: 1.25rem;
-  margin-bottom: 0.75rem;
+  padding-left: 1.5rem; margin-bottom: 0.875rem;
 }
 .brief-content li {
-  font-size: 0.84rem;
-  color: var(--text-2);
-  line-height: 1.65;
-  margin-bottom: 0.2rem;
+  font-size: 0.93rem; color: var(--text-2);
+  line-height: 1.7; margin-bottom: 0.25rem;
 }
-.brief-content a  { color: var(--accent); }
+.brief-content a { color: var(--accent); }
 .brief-content a:hover { text-decoration: underline; }
 .brief-content strong { color: var(--text); font-weight: 600; }
 .brief-content code {
   font-family: var(--font-mono, monospace);
-  font-size: 0.8rem;
-  background: rgba(255,255,255,0.06);
-  padding: 0.1em 0.35em;
+  font-size: 0.82rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 0.1em 0.4em;
   border-radius: 3px;
   color: var(--accent);
 }
 
-/* ─── Animations ────────────────────────────────────────────────── */
+/* ─── Animations ─────────────────────────────────────────────── */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0; }
 }
 .cursor {
   display: inline-block;
-  width: 7px;
-  height: 14px;
+  width: 7px; height: 14px;
   background: var(--accent);
   vertical-align: text-bottom;
   margin-left: 3px;
-  border-radius: 1px;
+  border-radius: 1.5px;
   animation: blink 1s step-end infinite;
 }
 
 @keyframes thought-in {
-  from { opacity: 0; transform: translateX(-8px); }
+  from { opacity: 0; transform: translateX(-6px); }
   to   { opacity: 1; transform: translateX(0); }
 }
 .thought {
   animation: thought-in 0.18s ease-out both;
 }
 
-@keyframes stage-glow {
-  0%, 100% { box-shadow: 0 0 0 1px rgba(75,158,245,0.25); }
-  50%       { box-shadow: 0 0 0 2px rgba(75,158,245,0.12); }
+@keyframes node-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(91,95,255,0.3); }
+  50%       { box-shadow: 0 0 0 4px rgba(91,95,255,0.08); }
 }
-.stage-active {
-  animation: stage-glow 2.5s ease-in-out infinite;
+.node-active {
+  animation: node-pulse 1.8s ease-in-out infinite;
 }
 
-/* ─── Scrollbar ─────────────────────────────────────────────────── */
-::-webkit-scrollbar { width: 4px; height: 4px; }
+@keyframes expand-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.pipeline-expand {
+  animation: expand-in 0.2s ease-out;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }

@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { DM_Sans, Spectral, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const dm = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-dm",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const space = Space_Grotesk({
+const spectral = Spectral({
   subsets: ["latin"],
-  variable: "--font-space",
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-spectral",
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 const mono = JetBrains_Mono({
@@ -26,8 +28,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${space.variable} ${mono.variable}`}>
-      <body style={{ fontFamily: "var(--font-inter, Inter, sans-serif)" }}>
+    <html lang="en" className={`${dm.variable} ${spectral.variable} ${mono.variable}`}>
+      <body style={{ fontFamily: "var(--font-dm, 'DM Sans', sans-serif)" }}>
         {children}
       </body>
     </html>

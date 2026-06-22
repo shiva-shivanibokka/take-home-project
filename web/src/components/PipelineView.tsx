@@ -45,9 +45,9 @@ interface ReviewerArtifact {
 
 type StageStatus = "pending" | "active" | "complete" | "failed";
 
-// ── Stage status resolution ───────────────────────────────────────────────────
+// ── Helpers ───────────────────────────────────────────────────────────────────
 
-function stageStatus(
+function deriveStageStatus(
   stage: "collecting" | "writing" | "review",
   job: Job,
   hasHandoff: boolean
@@ -55,22 +55,31 @@ function stageStatus(
   if (hasHandoff) return "complete";
   if (job.status === stage) return "active";
   if (job.status === "published" || job.status === "escalated") return "complete";
-  if (job.status === "failed") {
-    const order = ["queued", "collecting", "writing", "review"];
-    return order.indexOf(job.status) >= order.indexOf(stage) ? "failed" : "pending";
-  }
   const order = ["queued", "collecting", "writing", "review"];
+  if (job.status === "failed" && order.indexOf(job.status) >= order.indexOf(stage)) return "failed";
   return order.indexOf(job.status) > order.indexOf(stage) ? "complete" : "pending";
 }
 
-// ── Root component ────────────────────────────────────────────────────────────
+function downloadMarkdown(topic: string, markdown: string) {
+  const blob = new Blob([markdown], { type: "text/markdown" });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement("a");
+  a.href     = url;
+  a.download = `${topic.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}.md`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+// ── Root ──────────────────────────────────────────────────────────────────────
 
 export function PipelineView({ job, onDecision }: { job: Job; onDecision: () => void }) {
   const [handoffs, setHandoffs] = useState<Handoff[]>([]);
-  const [events, setEvents] = useState<Event[]>([]);
-  const [reviews, setReviews] = useState<Review[]>([]);
+  const [events,   setEvents]   = useState<Event[]>([]);
+  const [reviews,  setReviews]  = useState<Review[]>([]);
   const [reviewer, setReviewer] = useState("");
-  const [notes, setNotes] = useState("");
+  const [notes,    setNotes]    = useState("");
   const [deciding, setDeciding] = useState(false);
 
   useEffect(() => {
@@ -92,14 +101,10 @@ export function PipelineView({ job, onDecision }: { job: Job; onDecision: () => 
 
     const ch = supabase
       .channel(`pipeline-${job.id}`)
-      .on(
-        "postgres_changes",
-        { event: "INSERT", schema: "public", table: "handoffs", filter: `job_id=eq.${job.id}` },
+      .on("postgres_changes", { event: "INSERT", schema: "public", table: "handoffs", filter: `job_id=eq.${job.id}` },
         (p) => setHandoffs((prev) => [...prev, p.new as Handoff])
       )
-      .on(
-        "postgres_changes",
-        { event: "INSERT", schema: "public", table: "events", filter: `job_id=eq.${job.id}` },
+      .on("postgres_changes", { event: "INSERT", schema: "public", table: "events", filter: `job_id=eq.${job.id}` },
         (p) => setEvents((prev) => [...prev, p.new as Event])
       )
       .subscribe();
@@ -122,48 +127,65 @@ export function PipelineView({ job, onDecision }: { job: Job; onDecision: () => 
   const writerH    = handoffs.find((h) => h.from_stage === "writing");
   const reviewerH  = handoffs.find((h) => h.from_stage === "review");
 
-  const cStatus = stageStatus("collecting", job, !!collectorH);
-  const wStatus = stageStatus("writing",    job, !!writerH);
-  const rStatus = stageStatus("review",     job, !!reviewerH);
+  const cStatus = deriveStageStatus("collecting", job, !!collectorH);
+  const wStatus = deriveStageStatus("writing",    job, !!writerH);
+  const rStatus = deriveStageStatus("review",     job, !!reviewerH);
 
   const totalTokens = handoffs.reduce((s, h) => s + (h.tokens_used ?? 0), 0);
+  const writerArtifact = writerH ? (writerH.artifact as unknown as WriterArtifact) : null;
 
   return (
-    <div style={{ maxWidth: "780px" }}>
-      {/* ── Job header ── */}
-      <div style={{ marginBottom: "1.75rem" }}>
-        <h2 style={{
-          fontFamily: "var(--font-space, sans-serif)",
-          fontSize: "1.2rem",
-          fontWeight: 700,
-          color: "var(--text)",
-          lineHeight: 1.3,
-          marginBottom: "0.625rem",
-        }}>
-          {job.topic}
-        </h2>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.625rem", flexWrap: "wrap" }}>
-          <StatusBadge status={job.status} />
-          {job.attempts > 0 && (
-            <span style={{ fontSize: "0.73rem", color: "var(--amber)" }}>
-              ↺ {job.attempts} {job.attempts === 1 ? "retry" : "retries"}
-            </span>
-          )}
-          {totalTokens > 0 && (
-            <span style={{ fontSize: "0.73rem", color: "var(--text-muted)" }}>
-              ⚡ {totalTokens.toLocaleString()} tokens
-            </span>
-          )}
-          <span style={{ fontSize: "0.73rem", color: "var(--text-muted)", marginLeft: "auto" }}>
-            {new Date(job.created_at).toLocaleString()}
+    <div>
+      {/* Token count + download */}
+      <div style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "0.875rem",
+        marginBottom: "1.25rem",
+        flexWrap: "wrap",
+      }}>
+        {totalTokens > 0 && (
+          <span style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>
+            ⚡ {totalTokens.toLocaleString()} tokens used across all stages
           </span>
-        </div>
+        )}
+        {job.status === "published" && writerArtifact?.brief_markdown && (
+          <button
+            onClick={() => downloadMarkdown(job.topic, writerArtifact!.brief_markdown)}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.35rem",
+              padding: "0.3rem 0.75rem",
+              borderRadius: "6px",
+              background: "var(--green-light)",
+              border: "1.5px solid var(--green)",
+              color: "var(--green)",
+              fontSize: "0.75rem",
+              fontWeight: 600,
+              cursor: "pointer",
+              marginLeft: "auto",
+              letterSpacing: "-0.01em",
+            }}
+          >
+            ↓ Download brief (.md)
+          </button>
+        )}
       </div>
 
-      {/* ── Pipeline ── */}
-      <div>
+      {/* ── Stages ── */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.625rem" }}>
+
         {/* Collector */}
-        <StageBlock label="COLLECTOR" icon="◈" agent="collector" status={cStatus}>
+        <StageBlock
+          icon="◈"
+          label="COLLECTOR"
+          agent="collector"
+          stageColor="var(--blue)"
+          stageLightColor="var(--blue-light)"
+          status={cStatus}
+          tokensUsed={collectorH?.tokens_used}
+        >
           {cStatus === "complete" && collectorH
             ? <CollectorOutput handoff={collectorH} topic={job.topic} />
             : cStatus === "active"
@@ -179,14 +201,22 @@ export function PipelineView({ job, onDecision }: { job: Job; onDecision: () => 
         <StageConnector lit={wStatus !== "pending"} />
 
         {/* Writer */}
-        <StageBlock label="WRITER" icon="✦" agent="writer" status={wStatus}>
+        <StageBlock
+          icon="✦"
+          label="WRITER"
+          agent="writer"
+          stageColor="var(--purple)"
+          stageLightColor="var(--purple-light)"
+          status={wStatus}
+          tokensUsed={writerH?.tokens_used}
+        >
           {wStatus === "complete" && writerH
-            ? <WriterOutput handoff={writerH} />
+            ? <WriterOutput handoff={writerH} topic={job.topic} />
             : wStatus === "active"
             ? <ActiveThinking steps={[
                 "Reading sources from Collector",
                 "Drafting research brief",
-                "Writing citations",
+                "Adding citations",
               ]} />
             : wStatus === "failed" ? <FailedNote /> : null}
         </StageBlock>
@@ -194,7 +224,15 @@ export function PipelineView({ job, onDecision }: { job: Job; onDecision: () => 
         <StageConnector lit={rStatus !== "pending"} />
 
         {/* Reviewer */}
-        <StageBlock label="REVIEWER" icon="◉" agent="reviewer" status={rStatus}>
+        <StageBlock
+          icon="◉"
+          label="REVIEWER"
+          agent="reviewer"
+          stageColor="var(--amber)"
+          stageLightColor="var(--amber-light)"
+          status={rStatus}
+          tokensUsed={reviewerH?.tokens_used}
+        >
           {rStatus === "complete" && reviewerH
             ? <ReviewerOutput handoff={reviewerH} />
             : rStatus === "active"
@@ -224,34 +262,26 @@ export function PipelineView({ job, onDecision }: { job: Job; onDecision: () => 
 
         {/* Past decisions */}
         {reviews.length > 0 && (
-          <div style={{ marginTop: "1rem" }}>
+          <div style={{ marginTop: "0.75rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
             {reviews.map((r) => (
               <div key={r.id} style={{
                 display: "flex",
                 alignItems: "center",
                 gap: "0.5rem",
-                padding: "0.5rem 0.75rem",
-                borderRadius: "6px",
-                background: r.decision === "approve"
-                  ? "rgba(46,196,122,0.07)" : "rgba(224,82,82,0.07)",
-                border: `1px solid ${r.decision === "approve"
-                  ? "rgba(46,196,122,0.2)" : "rgba(224,82,82,0.2)"}`,
-                fontSize: "0.78rem",
+                padding: "0.5rem 0.875rem",
+                borderRadius: "8px",
+                background: r.decision === "approve" ? "var(--green-light)" : "var(--red-light)",
+                border: `1.5px solid ${r.decision === "approve" ? "var(--green)" : "var(--red)"}`,
+                fontSize: "0.8rem",
               }}>
-                <span style={{ color: r.decision === "approve" ? "var(--green)" : "var(--red)" }}>
-                  {r.decision === "approve" ? "✓" : "✗"}
-                </span>
-                <span style={{
-                  fontWeight: 600,
-                  color: r.decision === "approve" ? "var(--green)" : "var(--red)",
-                }}>
-                  {r.decision === "approve" ? "Approved & Published" : "Rejected"}
+                <span style={{ fontWeight: 700, color: r.decision === "approve" ? "var(--green)" : "var(--red)" }}>
+                  {r.decision === "approve" ? "✓ Approved & Published" : "✗ Rejected"}
                 </span>
                 {r.reviewer && (
                   <span style={{ color: "var(--text-muted)" }}>by {r.reviewer}</span>
                 )}
                 {r.notes && (
-                  <span style={{ color: "var(--text-muted)" }}>— {r.notes}</span>
+                  <span style={{ color: "var(--text-2)" }}>— {r.notes}</span>
                 )}
               </div>
             ))}
@@ -259,7 +289,7 @@ export function PipelineView({ job, onDecision }: { job: Job; onDecision: () => 
         )}
       </div>
 
-      {/* ── Event log ── */}
+      {/* Event log */}
       <EventLog events={events} />
     </div>
   );
@@ -268,83 +298,108 @@ export function PipelineView({ job, onDecision }: { job: Job; onDecision: () => 
 // ── Stage block ───────────────────────────────────────────────────────────────
 
 function StageBlock({
-  label, icon, agent, status, children,
+  icon, label, agent, stageColor, stageLightColor, status, tokensUsed, children,
 }: {
-  label: string;
   icon: string;
+  label: string;
   agent: string;
+  stageColor: string;
+  stageLightColor: string;
   status: StageStatus;
+  tokensUsed?: number | null;
   children?: React.ReactNode;
 }) {
   const borderColor = {
     pending:  "var(--border)",
-    active:   "var(--accent)",
-    complete: "var(--border-2)",
-    failed:   "var(--red)",
-  }[status];
-
-  const iconColor = {
-    pending:  "var(--text-muted)",
-    active:   "var(--accent)",
-    complete: "var(--green)",
+    active:   stageColor,
+    complete: "var(--border)",
     failed:   "var(--red)",
   }[status];
 
   const headerBg = {
-    pending:  "transparent",
-    active:   "rgba(75,158,245,0.04)",
-    complete: "rgba(255,255,255,0.015)",
-    failed:   "rgba(224,82,82,0.04)",
+    pending:  "var(--surface-2)",
+    active:   stageLightColor,
+    complete: "var(--surface-2)",
+    failed:   "var(--red-light)",
+  }[status];
+
+  const iconColor = {
+    pending:  "var(--text-muted)",
+    active:   stageColor,
+    complete: "var(--green)",
+    failed:   "var(--red)",
+  }[status];
+
+  const statusText = {
+    pending:  "waiting",
+    active:   "running",
+    complete: "done",
+    failed:   "failed",
+  }[status];
+
+  const statusColor = {
+    pending:  "var(--text-muted)",
+    active:   stageColor,
+    complete: "var(--green)",
+    failed:   "var(--red)",
   }[status];
 
   return (
-    <div
-      className={status === "active" ? "stage-active" : undefined}
-      style={{
-        border: `1px solid ${borderColor}`,
-        borderRadius: "8px",
-        overflow: "hidden",
-      }}
-    >
-      {/* Header row */}
+    <div style={{
+      border: `1.5px solid ${borderColor}`,
+      borderRadius: "10px",
+      overflow: "hidden",
+      background: "var(--surface)",
+    }}>
+      {/* Header */}
       <div style={{
-        padding: "0.6rem 0.875rem",
+        padding: "0.625rem 0.875rem",
         background: headerBg,
-        borderBottom: children ? `1px solid ${borderColor}` : "none",
+        borderBottom: children ? `1px solid var(--border)` : "none",
         display: "flex",
         alignItems: "center",
         gap: "0.625rem",
       }}>
+        <span style={{ color: iconColor, fontSize: "0.9rem", flexShrink: 0 }}>{icon}</span>
         <span style={{
-          fontFamily: "var(--font-mono, monospace)",
-          fontSize: "0.95rem",
-          color: iconColor,
-          lineHeight: 1,
-        }}>
-          {icon}
-        </span>
-        <span style={{
-          fontFamily: "var(--font-space, sans-serif)",
-          fontSize: "0.72rem",
+          fontSize: "0.7rem",
           fontWeight: 700,
-          letterSpacing: "0.12em",
+          letterSpacing: "0.1em",
           color: status === "pending" ? "var(--text-muted)" : "var(--text)",
         }}>
           {label}
         </span>
-        <span style={{
-          fontSize: "0.68rem",
-          color: "var(--text-muted)",
-          marginLeft: "auto",
-        }}>
+        <span style={{ fontSize: "0.7rem", color: "var(--text-muted)", marginLeft: "auto" }}>
           {agent}
         </span>
-        <StatusDot status={status} />
+        {tokensUsed != null && tokensUsed > 0 && (
+          <span style={{ fontSize: "0.68rem", color: "var(--text-muted)" }}>
+            {tokensUsed} tok
+          </span>
+        )}
+        <span style={{
+          fontSize: "0.68rem",
+          fontWeight: 600,
+          color: statusColor,
+          display: "flex",
+          alignItems: "center",
+          gap: "0.25rem",
+        }}>
+          <span style={{
+            display: "inline-block",
+            width: "5px",
+            height: "5px",
+            borderRadius: "50%",
+            background: statusColor,
+            ...(status === "active" ? { boxShadow: `0 0 0 2px ${stageColor}30` } : {}),
+          }} />
+          {statusText}
+        </span>
       </div>
 
       {/* Content */}
       {children && (
-        <div style={{ padding: "0.875rem" }}>
+        <div style={{ padding: "0.875rem 1rem" }}>
           {children}
         </div>
       )}
@@ -352,94 +407,43 @@ function StageBlock({
   );
 }
 
-function StatusDot({ status }: { status: StageStatus }) {
-  const color = {
-    pending:  "var(--text-muted)",
-    active:   "var(--accent)",
-    complete: "var(--green)",
-    failed:   "var(--red)",
-  }[status];
-  const label = {
-    pending:  "waiting",
-    active:   "running",
-    complete: "done",
-    failed:   "failed",
-  }[status];
-  return (
-    <span style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.68rem", color }}>
-      <span style={{
-        display: "inline-block",
-        width: "5px",
-        height: "5px",
-        borderRadius: "50%",
-        background: color,
-        ...(status === "active" ? { boxShadow: `0 0 4px ${color}` } : {}),
-      }} />
-      {label}
-    </span>
-  );
-}
-
 function StageConnector({ lit }: { lit: boolean }) {
   return (
     <div style={{
       display: "flex",
-      paddingLeft: "1.35rem",
-      height: "1.375rem",
+      paddingLeft: "1.3rem",
+      height: "1.25rem",
       alignItems: "stretch",
     }}>
       <div style={{
-        width: "1px",
+        width: "1.5px",
         background: lit ? "var(--border-2)" : "var(--border)",
         transition: "background 0.3s",
+        borderRadius: "1px",
       }} />
-    </div>
-  );
-}
-
-// ── Active "thinking" state ───────────────────────────────────────────────────
-
-function ActiveThinking({ steps }: { steps: string[] }) {
-  return (
-    <div style={{
-      fontFamily: "var(--font-mono, monospace)",
-      fontSize: "0.78rem",
-      display: "flex",
-      flexDirection: "column",
-      gap: "0.3rem",
-    }}>
-      {steps.map((step, i) => (
-        <div key={i} className="thought" style={{
-          animationDelay: `${i * 0.08}s`,
-          display: "flex",
-          alignItems: "baseline",
-          gap: "0.5rem",
-          color: "var(--text-muted)",
-        }}>
-          <span style={{ color: "var(--accent)", flexShrink: 0 }}>▸</span>
-          <span>{step}</span>
-        </div>
-      ))}
-      <div style={{ display: "flex", alignItems: "baseline", gap: "0.5rem" }}>
-        <span style={{ color: "var(--accent)" }}>▸</span>
-        <span className="cursor" />
-      </div>
     </div>
   );
 }
 
 function FailedNote() {
   return (
-    <p style={{ fontSize: "0.78rem", color: "var(--red)", fontFamily: "var(--font-mono, monospace)" }}>
+    <p style={{
+      fontSize: "0.8rem",
+      color: "var(--red)",
+      fontFamily: "var(--font-mono, monospace)",
+      margin: 0,
+    }}>
       ▸ Stage failed — check the event log below.
     </p>
   );
 }
 
-// ── ThoughtStream (completed stages) ─────────────────────────────────────────
+// ── Thought stream ────────────────────────────────────────────────────────────
 
-function ThoughtStream({ lines }: { lines: { text: string; tone?: "normal" | "pass" | "fail" | "info" }[] }) {
-  const toneColor = (tone?: string) => ({
+function ThoughtStream({ lines }: {
+  lines: { text: string; tone?: "normal" | "pass" | "fail" | "info" }[];
+}) {
+  const color = (tone?: string) => ({
     pass:   "var(--green)",
     fail:   "var(--red)",
     info:   "var(--text)",
@@ -452,15 +456,46 @@ function ThoughtStream({ lines }: { lines: { text: string; tone?: "normal" | "pa
       fontSize: "0.78rem",
       display: "flex",
       flexDirection: "column",
-      gap: "0.28rem",
+      gap: "0.25rem",
       marginBottom: "0.875rem",
     }}>
       {lines.map((line, i) => (
         <div key={i} style={{ display: "flex", alignItems: "baseline", gap: "0.5rem" }}>
-          <span style={{ color: "var(--accent)", flexShrink: 0, fontSize: "0.7rem" }}>▸</span>
-          <span style={{ color: toneColor(line.tone) }}>{line.text}</span>
+          <span style={{ color: "var(--accent)", flexShrink: 0, fontSize: "0.68rem" }}>▸</span>
+          <span style={{ color: color(line.tone) }}>{line.text}</span>
         </div>
       ))}
+    </div>
+  );
+}
+
+// ── Active thinking ───────────────────────────────────────────────────────────
+
+function ActiveThinking({ steps }: { steps: string[] }) {
+  return (
+    <div style={{
+      fontFamily: "var(--font-mono, monospace)",
+      fontSize: "0.78rem",
+      display: "flex",
+      flexDirection: "column",
+      gap: "0.28rem",
+    }}>
+      {steps.map((step, i) => (
+        <div key={i} className="thought" style={{
+          animationDelay: `${i * 0.08}s`,
+          display: "flex",
+          alignItems: "baseline",
+          gap: "0.5rem",
+          color: "var(--text-muted)",
+        }}>
+          <span style={{ color: "var(--accent)", flexShrink: 0, fontSize: "0.68rem" }}>▸</span>
+          <span>{step}</span>
+        </div>
+      ))}
+      <div style={{ display: "flex", alignItems: "baseline", gap: "0.5rem", marginTop: "0.1rem" }}>
+        <span style={{ color: "var(--accent)", fontSize: "0.68rem" }}>▸</span>
+        <span className="cursor" />
+      </div>
     </div>
   );
 }
@@ -471,10 +506,9 @@ function CollectorOutput({ handoff, topic }: { handoff: Handoff; topic: string }
   const a = handoff.artifact as unknown as CollectorArtifact;
   const lines = [
     { text: `Searched Google News RSS for "${topic}"` },
-    { text: `Queried Hacker News Algolia API` },
-    { text: a.notes || `Scored candidates for relevance` },
+    { text: "Queried Hacker News Algolia API" },
+    { text: a.notes || "Scored candidates for relevance" },
     { text: `Selected ${a.count ?? 0} source${a.count !== 1 ? "s" : ""} for Writer`, tone: "info" as const },
-    ...(handoff.tokens_used ? [{ text: `${handoff.tokens_used} tokens`, tone: "normal" as const }] : []),
   ];
 
   return (
@@ -490,35 +524,35 @@ function CollectorOutput({ handoff, topic }: { handoff: Handoff; topic: string }
               rel="noopener noreferrer"
               style={{
                 display: "block",
-                padding: "0.5rem 0.75rem",
-                borderRadius: "6px",
-                background: "rgba(255,255,255,0.02)",
-                border: "1px solid var(--border)",
+                padding: "0.625rem 0.875rem",
+                borderRadius: "8px",
+                background: "var(--surface-2)",
+                border: "1.5px solid var(--border)",
                 textDecoration: "none",
+                transition: "border-color 0.15s",
               }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--accent)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--border)"; }}
             >
               <div style={{
-                fontSize: "0.8rem",
+                fontSize: "0.82rem",
+                fontWeight: 600,
                 color: "var(--accent)",
-                fontWeight: 500,
                 marginBottom: s.snippet ? "0.2rem" : 0,
+                lineHeight: 1.4,
               }}>
                 {s.title || s.url}
               </div>
               {s.snippet && (
                 <div style={{
-                  fontSize: "0.72rem",
+                  fontSize: "0.75rem",
                   color: "var(--text-muted)",
                   lineHeight: 1.5,
                 }}>
-                  {s.snippet.slice(0, 180)}{s.snippet.length > 180 ? "…" : ""}
+                  {s.snippet.slice(0, 200)}{s.snippet.length > 200 ? "…" : ""}
                 </div>
               )}
-              <div style={{
-                fontSize: "0.67rem",
-                color: "var(--text-dim)",
-                marginTop: "0.25rem",
-              }}>
+              <div style={{ fontSize: "0.68rem", color: "var(--text-dim)", marginTop: "0.25rem" }}>
                 {s.source}
                 {s.published ? ` · ${new Date(s.published).toLocaleDateString()}` : ""}
               </div>
@@ -532,16 +566,15 @@ function CollectorOutput({ handoff, topic }: { handoff: Handoff; topic: string }
 
 // ── Writer output ─────────────────────────────────────────────────────────────
 
-function WriterOutput({ handoff }: { handoff: Handoff }) {
+function WriterOutput({ handoff, topic }: { handoff: Handoff; topic: string }) {
   const a = handoff.artifact as unknown as WriterArtifact;
   const lines = [
-    { text: `Read sources from Collector` },
+    { text: "Read sources from Collector" },
     { text: `Drafted "${a.title || "Research Brief"}"` },
     {
       text: `${a.word_count ?? "—"} words · ${a.citations?.length ?? 0} citation${a.citations?.length !== 1 ? "s" : ""}`,
       tone: "info" as const,
     },
-    ...(handoff.tokens_used ? [{ text: `${handoff.tokens_used} tokens` }] : []),
   ];
 
   return (
@@ -549,10 +582,10 @@ function WriterOutput({ handoff }: { handoff: Handoff }) {
       <ThoughtStream lines={lines} />
       {a.brief_markdown && (
         <div style={{
-          padding: "1rem 1.125rem",
-          background: "rgba(255,255,255,0.015)",
-          borderRadius: "6px",
-          border: "1px solid var(--border)",
+          padding: "1.25rem 1.375rem",
+          background: "var(--surface-2)",
+          borderRadius: "8px",
+          border: "1.5px solid var(--border)",
         }}>
           <div className="brief-content">
             <ReactMarkdown>{a.brief_markdown}</ReactMarkdown>
@@ -585,7 +618,6 @@ function ReviewerOutput({ handoff }: { handoff: Handoff }) {
       : []),
     { text: `Confidence: ${conf.toFixed(0)}%`, tone: "info" as const },
     { text: `Verdict: ${(a.verdict ?? "unknown").toUpperCase()}`, tone: (passed ? "pass" : "fail") as "pass" | "fail" },
-    ...(handoff.tokens_used ? [{ text: `${handoff.tokens_used} tokens` }] : []),
   ];
 
   return (
@@ -597,17 +629,17 @@ function ReviewerOutput({ handoff }: { handoff: Handoff }) {
         <div style={{
           display: "flex",
           justifyContent: "space-between",
-          marginBottom: "0.3rem",
-          fontSize: "0.72rem",
+          marginBottom: "0.35rem",
+          fontSize: "0.75rem",
         }}>
-          <span style={{ color: "var(--text-muted)" }}>Confidence</span>
+          <span style={{ color: "var(--text-muted)", fontWeight: 500 }}>Confidence</span>
           <span style={{ fontWeight: 700, color: passed ? "var(--green)" : "var(--orange)" }}>
             {conf.toFixed(0)}%
           </span>
         </div>
         <div style={{
-          height: "3px",
-          borderRadius: "2px",
+          height: "5px",
+          borderRadius: "3px",
           background: "var(--border)",
           overflow: "hidden",
         }}>
@@ -615,29 +647,29 @@ function ReviewerOutput({ handoff }: { handoff: Handoff }) {
             height: "100%",
             width: `${Math.min(conf, 100)}%`,
             background: passed ? "var(--green)" : "var(--orange)",
-            borderRadius: "2px",
+            borderRadius: "3px",
             transition: "width 0.6s ease",
           }} />
         </div>
       </div>
 
-      {/* Verdict card */}
+      {/* Verdict */}
       <div style={{
-        padding: "0.625rem 0.875rem",
-        borderRadius: "6px",
-        background: passed ? "rgba(46,196,122,0.07)" : "rgba(239,116,68,0.07)",
-        border: `1px solid ${passed ? "rgba(46,196,122,0.22)" : "rgba(239,116,68,0.22)"}`,
+        padding: "0.75rem 1rem",
+        borderRadius: "8px",
+        background: passed ? "var(--green-light)" : "var(--orange-light)",
+        border: `1.5px solid ${passed ? "var(--green)" : "var(--orange)"}`,
       }}>
         <div style={{
-          fontSize: "0.8rem",
-          fontWeight: 600,
+          fontSize: "0.83rem",
+          fontWeight: 700,
           color: passed ? "var(--green)" : "var(--orange)",
-          marginBottom: a.reasons?.length ? "0.4rem" : 0,
+          marginBottom: a.reasons?.length ? "0.375rem" : 0,
         }}>
-          {passed ? "✓ Passed review — publishing" : "⚠ Escalated for human review"}
+          {passed ? "✓ Passed — brief is being published" : "⚠ Escalated for human review"}
         </div>
         {a.reasons?.map((r, i) => (
-          <div key={i} style={{ fontSize: "0.75rem", color: "var(--text-muted)", marginTop: "0.15rem" }}>
+          <div key={i} style={{ fontSize: "0.78rem", color: "var(--text-2)", marginTop: "0.15rem" }}>
             {r}
           </div>
         ))}
@@ -659,57 +691,49 @@ function HumanReviewPanel({
   onNotesChange: (v: string) => void;
   onDecide: (d: "approve" | "reject") => void;
 }) {
-  const inputStyle: React.CSSProperties = {
+  const input: React.CSSProperties = {
     width: "100%",
-    background: "var(--surface-2)",
-    border: "1px solid var(--border)",
-    borderRadius: "6px",
-    padding: "0.4rem 0.625rem",
-    fontSize: "0.78rem",
+    background: "var(--surface)",
+    border: "1.5px solid var(--border-2)",
+    borderRadius: "7px",
+    padding: "0.45rem 0.75rem",
+    fontSize: "0.82rem",
     color: "var(--text)",
     outline: "none",
   };
 
   return (
     <div style={{
-      border: "1px solid rgba(239,116,68,0.35)",
-      borderRadius: "8px",
-      background: "rgba(239,116,68,0.04)",
-      padding: "0.875rem",
+      border: "1.5px solid var(--orange)",
+      borderRadius: "10px",
+      background: "var(--orange-light)",
+      padding: "1rem",
     }}>
-      <div style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "0.5rem",
-        marginBottom: "0.625rem",
+      <p style={{
+        fontSize: "0.72rem",
+        fontWeight: 700,
+        letterSpacing: "0.1em",
+        color: "var(--orange)",
+        marginBottom: "0.5rem",
       }}>
-        <span>👤</span>
-        <span style={{
-          fontFamily: "var(--font-space, sans-serif)",
-          fontSize: "0.72rem",
-          fontWeight: 700,
-          letterSpacing: "0.1em",
-          color: "var(--orange)",
-        }}>
-          HUMAN REVIEW REQUIRED
-        </span>
-      </div>
-      <p style={{ fontSize: "0.78rem", color: "var(--text-muted)", marginBottom: "0.75rem" }}>
-        The Reviewer agent escalated this brief. Read the draft above and decide.
+        ⚠ HUMAN REVIEW REQUIRED
+      </p>
+      <p style={{ fontSize: "0.82rem", color: "var(--text-2)", marginBottom: "0.875rem" }}>
+        The Reviewer escalated this brief. Read the draft above and decide.
       </p>
       <input
         type="text"
         placeholder="Your name (optional)"
         value={reviewer}
         onChange={(e) => onReviewerChange(e.target.value)}
-        style={{ ...inputStyle, marginBottom: "0.5rem" }}
+        style={{ ...input, marginBottom: "0.5rem" }}
       />
       <textarea
         placeholder="Notes (optional)"
         value={notes}
         onChange={(e) => onNotesChange(e.target.value)}
         rows={2}
-        style={{ ...inputStyle, resize: "none", marginBottom: "0.625rem", fontFamily: "inherit" }}
+        style={{ ...input, resize: "none", marginBottom: "0.75rem", fontFamily: "inherit" }}
       />
       <div style={{ display: "flex", gap: "0.5rem" }}>
         <button
@@ -717,15 +741,16 @@ function HumanReviewPanel({
           disabled={deciding}
           style={{
             flex: 1,
-            padding: "0.5rem",
-            borderRadius: "6px",
+            padding: "0.55rem",
+            borderRadius: "7px",
             background: "var(--green)",
             color: "#fff",
             border: "none",
-            fontSize: "0.8rem",
-            fontWeight: 600,
+            fontSize: "0.83rem",
+            fontWeight: 700,
             cursor: deciding ? "default" : "pointer",
             opacity: deciding ? 0.5 : 1,
+            letterSpacing: "-0.01em",
           }}
         >
           ✓ Approve &amp; Publish
@@ -735,15 +760,16 @@ function HumanReviewPanel({
           disabled={deciding}
           style={{
             flex: 1,
-            padding: "0.5rem",
-            borderRadius: "6px",
-            background: "rgba(224,82,82,0.12)",
+            padding: "0.55rem",
+            borderRadius: "7px",
+            background: "var(--surface)",
             color: "var(--red)",
-            border: "1px solid rgba(224,82,82,0.3)",
-            fontSize: "0.8rem",
-            fontWeight: 600,
+            border: "1.5px solid var(--red)",
+            fontSize: "0.83rem",
+            fontWeight: 700,
             cursor: deciding ? "default" : "pointer",
             opacity: deciding ? 0.5 : 1,
+            letterSpacing: "-0.01em",
           }}
         >
           ✗ Reject
@@ -753,62 +779,32 @@ function HumanReviewPanel({
   );
 }
 
-// ── Status badge ──────────────────────────────────────────────────────────────
-
-function StatusBadge({ status }: { status: JobStatus }) {
-  const map: Record<string, { bg: string; color: string }> = {
-    queued:     { bg: "rgba(255,255,255,0.05)", color: "var(--text-muted)" },
-    collecting: { bg: "rgba(75,158,245,0.12)",  color: "var(--accent)" },
-    writing:    { bg: "rgba(167,139,250,0.12)", color: "var(--purple)" },
-    review:     { bg: "rgba(245,166,35,0.12)",  color: "var(--amber)" },
-    published:  { bg: "rgba(46,196,122,0.12)",  color: "var(--green)" },
-    escalated:  { bg: "rgba(239,116,68,0.12)",  color: "var(--orange)" },
-    failed:     { bg: "rgba(224,82,82,0.12)",   color: "var(--red)" },
-  };
-  const s = map[status] ?? map.queued;
-  return (
-    <span style={{
-      display: "inline-flex",
-      alignItems: "center",
-      padding: "0.18rem 0.6rem",
-      borderRadius: "999px",
-      background: s.bg,
-      color: s.color,
-      fontSize: "0.7rem",
-      fontWeight: 600,
-      letterSpacing: "0.04em",
-    }}>
-      {STAGE_LABELS[status]}
-    </span>
-  );
-}
-
 // ── Event log ─────────────────────────────────────────────────────────────────
 
 function EventLog({ events }: { events: Event[] }) {
   const [open, setOpen] = useState(false);
-  const relevant = events.filter((e) => !(e.detail as any)?.heartbeat);
+  const relevant = events.filter((e) => !(e.detail as Record<string, unknown>)?.heartbeat);
   if (relevant.length === 0) return null;
 
   const typeColor: Record<string, string> = {
-    started:       "var(--accent)",
-    retry:         "var(--amber)",
-    throttled:     "var(--amber)",
-    failed:        "var(--red)",
-    escalated:     "var(--orange)",
-    published:     "var(--green)",
+    started:        "var(--blue)",
+    retry:          "var(--amber)",
+    throttled:      "var(--amber)",
+    failed:         "var(--red)",
+    escalated:      "var(--orange)",
+    published:      "var(--green)",
     human_decision: "var(--purple)",
   };
 
   return (
-    <div style={{ marginTop: "1.5rem", borderTop: "1px solid var(--border)", paddingTop: "1rem" }}>
+    <div style={{ marginTop: "1.25rem", borderTop: "1px solid var(--border)", paddingTop: "1rem" }}>
       <button
         onClick={() => setOpen((o) => !o)}
         style={{
           background: "none",
           border: "none",
           color: "var(--text-muted)",
-          fontSize: "0.73rem",
+          fontSize: "0.75rem",
           cursor: "pointer",
           display: "flex",
           alignItems: "center",
@@ -821,11 +817,13 @@ function EventLog({ events }: { events: Event[] }) {
           display: "inline-block",
           transform: open ? "rotate(90deg)" : "rotate(0)",
           transition: "transform 0.15s",
-        }}>▶</span>
+        }}>
+          ▶
+        </span>
         Event log ({relevant.length})
       </button>
       {open && (
-        <div style={{ marginTop: "0.75rem", display: "flex", flexDirection: "column", gap: "0.35rem" }}>
+        <div style={{ marginTop: "0.625rem", display: "flex", flexDirection: "column", gap: "0.3rem" }}>
           {relevant.map((ev) => (
             <div key={ev.id} style={{
               display: "flex",

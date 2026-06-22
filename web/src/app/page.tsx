@@ -9,50 +9,55 @@ import {
 } from "@/lib/supabase";
 import { PipelineView } from "@/components/PipelineView";
 
-// ── Status colour map ─────────────────────────────────────────────────────────
+// ── Stage colours & icons ─────────────────────────────────────────────────────
 
-const STATUS_COLOR: Record<string, string> = {
-  queued:     "var(--text-muted)",
-  collecting: "var(--accent)",
-  writing:    "var(--purple)",
-  review:     "var(--amber)",
-  published:  "var(--green)",
-  escalated:  "var(--orange)",
-  failed:     "var(--red)",
+const STAGE_META: Record<string, { color: string; light: string; icon: string }> = {
+  queued:     { color: "var(--text-muted)", light: "var(--surface-2)", icon: "○" },
+  collecting: { color: "var(--blue)",       light: "var(--blue-light)",   icon: "◈" },
+  writing:    { color: "var(--purple)",     light: "var(--purple-light)", icon: "✦" },
+  review:     { color: "var(--amber)",      light: "var(--amber-light)",  icon: "◉" },
+  published:  { color: "var(--green)",      light: "var(--green-light)",  icon: "✓" },
+  escalated:  { color: "var(--orange)",     light: "var(--orange-light)", icon: "⚠" },
+  failed:     { color: "var(--red)",        light: "var(--red-light)",    icon: "✗" },
 };
 
-// ── Root ─────────────────────────────────────────────────────────────────────
+// ── Root ──────────────────────────────────────────────────────────────────────
 
 export default function BoardPage() {
-  const [jobs, setJobs]         = useState<Job[]>([]);
-  const [selected, setSelected] = useState<Job | null>(null);
-  const [topic, setTopic]       = useState("");
+  const [jobs, setJobs]           = useState<Job[]>([]);
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [topic, setTopic]         = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [submitErr, setSubmitErr]   = useState<string | null>(null);
+  const [submitErr, setSubmitErr] = useState<string | null>(null);
+  const [totalPublished, setTotalPublished] = useState(0);
 
-  // ── Load jobs ────────────────────────────────────────────────────────────────
   const loadJobs = useCallback(async () => {
     const { data } = await supabase
       .from("jobs")
       .select("*")
       .order("created_at", { ascending: false });
-    if (data) setJobs(data as Job[]);
+    if (data) {
+      const list = data as Job[];
+      setJobs(list);
+      setTotalPublished(list.filter((j) => j.status === "published").length);
+    }
   }, []);
 
   useEffect(() => { loadJobs(); }, [loadJobs]);
 
-  // ── Realtime ─────────────────────────────────────────────────────────────────
+  // Realtime job updates
   useEffect(() => {
     const ch = supabase
       .channel("board-jobs")
       .on("postgres_changes", { event: "*", schema: "public", table: "jobs" },
         (payload) => {
           if (payload.eventType === "INSERT") {
-            setJobs((prev) => [payload.new as Job, ...prev]);
+            const j = payload.new as Job;
+            setJobs((prev) => [j, ...prev]);
+            setExpandedId(j.id); // auto-expand newly submitted
           } else if (payload.eventType === "UPDATE") {
             const updated = payload.new as Job;
             setJobs((prev) => prev.map((j) => j.id === updated.id ? updated : j));
-            setSelected((prev) => prev?.id === updated.id ? updated : prev);
           } else if (payload.eventType === "DELETE") {
             setJobs((prev) => prev.filter((j) => j.id !== (payload.old as Job).id));
           }
@@ -62,7 +67,6 @@ export default function BoardPage() {
     return () => { supabase.removeChannel(ch); };
   }, []);
 
-  // ── Submit ────────────────────────────────────────────────────────────────────
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!topic.trim()) return;
@@ -76,319 +80,437 @@ export default function BoardPage() {
     else setTopic("");
   };
 
-  // ── Group jobs ────────────────────────────────────────────────────────────────
-  const active    = jobs.filter((j) => ["queued","collecting","writing","review"].includes(j.status));
-  const escalated = jobs.filter((j) => j.status === "escalated");
-  const published = jobs.filter((j) => j.status === "published");
-  const failed    = jobs.filter((j) => j.status === "failed");
+  const toggleExpand = (id: string) => {
+    setExpandedId((prev) => prev === id ? null : id);
+  };
 
-  const totalTokenDisplay = jobs.length;
+  const active   = jobs.filter((j) => ["queued","collecting","writing","review"].includes(j.status));
+  const escalated = jobs.filter((j) => j.status === "escalated");
+  const finished  = jobs.filter((j) => ["published","failed"].includes(j.status));
+
+  return (
+    <div style={{ minHeight: "100vh", background: "var(--bg)" }}>
+      {/* ── Header ── */}
+      <header style={{
+        position: "sticky",
+        top: 0,
+        zIndex: 20,
+        background: "rgba(255,255,255,0.92)",
+        backdropFilter: "blur(10px)",
+        borderBottom: "1px solid var(--border)",
+      }}>
+        <div style={{
+          maxWidth: "900px",
+          margin: "0 auto",
+          padding: "0 1.5rem",
+          height: "58px",
+          display: "flex",
+          alignItems: "center",
+          gap: "1.5rem",
+        }}>
+          {/* Logo */}
+          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexShrink: 0 }}>
+            <span style={{
+              fontWeight: 800,
+              fontSize: "1.05rem",
+              color: "var(--accent)",
+              letterSpacing: "-0.01em",
+              fontFamily: "var(--font-dm, sans-serif)",
+            }}>
+              Research Desk
+            </span>
+            <span style={{
+              fontSize: "0.68rem",
+              color: "var(--text-muted)",
+              background: "var(--surface-2)",
+              border: "1px solid var(--border)",
+              padding: "0.15rem 0.5rem",
+              borderRadius: "999px",
+              letterSpacing: "0.02em",
+            }}>
+              3 agents · live
+            </span>
+          </div>
+
+          {/* Live stats */}
+          <div style={{ display: "flex", gap: "1rem", marginLeft: "0.5rem" }}>
+            {active.length > 0 && (
+              <Stat
+                value={active.length}
+                label={active.length === 1 ? "running" : "running"}
+                color="var(--blue)"
+              />
+            )}
+            {escalated.length > 0 && (
+              <Stat value={escalated.length} label="needs review" color="var(--orange)" />
+            )}
+            <Stat value={totalPublished} label="published" color="var(--green)" />
+          </div>
+
+          {/* Submit form */}
+          <form
+            onSubmit={handleSubmit}
+            style={{ display: "flex", gap: "0.5rem", marginLeft: "auto", alignItems: "center" }}
+          >
+            <input
+              type="text"
+              value={topic}
+              onChange={(e) => setTopic(e.target.value)}
+              placeholder="Research topic…"
+              disabled={submitting}
+              style={{
+                background: "var(--surface-2)",
+                border: "1.5px solid var(--border)",
+                borderRadius: "8px",
+                padding: "0.4rem 0.875rem",
+                fontSize: "0.83rem",
+                color: "var(--text)",
+                width: "230px",
+                outline: "none",
+                transition: "border-color 0.15s",
+              }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "var(--accent)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "var(--border)"; }}
+            />
+            <button
+              type="submit"
+              disabled={submitting || !topic.trim()}
+              style={{
+                background: "var(--accent)",
+                color: "#fff",
+                border: "none",
+                borderRadius: "8px",
+                padding: "0.4rem 1rem",
+                fontSize: "0.83rem",
+                fontWeight: 600,
+                cursor: submitting || !topic.trim() ? "default" : "pointer",
+                opacity: submitting || !topic.trim() ? 0.45 : 1,
+                whiteSpace: "nowrap",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              {submitting ? "…" : "Research →"}
+            </button>
+            {submitErr && (
+              <span style={{ fontSize: "0.72rem", color: "var(--red)" }}>{submitErr}</span>
+            )}
+          </form>
+        </div>
+      </header>
+
+      {/* ── Content ── */}
+      <div style={{ maxWidth: "900px", margin: "0 auto", padding: "2rem 1.5rem 4rem" }}>
+
+        {jobs.length === 0 ? (
+          <EmptyState />
+        ) : (
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+            {/* Section label: active/escalated first */}
+            {(active.length > 0 || escalated.length > 0) && (
+              <SectionLabel>In Progress</SectionLabel>
+            )}
+            {[...active, ...escalated].map((job) => (
+              <JobAccordion
+                key={job.id}
+                job={job}
+                isOpen={expandedId === job.id}
+                onToggle={() => toggleExpand(job.id)}
+                onDecision={loadJobs}
+              />
+            ))}
+
+            {/* Finished jobs */}
+            {finished.length > 0 && (
+              <>
+                <SectionLabel style={{ marginTop: active.length > 0 || escalated.length > 0 ? "1.25rem" : 0 }}>
+                  Completed
+                </SectionLabel>
+                {finished.map((job) => (
+                  <JobAccordion
+                    key={job.id}
+                    job={job}
+                    isOpen={expandedId === job.id}
+                    onToggle={() => toggleExpand(job.id)}
+                    onDecision={loadJobs}
+                  />
+                ))}
+              </>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ── Section label ─────────────────────────────────────────────────────────────
+
+function SectionLabel({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
+  return (
+    <p style={{
+      fontSize: "0.7rem",
+      fontWeight: 700,
+      letterSpacing: "0.12em",
+      color: "var(--text-muted)",
+      textTransform: "uppercase",
+      marginBottom: "0.1rem",
+      ...style,
+    }}>
+      {children}
+    </p>
+  );
+}
+
+// ── Stat chip ─────────────────────────────────────────────────────────────────
+
+function Stat({ value, label, color }: { value: number; label: string; color: string }) {
+  return (
+    <div style={{ display: "flex", alignItems: "baseline", gap: "0.3rem" }}>
+      <span style={{ fontSize: "0.88rem", fontWeight: 700, color }}>{value}</span>
+      <span style={{ fontSize: "0.72rem", color: "var(--text-muted)" }}>{label}</span>
+    </div>
+  );
+}
+
+// ── Job accordion card ────────────────────────────────────────────────────────
+
+function JobAccordion({
+  job, isOpen, onToggle, onDecision,
+}: {
+  job: Job;
+  isOpen: boolean;
+  onToggle: () => void;
+  onDecision: () => void;
+}) {
+  const meta = STAGE_META[job.status] ?? STAGE_META.queued;
+  const ageMin = Math.round((Date.now() - new Date(job.created_at).getTime()) / 60_000);
+  const age = ageMin < 60 ? `${ageMin}m ago` : `${Math.round(ageMin / 60)}h ago`;
+
+  const isTerminal = ["published", "failed"].includes(job.status);
 
   return (
     <div style={{
-      height: "100vh",
-      display: "flex",
-      flexDirection: "column",
-      background: "var(--bg)",
+      background: "var(--surface)",
+      borderRadius: "12px",
+      border: `1.5px solid ${isOpen ? "var(--accent)" : "var(--border)"}`,
       overflow: "hidden",
+      boxShadow: isOpen
+        ? "0 0 0 3px rgba(91,95,255,0.08), 0 4px 16px rgba(0,0,0,0.06)"
+        : "0 1px 4px rgba(0,0,0,0.04)",
+      transition: "border-color 0.15s, box-shadow 0.15s",
     }}>
-      {/* ── Header ── */}
-      <header style={{
-        height: "50px",
-        flexShrink: 0,
-        display: "flex",
-        alignItems: "center",
-        gap: "1.25rem",
-        padding: "0 1.25rem",
-        borderBottom: "1px solid var(--border)",
-        background: "var(--surface)",
-      }}>
-        {/* Logo */}
-        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexShrink: 0 }}>
-          <span style={{ color: "var(--accent)", fontSize: "1.1rem", lineHeight: 1 }}>◈</span>
-          <span style={{
-            fontFamily: "var(--font-space, sans-serif)",
-            fontWeight: 700,
-            fontSize: "0.88rem",
+      {/* Card header — always visible */}
+      <button
+        onClick={onToggle}
+        style={{
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          gap: "1rem",
+          padding: "1rem 1.25rem",
+          background: "transparent",
+          border: "none",
+          cursor: "pointer",
+          textAlign: "left",
+        }}
+      >
+        {/* Expand chevron */}
+        <span style={{
+          fontSize: "0.7rem",
+          color: "var(--text-muted)",
+          transform: isOpen ? "rotate(90deg)" : "rotate(0)",
+          transition: "transform 0.18s ease",
+          flexShrink: 0,
+        }}>
+          ▶
+        </span>
+
+        {/* Topic */}
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <p style={{
+            fontSize: "0.95rem",
+            fontWeight: 600,
             color: "var(--text)",
-            letterSpacing: "0.06em",
+            lineHeight: 1.35,
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            letterSpacing: "-0.01em",
           }}>
-            RESEARCH DESK
-          </span>
+            {job.topic}
+          </p>
+          <p style={{ fontSize: "0.72rem", color: "var(--text-muted)", marginTop: "0.15rem" }}>
+            {age}
+            {job.attempts > 0 && (
+              <span style={{ color: "var(--amber)", marginLeft: "0.5rem" }}>
+                ↺ {job.attempts} {job.attempts === 1 ? "retry" : "retries"}
+              </span>
+            )}
+          </p>
         </div>
 
+        {/* Mini pipeline diagram */}
+        <MiniPipeline status={job.status} />
+
+        {/* Status badge */}
         <span style={{
-          fontSize: "0.68rem",
-          color: "var(--text-muted)",
-          borderLeft: "1px solid var(--border)",
-          paddingLeft: "1.25rem",
           flexShrink: 0,
-        }}>
-          Collector → Writer → Reviewer
-        </span>
-
-        {/* Submit form */}
-        <form
-          onSubmit={handleSubmit}
-          style={{ display: "flex", gap: "0.5rem", marginLeft: "auto", alignItems: "center" }}
-        >
-          <input
-            type="text"
-            value={topic}
-            onChange={(e) => setTopic(e.target.value)}
-            placeholder="Enter a research topic…"
-            disabled={submitting}
-            style={{
-              background: "var(--bg)",
-              border: "1px solid var(--border-2)",
-              borderRadius: "6px",
-              padding: "0.35rem 0.75rem",
-              fontSize: "0.78rem",
-              color: "var(--text)",
-              width: "270px",
-              outline: "none",
-            }}
-          />
-          <button
-            type="submit"
-            disabled={submitting || !topic.trim()}
-            style={{
-              background: "var(--accent)",
-              color: "#fff",
-              border: "none",
-              borderRadius: "6px",
-              padding: "0.35rem 0.875rem",
-              fontSize: "0.78rem",
-              fontWeight: 600,
-              cursor: submitting || !topic.trim() ? "default" : "pointer",
-              opacity: submitting || !topic.trim() ? 0.5 : 1,
-              whiteSpace: "nowrap",
-            }}
-          >
-            {submitting ? "…" : "Research →"}
-          </button>
-          {submitErr && (
-            <span style={{ fontSize: "0.72rem", color: "var(--red)" }}>{submitErr}</span>
-          )}
-        </form>
-      </header>
-
-      {/* ── Body ── */}
-      <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
-
-        {/* ── Sidebar ── */}
-        <aside style={{
-          width: "268px",
-          flexShrink: 0,
-          borderRight: "1px solid var(--border)",
-          background: "var(--surface)",
-          display: "flex",
-          flexDirection: "column",
-          overflowY: "auto",
-        }}>
-          <JobGroup
-            label="In Progress"
-            dot="var(--accent)"
-            pulse
-            jobs={active}
-            selected={selected}
-            onSelect={setSelected}
-          />
-          <JobGroup
-            label="Needs Human"
-            dot="var(--orange)"
-            jobs={escalated}
-            selected={selected}
-            onSelect={setSelected}
-          />
-          <JobGroup
-            label="Published"
-            dot="var(--green)"
-            jobs={published}
-            selected={selected}
-            onSelect={setSelected}
-          />
-          <JobGroup
-            label="Failed"
-            dot="var(--red)"
-            jobs={failed}
-            selected={selected}
-            onSelect={setSelected}
-          />
-
-          {/* Footer stats */}
-          <div style={{
-            marginTop: "auto",
-            padding: "0.75rem 1rem",
-            borderTop: "1px solid var(--border)",
-            display: "flex",
-            flexDirection: "column",
-            gap: "0.25rem",
-          }}>
-            <div style={{
-              display: "flex",
-              justifyContent: "space-between",
-              fontSize: "0.7rem",
-              color: "var(--text-muted)",
-            }}>
-              <span>{published.length} published</span>
-              <span>{escalated.length} escalated</span>
-              <span>{jobs.length} total</span>
-            </div>
-            <div style={{ fontSize: "0.67rem", color: "var(--text-dim)" }}>
-              Live · Groq llama-3.1-8b-instant
-            </div>
-          </div>
-        </aside>
-
-        {/* ── Main ── */}
-        <main style={{
-          flex: 1,
-          overflowY: "auto",
-          padding: "1.75rem 2rem",
-        }}>
-          {selected ? (
-            <PipelineView job={selected} onDecision={loadJobs} />
-          ) : (
-            <EmptyState count={jobs.length} />
-          )}
-        </main>
-      </div>
-    </div>
-  );
-}
-
-// ── Job group ─────────────────────────────────────────────────────────────────
-
-function JobGroup({
-  label, dot, pulse, jobs, selected, onSelect,
-}: {
-  label: string;
-  dot: string;
-  pulse?: boolean;
-  jobs: Job[];
-  selected: Job | null;
-  onSelect: (j: Job) => void;
-}) {
-  if (jobs.length === 0) return null;
-  return (
-    <div style={{ paddingTop: "0.875rem", paddingBottom: "0.25rem" }}>
-      <div style={{
-        padding: "0 1rem 0.375rem",
-        fontSize: "0.64rem",
-        fontWeight: 700,
-        letterSpacing: "0.12em",
-        color: "var(--text-muted)",
-        textTransform: "uppercase",
-        display: "flex",
-        alignItems: "center",
-        gap: "0.5rem",
-      }}>
-        <span style={{
-          display: "inline-block",
-          width: "5px",
-          height: "5px",
-          borderRadius: "50%",
-          background: dot,
-          flexShrink: 0,
-          ...(pulse ? { boxShadow: `0 0 0 2px ${dot}30` } : {}),
-        }} />
-        {label}
-        <span style={{ marginLeft: "auto", opacity: 0.6, fontWeight: 400 }}>
-          {jobs.length}
-        </span>
-      </div>
-      {jobs.map((job) => (
-        <JobItem
-          key={job.id}
-          job={job}
-          isSelected={selected?.id === job.id}
-          onClick={() => onSelect(job)}
-        />
-      ))}
-    </div>
-  );
-}
-
-// ── Job item ──────────────────────────────────────────────────────────────────
-
-function JobItem({ job, isSelected, onClick }: {
-  job: Job;
-  isSelected: boolean;
-  onClick: () => void;
-}) {
-  const ageMin = Math.round((Date.now() - new Date(job.created_at).getTime()) / 60_000);
-  const age = ageMin < 60 ? `${ageMin}m` : `${Math.round(ageMin / 60)}h`;
-
-  return (
-    <button
-      onClick={onClick}
-      style={{
-        width: "100%",
-        textAlign: "left",
-        padding: "0.45rem 1rem",
-        background: isSelected ? "rgba(75,158,245,0.08)" : "transparent",
-        border: "none",
-        borderLeft: `2px solid ${isSelected ? "var(--accent)" : "transparent"}`,
-        cursor: "pointer",
-        transition: "background 0.1s",
-      }}
-    >
-      <div style={{
-        fontSize: "0.78rem",
-        fontWeight: isSelected ? 500 : 400,
-        color: isSelected ? "var(--text)" : "var(--text-2)",
-        lineHeight: 1.4,
-        whiteSpace: "nowrap",
-        overflow: "hidden",
-        textOverflow: "ellipsis",
-      }}>
-        {job.topic}
-      </div>
-      <div style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "0.4rem",
-        marginTop: "0.15rem",
-      }}>
-        <span style={{
-          fontSize: "0.67rem",
-          color: STATUS_COLOR[job.status] ?? "var(--text-muted)",
+          fontSize: "0.72rem",
+          fontWeight: 600,
+          color: meta.color,
+          background: meta.light,
+          padding: "0.22rem 0.625rem",
+          borderRadius: "999px",
+          letterSpacing: "0.01em",
         }}>
           {STAGE_LABELS[job.status]}
         </span>
-        <span style={{ fontSize: "0.67rem", color: "var(--text-dim)" }}>·</span>
-        <span style={{ fontSize: "0.67rem", color: "var(--text-muted)" }}>{age} ago</span>
-        {job.attempts > 0 && (
-          <span style={{ fontSize: "0.67rem", color: "var(--amber)", marginLeft: "auto" }}>
-            ↺ {job.attempts}
-          </span>
-        )}
+      </button>
+
+      {/* Expanded pipeline */}
+      {isOpen && (
+        <div
+          className="pipeline-expand"
+          style={{
+            borderTop: "1px solid var(--border)",
+            padding: "1.25rem 1.5rem 1.5rem",
+          }}
+        >
+          <PipelineView job={job} onDecision={onDecision} />
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ── Mini pipeline diagram ─────────────────────────────────────────────────────
+
+function MiniPipeline({ status }: { status: JobStatus }) {
+  const collectDone   = ["writing","review","published","escalated"].includes(status);
+  const collectActive = status === "collecting";
+  const writeDone     = ["review","published","escalated"].includes(status);
+  const writeActive   = status === "writing";
+  const reviewDone    = ["published","escalated"].includes(status);
+  const reviewActive  = status === "review";
+
+  const nodeStyle = (done: boolean, active: boolean, color: string, lightColor: string) => ({
+    width: "24px",
+    height: "24px",
+    borderRadius: "50%",
+    border: `2px solid ${done ? "var(--green)" : active ? color : "var(--border)"}`,
+    background: done ? "var(--green-light)" : active ? lightColor : "transparent",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "0.6rem",
+    fontWeight: 700,
+    color: done ? "var(--green)" : active ? color : "var(--text-dim)",
+    flexShrink: 0,
+    transition: "all 0.2s",
+  });
+
+  const trackStyle = (filled: boolean) => ({
+    flex: 1,
+    height: "2px",
+    background: filled ? "var(--green)" : "var(--border)",
+    borderRadius: "1px",
+    minWidth: "20px",
+    transition: "background 0.3s",
+  });
+
+  return (
+    <div style={{ display: "flex", alignItems: "center", flexShrink: 0, gap: "0" }}>
+      <div
+        className={collectActive ? "node-active" : undefined}
+        style={nodeStyle(collectDone, collectActive, "var(--blue)", "var(--blue-light)")}
+      >
+        {collectDone ? "✓" : "◈"}
       </div>
-    </button>
+      <div style={trackStyle(collectDone)} />
+      <div
+        className={writeActive ? "node-active" : undefined}
+        style={nodeStyle(writeDone, writeActive, "var(--purple)", "var(--purple-light)")}
+      >
+        {writeDone ? "✓" : "✦"}
+      </div>
+      <div style={trackStyle(writeDone)} />
+      <div
+        className={reviewActive ? "node-active" : undefined}
+        style={nodeStyle(reviewDone, reviewActive, "var(--amber)", "var(--amber-light)")}
+      >
+        {reviewDone ? "✓" : "◉"}
+      </div>
+    </div>
   );
 }
 
 // ── Empty state ───────────────────────────────────────────────────────────────
 
-function EmptyState({ count }: { count: number }) {
+function EmptyState() {
   return (
     <div style={{
-      height: "100%",
+      textAlign: "center",
+      padding: "5rem 1rem",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      justifyContent: "center",
-      gap: "0.75rem",
-      userSelect: "none",
+      gap: "1rem",
     }}>
-      <span style={{ fontSize: "2.5rem", color: "var(--text-dim)" }}>◈</span>
-      <p style={{ fontSize: "0.88rem", color: "var(--text-2)" }}>
-        {count > 0 ? "Select a job from the sidebar" : "Submit a topic to get started"}
-      </p>
-      <p style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>
-        Multi-agent pipeline · Collector → Writer → Reviewer
-      </p>
+      <div style={{
+        width: "56px",
+        height: "56px",
+        borderRadius: "16px",
+        background: "var(--accent-light)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: "1.5rem",
+        color: "var(--accent)",
+      }}>
+        ◈
+      </div>
+      <div>
+        <p style={{ fontSize: "1.05rem", fontWeight: 600, color: "var(--text)", marginBottom: "0.375rem" }}>
+          No research jobs yet
+        </p>
+        <p style={{ fontSize: "0.85rem", color: "var(--text-muted)" }}>
+          Enter a topic above — three agents will collect sources, write a brief, and review it.
+        </p>
+      </div>
+      <div style={{
+        display: "flex",
+        gap: "0.5rem",
+        marginTop: "0.5rem",
+        fontSize: "0.78rem",
+        color: "var(--text-muted)",
+        alignItems: "center",
+      }}>
+        <AgentChip icon="◈" label="Collector" color="var(--blue)" />
+        <span style={{ color: "var(--text-dim)" }}>→</span>
+        <AgentChip icon="✦" label="Writer" color="var(--purple)" />
+        <span style={{ color: "var(--text-dim)" }}>→</span>
+        <AgentChip icon="◉" label="Reviewer" color="var(--amber)" />
+      </div>
     </div>
+  );
+}
+
+function AgentChip({ icon, label, color }: { icon: string; label: string; color: string }) {
+  return (
+    <span style={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "0.3rem",
+      padding: "0.25rem 0.625rem",
+      borderRadius: "999px",
+      border: "1.5px solid var(--border)",
+      background: "var(--surface)",
+      color,
+      fontWeight: 500,
+      fontSize: "0.78rem",
+    }}>
+      <span>{icon}</span>
+      <span style={{ color: "var(--text-2)" }}>{label}</span>
+    </span>
   );
 }
