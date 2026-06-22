@@ -4,39 +4,116 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 215 25% 12%;
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 12%;
-    --muted: 210 15% 94%;
-    --muted-foreground: 215 15% 45%;
-    --primary: 221 83% 57%;
-    --primary-foreground: 0 0% 100%;
-    --accent: 210 20% 92%;
-    --accent-foreground: 215 25% 12%;
-    --border: 215 20% 88%;
-    --radius: 0.6rem;
+    --bg:          #07111E;
+    --surface:     #0C1929;
+    --surface-2:   #101F2E;
+    --border:      #172638;
+    --border-2:    #1E3348;
+    --accent:      #4B9EF5;
+    --green:       #2EC47A;
+    --amber:       #F5A623;
+    --orange:      #EF7444;
+    --red:         #E05252;
+    --purple:      #A78BFA;
+    --text:        #D8E8F5;
+    --text-2:      #7A9DB8;
+    --text-muted:  #3D5972;
+    --text-dim:    #243344;
   }
 }
 
 @layer base {
-  * { @apply border-border; }
-  body { @apply bg-background text-foreground; }
+  html, body { height: 100%; }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  input, textarea, button { font-family: inherit; }
 }
 
-/* Kanban scrollable columns */
-.board-col {
-  @apply flex flex-col gap-2 min-w-[230px] max-w-[230px];
+/* ─── Brief markdown ────────────────────────────────────────────── */
+.brief-content h1 {
+  font-family: var(--font-space, 'Space Grotesk', sans-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
 }
-.board-scroll {
-  @apply flex gap-4 overflow-x-auto pb-4;
-  scrollbar-width: thin;
+.brief-content h2 {
+  font-family: var(--font-space, 'Space Grotesk', sans-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 1.25rem 0 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.brief-content p {
+  font-size: 0.84rem;
+  line-height: 1.75;
+  color: var(--text-2);
+  margin-bottom: 0.75rem;
+}
+.brief-content ul, .brief-content ol {
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+.brief-content li {
+  font-size: 0.84rem;
+  color: var(--text-2);
+  line-height: 1.65;
+  margin-bottom: 0.2rem;
+}
+.brief-content a  { color: var(--accent); }
+.brief-content a:hover { text-decoration: underline; }
+.brief-content strong { color: var(--text); font-weight: 600; }
+.brief-content code {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  background: rgba(255,255,255,0.06);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  color: var(--accent);
 }
 
-/* Markdown brief styling */
-.brief-content h1 { @apply text-xl font-bold mb-3 mt-1; }
-.brief-content h2 { @apply text-base font-semibold mb-2 mt-4 border-b pb-1; }
-.brief-content ul { @apply list-disc pl-5 space-y-1; }
-.brief-content ol { @apply list-decimal pl-5 space-y-1; }
-.brief-content p  { @apply mb-2 leading-relaxed; }
-.brief-content a  { @apply text-blue-600 underline break-all; }
+/* ─── Animations ────────────────────────────────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.cursor {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  margin-left: 3px;
+  border-radius: 1px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes thought-in {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.thought {
+  animation: thought-in 0.18s ease-out both;
+}
+
+@keyframes stage-glow {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(75,158,245,0.25); }
+  50%       { box-shadow: 0 0 0 2px rgba(75,158,245,0.12); }
+}
+.stage-active {
+  animation: stage-glow 2.5s ease-in-out infinite;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
