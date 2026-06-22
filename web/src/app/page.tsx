@@ -106,7 +106,13 @@ export default function ChatPage() {
         display: "flex", alignItems: "center",
         padding: "0 1.75rem", gap: "1rem", zIndex: 10,
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+        <button
+          onClick={() => { setMode("live"); setLiveJobId(null); setHistoryJobId(null); }}
+          style={{
+            display: "flex", alignItems: "center", gap: "0.5rem",
+            background: "none", border: "none", cursor: "pointer", padding: 0,
+          }}
+        >
           <div style={{
             width: "24px", height: "24px", borderRadius: "6px",
             background: "linear-gradient(135deg, #4361EE 0%, #8B5CF6 100%)",
@@ -116,8 +122,8 @@ export default function ChatPage() {
           <span style={{ fontWeight: 800, fontSize: "0.95rem", color: "#0D0F12", letterSpacing: "-0.025em" }}>
             Research Desk
           </span>
-        </div>
-        <span style={{ fontSize: "0.75rem", color: "#CBD5E1" }}>
+        </button>
+        <span style={{ fontSize: "0.75rem", color: "#64748B" }}>
           Collector → Writer → Reviewer
         </span>
         <div style={{ marginLeft: "auto", display: "flex", gap: "1.25rem", alignItems: "center" }}>
