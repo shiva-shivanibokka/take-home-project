@@ -92,6 +92,7 @@ export function ChatMessage({ job, onDecision, onRetry }: {
   const [notes,          setNotes]          = useState("");
   const [deciding,       setDeciding]       = useState(false);
   const [retrying,       setRetrying]       = useState(false);
+  const [revisePending,  setRevisePending]  = useState(false);
   const briefRef = useRef<HTMLDivElement>(null);
 
   // Auto-collapse reasoning when job finishes
@@ -144,9 +145,10 @@ export function ChatMessage({ job, onDecision, onRetry }: {
       await supabase.from("jobs").update({ status: "failed" }).eq("id", job.id);
       onDecision();
     } else {
-      // revise: review is now inserted — orchestrator's processHumanReviews
-      // picks it up via service-role key and advances job to "writing".
-      // The direct job update below may be blocked by RLS but orchestrator handles it.
+      // revise: review is now inserted — orchestrator polls every 5s and will
+      // advance the job to "writing" via service-role key. Show pending state
+      // immediately so the user knows it was received.
+      setRevisePending(true);
       await supabase.from("jobs").update({
         status: "writing", attempts: 0, locked_at: null,
       }).eq("id", job.id);
@@ -338,9 +340,26 @@ export function ChatMessage({ job, onDecision, onRetry }: {
             ))}
 
             {/* Human review panel */}
-            {job.status === "escalated" && reviews.length === 0 && (
+            {job.status === "escalated" && reviews.length === 0 && !revisePending && (
               <HumanPanel reviewer={reviewer} notes={notes} deciding={deciding}
                 onReviewer={setReviewer} onNotes={setNotes} onDecide={decide} />
+            )}
+            {revisePending && (
+              <div style={{
+                marginTop: "1.25rem", borderRadius: "12px",
+                background: "#EEF2FF", border: "1.5px solid #C7D2FE",
+                padding: "1rem 1.25rem", display: "flex", alignItems: "center", gap: "0.75rem",
+              }}>
+                <span style={{ fontSize: "1.1rem" }}>↺</span>
+                <div>
+                  <p style={{ margin: 0, fontSize: "0.85rem", fontWeight: 700, color: "#4361EE" }}>
+                    Revision submitted — Writer is re-running
+                  </p>
+                  <p style={{ margin: "0.2rem 0 0", fontSize: "0.78rem", color: "#6366F1" }}>
+                    The pipeline will pick this up within seconds. The brief will update automatically when complete.
+                  </p>
+                </div>
+              </div>
             )}
           </div>
         )}
