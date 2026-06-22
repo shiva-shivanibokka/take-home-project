@@ -69,10 +69,11 @@ alter table events replica identity full;
 create table if not exists reviews (
   id         uuid primary key default gen_random_uuid(),
   job_id     uuid not null references jobs(id) on delete cascade,
-  decision   text not null check (decision in ('approve','reject')),
-  notes      text,
-  reviewer   text,               -- free-text; no auth required for the demo
-  created_at timestamptz not null default now()
+  decision      text not null check (decision in ('approve','reject','revise')),
+  notes         text,
+  reviewer      text,               -- free-text; no auth required for the demo
+  processed_at  timestamptz,        -- set by orchestrator after handling; prevents re-processing
+  created_at    timestamptz not null default now()
 );
 
 -- ─── helpers ───────────────────────────────────────────────────────────────
