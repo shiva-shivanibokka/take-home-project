@@ -116,19 +116,20 @@ async function main() {
     },
   ], 1800);
 
-  // 4. Extract citations (URLs actually referenced in the brief)
-  const urlsInBrief = sources
-    .filter((s) => brief.includes(s.url) || brief.includes(s.title.slice(0, 30)))
-    .map((s) => s.url);
-  // Always include all source URLs since we numbered them
-  const citations = sources.map((s) => s.url);
+  // 4. Clean the brief — strip Sources/References section and inline [n] markers
+  const cleanedBrief = brief
+    .replace(/^##\s+(Sources|References|Bibliography|Citations|Further Reading)[^\n]*\n[\s\S]*/im, "")
+    .replace(/\[\d+(?:,\s*\d+)*\]/g, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
 
-  const wordCount = brief.split(/\s+/).filter(Boolean).length;
+  const citations = sources.map((s) => s.url);
+  const wordCount = cleanedBrief.split(/\s+/).filter(Boolean).length;
 
   // 5. Write handoff (idempotent)
   const artifact = {
-    title: brief.match(/^#\s+(.+)$/m)?.[1]?.trim() ?? job.topic,
-    brief_markdown: brief,
+    title: cleanedBrief.match(/^#\s+(.+)$/m)?.[1]?.trim() ?? job.topic,
+    brief_markdown: cleanedBrief,
     citations,
     word_count: wordCount,
     tokens_used: tokensUsed,
