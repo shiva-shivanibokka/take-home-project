@@ -37,7 +37,7 @@ A production-grade pipeline of three cooperating AI agents that research any top
 
 Submit a research topic (e.g. *"Anthropic Claude vs GPT-4o enterprise adoption 2025"*) and watch three AI agents cooperate to produce a published brief:
 
-1. **Collector** — searches Google News RSS and Hacker News, deduplicates by domain, asks an LLM to score relevance, and selects the 7 best sources.
+1. **Collector** — searches the web via Tavily, deduplicates by domain, asks an LLM to score relevance, and selects the 7 best sources. Works for any topic — news, academic papers, technical research.
 2. **Writer** — reads the curated sources and drafts a 900–1,100-word Markdown brief with Summary, Key Findings, and Analysis sections.
 3. **Reviewer** — evaluates the brief against the sources on three checks (citation support, coverage, factuality) and emits a calibrated confidence score. Briefs above 70% confidence auto-publish; below 70% → escalated to a human.
 
@@ -74,8 +74,8 @@ Human reviewers can **Approve** (publish), **Reject** (fail), or **Revise with A
     │  Collector  │ │   Writer   │ │   Reviewer   │
     │  (OpenClaw) │ │ (OpenClaw) │ │  (OpenClaw)  │
     │             │ │            │ │              │
-    │ Google News │ │ LLM draft  │ │ LLM evaluate │
-    │ HN Algolia  │ │ 900-1100 wd│ │ confidence   │
+    │ Tavily web  │ │ LLM draft  │ │ LLM evaluate │
+    │ search      │ │ 900-1100 wd│ │ confidence   │
     │ Domain dedup│ │            │ │ → publish or │
     │ 7 sources   │ │            │ │   escalate   │
     └─────────────┘ └────────────┘ └──────────────┘
@@ -128,9 +128,8 @@ This is the kind of per-component optimisation that matters in real multi-agent 
   status = collecting
        │
        ▼ Collector agent runs (node skills/run.mjs --job <id>)
-       │   · Fetches up to 12 Google News + 8 HN items (cap chosen to fit
-       │     all candidates in the 128-token LLM scoring call)
-       │   · Deduplicates by domain (outlet name for news.google.com URLs)
+       │   · Searches the web via Tavily (up to 10 results, any topic)
+       │   · Deduplicates by domain
        │   · Scores relevance via LLM (128 max tokens)
        │   · Selects up to 7 best sources; falls back to all if LLM returns
        │     no valid indices
@@ -236,8 +235,8 @@ created_at   timestamptz
 **Persona (`SOUL.md`):** Only gathers. Never writes prose. Never invents sources. Either a URL is real or it isn't.
 
 **What it does:**
-- Fetches up to 12 items from Google News RSS and 8 from HN Algolia (caps chosen so all candidates fit in the 128-token LLM scoring budget)
-- Deduplicates by outlet name for `news.google.com` URLs (all Google News redirect URLs share the same hostname — using the source outlet prevents collapsing all 12 to 1)
+- Searches the web via **Tavily** (free tier, 1000 searches/month) — works for any topic: news, academic papers, technical research, market analysis
+- Deduplicates by domain so no single outlet dominates the source list
 - Scores relevance with the LLM using 120-char snippets; stores 350-char snippets in the artifact
 - Selects the 7 highest-relevance sources; falls back to all available if LLM returns out-of-range indices
 - Emits handoff: `{ sources: [{title, url, snippet, published, source}], count, notes, tokens_used }`
@@ -422,6 +421,7 @@ All infrastructure is permanently free:
 | Postgres + Realtime | Supabase free tier (500 MB DB) | **$0** |
 | Frontend | Vercel Hobby tier | **$0** |
 | LLM API | Groq free tier | **$0** (14,400 tokens/min, 500K/day) |
+| Web search | Tavily free tier | **$0** (1,000 searches/month) |
 | **Total** | | **$0/week** |
 
 **Token caps per job:**
@@ -477,9 +477,9 @@ Row Level Security policies can fail silently in ways that look identical to app
 
 **Lesson:** Test every RLS path explicitly with the exact values in every `WITH CHECK` clause. Silent policy failures are indistinguishable from application bugs without careful console inspection.
 
-### 5. Google News RSS deduplication bug
+### 5. Google News RSS deduplication bug → switched to Tavily
 
-The Collector deduplicates sources by domain to avoid five articles from the same outlet. The bug: Google News RSS returns redirect URLs in the format `https://news.google.com/rss/articles/CBMi...` — every article has the same hostname, `news.google.com`. The dedup function kept exactly one item and discarded the rest, reducing 12 candidates to 1 every time. The fix: for `news.google.com` URLs, use the outlet name from the RSS `<source>` tag as the dedup key. **Lesson:** domain dedup assumes URLs point to their actual host. Aggregator redirect URLs break that assumption.
+The original Collector used Google News RSS + Hacker News. The dedup bug: Google News RSS returns redirect URLs (`https://news.google.com/rss/articles/CBMi...`) — every article shares the hostname `news.google.com`. The dedup function reduced 12 candidates to 1 every time. Initial fix: use the outlet name from the RSS `<source>` tag as the dedup key. Deeper issue: Google News + HN only covers news topics — academic, scientific, or domain-specific research returned zero results and failed the pipeline. Final fix: replaced both sources with **Tavily web search**, which returns real domain URLs (dedup works naturally) and covers any topic type. **Lesson:** domain dedup assumes URLs point to their actual host. Aggregator redirect URLs break that assumption. Also: validate your source APIs against the full range of topics users will actually submit.
 
 ### 6. Stale skill copies (OPENCLAW_WORKSPACES_ROOT)
 
@@ -504,6 +504,7 @@ Everything needed to stand up a fresh instance from zero.
 - [Supabase](https://supabase.com) free-tier project
 - [Vercel](https://vercel.com) account (connect your GitHub fork)
 - [Groq](https://console.groq.com) account (free API key)
+- [Tavily](https://tavily.com) account (free API key — 1,000 searches/month)
 - Node.js 22 on the VPS (installed in Step 3)
 
 ---
@@ -590,6 +591,9 @@ OLLAMA_BASE_URL=https://api.groq.com/openai
 OLLAMA_MODEL=llama-3.1-8b-instant          # Collector + Reviewer
 WRITER_MODEL=llama-3.3-70b-versatile       # Writer uses larger model for brief quality
 OLLAMA_API_KEY=gsk_...                     # your Groq API key
+
+# Tavily web search (Collector source — works for any topic)
+TAVILY_API_KEY=tvly-...                    # get free key at tavily.com
 
 # OpenClaw workspaces
 OPENCLAW_WORKSPACES_ROOT=/home/<your-username>/take-home-project/agents-openclaw/workspaces
@@ -687,6 +691,7 @@ The chain-of-thought panel shows each agent's reasoning in real time.
 | `OLLAMA_MODEL` | ✅ | — | Default model for Collector + Reviewer (e.g. `llama-3.1-8b-instant`) |
 | `WRITER_MODEL` | — | `$OLLAMA_MODEL` | Override model for Writer only (e.g. `llama-3.3-70b-versatile`) |
 | `OLLAMA_API_KEY` | ✅ | — | API key for the LLM provider (Groq) |
+| `TAVILY_API_KEY` | ✅ | — | Tavily web search API key (free at tavily.com — 1,000 searches/month) |
 | `OPENCLAW_WORKSPACES_ROOT` | ✅ | — | Absolute path to `agents-openclaw/workspaces` |
 | `POLL_INTERVAL_MS` | — | `5000` | How often the orchestrator polls for new jobs (ms) |
 | `LOCK_TIMEOUT_SECS` | — | `120` | Seconds before a stale job lock expires |
