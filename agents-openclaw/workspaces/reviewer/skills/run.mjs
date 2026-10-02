@@ -40,6 +40,9 @@ const db = createClient(
 const OLLAMA_BASE = process.env.OLLAMA_BASE_URL ?? "https://api.ollama.ai";
 const OLLAMA_MODEL = process.env.OLLAMA_MODEL ?? "llama3.2:3b";
 const CONFIDENCE_THRESHOLD = Number(process.env.CONFIDENCE_THRESHOLD ?? 0.70);
+// Eval hook (sop-eval branch): how many snippet characters the reviewer sees.
+// Default 150 preserves the original behaviour exactly.
+const REVIEWER_SNIPPET_CHARS = Number(process.env.REVIEWER_SNIPPET_CHARS ?? 150);
 console.log(`[reviewer] using model: ${OLLAMA_MODEL}`);
 
 async function ollamaChat(messages, maxTokens = 512) {
@@ -98,7 +101,7 @@ async function main() {
 
   // 2. Ask Ollama to evaluate the brief against the sources
   const sourceList = sources.map((s, i) =>
-    `[${i + 1}] ${s.title} — ${s.snippet?.slice(0, 150) ?? ""}`
+    `[${i + 1}] ${s.title} — ${s.snippet?.slice(0, REVIEWER_SNIPPET_CHARS) ?? ""}`
   ).join("\n");
 
   const prompt = `
