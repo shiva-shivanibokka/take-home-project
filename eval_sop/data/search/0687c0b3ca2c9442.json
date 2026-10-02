@@ -1,0 +1,58 @@
+{
+ "query": "What formula is used for finding the inverse of a square matrix in Google Sheets?",
+ "id": "q027",
+ "retrieved_at": "2026-10-02T00:29:39.950326+00:00",
+ "engine": "ddgs.text",
+ "results": [
+  {
+   "title": "MINVERSE in Google Sheets - Syntax, Examples, How to Use?",
+   "href": "https://www.excelmojo.com/minverse-in-google-sheets/",
+   "body": "Apr 27, 2026 \u00b7 The MINVERSE function in Google Sheets is used to calculate the inverse of a given square matrix. Let us see how to find the inverse matrix with some examples in Google Sheets."
+  },
+  {
+   "title": "MINVERSE Google Sheets Formula | Check Sheet",
+   "href": "https://checksheet.app/google-sheets-formulas/minverse/",
+   "body": "The MINVERSE function in Google Sheets returns the inverse matrix of a given square matrix. The inverse matrix is such that when multiplied by the original matrix, it results in an identity matrix. This function is commonly used in linear algebra, such as solving systems of linear equations or finding determinants of matrices."
+  },
+  {
+   "title": "MINVERSE Google Sheets Formula in Google Sheets - Better Analyst",
+   "href": "https://betteranalyst.com/google-sheets/minverse-function",
+   "body": "Discover the MINVERSE function in Google Sheets to calculate the inverse of a matrix, enabling advanced data analysis and mathematical computations."
+  },
+  {
+   "title": "How Do You Find The Inverse Of A Matrix In Google Sheets?",
+   "href": "https://scales.arabpsychology.com/stats/how-do-you-find-the-inverse-of-a-matrix-in-google-sheets/",
+   "body": "Jul 1, 2024 \u00b7 The result will be displayed in a new range of cells, with the original matrix on the left and the inverse on the right. This function can be used for matrices of any size, making it a convenient tool for mathematical calculations in Google Sheets. MINVERSE Returns the multiplicative inverse of a square matrix specified as an array or range."
+  },
+  {
+   "title": "MINVERSE function in Google Sheets \u2014 syntax, examples & Excel ...",
+   "href": "https://www.formulafoundry.io/functions/google-sheets/minverse/",
+   "body": "Returns the multiplicative inverse of a square matrix specified as an array or range. Syntax, parameters, and worked MINVERSE examples you can edit live in the playground."
+  },
+  {
+   "title": "MINVERSE - Google Docs Editors Help",
+   "href": "https://support.google.com/docs/answer/3094253?hl=en-GB",
+   "body": "MINVERSE (square_matrix) square_matrix \u2013 An array or range with an equal number of rows and columns representing a matrix whose multiplicative inverse will be calculated."
+  },
+  {
+   "title": "MINVERSE Function in Google Sheets: Syntax & Examples | ExcelGPT",
+   "href": "https://excelgpt.app/en/google-sheets-functions/minverse",
+   "body": "The MINVERSE function calculates the inverse of a square matrix. It requires the input array to contain an equal number of rows and columns, and the determinant of the matrix must not be zero."
+  },
+  {
+   "title": "Determinant of 3\u00d73 Matrix - GeeksforGeeks",
+   "href": "https://www.geeksforgeeks.org/maths/determinant-of-3x3-matrix/",
+   "body": "The determinant of a Matrix is a single number calculated from a square matrix. In linear algebra, determinants are found by using the values within the square matrix. This number acts like a scaling factor, influencing how the matrix transforms."
+  },
+  {
+   "title": "Determinant of a Matrix",
+   "href": "https://www.mathsisfun.com/algebra/matrix-determinant.html",
+   "body": "The determinant helps us find the inverse of a matrix, tells us things about the matrix that are useful in systems of linear equations, calculus and more. Calculating the Determinant. First of all the matrix must be square (i.e. have the same number of rows as columns)."
+  },
+  {
+   "title": "Matrix Inverse Calculator - eMathHelp",
+   "href": "https://www.emathhelp.net/calculators/linear-algebra/inverse-of-matrix-calculator/",
+   "body": "Matrix Inverse Calculator. Calculate matrix inverse step by step. The calculator will find the inverse (if it exists) of the square matrix using the Gaussian elimination method or the adjoint method, with steps shown."
+  }
+ ]
+}

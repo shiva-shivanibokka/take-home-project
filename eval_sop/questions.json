@@ -1,0 +1,1597 @@
+[
+ {
+  "source": "simpleqa",
+  "row": 3576,
+  "stratum": "simpleqa",
+  "question": "What is the surname of the individual who won the Oesper Award in 1983?",
+  "answers": [
+   "Basolo"
+  ],
+  "meta": {
+   "topic": "Science and technology",
+   "answer_type": "Person"
+  },
+  "id": "q001"
+ },
+ {
+  "source": "simpleqa",
+  "row": 4190,
+  "stratum": "simpleqa",
+  "question": "What is the name of King Goodwill Zwelithini's seventh child by his wife, Queen Mantfombi Dlamini?",
+  "answers": [
+   "Mandlesizwe Zulu"
+  ],
+  "meta": {
+   "topic": "History",
+   "answer_type": "Person"
+  },
+  "id": "q002"
+ },
+ {
+  "source": "simpleqa",
+  "row": 1917,
+  "stratum": "simpleqa",
+  "question": "What is the total number of tracks on the Ys Origin original soundtrack released in 2007?",
+  "answers": [
+   "37"
+  ],
+  "meta": {
+   "topic": "Music",
+   "answer_type": "Number"
+  },
+  "id": "q003"
+ },
+ {
+  "source": "simpleqa",
+  "row": 555,
+  "stratum": "simpleqa",
+  "question": "On what specific day, month, and year was Carrie Underwood's album \"Cry Pretty\" certified Platinum by the RIAA?",
+  "answers": [
+   "February 12, 2020"
+  ],
+  "meta": {
+   "topic": "Music",
+   "answer_type": "Date"
+  },
+  "id": "q004"
+ },
+ {
+  "source": "simpleqa",
+  "row": 2345,
+  "stratum": "simpleqa",
+  "question": "In the 1993 series \"The Young and the Restless,\" what was Hope saved from when Victor arrived?",
+  "answers": [
+   "a rapist"
+  ],
+  "meta": {
+   "topic": "TV shows",
+   "answer_type": "Other"
+  },
+  "id": "q005"
+ },
+ {
+  "source": "simpleqa",
+  "row": 2533,
+  "stratum": "simpleqa",
+  "question": "In July 2021, how much rainfall (in millimeters) was recorded in Al Ain due to cloud-seeding efforts?",
+  "answers": [
+   "6.9 millimetres"
+  ],
+  "meta": {
+   "topic": "Science and technology",
+   "answer_type": "Number"
+  },
+  "id": "q006"
+ },
+ {
+  "source": "simpleqa",
+  "row": 2600,
+  "stratum": "simpleqa",
+  "question": "In what year did Anne Golden become the first woman to chair the American Heart Association board of directors?",
+  "answers": [
+   "1991"
+  ],
+  "meta": {
+   "topic": "History",
+   "answer_type": "Date"
+  },
+  "id": "q007"
+ },
+ {
+  "source": "simpleqa",
+  "row": 4275,
+  "stratum": "simpleqa",
+  "question": "Which architect built the Palace of Justice of the Argentine Nation?",
+  "answers": [
+   "Norbert Maillart."
+  ],
+  "meta": {
+   "topic": "Art",
+   "answer_type": "Person"
+  },
+  "id": "q008"
+ },
+ {
+  "source": "simpleqa",
+  "row": 2131,
+  "stratum": "simpleqa",
+  "question": "Who created Ida Mntwana's bronze statue?",
+  "answers": [
+   "Sarah Lovejoy"
+  ],
+  "meta": {
+   "topic": "Art",
+   "answer_type": "Person"
+  },
+  "id": "q009"
+ },
+ {
+  "source": "simpleqa",
+  "row": 998,
+  "stratum": "simpleqa",
+  "question": "How many minutes did the Fairey Albacore with Taurus XII used in World War II take to reach 6000 feet altitude in its time to altitude specification?",
+  "answers": [
+   "8"
+  ],
+  "meta": {
+   "topic": "History",
+   "answer_type": "Number"
+  },
+  "id": "q010"
+ },
+ {
+  "source": "simpleqa",
+  "row": 1523,
+  "stratum": "simpleqa",
+  "question": "Who received the Roebling Medal the year after Alexandra Navrotsky received hers?",
+  "answers": [
+   "Robert C. Newton"
+  ],
+  "meta": {
+   "topic": "Science and technology",
+   "answer_type": "Person"
+  },
+  "id": "q011"
+ },
+ {
+  "source": "simpleqa",
+  "row": 530,
+  "stratum": "simpleqa",
+  "question": "In what year did Eilenberg, in a joint paper with Chevalley, give an algebraic approach to the cohomology of Lie groups using the Lie algebra as the basic object?",
+  "answers": [
+   "1948"
+  ],
+  "meta": {
+   "topic": "Science and technology",
+   "answer_type": "Date"
+  },
+  "id": "q012"
+ },
+ {
+  "source": "simpleqa",
+  "row": 1191,
+  "stratum": "simpleqa",
+  "question": "At which international show jumping event did Susie Hutchison and Samsung Woodstock get blocked mid-round by the ring crew?",
+  "answers": [
+   "Volvo FEI World Cup Final"
+  ],
+  "meta": {
+   "topic": "Sports",
+   "answer_type": "Date"
+  },
+  "id": "q013"
+ },
+ {
+  "source": "simpleqa",
+  "row": 3009,
+  "stratum": "simpleqa",
+  "question": "From 1st January 2015 to 5th February 2019, how many hectares of forest land were diverted in Goa for non-forestry purposes under the Forest Conservation Act of 1980 (MoEF&CC, 2019)?",
+  "answers": [
+   "42.75"
+  ],
+  "meta": {
+   "topic": "Geography",
+   "answer_type": "Number"
+  },
+  "id": "q014"
+ },
+ {
+  "source": "simpleqa",
+  "row": 72,
+  "stratum": "simpleqa",
+  "question": "In Season 3 of the American version of \"The Circle,\" in which episode did Vince enter the game?",
+  "answers": [
+   "7"
+  ],
+  "meta": {
+   "topic": "TV shows",
+   "answer_type": "Date"
+  },
+  "id": "q015"
+ },
+ {
+  "source": "simpleqa",
+  "row": 2655,
+  "stratum": "simpleqa",
+  "question": "In which competition did Ken Kesey place second in his weight class in 1957?",
+  "answers": [
+   "Pacific Coast intercollegiate competition"
+  ],
+  "meta": {
+   "topic": "Sports",
+   "answer_type": "Other"
+  },
+  "id": "q016"
+ },
+ {
+  "source": "simpleqa",
+  "row": 3354,
+  "stratum": "simpleqa",
+  "question": "What EP did Machine Girl release in 2016?",
+  "answers": [
+   "MACHINE GIRL VS MACHINE GIRL"
+  ],
+  "meta": {
+   "topic": "Music",
+   "answer_type": "Other"
+  },
+  "id": "q017"
+ },
+ {
+  "source": "simpleqa",
+  "row": 1530,
+  "stratum": "simpleqa",
+  "question": "How many years did Magen Fieramusca receive for killing Heidi Broussard?",
+  "answers": [
+   "55"
+  ],
+  "meta": {
+   "topic": "Other",
+   "answer_type": "Number"
+  },
+  "id": "q018"
+ },
+ {
+  "source": "simpleqa",
+  "row": 918,
+  "stratum": "simpleqa",
+  "question": "Who is known to be the first female museum curator in Spain's National Archaeological Museum (Madrid)?",
+  "answers": [
+   "María del Pilar Fernández Vega"
+  ],
+  "meta": {
+   "topic": "Art",
+   "answer_type": "Person"
+  },
+  "id": "q019"
+ },
+ {
+  "source": "simpleqa",
+  "row": 402,
+  "stratum": "simpleqa",
+  "question": "What was Janice Burgess hired as when she worked at Nick Jr.?",
+  "answers": [
+   "executive in charge of production"
+  ],
+  "meta": {
+   "topic": "TV shows",
+   "answer_type": "Other"
+  },
+  "id": "q020"
+ },
+ {
+  "source": "simpleqa",
+  "row": 1220,
+  "stratum": "simpleqa",
+  "question": "Which Secretary General of the Arab League sponsored the first Arab Creativity Oscar for the Arab Creativity Union in Egypt?",
+  "answers": [
+   "Amr Mousa"
+  ],
+  "meta": {
+   "topic": "Politics",
+   "answer_type": "Person"
+  },
+  "id": "q021"
+ },
+ {
+  "source": "simpleqa",
+  "row": 4117,
+  "stratum": "simpleqa",
+  "question": "What was the final score on February 6, 2022, in the rugby match between Georgia and Portugal that was part of the 2022 Rugby Europe Championship?",
+  "answers": [
+   "Geogia 25 - 25 Portugal"
+  ],
+  "meta": {
+   "topic": "Sports",
+   "answer_type": "Other"
+  },
+  "id": "q022"
+ },
+ {
+  "source": "simpleqa",
+  "row": 2377,
+  "stratum": "simpleqa",
+  "question": "What are the twins' names from \"The Cosby Show\"?",
+  "answers": [
+   "Nelson and Winnie."
+  ],
+  "meta": {
+   "topic": "TV shows",
+   "answer_type": "Person"
+  },
+  "id": "q023"
+ },
+ {
+  "source": "simpleqa",
+  "row": 3162,
+  "stratum": "simpleqa",
+  "question": "Blockhouse Island in Brockville has a statue of Con Darling, a local figure who is pushing a stroller. What is inside the stroller?",
+  "answers": [
+   "His pet chicken Myrtle"
+  ],
+  "meta": {
+   "topic": "Other",
+   "answer_type": "Other"
+  },
+  "id": "q024"
+ },
+ {
+  "source": "simpleqa",
+  "row": 3795,
+  "stratum": "simpleqa",
+  "question": "What day, month, and year did Jovian become a Roman emperor?",
+  "answers": [
+   "27 June 363"
+  ],
+  "meta": {
+   "topic": "History",
+   "answer_type": "Date"
+  },
+  "id": "q025"
+ },
+ {
+  "source": "simpleqa",
+  "row": 1831,
+  "stratum": "simpleqa",
+  "question": "What type of wood was the case of the Yamaha DX1 (1983) made from?",
+  "answers": [
+   "Brazilian rosewood"
+  ],
+  "meta": {
+   "topic": "Music",
+   "answer_type": "Other"
+  },
+  "id": "q026"
+ },
+ {
+  "source": "simpleqa",
+  "row": 2017,
+  "stratum": "simpleqa",
+  "question": "What formula is used for finding the inverse of a square matrix in Google Sheets?",
+  "answers": [
+   "MINVERSE"
+  ],
+  "meta": {
+   "topic": "Science and technology",
+   "answer_type": "Other"
+  },
+  "id": "q027"
+ },
+ {
+  "source": "simpleqa",
+  "row": 895,
+  "stratum": "simpleqa",
+  "question": "Who was awarded The Oceanography Society's Jerlov Award in 2008?",
+  "answers": [
+   "Talbot Waterman"
+  ],
+  "meta": {
+   "topic": "Science and technology",
+   "answer_type": "Person"
+  },
+  "id": "q028"
+ },
+ {
+  "source": "simpleqa",
+  "row": 3368,
+  "stratum": "simpleqa",
+  "question": "How many seats in the Chamber of Deputies did the Italian Communist Party lose in the 1958 Italian General Election?",
+  "answers": [
+   "3"
+  ],
+  "meta": {
+   "topic": "Politics",
+   "answer_type": "Number"
+  },
+  "id": "q029"
+ },
+ {
+  "source": "simpleqa",
+  "row": 2047,
+  "stratum": "simpleqa",
+  "question": "How many kilobytes of memory did the IBM 7030 Stretch have?",
+  "answers": [
+   "2048"
+  ],
+  "meta": {
+   "topic": "Science and technology",
+   "answer_type": "Number"
+  },
+  "id": "q030"
+ },
+ {
+  "source": "simpleqa",
+  "row": 2554,
+  "stratum": "simpleqa",
+  "question": "In which day, month, and year was the song written by Pedro Medina Avendaño declared the national anthem of Bogotá?",
+  "answers": [
+   "31 July 1974"
+  ],
+  "meta": {
+   "topic": "Music",
+   "answer_type": "Date"
+  },
+  "id": "q031"
+ },
+ {
+  "source": "simpleqa",
+  "row": 712,
+  "stratum": "simpleqa",
+  "question": "What's the secret identity of the third Phantom Lady?",
+  "answers": [
+   "Stormy Knight"
+  ],
+  "meta": {
+   "topic": "Other",
+   "answer_type": "Person"
+  },
+  "id": "q032"
+ },
+ {
+  "source": "simpleqa",
+  "row": 1172,
+  "stratum": "simpleqa",
+  "question": "What is the name of the dedicated infrared flash used to project invisible infrared light onto the user's face to properly read the 30,000 facial points?",
+  "answers": [
+   "Flood Illuminator"
+  ],
+  "meta": {
+   "topic": "Science and technology",
+   "answer_type": "Other"
+  },
+  "id": "q033"
+ },
+ {
+  "source": "simpleqa",
+  "row": 189,
+  "stratum": "simpleqa",
+  "question": "Which companion can Josephine develop feelings for (other than the Inquisitor themselves) in Dragon Age: Inquisition (2014)?",
+  "answers": [
+   "Blackwall"
+  ],
+  "meta": {
+   "topic": "Video games",
+   "answer_type": "Person"
+  },
+  "id": "q034"
+ },
+ {
+  "source": "simpleqa",
+  "row": 1116,
+  "stratum": "simpleqa",
+  "question": "What year was the municipality of San Pedro de Urabá, Antioquia, Colombia, founded?",
+  "answers": [
+   "1956"
+  ],
+  "meta": {
+   "topic": "Geography",
+   "answer_type": "Date"
+  },
+  "id": "q035"
+ },
+ {
+  "source": "simpleqa",
+  "row": 156,
+  "stratum": "simpleqa",
+  "question": "In which two fields of study did computer scientist Nancy Amato receive two bachelor's degrees from Stanford University in 1986?",
+  "answers": [
+   "Mathematical Sciences and Economics "
+  ],
+  "meta": {
+   "topic": "Science and technology",
+   "answer_type": "Other"
+  },
+  "id": "q036"
+ },
+ {
+  "source": "simpleqa",
+  "row": 1457,
+  "stratum": "simpleqa",
+  "question": "In which year was the municipality of Santa Bárbara, Antioquia, Colombia, founded?",
+  "answers": [
+   "1774"
+  ],
+  "meta": {
+   "topic": "Geography",
+   "answer_type": "Date"
+  },
+  "id": "q037"
+ },
+ {
+  "source": "simpleqa",
+  "row": 1902,
+  "stratum": "simpleqa",
+  "question": "What typographer developed the Allegro typeface?",
+  "answers": [
+   "Hans Bohn"
+  ],
+  "meta": {
+   "topic": "Art",
+   "answer_type": "Person"
+  },
+  "id": "q038"
+ },
+ {
+  "source": "simpleqa",
+  "row": 536,
+  "stratum": "simpleqa",
+  "question": "At which hospital did cookbook author and celebrity chef Fatima Sydow pass away?",
+  "answers": [
+   "Vincent Pallotti Hospital"
+  ],
+  "meta": {
+   "topic": "Other",
+   "answer_type": "Place"
+  },
+  "id": "q039"
+ },
+ {
+  "source": "simpleqa",
+  "row": 1939,
+  "stratum": "simpleqa",
+  "question": "What is the Kashmir Valley also known as?",
+  "answers": [
+   "Vale of Kashmir"
+  ],
+  "meta": {
+   "topic": "Geography",
+   "answer_type": "Place"
+  },
+  "id": "q040"
+ },
+ {
+  "source": "simpleqa",
+  "row": 3869,
+  "stratum": "simpleqa",
+  "question": "What were the year and month when the theme song of the anime Ponyo was released?",
+  "answers": [
+   "December 2007."
+  ],
+  "meta": {
+   "topic": "Music",
+   "answer_type": "Date"
+  },
+  "id": "q041"
+ },
+ {
+  "source": "simpleqa",
+  "row": 2339,
+  "stratum": "simpleqa",
+  "question": "Who was Ghana's Minister of Foreign Affairs during the Kulungugu bomb attack?",
+  "answers": [
+   "Ebenezer Ako-Adjei"
+  ],
+  "meta": {
+   "topic": "Politics",
+   "answer_type": "Person"
+  },
+  "id": "q042"
+ },
+ {
+  "source": "simpleqa",
+  "row": 214,
+  "stratum": "simpleqa",
+  "question": "What are the four keywords of the paper \"New Avenues and Challenges in Semantic Map Research\"?",
+  "answers": [
+   "semantic maps, inference, graph, emotions"
+  ],
+  "meta": {
+   "topic": "Science and technology",
+   "answer_type": "Other"
+  },
+  "id": "q043"
+ },
+ {
+  "source": "simpleqa",
+  "row": 1692,
+  "stratum": "simpleqa",
+  "question": "What was the population of the town of Lesbury in Northumberland, England in the 2011 census?",
+  "answers": [
+   "1007"
+  ],
+  "meta": {
+   "topic": "Geography",
+   "answer_type": "Number"
+  },
+  "id": "q044"
+ },
+ {
+  "source": "simpleqa",
+  "row": 3161,
+  "stratum": "simpleqa",
+  "question": "What is the KEGG ID of Hydroxyzine, an antihistamine medication?",
+  "answers": [
+   "D08054"
+  ],
+  "meta": {
+   "topic": "Science and technology",
+   "answer_type": "Other"
+  },
+  "id": "q045"
+ },
+ {
+  "source": "simpleqa",
+  "row": 3227,
+  "stratum": "simpleqa",
+  "question": "In what city and state was Richard Diebenkorn stationed for the U.S. Marine Corps?",
+  "answers": [
+   "Quantico, Virginia"
+  ],
+  "meta": {
+   "topic": "Art",
+   "answer_type": "Place"
+  },
+  "id": "q046"
+ },
+ {
+  "source": "simpleqa",
+  "row": 1791,
+  "stratum": "simpleqa",
+  "question": "In which year did Clint Ballard Jr. adopt the alias Buddy Clinton to cut a two-sided single?",
+  "answers": [
+   "1960"
+  ],
+  "meta": {
+   "topic": "Music",
+   "answer_type": "Date"
+  },
+  "id": "q047"
+ },
+ {
+  "source": "simpleqa",
+  "row": 453,
+  "stratum": "simpleqa",
+  "question": "How many years were Dr. Tony Evans and Lois Evans married?",
+  "answers": [
+   "49"
+  ],
+  "meta": {
+   "topic": "Other",
+   "answer_type": "Number"
+  },
+  "id": "q048"
+ },
+ {
+  "source": "simpleqa",
+  "row": 2926,
+  "stratum": "simpleqa",
+  "question": "What month and year was the Tigray People's Liberation Front removed from the list of terrorist organizations by the Ethiopian government?",
+  "answers": [
+   "March 2023."
+  ],
+  "meta": {
+   "topic": "Politics",
+   "answer_type": "Date"
+  },
+  "id": "q049"
+ },
+ {
+  "source": "simpleqa",
+  "row": 45,
+  "stratum": "simpleqa",
+  "question": "In what year was Eugenius Aristides Nisbet elected to the Georgia House of Representatives?",
+  "answers": [
+   "1827"
+  ],
+  "meta": {
+   "topic": "Politics",
+   "answer_type": "Date"
+  },
+  "id": "q050"
+ },
+ {
+  "source": "popqa",
+  "row": 7987,
+  "stratum": "popqa_high",
+  "question": "What is Hanover the capital of?",
+  "answers": [
+   "Lower Saxony",
+   "Niedersachsen",
+   "NDS",
+   "DE-NI",
+   "Kingdom of Hanover",
+   "Königreich Hannover",
+   "Hanover",
+   "Hannover",
+   "Principality of Calenberg"
+  ],
+  "meta": {
+   "prop": "capital of",
+   "s_pop": 35693
+  },
+  "id": "q051"
+ },
+ {
+  "source": "popqa",
+  "row": 3268,
+  "stratum": "popqa_high",
+  "question": "Who is the father of Isis?",
+  "answers": [
+   "Geb",
+   "Seb",
+   "Keb"
+  ],
+  "meta": {
+   "prop": "father",
+   "s_pop": 67359
+  },
+  "id": "q052"
+ },
+ {
+  "source": "popqa",
+  "row": 3807,
+  "stratum": "popqa_high",
+  "question": "In what country is hundred?",
+  "answers": [
+   "Norway",
+   "Kingdom of Norway",
+   "Norge",
+   "Norvège‏",
+   "NOR",
+   "Noreg",
+   "Norwegen‏",
+   "Finland",
+   "Republic of Finland",
+   "Finnia",
+   "Land of Thousand Lakes",
+   "Suomi",
+   "Suomen tasavalta",
+   "Republiken Finland",
+   "FIN",
+   "Sweden",
+   "Kingdom of Sweden",
+   "SWE",
+   "Denmark",
+   "Danmark",
+   "DNK",
+   "DEK",
+   "Denmark proper",
+   "metropolitan Denmark",
+   "DEN",
+   "TAN",
+   "Realm of Denmark",
+   "Kingdom of Denmark"
+  ],
+  "meta": {
+   "prop": "country",
+   "s_pop": 6794
+  },
+  "id": "q053"
+ },
+ {
+  "source": "popqa",
+  "row": 13908,
+  "stratum": "popqa_high",
+  "question": "What is the capital of Mayotte?",
+  "answers": [
+   "Mamoudzou"
+  ],
+  "meta": {
+   "prop": "capital",
+   "s_pop": 38642
+  },
+  "id": "q054"
+ },
+ {
+  "source": "popqa",
+  "row": 6940,
+  "stratum": "popqa_high",
+  "question": "Who was the director of Another Toothpick?",
+  "answers": [
+   "Jack Bender"
+  ],
+  "meta": {
+   "prop": "director",
+   "s_pop": 13006
+  },
+  "id": "q055"
+ },
+ {
+  "source": "popqa",
+  "row": 8337,
+  "stratum": "popqa_high",
+  "question": "Who was the screenwriter for Lost?",
+  "answers": [
+   "Elizabeth Sarnoff",
+   "Elizabeth \"Liz\" Sarnoff",
+   "Liz Sarnoff",
+   "Adam Horowitz",
+   "Damon Lindelof",
+   "Damon Laurence Lindelof",
+   "Carlton Cuse",
+   "Arthur Carlton Cuse",
+   "Edward Kitsis",
+   "Edward \"Eddy\" Lawrence Kitsis",
+   "Edward Lawrence Kitsis"
+  ],
+  "meta": {
+   "prop": "screenwriter",
+   "s_pop": 154447
+  },
+  "id": "q056"
+ },
+ {
+  "source": "popqa",
+  "row": 3537,
+  "stratum": "popqa_high",
+  "question": "In what country is history of Ghana?",
+  "answers": [
+   "Ghana",
+   "Republic of Ghana",
+   "GHA"
+  ],
+  "meta": {
+   "prop": "country",
+   "s_pop": 8839
+  },
+  "id": "q057"
+ },
+ {
+  "source": "popqa",
+  "row": 3882,
+  "stratum": "popqa_high",
+  "question": "In what country is Charlotte Hornets?",
+  "answers": [
+   "United States of America",
+   "the United States of America",
+   "America",
+   "U.S.A.",
+   "USA",
+   "U.S.",
+   "the US",
+   "the USA",
+   "US of A",
+   "the United States",
+   "U. S. A.",
+   "U. S.",
+   "the States",
+   "the U.S.",
+   "'Merica",
+   "U.S",
+   "United States",
+   "'Murica"
+  ],
+  "meta": {
+   "prop": "country",
+   "s_pop": 78030
+  },
+  "id": "q058"
+ },
+ {
+  "source": "popqa",
+  "row": 7233,
+  "stratum": "popqa_high",
+  "question": "Who was the director of Falling Down?",
+  "answers": [
+   "Joel Schumacher",
+   "Joel T. Schumacher"
+  ],
+  "meta": {
+   "prop": "director",
+   "s_pop": 51068
+  },
+  "id": "q059"
+ },
+ {
+  "source": "popqa",
+  "row": 4243,
+  "stratum": "popqa_high",
+  "question": "Who was the producer of RV?",
+  "answers": [
+   "Douglas Wick"
+  ],
+  "meta": {
+   "prop": "producer",
+   "s_pop": 14405
+  },
+  "id": "q060"
+ },
+ {
+  "source": "popqa",
+  "row": 13681,
+  "stratum": "popqa_high",
+  "question": "What is the capital of Cordillera Administrative Region?",
+  "answers": [
+   "Baguio",
+   "City of Baguio",
+   "Baguio City",
+   "Baguio, Benguet"
+  ],
+  "meta": {
+   "prop": "capital",
+   "s_pop": 25227
+  },
+  "id": "q061"
+ },
+ {
+  "source": "popqa",
+  "row": 2959,
+  "stratum": "popqa_high",
+  "question": "Who is the father of St. James the Elder, Apostle?",
+  "answers": [
+   "Zebedee"
+  ],
+  "meta": {
+   "prop": "father",
+   "s_pop": 28599
+  },
+  "id": "q062"
+ },
+ {
+  "source": "popqa",
+  "row": 12504,
+  "stratum": "popqa_high",
+  "question": "Who is the author of Left Behind?",
+  "answers": [
+   "Jerry B. Jenkins",
+   "Jerry Jenkins",
+   "Jerry Bruce Jenkins",
+   "Tim LaHaye",
+   "Timothy LaHaye",
+   "Timothy F. \"Tim\" LaHaye",
+   "Timothy Francis LaHaye",
+   "Tim Francis LaHaye"
+  ],
+  "meta": {
+   "prop": "author",
+   "s_pop": 21053
+  },
+  "id": "q063"
+ },
+ {
+  "source": "popqa",
+  "row": 10183,
+  "stratum": "popqa_high",
+  "question": "Who was the composer of Messiah?",
+  "answers": [
+   "George Frideric Handel",
+   "Handel",
+   "G. F. Handel",
+   "Georg Friedrich Händel",
+   "George Frederick Handel",
+   "G. F. Händel",
+   "Händel",
+   "George Frideric"
+  ],
+  "meta": {
+   "prop": "composer",
+   "s_pop": 20784
+  },
+  "id": "q064"
+ },
+ {
+  "source": "popqa",
+  "row": 6745,
+  "stratum": "popqa_high",
+  "question": "Who was the director of Ninja Gaiden?",
+  "answers": [
+   "Tomonobu Itagaki"
+  ],
+  "meta": {
+   "prop": "director",
+   "s_pop": 7453
+  },
+  "id": "q065"
+ },
+ {
+  "source": "popqa",
+  "row": 6881,
+  "stratum": "popqa_high",
+  "question": "Who was the director of Big?",
+  "answers": [
+   "Penny Marshall",
+   "Carol Penny Marshall",
+   "Carol Penelope Masciarelli",
+   "Carol Marshall"
+  ],
+  "meta": {
+   "prop": "director",
+   "s_pop": 38538
+  },
+  "id": "q066"
+ },
+ {
+  "source": "popqa",
+  "row": 13913,
+  "stratum": "popqa_high",
+  "question": "What is the capital of Mauritania?",
+  "answers": [
+   "Nouakchott",
+   "Nouakchott, Mauritania",
+   "Nawākshūṭ",
+   "Nawakshut",
+   "Capital of Mauritania",
+   "Nouakchot",
+   "Noukchott",
+   "Nuwākshūṭ"
+  ],
+  "meta": {
+   "prop": "capital",
+   "s_pop": 114627
+  },
+  "id": "q067"
+ },
+ {
+  "source": "popqa",
+  "row": 14111,
+  "stratum": "popqa_high",
+  "question": "What is the capital of Democratic Republic of the Congo?",
+  "answers": [
+   "Kinshasa",
+   "Léopoldville",
+   "Leopoldstad",
+   "Leopoldville"
+  ],
+  "meta": {
+   "prop": "capital",
+   "s_pop": 182435
+  },
+  "id": "q068"
+ },
+ {
+  "source": "popqa",
+  "row": 14061,
+  "stratum": "popqa_high",
+  "question": "What is the capital of North Korea?",
+  "answers": [
+   "Pyongyang",
+   "Capital of Revolution",
+   "Ryugyong"
+  ],
+  "meta": {
+   "prop": "capital",
+   "s_pop": 325845
+  },
+  "id": "q069"
+ },
+ {
+  "source": "popqa",
+  "row": 13894,
+  "stratum": "popqa_high",
+  "question": "What is the capital of England?",
+  "answers": [
+   "London",
+   "London, UK",
+   "London, United Kingdom",
+   "London, England",
+   "Modern Babylon"
+  ],
+  "meta": {
+   "prop": "capital",
+   "s_pop": 445438
+  },
+  "id": "q070"
+ },
+ {
+  "source": "popqa",
+  "row": 4323,
+  "stratum": "popqa_high",
+  "question": "Who was the producer of Discovery?",
+  "answers": [
+   "Daft Punk"
+  ],
+  "meta": {
+   "prop": "producer",
+   "s_pop": 20210
+  },
+  "id": "q071"
+ },
+ {
+  "source": "popqa",
+  "row": 13792,
+  "stratum": "popqa_high",
+  "question": "What is the capital of County Dublin?",
+  "answers": [
+   "Dublin",
+   "Dublin city",
+   "City of Dublin",
+   "Baile Átha Cliath"
+  ],
+  "meta": {
+   "prop": "capital",
+   "s_pop": 10117
+  },
+  "id": "q072"
+ },
+ {
+  "source": "popqa",
+  "row": 7824,
+  "stratum": "popqa_high",
+  "question": "What is London the capital of?",
+  "answers": [
+   "Kingdom of Essex",
+   "kingdom of the East Saxons",
+   "Essex",
+   "United Kingdom",
+   "United Kingdom of Great Britain and Northern Ireland",
+   "U.K.",
+   "GBR",
+   "U. K.",
+   "U K",
+   "G.B.",
+   "G. B.",
+   "G B",
+   "Great Britain",
+   "G.B.R.",
+   "G B R",
+   "Britain",
+   "Great Britain and Northern Ireland",
+   "Great Britain",
+   "United Kingdom of Great Britain",
+   "UKGB",
+   "Kingdom of Great Britain",
+   "United Kingdom of Great Britain and Ireland",
+   "United Kingdom",
+   "UKGBI",
+   "Great Britain and Ireland",
+   "the United Kingdom",
+   "Britain",
+   "Kingdom of England",
+   "England",
+   "England",
+   "British North America",
+   "British America",
+   "Commonwealth of England",
+   "English Republic",
+   "Commonwealth",
+   "Interregnum",
+   "Protectorate",
+   "Commonwealth of England, Scotland and Ireland"
+  ],
+  "meta": {
+   "prop": "capital of",
+   "s_pop": 523018
+  },
+  "id": "q073"
+ },
+ {
+  "source": "popqa",
+  "row": 13596,
+  "stratum": "popqa_high",
+  "question": "Who is the mother of Gautama Buddha?",
+  "answers": [
+   "Maya"
+  ],
+  "meta": {
+   "prop": "mother",
+   "s_pop": 270891
+  },
+  "id": "q074"
+ },
+ {
+  "source": "popqa",
+  "row": 4367,
+  "stratum": "popqa_high",
+  "question": "Who was the producer of Skins?",
+  "answers": [
+   "Chris Clough"
+  ],
+  "meta": {
+   "prop": "producer",
+   "s_pop": 42802
+  },
+  "id": "q075"
+ },
+ {
+  "source": "popqa",
+  "row": 3963,
+  "stratum": "popqa_low",
+  "question": "In what country is Monitor House?",
+  "answers": [
+   "United States of America",
+   "the United States of America",
+   "America",
+   "U.S.A.",
+   "USA",
+   "U.S.",
+   "the US",
+   "the USA",
+   "US of A",
+   "the United States",
+   "U. S. A.",
+   "U. S.",
+   "the States",
+   "the U.S.",
+   "'Merica",
+   "U.S",
+   "United States",
+   "'Murica"
+  ],
+  "meta": {
+   "prop": "country",
+   "s_pop": 71
+  },
+  "id": "q076"
+ },
+ {
+  "source": "popqa",
+  "row": 3533,
+  "stratum": "popqa_low",
+  "question": "In what country is Sabiote?",
+  "answers": [
+   "Spain",
+   "España",
+   "Kingdom of Spain",
+   "ESP"
+  ],
+  "meta": {
+   "prop": "country",
+   "s_pop": 75
+  },
+  "id": "q077"
+ },
+ {
+  "source": "popqa",
+  "row": 653,
+  "stratum": "popqa_low",
+  "question": "In what city was Pete Stewart born?",
+  "answers": [
+   "Statesville",
+   "Statesville, North Carolina"
+  ],
+  "meta": {
+   "prop": "place of birth",
+   "s_pop": 72
+  },
+  "id": "q078"
+ },
+ {
+  "source": "popqa",
+  "row": 1105,
+  "stratum": "popqa_low",
+  "question": "In what city was Stig Kleven born?",
+  "answers": [
+   "Notodden"
+  ],
+  "meta": {
+   "prop": "place of birth",
+   "s_pop": 49
+  },
+  "id": "q079"
+ },
+ {
+  "source": "popqa",
+  "row": 729,
+  "stratum": "popqa_low",
+  "question": "In what city was Manon born?",
+  "answers": [
+   "Bern",
+   "Berne",
+   "city of Bern",
+   "Berna"
+  ],
+  "meta": {
+   "prop": "place of birth",
+   "s_pop": 172
+  },
+  "id": "q080"
+ },
+ {
+  "source": "popqa",
+  "row": 737,
+  "stratum": "popqa_low",
+  "question": "In what city was Hieronymous Francken I born?",
+  "answers": [
+   "Herentals"
+  ],
+  "meta": {
+   "prop": "place of birth",
+   "s_pop": 235
+  },
+  "id": "q081"
+ },
+ {
+  "source": "popqa",
+  "row": 7605,
+  "stratum": "popqa_low",
+  "question": "Who was the director of Home?",
+  "answers": [
+   "Chookiat Sakveerakul"
+  ],
+  "meta": {
+   "prop": "director",
+   "s_pop": 174
+  },
+  "id": "q082"
+ },
+ {
+  "source": "popqa",
+  "row": 1022,
+  "stratum": "popqa_low",
+  "question": "In what city was Gaston-François de Witte born?",
+  "answers": [
+   "Antwerp",
+   "Antwerpen",
+   "City of Antwerp",
+   "Anvers"
+  ],
+  "meta": {
+   "prop": "place of birth",
+   "s_pop": 94
+  },
+  "id": "q083"
+ },
+ {
+  "source": "popqa",
+  "row": 12580,
+  "stratum": "popqa_low",
+  "question": "Who is the author of Transcension?",
+  "answers": [
+   "Damien Broderick",
+   "Damien Francis Broderick",
+   "D. Broderick",
+   "D Broderick",
+   "Roger Delaney",
+   "Edgar Grieve",
+   "Jack Harding",
+   "Alan Harlison",
+   "Philip Jenkins",
+   "Horace West",
+   "Iago Yarrick",
+   "O'Flaherty Gribbles"
+  ],
+  "meta": {
+   "prop": "author",
+   "s_pop": 42
+  },
+  "id": "q084"
+ },
+ {
+  "source": "popqa",
+  "row": 8217,
+  "stratum": "popqa_low",
+  "question": "Who was the screenwriter for While the Sun Shines?",
+  "answers": [
+   "Terence Rattigan",
+   "Sir Terence Mervyn Rattigan",
+   "Terrence Rattigan"
+  ],
+  "meta": {
+   "prop": "screenwriter",
+   "s_pop": 246
+  },
+  "id": "q085"
+ },
+ {
+  "source": "popqa",
+  "row": 7048,
+  "stratum": "popqa_low",
+  "question": "Who was the director of Big Dreams Little Tokyo?",
+  "answers": [
+   "Dave Boyle"
+  ],
+  "meta": {
+   "prop": "director",
+   "s_pop": 87
+  },
+  "id": "q086"
+ },
+ {
+  "source": "popqa",
+  "row": 10198,
+  "stratum": "popqa_low",
+  "question": "Who was the composer of Estate?",
+  "answers": [
+   "Bruno Martino"
+  ],
+  "meta": {
+   "prop": "composer",
+   "s_pop": 163
+  },
+  "id": "q087"
+ },
+ {
+  "source": "popqa",
+  "row": 9594,
+  "stratum": "popqa_low",
+  "question": "Who was the screenwriter for The Game?",
+  "answers": [
+   "Joey Murphy",
+   "John Pardee"
+  ],
+  "meta": {
+   "prop": "screenwriter",
+   "s_pop": 194
+  },
+  "id": "q088"
+ },
+ {
+  "source": "popqa",
+  "row": 3688,
+  "stratum": "popqa_low",
+  "question": "In what country is Cos?",
+  "answers": [
+   "France",
+   "République française",
+   "La France",
+   "Republic of France",
+   "French Republic",
+   "FRA",
+   "the Hexagon"
+  ],
+  "meta": {
+   "prop": "country",
+   "s_pop": 61
+  },
+  "id": "q089"
+ },
+ {
+  "source": "popqa",
+  "row": 12537,
+  "stratum": "popqa_low",
+  "question": "Who is the author of Time After Time?",
+  "answers": [
+   "Allen Appel"
+  ],
+  "meta": {
+   "prop": "author",
+   "s_pop": 84
+  },
+  "id": "q090"
+ },
+ {
+  "source": "popqa",
+  "row": 7043,
+  "stratum": "popqa_low",
+  "question": "Who was the director of The Chicken?",
+  "answers": [
+   "Claude Berri"
+  ],
+  "meta": {
+   "prop": "director",
+   "s_pop": 164
+  },
+  "id": "q091"
+ },
+ {
+  "source": "popqa",
+  "row": 13168,
+  "stratum": "popqa_low",
+  "question": "Who is the author of Chaotic?",
+  "answers": [
+   "Kelley Armstrong",
+   "Sarah"
+  ],
+  "meta": {
+   "prop": "author",
+   "s_pop": 55
+  },
+  "id": "q092"
+ },
+ {
+  "source": "popqa",
+  "row": 704,
+  "stratum": "popqa_low",
+  "question": "In what city was Antigoni Goni born?",
+  "answers": [
+   "Athens"
+  ],
+  "meta": {
+   "prop": "place of birth",
+   "s_pop": 256
+  },
+  "id": "q093"
+ },
+ {
+  "source": "popqa",
+  "row": 11929,
+  "stratum": "popqa_low",
+  "question": "Who is the author of Escape?",
+  "answers": [
+   "David McMillan"
+  ],
+  "meta": {
+   "prop": "author",
+   "s_pop": 127
+  },
+  "id": "q094"
+ },
+ {
+  "source": "popqa",
+  "row": 3400,
+  "stratum": "popqa_low",
+  "question": "In what country is Dubicze Osoczne?",
+  "answers": [
+   "Poland",
+   "POL",
+   "Republic of Poland",
+   "Polska"
+  ],
+  "meta": {
+   "prop": "country",
+   "s_pop": 31
+  },
+  "id": "q095"
+ },
+ {
+  "source": "popqa",
+  "row": 7425,
+  "stratum": "popqa_low",
+  "question": "Who was the director of The Wolf?",
+  "answers": [
+   "Michael Curtiz"
+  ],
+  "meta": {
+   "prop": "director",
+   "s_pop": 95
+  },
+  "id": "q096"
+ },
+ {
+  "source": "popqa",
+  "row": 8081,
+  "stratum": "popqa_low",
+  "question": "Who was the screenwriter for Storm?",
+  "answers": [
+   "David Winning"
+  ],
+  "meta": {
+   "prop": "screenwriter",
+   "s_pop": 211
+  },
+  "id": "q097"
+ },
+ {
+  "source": "popqa",
+  "row": 4725,
+  "stratum": "popqa_low",
+  "question": "Who was the producer of Romance on the Range?",
+  "answers": [
+   "Joseph Kane",
+   "Jasper Joseph Inman Kane"
+  ],
+  "meta": {
+   "prop": "producer",
+   "s_pop": 184
+  },
+  "id": "q098"
+ },
+ {
+  "source": "popqa",
+  "row": 3049,
+  "stratum": "popqa_low",
+  "question": "Who is the father of Alexander?",
+  "answers": [
+   "Ivan Shishman of Bulgaria"
+  ],
+  "meta": {
+   "prop": "father",
+   "s_pop": 213
+  },
+  "id": "q099"
+ },
+ {
+  "source": "popqa",
+  "row": 11947,
+  "stratum": "popqa_low",
+  "question": "Who is the author of Nerve?",
+  "answers": [
+   "Dick Francis"
+  ],
+  "meta": {
+   "prop": "author",
+   "s_pop": 167
+  },
+  "id": "q100"
+ }
+]

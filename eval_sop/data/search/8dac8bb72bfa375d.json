@@ -1,0 +1,58 @@
+{
+ "query": "Who was awarded The Oceanography Society's Jerlov Award in 2008?",
+ "id": "q028",
+ "retrieved_at": "2026-10-02T00:29:44.565524+00:00",
+ "engine": "ddgs.text",
+ "results": [
+  {
+   "title": "The Oceanography Society - Wikipedia",
+   "href": "https://en.wikipedia.org/wiki/The_Oceanography_Society",
+   "body": "The Oceanography Society is a nonprofit society founded in 1988, based in Rockville, Maryland, U.S. and incorporated in the District of Columbia. It is an oceanographical organization that aims to promote communication among oceanographers..."
+  },
+  {
+   "title": "Awards",
+   "href": "https://tos.org/oceanography/assets/docs/21-4_jerlov.pdf",
+   "body": "Copyright 2008 by The Oceanography Society. All rights reserved. Permission is granted to copy this article for use in teaching and research.My receipt of this 2008 Jerlov Award is really a peak for me both as a welcome personal honor and profes-sional recognition."
+  },
+  {
+   "title": "The Jerlov Award",
+   "href": "https://www.jstor.org/stable/pdf/24862298.pdf",
+   "body": "The Jerlov Award. Awarded in Recognition of Contributions Made to the Advancement of Our Knowledge of the Nature and Consequences of Light in the Ocean. 2016 Recipient \u2014 Dr. Curtis Mobley."
+  },
+  {
+   "title": "Jerlov Award | Ocean Optics Conference 2022",
+   "href": "https://2022.oceanopticsconference.org/jerlov-award/",
+   "body": "The Oceanography Society commemorates Dr. Nils Gunnar Jerlov and his many contributions to the study of light in the ocean with an international award, given biennially, to an individual ocean scientist for having significantly advanced our knowledge of how light interacts with the ocean."
+  },
+  {
+   "title": "Jerlov Medal | The Oceanography Society",
+   "href": "https://tos-org.nproxy.org/jerlov-medal",
+   "body": "The Dr. Nils Gunnar Jerlov Medal is awarded biennially to an individual for advancing our knowledge of how light interacts with the ocean. Additionally, the Jerlov Medal also seeks to recognize individuals who have made significant contributions toward educating and mentoring students and..."
+  },
+  {
+   "title": "Jerlov Award",
+   "href": "https://tosmc.memberclicks.net/jerlov-award",
+   "body": "The Oceanography Society (TOS) commemorates Dr. Jerlov and his many contributions to the study of light in the ocean with an international award, established in his name, to recognize outstanding achievements in ocean optics and ocean color remote sensing research."
+  },
+  {
+   "title": "Memorial service for Talbot Waterman | Yale News",
+   "href": "https://news.yale.edu/2011/01/07/memorial-service-talbot-waterman",
+   "body": "In 2008 the Oceanography Society honored him with the distinguished Jerlov Award For Advancing Knowledge of the Nature and Consequences of Light in the Ocean. Click here to read his obituary."
+  },
+  {
+   "title": "Talbot H. Waterman - PMC",
+   "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3049020/",
+   "body": "In fact, he worked with the premier optical oceanographer of the last century, Nils Gunnar Jerlov, and fittingly The Oceanography Society selected him in 2008 for the Jerlov Award, recognizing his pioneering research on polarized light in the ocean."
+  },
+  {
+   "title": "pvduy/simpleqa \u00b7 Datasets at Hugging Face",
+   "href": "https://huggingface.co/datasets/pvduy/simpleqa/viewer",
+   "body": "[ \"The Oceanography Society's Jerlov Award in 2018 was awarded to Gert Jan Reichart from Leiden University in the Netherlands. This award is given to recognize outstanding contributions to the field of ocean optics and aquatic light climate..."
+  },
+  {
+   "title": "Charles S. Yentsch: American oceanographer and... | PeoplePill",
+   "href": "https://peoplepill.com/people/charles-s-yentsch",
+   "body": "The Oceanography Society Fellows Program recognizes individuals who \"have attained eminence in oceanography through their outstanding contributions to the field of oceanography or its applications during a substantial period of years.\""
+  }
+ ]
+}

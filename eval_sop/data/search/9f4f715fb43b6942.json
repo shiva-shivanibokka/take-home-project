@@ -1,0 +1,58 @@
+{
+ "query": "What is the name of the dedicated infrared flash used to project invisible infrared light onto the user's face to properly read the 30,000 facial points?",
+ "id": "q033",
+ "retrieved_at": "2026-10-02T00:30:04.325329+00:00",
+ "engine": "ddgs.text",
+ "results": [
+  {
+   "title": "How Face ID Technology Actually Works | PanicVault",
+   "href": "https://www.panicvault.org/biometrics/how-face-id-works/",
+   "body": "Feb 14, 2026 \u00b7 Face ID is Apple\u2019s facial recognition system, and the technology behind it is significantly more sophisticated than what most people assume. It is not a camera taking a photo of your face and comparing it to a stored image. It is a three-dimensional depth-sensing system that projects invisible infrared light, captures the resulting topography, processes it through a dedicated neural engine ..."
+  },
+  {
+   "title": "iPhone Dot Projector Explained - SimplyMac",
+   "href": "https://www.simplymac.com/iphone/iphone-dot-projector-explained",
+   "body": "Jan 26, 2025 \u00b7 The iPhone Dot Projector is a key component of Apple\u2019s Face ID technology. This small device projects over 30,000 invisible infrared dots onto a user\u2019s face. The dots create a detailed 3D map of facial features, enabling secure and accurate facial recognition. The Dot Projector works alongside other sensors in the TrueDepth camera system. These include an infrared camera and flood ..."
+  },
+  {
+   "title": "Does Face ID Use Infrared Light? The Science of Secure iPhone ...",
+   "href": "https://techflare.net/does-face-id-use-infrared-light-the-science-of-secure-iphone-tech/",
+   "body": "Jan 6, 2026 \u00b7 The Dot Projector: This is the centerpiece of the 3D mapping process. It projects more than 30,000 invisible infrared dots onto the contours of the user\u2019s face. The Infrared Camera: This sensor reads the dot pattern reflected back from the face. It captures an infrared image and sends it to the Secure Enclave for processing."
+  },
+  {
+   "title": "Unmasking the Magic: How Apple's Face ID Really Works",
+   "href": "https://www.firestormcyber.com/post/unmasking-the-magic-how-apple-s-face-id-really-works",
+   "body": "Jul 9, 2025 \u00b7 The dot projector beams over 30,000 invisible infrared dots onto your face. Think of it like a highly detailed, invisible grid. Proximity Sensor & Ambient Light Sensor: These help the system detect when your face is near the device and adjust for lighting conditions, ensuring efficient operation."
+  },
+  {
+   "title": "Unveiling the Magic: What Does the iPhone Dot Projector Do?",
+   "href": "https://easytechsolver.com/what-does-iphone-dot-projector-do/",
+   "body": "Feb 24, 2024 \u00b7 Understanding Dot Projector Technology Dot projector technology is a key feature in the iPhone, primarily used for facial recognition and augmented reality applications. The technology involves the emission of thousands of infrared dots onto the user\u2019s face, enabling the iPhone to create a precise 3D map of the facial structure. This enables the device to accurately identify the user and ..."
+  },
+  {
+   "title": "iPhone Face ID: Lidar vs. TrueDepth - Lidar News",
+   "href": "https://lidarnews.com/phone-face-id-lidar-truedepth/",
+   "body": "Feb 20, 2025 \u00b7 This YouTube video gives a great overview and visual explanation of the iPhone Face ID system. Face ID Adapts to Facial Changes By combining structured infrared light projection and depth-sensing technology, Face ID ensures both security and convenience while adapting to gradual facial changes, such as growing a beard or aging. For sudden changes, such as shaving off facial hair or wearing a ..."
+  },
+  {
+   "title": "Face ID Components: TrueDepth, Flood Illuminator, IR Flash",
+   "href": "https://ifixelectronics.com.au/resources/face-id-explained",
+   "body": "The Ambient Light Sensor's Hidden Role The ALS does more than adjust your screen brightness. It feeds real-time ambient light data to the Face ID system, which uses it to calibrate infrared power output. In bright sunlight, IR power is increased to compete with ambient infrared. In darkness, it dials back to avoid oversaturation. When the ALS is damaged or disconnected, Face ID can still work ..."
+  },
+  {
+   "title": "Facial recognition | Apple Wiki | Fandom",
+   "href": "https://apple.fandom.com/wiki/Facial_recognition",
+   "body": "This is done by using a \"Flood Illuminator\", which is a dedicated infrared flash that throws out invisible infrared light onto the user's face to properly read the 30,000 facial points."
+  },
+  {
+   "title": "Face ID vs Iris Scanner: Is iPhone X more secure than... | TechRadar",
+   "href": "https://www.techradar.com/news/face-id-vs-iris-scanner-is-iphone-x-more-secure-than-galaxy-s8",
+   "body": "As its name suggests, Face ID uses your face as the password to unlock your device. Well, wasn\u2019t this already present in smartphones since ages? The answer is both yes and no.1. Dot Projector: This emits more than 30,000 invisible dots onto your face to build a unique 3D facial map."
+  },
+  {
+   "title": "dedicated infrared flash project invisible infrared light onto the...",
+   "href": "https://www.biometricupdate.com/?s=dedicated+infrared+flash+project+invisible+infrared+light+onto+the+user's+face+properly+read+30,000+facial+points+name",
+   "body": "New deepfake tool shows why face alone is no longer proof of identity.The Biometrics Institute, established in 2001, is an independent international membership organisation promoting the responsible, ethical, and effective use of biometrics."
+  }
+ ]
+}

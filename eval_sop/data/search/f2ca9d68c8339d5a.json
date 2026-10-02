@@ -1,0 +1,58 @@
+{
+ "query": "In which two fields of study did computer scientist Nancy Amato receive two bachelor's degrees from Stanford University in 1986?",
+ "id": "q036",
+ "retrieved_at": "2026-10-02T00:30:17.586870+00:00",
+ "engine": "ddgs.text",
+ "results": [
+  {
+   "title": "Nancy M. Amato - Wikipedia",
+   "href": "https://en.wikipedia.org/wiki/Nancy_M._Amato",
+   "body": "Amato received both a Bachelor of Arts degree in Economics and a Bachelor of Science degree in Mathematical Sciences from Stanford University in 1986. [2] She received an MS in Computer Science from the University of California, Berkeley in 1988, with advisor Manuel Blum. [3] In 1995, she received a PhD in computer science from the University of Illinois at Urbana-Champaign under advisor ..."
+  },
+  {
+   "title": "Nancy M. Amato | Siebel School of Computing and Data Science ...",
+   "href": "https://siebelschool.illinois.edu/about/people/faculty/namato",
+   "body": "She received undergraduate degrees in Mathematical Sciences and Economics from Stanford, and M.S. and Ph.D. degrees in Computer Science from UC Berkeley and the University of Illinois, respectively."
+  },
+  {
+   "title": "Nancy M. Amato - Notable People",
+   "href": "https://notablepeopleproject.org/nancy_m_amato",
+   "body": "Early Life and Education Growing up in Portland, Oregon, Nancy Amato demonstrated early intellectual curiosity. She earned dual bachelor's degrees in Economics and Mathematical Sciences from Stanford University before receiving a Master of Science in Computer Science from UC Berkeley."
+  },
+  {
+   "title": "Nancy M. Amato \u2014 Grokipedia",
+   "href": "https://grokipedia.com/page/nancy_m_amato",
+   "body": "Nancy M. Amato earned her undergraduate degrees from Stanford University, receiving a Bachelor of Arts in Economics and a Bachelor of Science in Mathematical Sciences in 1986."
+  },
+  {
+   "title": "Biography:Nancy M. Amato - HandWiki",
+   "href": "https://handwiki.org/wiki/Biography:Nancy_M._Amato",
+   "body": "Jun 14, 2026 \u00b7 Amato received both a Bachelor of Arts degree in Economics and a Bachelor of Science degree in Mathematical Sciences from Stanford University in 1986. [2] She received an MS in Computer Science from the University of California, Berkeley in 1988, with advisor Manuel Blum. [3] In 1995, she received a PhD in computer science from the University of Illinois at Urbana-Champaign under advisor ..."
+  },
+  {
+   "title": "Nancy M. Amato - parasollab.web.illinois.edu",
+   "href": "https://parasollab.web.illinois.edu/assets/cv/cv_nancy_amato.pdf",
+   "body": "M.S. IN COMPUTER SCIENCE, University of California at Berkeley, May 1988. M.S. Thesis: Reversing Trains: A Turn of the Century Sorting Problem Thesis advisor: Prof. Manuel Blum B.S. IN MATHEMATICAL SCIENCES, Stanford University, June 1986. A.B. IN ECONOMICS, Stanford University, June 1986."
+  },
+  {
+   "title": "Amato, Nancy M. | Texas A&M University Engineering",
+   "href": "https://engineering.tamu.edu/cse/profiles/namato.html",
+   "body": "Amato, Nancy M. | Texas A&M University Engineering"
+  },
+  {
+   "title": "Nancy AMATO | Texas A&M University, College Station | TAMU",
+   "href": "https://www.researchgate.net/profile/Nancy-Amato",
+   "body": "Nancy M. Amato. We present a hierarchical skeleton-guided motion planning algorithm to guide mobile robots. A good skeleton maps the connectivity of the subspace of c-space containing significant degrees of freedom and is able to guide the planner to find the desired solutions fast."
+  },
+  {
+   "title": "Nancy M. Amato - Google Scholar",
+   "href": "https://scholar.google.com/citations?user=AmaB9c4AAAAJ&hl=en",
+   "body": "Nancy M. Amato. Abel Bliss Professor and Head, Computer Science, University of Illinois. Verified email at illinois.edu - Homepage.G Song, NM Amato. Proceedings of the fifth annual international conference on Computational \u2026, 2001."
+  },
+  {
+   "title": "Nancy Amato is first woman to lead UI computer science department",
+   "href": "https://eecs.berkeley.edu/news/nancy-amato-first-woman-lead-ui-computer-science-department/",
+   "body": "CS alumna Nancy Amato (M.S. \u201988, advisor: Manuel Blum) has been chosen to lead the highly ranked University of Illinois Department of Computer Science \u2014 the first woman to hold that position."
+  }
+ ]
+}
