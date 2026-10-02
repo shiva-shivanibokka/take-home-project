@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q057_w0",
+    "topic": "In what country is history of Ghana?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q057_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "History of Ghana - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/History_of_Ghana",
+            "snippet": "Dagbon pioneered Ghana's earliest learning institutions, [12] including a university town, [13] and a writing system prior to European arrival. [14] Toward the end of the classical era, larger regional kingdoms had formed in West Africa, one of which was the Kingdom of Ghana, north of what is today the nation of Ghana.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "Ghana | Country, Religion, Africa, Capital, Population, Area ...",
+            "url": "https://www.britannica.com/place/Ghana",
+            "snippet": "1 day ago · Ghana is a country in western Africa situated on the coast of the Gulf of Guinea. Although relatively small in area and population, Ghana is one of the leading countries of Africa and is celebrated for its rich history. Ghana’s capital is the coastal city of Accra.",
+            "published": "",
+            "source": "britannica.com"
+          },
+          {
+            "title": "About Ghana – Ministry Of Foreign Affairs",
+            "url": "https://mfa.gov.gh/index.php/about-ghana/",
+            "snippet": "ABOUT GHANA Brief History of Ghana The Republic of Ghana is located in West Africa. It borders Cote d’Ivoire to the west, Burkina Faso to the north, Togo to the east and the Gulf of Guinea to the south.",
+            "published": "",
+            "source": "mfa.gov.gh"
+          },
+          {
+            "title": "The Complete History of Ghana — Pre-Colonial Kingdoms to ...",
+            "url": "https://exodus.africa/history/history-of-ghana",
+            "snippet": "Feb 27, 2026 · Ghana's Right of Abode provisions allow people of African descent to live and work in the country indefinitely, and the government has actively encouraged diaspora Africans to establish businesses, purchase property, and contribute to national development.",
+            "published": "",
+            "source": "exodus.africa"
+          },
+          {
+            "title": "Ghana country profile - BBC News",
+            "url": "https://www.bbc.com/news/world-africa-13433790",
+            "snippet": "Ghana is considered one of the more stable countries in West Africa since its transition to multi-party democracy in 1992. Formerly known as the Gold Coast, Ghana gained independence from Britain in 1957, becoming the first sub-Saharan nation to break free from colonial rule.",
+            "published": "",
+            "source": "bbc.com"
+          },
+          {
+            "title": "Ghana - Gold Coast - Country Profile - Nations Online Project",
+            "url": "https://www.nationsonline.org/oneworld/ghana.htm",
+            "snippet": "Ghana facts: Official web sites of Ghana, links and information on Ghana's art, culture, geography, history, travel and tourism, cities, the capital city, airlines, embassies, tourist boards and newspapers.",
+            "published": "",
+            "source": "nationsonline.org"
+          },
+          {
+            "title": "History of Ghana - Wikipedia",
+            "url": "https://gpe.wikipedia.org/wiki/History_of_Ghana",
+            "snippet": "Ghana: A country study (1995, Library of Congress), pp: 1–58. online Owusu-Ansah, David. Historical Dictionary of Ghana (Rowman & Littlefield, 2014) Szereszewski, R. Structural Changes in the Economy of Ghana, 1891–1911 (London: Weidenfeld and Nicolson, 1965) Ward, W. E. F. A History of Ghana (Allen & Unwin, 1966), online free to borrow",
+            "published": "",
+            "source": "gpe.wikipedia.org"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 7; selected 7 for Writer.",
+        "tokens_used": 421,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 421,
+      "created_at": "2026-10-02T19:50:34.225Z"
+    },
+    "writing": {
+      "job_id": "q057_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "The Country Where Ghana's History Resides",
+        "brief_markdown": "# The Country Where Ghana's History Resides\n\n## Summary\n\nGhana's history is a complex and multifaceted topic that spans thousands of years. The country's earliest learning institutions, including a university town and a writing system, were pioneered by the Dagbon people prior to European arrival. The Kingdom of Ghana, a larger regional kingdom, was formed in West Africa, north of what is today the nation of Ghana. Ghana is a country in western Africa situated on the coast of the Gulf of Guinea, and its history is marked by a rich cultural heritage and a complex colonial past. The country's history is not solely located within its borders, but also in the diaspora communities around the world.\n\n## Key Findings\n\n* **The Dagbon People Pioneered Ghana's Earliest Learning Institutions**\nThe Dagbon people, who lived in what is now northern Ghana, pioneered Ghana's earliest learning institutions, including a university town and a writing system, prior to European arrival. This is a significant finding, as it highlights the importance of indigenous knowledge and innovation in Ghana's history. The fact that the Dagbon people developed a writing system suggests a high level of cultural and intellectual sophistication. This finding is also significant because it challenges the common narrative that European colonial powers were responsible for introducing education and literacy to Africa.\n\n* **The Kingdom of Ghana Was a Larger Regional Kingdom**\nThe Kingdom of Ghana was a larger regional kingdom that was formed in West Africa, north of what is today the nation of Ghana. This is a critical finding, as it highlights the complexity and diversity of Ghana's pre-colonial history. The Kingdom of Ghana was a major power in the region, and its legacy continues to shape Ghana's identity and culture today. This finding is also significant because it underscores the importance of understanding Ghana's history in a broader regional context.\n\n* **Ghana's History is Marked by a Complex Colonial Past**\nGhana's history is marked by a complex colonial past, which had a profound impact on the country's development and identity. The country was colonized by the British, who imposed their language, culture, and institutions on the local population. This finding is significant because it highlights the ongoing legacy of colonialism in Ghana and the need for ongoing decolonization efforts.\n\n* **Ghana's Capital is the Coastal City of Accra**\nGhana's capital is the coastal city of Accra, which is a major hub of commerce, culture, and politics. This is a significant finding, as it highlights the importance of Accra as a center of power and influence in Ghana. Accra's history as a colonial city has shaped its architecture, culture, and politics, and it continues to play a major role in Ghana's development today.\n\n* **Ghana's Right of Abode Provisions Allow for Diaspora Africans**\nGhana's Right of Abode provisions allow people of African descent to live and work in the country indefinitely, and the government has actively encouraged diaspora Africans to establish businesses, purchase property, and contribute to national development. This is a significant finding, as it highlights the importance of diaspora communities in Ghana's development and identity. The Right of Abode provisions are a major innovation in Ghana's immigration policy, and they reflect the country's commitment to African unity and solidarity.\n\n* **Ghana Gained Independence from Britain in 1957**\nGhana gained independence from Britain in 1957, becoming the first sub-Saharan nation to break free from colonial rule. This is a critical finding, as it highlights the significance of Ghana's independence movement and the country's role as a leader in African liberation. Ghana's independence marked a major turning point in the country's history, and it continues to shape its identity and politics today.\n\n* **Ghana's History is Not Solely Located Within its Borders**\nGhana's history is not solely located within its borders, but also in the diaspora communities around the world. This is a significant finding, as it highlights the importance of understanding Ghana's history in a global context. The diaspora communities have played a major role in shaping Ghana's culture, politics, and economy, and they continue to contribute to the country's development today.\n\n## Analysis\n\nGhana's history is a complex and multifaceted topic that spans thousands of years. The country's earliest learning institutions, including a university town and a writing system, were pioneered by the Dagbon people prior to European arrival. The Kingdom of Ghana, a larger regional kingdom, was formed in West Africa, north of what is today the nation of Ghana. Ghana's history is marked by a complex colonial past, which had a profound impact on the country's development and identity. The country's capital, Accra, is a major hub of commerce, culture, and politics, and its history as a colonial city has shaped its architecture, culture, and politics.\n\nThe findings of this research brief highlight the importance of understanding Ghana's history in a broader regional and global context. The country's history is not solely located within its borders, but also in the diaspora communities around the world. The Right of Abode provisions, which allow people of African descent to live and work in the country indefinitely, are a major innovation in Ghana's immigration policy and reflect the country's commitment to African unity and solidarity. The country's independence movement, which led to Ghana's independence from Britain in 1957, marked a major turning point in the country's history and continues to shape its identity and politics today.\n\nThe analysis of Ghana's history highlights the ongoing legacy of colonialism in the country and the need for ongoing decolonization efforts. The country's history is marked by a complex and often fraught relationship between indigenous and colonial powers, and this legacy continues to shape its politics, culture, and economy today. However, the country's history also highlights its resilience and adaptability, as well as its commitment to African unity and solidarity. The findings of this research brief underscore the importance of ongoing research and analysis into Ghana's history, and the need for a nuanced and contextualized understanding of the country's development and identity.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/History_of_Ghana",
+          "https://www.britannica.com/place/Ghana",
+          "https://mfa.gov.gh/index.php/about-ghana/",
+          "https://exodus.africa/history/history-of-ghana",
+          "https://www.bbc.com/news/world-africa-13433790",
+          "https://www.nationsonline.org/oneworld/ghana.htm",
+          "https://gpe.wikipedia.org/wiki/History_of_Ghana"
+        ],
+        "word_count": 997,
+        "tokens_used": 2163,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2163,
+      "created_at": "2026-10-02T19:51:02.030Z"
+    }
+  }
+}

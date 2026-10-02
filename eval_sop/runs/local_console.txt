@@ -1,0 +1,646 @@
+q001_w0 collector 0 20.6s
+q001_w0 writer 0 22.7s
+q051_w0 collector 0 1.0s
+q051_w0 writer 0 24.8s
+q002_w0 collector 0 1.2s
+q002_w0 writer 0 20.8s
+q076_w0 collector 0 1.1s
+q076_w0 writer 0 25.8s
+q003_w0 collector 0 1.2s
+q003_w0 writer 0 21.6s
+q052_w0 collector 0 1.1s
+q052_w0 writer 0 20.1s
+q004_w0 collector 0 1.1s
+q004_w0 writer 0 17.6s
+q077_w0 collector 0 0.9s
+q077_w0 writer 0 23.8s
+q005_w0 collector 0 1.0s
+q005_w0 writer 0 22.6s
+q053_w0 collector 0 1.0s
+q053_w0 writer 0 19.1s
+q006_w0 collector 0 1.0s
+q006_w0 writer 0 23.9s
+q078_w0 collector 0 1.1s
+q078_w0 writer 0 21.2s
+q007_w0 collector 0 1.1s
+q007_w0 writer 0 22.6s
+q054_w0 collector 0 1.1s
+q054_w0 writer 0 24.3s
+q008_w0 collector 0 1.2s
+q008_w0 writer 0 23.7s
+q079_w0 collector 0 1.0s
+q079_w0 writer 0 29.2s
+q009_w0 collector 0 1.0s
+q009_w0 writer 0 28.8s
+q055_w0 collector 0 1.1s
+q055_w0 writer 0 21.2s
+q010_w0 collector 0 1.2s
+q010_w0 writer 0 26.0s
+q080_w0 collector 0 1.1s
+q080_w0 writer 0 23.0s
+q011_w0 collector 0 0.8s
+q011_w0 writer 0 21.1s
+q056_w0 collector 0 1.0s
+q056_w0 writer 0 30.4s
+q012_w0 collector 0 1.0s
+q012_w0 writer 0 30.4s
+q081_w0 collector 0 1.0s
+q081_w0 writer 0 18.3s
+q013_w0 collector 0 0.9s
+q013_w0 writer 0 23.5s
+q057_w0 collector 0 1.1s
+q057_w0 writer 0 27.8s
+q014_w0 collector 0 1.3s
+q014_w0 writer 0 28.0s
+q082_w0 collector 0 1.2s
+q082_w0 writer 0 25.4s
+q015_w0 collector 0 0.8s
+q015_w0 writer 0 26.2s
+q058_w0 collector 0 1.0s
+q058_w0 writer 0 21.0s
+q016_w0 collector 0 1.0s
+q016_w0 writer 0 22.8s
+q083_w0 collector 0 0.9s
+q083_w0 writer 0 21.1s
+q017_w0 collector 0 1.0s
+q017_w0 writer 0 21.3s
+q059_w0 collector 0 0.7s
+q059_w0 writer 0 25.7s
+q018_w0 collector 0 1.1s
+q018_w0 writer 0 23.8s
+q084_w0 collector 0 1.0s
+q084_w0 writer 0 23.5s
+q019_w0 collector 0 0.9s
+q019_w0 writer 0 19.3s
+q060_w0 collector 0 0.9s
+q060_w0 writer 0 21.3s
+q020_w0 collector 0 0.9s
+q020_w0 writer 0 23.5s
+q085_w0 collector 0 1.0s
+q085_w0 writer 0 27.7s
+q021_w0 collector 0 1.0s
+q021_w0 writer 0 20.5s
+q061_w0 collector 0 1.0s
+q061_w0 writer 0 22.9s
+q022_w0 collector 0 1.0s
+q022_w0 writer 0 25.0s
+q086_w0 collector 0 0.9s
+q086_w0 writer 0 22.5s
+q023_w0 collector 0 0.9s
+q023_w0 writer 0 28.1s
+q062_w0 collector 0 0.9s
+q062_w0 writer 0 32.8s
+q024_w0 collector 0 0.9s
+q024_w0 writer 0 26.9s
+q087_w0 collector 0 0.9s
+q087_w0 writer 0 20.0s
+q025_w0 collector 0 0.9s
+q025_w0 writer 0 29.3s
+q063_w0 collector 0 0.9s
+q063_w0 writer 0 27.9s
+q026_w0 collector 0 1.0s
+q026_w0 writer 0 21.8s
+q088_w0 collector 0 0.9s
+q088_w0 writer 0 20.0s
+q027_w0 collector 0 0.8s
+q027_w0 writer 0 22.6s
+q064_w0 collector 0 0.9s
+q064_w0 writer 0 26.7s
+q028_w0 collector 0 1.0s
+q028_w0 writer 0 22.3s
+q089_w0 collector 0 0.9s
+q089_w0 writer 0 19.1s
+q029_w0 collector 0 0.9s
+q029_w0 writer 0 25.4s
+q065_w0 collector 0 0.9s
+q065_w0 writer 0 24.4s
+q030_w0 collector 0 0.9s
+q030_w0 writer 0 22.0s
+q090_w0 collector 0 1.0s
+q090_w0 writer 0 66.5s
+q031_w0 collector 0 1.0s
+q031_w0 writer 0 27.0s
+q066_w0 collector 0 0.8s
+q066_w0 writer 0 24.8s
+q032_w0 collector 0 0.9s
+q032_w0 writer 0 20.8s
+q091_w0 collector 0 1.0s
+q091_w0 writer 0 24.7s
+q033_w0 collector 0 1.0s
+q033_w0 writer 0 22.4s
+q067_w0 collector 0 0.9s
+q067_w0 writer 0 29.6s
+q034_w0 collector 0 1.0s
+q034_w0 writer 0 26.1s
+q092_w0 collector 0 0.9s
+q092_w0 writer 0 22.6s
+q035_w0 collector 0 0.9s
+q035_w0 writer 0 17.2s
+q068_w0 collector 0 0.9s
+q068_w0 writer 0 18.9s
+q036_w0 collector 0 0.9s
+q036_w0 writer 0 23.8s
+q093_w0 collector 0 0.9s
+q093_w0 writer 0 22.6s
+q037_w0 collector 0 0.8s
+q037_w0 writer 0 27.1s
+q069_w0 collector 0 0.9s
+q069_w0 writer 0 21.8s
+q038_w0 collector 0 1.0s
+q038_w0 writer 0 25.1s
+q094_w0 collector 0 0.9s
+q094_w0 writer 0 32.7s
+q039_w0 collector 0 0.8s
+q039_w0 writer 0 21.1s
+q070_w0 collector 0 0.9s
+q070_w0 writer 0 19.1s
+q040_w0 collector 0 0.9s
+q040_w0 writer 0 19.5s
+q095_w0 collector 0 1.1s
+q095_w0 writer 0 22.8s
+q041_w0 collector 0 1.1s
+q041_w0 writer 0 19.7s
+q071_w0 collector 0 0.9s
+q071_w0 writer 0 18.5s
+q042_w0 collector 0 1.0s
+q042_w0 writer 0 26.3s
+q096_w0 collector 0 0.9s
+q096_w0 writer 0 28.2s
+q043_w0 collector 0 0.9s
+q043_w0 writer 0 20.3s
+q072_w0 collector 0 1.0s
+q072_w0 writer 0 21.3s
+q044_w0 collector 0 1.0s
+q044_w0 writer 0 26.1s
+q097_w0 collector 0 1.0s
+q097_w0 writer 0 16.9s
+q045_w0 collector 0 0.8s
+q045_w0 writer 0 21.5s
+q073_w0 collector 0 0.8s
+q073_w0 writer 0 24.1s
+q046_w0 collector 0 0.9s
+q046_w0 writer 0 24.7s
+q098_w0 collector 0 0.9s
+q098_w0 writer 0 21.9s
+q047_w0 collector 0 1.0s
+q047_w0 writer 0 24.9s
+q074_w0 collector 0 0.9s
+q074_w0 writer 0 27.0s
+q048_w0 collector 0 1.0s
+q048_w0 writer 0 23.3s
+q099_w0 collector 0 0.9s
+q099_w0 writer 0 31.0s
+q049_w0 collector 0 1.0s
+q049_w0 writer 0 21.6s
+q075_w0 collector 0 0.8s
+q075_w0 writer 0 21.6s
+q050_w0 collector 0 1.1s
+q050_w0 writer 0 20.1s
+q100_w0 collector 0 1.0s
+q100_w0 writer 0 27.4s
+rev_llama3-1-8b_snip150_s0_w0 q001_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q051_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q002_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q076_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q003_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q052_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q004_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q077_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q005_w0 0 conf=0.2 escalate
+rev_llama3-1-8b_snip150_s0_w0 q053_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q006_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q078_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q007_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q054_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q008_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q079_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q009_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q055_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q010_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q080_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q011_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q056_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q012_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q081_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q013_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q057_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q014_w0 0 conf=0.2 escalate
+rev_llama3-1-8b_snip150_s0_w0 q082_w0 0 conf=0 escalate
+rev_llama3-1-8b_snip150_s0_w0 q015_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q058_w0 0 conf=0.95 publish
+rev_llama3-1-8b_snip150_s0_w0 q016_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q083_w0 0 conf=0.4 escalate
+rev_llama3-1-8b_snip150_s0_w0 q017_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q059_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q018_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q084_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q019_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q060_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q020_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q085_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q021_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q061_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q022_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q086_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q023_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q062_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q024_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q087_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q025_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q063_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q026_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q088_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q027_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q064_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q028_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q089_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q029_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q065_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q030_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q090_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q031_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q066_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q032_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q091_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q033_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q067_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q034_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q092_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q035_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q068_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q036_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q093_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q037_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q069_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q038_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q094_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q039_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q070_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q040_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q095_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q041_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q071_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q042_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q096_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q043_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q072_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q044_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q097_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q045_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q073_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q046_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q098_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q047_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q074_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q048_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q099_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q049_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s0_w0 q075_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s0_w0 q050_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s0_w0 q100_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q001_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q051_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q002_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q076_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q003_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q052_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q004_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q077_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q005_w0 0 conf=0.2 escalate
+rev_llama3-1-8b_snip150_s1_w0 q053_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q006_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q078_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q007_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q054_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q008_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q079_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q009_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q055_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q010_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q080_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q011_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q056_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q012_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q081_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q013_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q057_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q014_w0 0 conf=0.2 escalate
+rev_llama3-1-8b_snip150_s1_w0 q082_w0 0 conf=0 escalate
+rev_llama3-1-8b_snip150_s1_w0 q015_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q058_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q016_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q083_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q017_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q059_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q018_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q084_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q019_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q060_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q020_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q085_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q021_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q061_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q022_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q086_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q023_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q062_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q024_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q087_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q025_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q063_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q026_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q088_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q027_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q064_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q028_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q089_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q029_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q065_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q030_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q090_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q031_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q066_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q032_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q091_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q033_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q067_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q034_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q092_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q035_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q068_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q036_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q093_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q037_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q069_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q038_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q094_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q039_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q070_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q040_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q095_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q041_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q071_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q042_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q096_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q043_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q072_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q044_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q097_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q045_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q073_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q046_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q098_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q047_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q074_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q048_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q099_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s1_w0 q049_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q075_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s1_w0 q050_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s1_w0 q100_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q001_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q051_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q002_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q076_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q003_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q052_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q004_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q077_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q005_w0 0 conf=0.2 escalate
+rev_llama3-1-8b_snip150_s2_w0 q053_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q006_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q078_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q007_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q054_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q008_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q079_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q009_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q055_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q010_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q080_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q011_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q056_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q012_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q081_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q013_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q057_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q014_w0 0 conf=0.2 escalate
+rev_llama3-1-8b_snip150_s2_w0 q082_w0 0 conf=0 escalate
+rev_llama3-1-8b_snip150_s2_w0 q015_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q058_w0 0 conf=0.95 publish
+rev_llama3-1-8b_snip150_s2_w0 q016_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q083_w0 0 conf=0.4 escalate
+rev_llama3-1-8b_snip150_s2_w0 q017_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q059_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q018_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q084_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q019_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q060_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q020_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q085_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q021_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q061_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q022_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q086_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q023_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q062_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q024_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q087_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q025_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q063_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q026_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q088_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q027_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q064_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q028_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q089_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q029_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q065_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q030_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q090_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q031_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q066_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q032_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q091_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q033_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q067_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q034_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q092_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q035_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q068_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q036_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q093_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q037_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q069_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q038_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q094_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q039_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q070_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q040_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q095_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q041_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q071_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q042_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q096_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q043_w0 0 conf=0.2 escalate
+rev_llama3-1-8b_snip150_s2_w0 q072_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q044_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q097_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q045_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q073_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q046_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q098_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q047_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q074_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q048_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q099_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q049_w0 0 conf=0.6 escalate
+rev_llama3-1-8b_snip150_s2_w0 q075_w0 0 conf=0.8 publish
+rev_llama3-1-8b_snip150_s2_w0 q050_w0 0 conf=0.9 publish
+rev_llama3-1-8b_snip150_s2_w0 q100_w0 0 conf=0.6 escalate
+unloaded llama3.1:8b
+q001 INCORRECT
+q002 INCORRECT
+q003 CORRECT
+q004 INCORRECT
+q005 INCORRECT
+q006 INCORRECT
+q007 CORRECT
+q008 INCORRECT
+q009 CORRECT
+q010 CORRECT
+q011 INCORRECT
+q012 CORRECT
+q013 CORRECT
+q014 NOT_ATTEMPTED
+q015 INCORRECT
+q016 CORRECT
+q017 INCORRECT
+q018 CORRECT
+q019 CORRECT
+q020 CORRECT
+q021 CORRECT
+q022 INCORRECT
+q023 CORRECT
+q024 CORRECT
+q025 NOT_ATTEMPTED
+q026 NOT_ATTEMPTED
+q027 CORRECT
+q028 CORRECT
+q029 INCORRECT
+q030 INCORRECT
+q031 INCORRECT
+q032 CORRECT
+q033 CORRECT
+q034 CORRECT
+q035 INCORRECT
+q036 CORRECT
+q037 INCORRECT
+q038 CORRECT
+q039 INCORRECT
+q040 CORRECT
+q041 CORRECT
+q042 CORRECT
+q043 CORRECT
+q044 CORRECT
+q045 INCORRECT
+q046 CORRECT
+q047 INCORRECT
+q048 CORRECT
+q049 INCORRECT
+q050 CORRECT
+q051 CORRECT
+q052 CORRECT
+q053 NOT_ATTEMPTED
+q054 CORRECT
+q055 CORRECT
+q056 INCORRECT
+q057 CORRECT
+q058 CORRECT
+q059 CORRECT
+q060 NOT_ATTEMPTED
+q061 INCORRECT
+q062 INCORRECT
+q063 CORRECT
+q064 CORRECT
+q065 INCORRECT
+q066 CORRECT
+q067 CORRECT
+q068 CORRECT
+q069 CORRECT
+q070 CORRECT
+q071 INCORRECT
+q072 INCORRECT
+q073 CORRECT
+q074 CORRECT
+q075 INCORRECT
+q076 CORRECT
+q077 CORRECT
+q078 INCORRECT
+q079 CORRECT
+q080 INCORRECT
+q081 CORRECT
+q082 INCORRECT
+q083 CORRECT
+q084 CORRECT
+q085 INCORRECT
+q086 CORRECT
+q087 INCORRECT
+q088 INCORRECT
+q089 NOT_ATTEMPTED
+q090 INCORRECT
+q091 CORRECT
+q092 INCORRECT
+q093 CORRECT
+q094 INCORRECT
+q095 CORRECT
+q096 INCORRECT
+q097 INCORRECT
+q098 NOT_ATTEMPTED
+q099 INCORRECT
+q100 INCORRECT
+unloaded qwen2.5:7b
+100 briefs; correct_match 54 gold_in_snippets 50
+{
+ "n_questions": 100,
+ "label_agreement": {
+  "match~llm_qwen2.5-7b": {
+   "n": 100,
+   "raw_agreement": 0.86,
+   "cohen_kappa": 0.7181964573268922
+  }
+ },
+ "diagnostics": {
+  "acc_overall": {
+   "n": 100,
+   "acc_match": 0.54
+  },
+  "by_stratum": {
+   "popqa_high": {
+    "n": 25,
+    "acc_match": 0.8
+   },
+   "popqa_low": {
+    "n": 25,
+    "acc_match": 0.44
+   },
+   "simpleqa": {
+    "n": 50,
+    "acc_match": 0.46
+   }
+  },
+  "gold_in_snippets": {
+   "n": 50,
+   "acc_match": 0.94
+  },
+  "gold_not_in_snippets": {
+   "n": 50,
+   "acc_match": 0.14
+  },
+  "frac_gold_in_snippets": 0.5,
+  "frac_gold_in_rev150": 0.44,
+  "strip_changed_correctness": 0
+ }
+}
+llama3-1-8b|snip150 AUROC 0.701 [0.5941414141414141, 0.8007485156112879] ECE 0.245 prec 0.538 rec 0.304 esc_rate 0.26
+EXIT 0

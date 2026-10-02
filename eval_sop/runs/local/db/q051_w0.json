@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q051_w0",
+    "topic": "What is Hanover the capital of?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q051_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Hanover - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Hanover",
+            "snippet": "Hanover[a] (German: Hannover. [haˈnoːfɐ]. )[b] is the capital and largest city of the German state of Lower Saxony.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "Hanover Region Facts for Kids",
+            "url": "https://kids.kiddle.co/Hanover_Region",
+            "snippet": "Its capital city is Hanover, which is also the capital city of Lower Saxony. The region covers a large area of about 2,290 square kilometers (about 884 square miles). How many people live here? As of 2002, more than 1.1 million people lived in the Hanover Region.",
+            "published": "",
+            "source": "kids.kiddle.co"
+          },
+          {
+            "title": "Hanover Holiday Region - FAQ - Visit Hanover",
+            "url": "https://www.visit-hannover.com/en/Kultur-Sehenswürdigkeiten/Hannover-Urlaubsregion/Urlaubsregion-Hannover-FAQ",
+            "snippet": "With approximately 529,000 residents, the state capital of Hannover is the largest, followed by Garbsen and Langenhagen, both located in the northern part of the region.",
+            "published": "",
+            "source": "visit-hannover.com"
+          },
+          {
+            "title": "wikitravel.org/en/Hanover",
+            "url": "https://wikitravel.org/en/Hanover",
+            "snippet": "It is Hanover's major shopping spot, home to the Opera house and has lots of...",
+            "published": "",
+            "source": "wikitravel.org"
+          },
+          {
+            "title": "Tryp.com | Hannover: Capital of Lower Saxony",
+            "url": "https://www.tryp.com/en/blog/hannover-capital-of-lower-saxony",
+            "snippet": "Hannover, nestled at the heart of Lower Saxony, boasts a city center that radiates a cosmopolitan vibe, complete with one of Germany's most expansive pedestrian zones. In the old town, guests meander through time-honored lanes or unwind along the tranquil banks of the Leine.",
+            "published": "",
+            "source": "tryp.com"
+          },
+          {
+            "title": "The 16 federal states: Lower Saxony",
+            "url": "https://www.dw.com/en/germanys-16-states-lower-saxony/a-45215372",
+            "snippet": "State capital Hanover. The trade fair city of Hannover is also the largest city in Lower Saxony. Among the sights in this once fortified city and royal seat is Hanover's Adventure Zoo, which is considered one of Germany's most beautiful zoos.",
+            "published": "",
+            "source": "dw.com"
+          },
+          {
+            "title": "Hanover: capital of Lower Saxony - Germany",
+            "url": "https://ermakvagus.com/Europe/Germany/hanover.html",
+            "snippet": "Hanover is the capital of the state of Lower Saxony. The town on the southern edge of the North German lowlands on the Leine and the Ihme was first mentioned in 1150 and received city rights in 1241.What to do. Theatre, opera and dance.",
+            "published": "",
+            "source": "ermakvagus.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 564,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 564,
+      "created_at": "2026-10-02T19:40:44.624Z"
+    },
+    "writing": {
+      "job_id": "q051_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "What is Hanover the capital of?",
+        "brief_markdown": "# What is Hanover the capital of?\n\n## Summary\n\nHanover, a city located in the German state of Lower Saxony, is often referred to as the capital of Lower Saxony. This research aims to provide an in-depth analysis of the available information on Hanover's status as the capital of Lower Saxony. The findings of this research will provide a comprehensive understanding of the city's role and significance within the German state. According to various sources, Hanover is indeed the capital and largest city of Lower Saxony, with a population of over 529,000 residents. The city's rich history, cultural attractions, and economic importance make it a vital part of the region.\n\n## Key Findings\n\n* **Hanover is the capital of Lower Saxony**\nHanover is widely recognized as the capital of Lower Saxony, as stated in Wikipedia, which notes that Hanover is the \"capital and largest city of the German state of Lower Saxony.\" This designation is also confirmed by Hanover Region Facts for Kids, which states that Hanover is the capital city of Lower Saxony. The city's status as the capital is a testament to its economic, cultural, and historical significance within the region. As the capital, Hanover plays a crucial role in the administration and governance of Lower Saxony.\n* **Hanover is the largest city in Lower Saxony**\nAccording to Hanover Holiday Region - FAQ - Visit Hanover, Hanover is the largest city in Lower Saxony, with a population of approximately 529,000 residents. This makes Hanover the most populous city in the region, followed by Garbsen and Langenhagen. The city's large population contributes to its economic and cultural importance within the region.\n* **Hanover has a rich history and cultural attractions**\nHanover's rich history and cultural attractions are highlighted in wikitravel.org/en/Hanover, which notes that the city is home to the Opera house and has lots of shopping spots. The city's old town is also mentioned in Tryp.com | Hannover: Capital of Lower Saxony, which describes it as a \"cosmopolitan vibe\" with a \"tranquil banks of the Leine.\" The city's cultural attractions and historical significance make it a popular tourist destination.\n* **Hanover is an important economic center**\nAs the capital of Lower Saxony, Hanover is an important economic center in the region. According to The 16 federal states: Lower Saxony, Hanover is the trade fair city of Hannover, which implies that the city is a significant hub for trade and commerce. The city's economic importance is also highlighted in Hanover: capital of Lower Saxony - Germany, which notes that Hanover is a major center for industry and trade.\n* **Hanover has a significant role in the region's administration**\nAs the capital of Lower Saxony, Hanover plays a crucial role in the administration and governance of the region. According to Wikipedia, Hanover is the capital and largest city of the German state of Lower Saxony, which implies that the city is the seat of the regional government.\n* **Hanover has a significant impact on the region's economy**\nHanover's economic importance is not limited to its role as the capital of Lower Saxony. According to Hanover Holiday Region - FAQ - Visit Hanover, Hanover is the largest city in Lower Saxony, which implies that the city has a significant impact on the region's economy. The city's large population and economic activities contribute to the region's economic growth and development.\n* **Hanover is a popular tourist destination**\nHanover's cultural attractions and historical significance make it a popular tourist destination. According to wikitravel.org/en/Hanover, Hanover is home to the Opera house and has lots of shopping spots. The city's old town is also mentioned in Tryp.com | Hannover: Capital of Lower Saxony, which describes it as a \"cosmopolitan vibe\" with a \"tranquil banks of the Leine.\" The city's popularity as a tourist destination contributes to its economic growth and development.\n\n## Analysis\n\nThe findings of this research provide a comprehensive understanding of Hanover's status as the capital of Lower Saxony. The city's role as the capital and largest city of the region is widely recognized, and its economic, cultural, and historical significance make it a vital part of the region. Hanover's importance is not limited to its role as the capital, as it is also an important economic center in the region. The city's large population and economic activities contribute to the region's economic growth and development.\n\nThe analysis of the findings also highlights the significance of Hanover's cultural attractions and historical significance. The city's old town, Opera house, and shopping spots make it a popular tourist destination, which contributes to its economic growth and development. The city's rich history and cultural attractions also make it a significant part of the region's cultural heritage.\n\nThe implications of these findings are significant, as they highlight the importance of Hanover as the capital of Lower Saxony. The city's role in the administration and governance of the region is crucial, and its economic importance is not limited to its role as the capital. The city's cultural attractions and historical significance also make it a popular tourist destination, which contributes to its economic growth and development.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/Hanover",
+          "https://kids.kiddle.co/Hanover_Region",
+          "https://www.visit-hannover.com/en/Kultur-Sehenswürdigkeiten/Hannover-Urlaubsregion/Urlaubsregion-Hannover-FAQ",
+          "https://wikitravel.org/en/Hanover",
+          "https://www.tryp.com/en/blog/hannover-capital-of-lower-saxony",
+          "https://www.dw.com/en/germanys-16-states-lower-saxony/a-45215372",
+          "https://ermakvagus.com/Europe/Germany/hanover.html"
+        ],
+        "word_count": 847,
+        "tokens_used": 1965,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 1965,
+      "created_at": "2026-10-02T19:41:09.361Z"
+    }
+  }
+}

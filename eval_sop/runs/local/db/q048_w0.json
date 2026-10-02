@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q048_w0",
+    "topic": "How many years were Dr. Tony Evans and Lois Evans married?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q048_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Lois Evans | Tony Evans",
+            "url": "https://go.tonyevans.org/about/lois-evans",
+            "snippet": "Tony and Lois Evans.Dr. Tony Evans is the founding pastor of Oak Cliff Bible Fellowship in Dallas, founder and president of The Urban Alternative and author of over 100 books, booklets and Bible studies.",
+            "published": "",
+            "source": "go.tonyevans.org"
+          },
+          {
+            "title": "Funeral of Lois Evans, wife of Tony Evans, set for their Dallas church",
+            "url": "https://religionnews.com/2020/01/06/funeral-of-lois-evans-wife-of-tony-evans-set-for-their-dallas-church/",
+            "snippet": "Lois Evans was most recently senior vice president of The Urban Alternative, the ministry she co-founded with her husband of almost 50 years.Tony and Lois Evans were married for almost 50 years. Photo via LoisEvans.org.",
+            "published": "",
+            "source": "religionnews.com"
+          },
+          {
+            "title": "Dr Tony Evans marries his fiancée in private ceremony",
+            "url": "https://premierchristian.news/en/news/article/dr-tony-evans-marries-his-fiance-in-private-ceremony",
+            "snippet": "Lois Evans, Dr Evans' first wife, was married to him for nearly five decades.He and Lois had four children together. The announcement from Oak Cliff Bible Fellowship said: “Marriage is a blessing from God, and it brings us great joy to see our pastor blessed in this beautiful way.",
+            "published": "",
+            "source": "premierchristian.news"
+          },
+          {
+            "title": "Died: Lois Evans, Wife of Tony Evans, and... - Christianity Today",
+            "url": "https://www.christianitytoday.com/2020/01/lois-evans-tony-cancer-pastors-wives-ministry/",
+            "snippet": "Lois Irene Evans, beloved wife of Tony Evans for 49 years and founder of Pastors' Wives Ministry, passed away Dec. 30, 2019 of biliary cancer. She was 70. Tony, senior pastor of Oak Cliff Bible Fellowship in Dallas, shared the news on Facebook.",
+            "published": "",
+            "source": "christianitytoday.com"
+          },
+          {
+            "title": "Lois Evans Obituary: Tony Evans' Wife Was Dedicated Mother, Minister",
+            "url": "https://faithfullymagazine.com/lois-evans-obituary/",
+            "snippet": "Lois Evans obituary reveals just how committed Tony Evans late wife and ministry partner was committed to her faith, family, and serving others.Dr. Lois Evans’ legacy was using her gifts and talents to plant many seeds that would bear fruit in different seasons of her life.",
+            "published": "",
+            "source": "faithfullymagazine.com"
+          },
+          {
+            "title": "Celeb Pastor Tony Evans Writes Heartfelt Post... | The Epoch Times",
+            "url": "https://www.theepochtimes.com/article/celeb-pastor-tony-evans-writes-heartfelt-post-after-wife-passes-away-to-watch-her-first-sunrise-from-heaven-3207206",
+            "snippet": "Celebrity pastor Tony Evans has lost his wife of 49 years. Lois Evans lost her battle with cancer at the age of 70 on Dec. 30, 2019, while holding her husband’s hand. Tony, of the Oak Cliff Bible Fellowship in Dallas, Texas, shared his family’s sad news on Facebook.",
+            "published": "",
+            "source": "theepochtimes.com"
+          },
+          {
+            "title": "Service set for Lois Evans, co-founder of Urban Alternative ministry",
+            "url": "https://www.dallasnews.com/news/2020/01/03/service-set-for-lois-evans-wife-of-oak-cliff-bible-fellowship-senior-pastor/",
+            "snippet": "Lois Evans is survived by her husband, Tony Evans, and their four children, Chrystal Evans Hurst, Priscilla Shirer, Anthony Evans Jr. and Jonathan Evans, as well as 13 grandchildren. In lieu of flowers, the Evans family asked for donations to the Pastors' Wives Ministry.",
+            "published": "",
+            "source": "dallasnews.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 617,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 617,
+      "created_at": "2026-10-02T20:19:35.765Z"
+    },
+    "writing": {
+      "job_id": "q048_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "The Marriage of Dr. Tony Evans and Lois Evans: A Detailed Analysis",
+        "brief_markdown": "# The Marriage of Dr. Tony Evans and Lois Evans: A Detailed Analysis\n\n## Summary\n\nThis research brief provides an in-depth examination of the marriage of Dr. Tony Evans and Lois Evans. Through a review of various sources, we aim to determine the exact duration of their marriage. The findings reveal that Lois Evans was Dr. Tony Evans' first wife, and they were married for nearly five decades. Their marriage was marked by significant milestones, including the co-founding of The Urban Alternative ministry and the raising of four children. Unfortunately, Lois Evans passed away on December 30, 2019, after a battle with cancer, leaving behind a legacy of dedication to her faith, family, and ministry.\n\n## Key Findings\n\n* **Duration of Marriage: Almost 50 Years**\nLois Evans was married to Dr. Tony Evans for almost 50 years, as stated in. This remarkable duration speaks to the strength and commitment of their relationship. The fact that they were married for nearly five decades is a testament to their enduring love and partnership, which was built on a foundation of shared faith and values. As Lois Evans' obituary in notes, she was a dedicated mother and minister who used her gifts and talents to plant seeds that would bear fruit in different seasons of her life.\n\n* **Co-Founders of The Urban Alternative Ministry**\nLois Evans and Dr. Tony Evans co-founded The Urban Alternative ministry, which has become a significant platform for their shared vision of spreading the gospel and promoting spiritual growth. Their collaborative efforts demonstrate the importance of partnership in ministry and the impact that can be achieved when individuals work together towards a common goal. As stated in, Lois Evans was most recently senior vice president of The Urban Alternative, highlighting her continued involvement in the ministry.\n\n* **Raising Four Children Together**\nDr. Tony Evans and Lois Evans had four children together, as mentioned in. Their family was a vital part of their ministry, and their children have gone on to become influential figures in their own right. Chrystal Evans Hurst, Priscilla Shirer, Anthony Evans Jr., and Jonathan Evans are all notable figures in their respective fields, and their parents' influence can be seen in their work. The fact that they were able to raise their children while maintaining a strong ministry highlights the Evans' commitment to family and their ability to balance multiple responsibilities.\n\n* **Legacy of Lois Evans**\nLois Evans' passing on December 30, 2019, was a significant loss for the Evans family and the ministry. However, her legacy lives on through the countless lives she touched during her lifetime. As stated in, Lois Evans was a dedicated mother, minister, and wife who used her gifts and talents to plant seeds that would bear fruit in different seasons of her life. Her impact will continue to be felt through the work of The Urban Alternative and the lives of those she influenced.\n\n* **Tony Evans' Heartfelt Tribute**\nDr. Tony Evans' heartfelt tribute to his late wife in highlights the deep love and respect they shared. His words demonstrate the profound impact Lois Evans had on his life and ministry, and the grief he felt upon her passing. The fact that he was able to share his emotions publicly speaks to the strong bond they shared and the influence she had on his life.\n\n* **Service and Donations**\nThe service held for Lois Evans in was a testament to the love and respect she inspired in those around her. The fact that the Evans family asked for donations to the Pastors' Wives Ministry in lieu of flowers highlights the importance of supporting the work of ministry wives and the impact they have on the lives of others.\n\n* **Impact on Ministry**\nLois Evans' passing had a significant impact on the ministry, as stated in. Her role as senior vice president of The Urban Alternative and her involvement in the Pastors' Wives Ministry will be deeply missed. However, her legacy will continue to inspire and motivate those involved in the ministry, and her impact will be felt for years to come.\n\n## Analysis\n\nThe findings of this research brief provide a comprehensive understanding of the marriage of Dr. Tony Evans and Lois Evans. Their remarkable 49-year marriage was marked by significant milestones, including the co-founding of The Urban Alternative ministry and the raising of four children. The fact that they were married for nearly five decades speaks to the strength and commitment of their relationship, which was built on a foundation of shared faith and values. Lois Evans' passing on December 30, 2019, was a significant loss for the Evans family and the ministry, but her legacy lives on through the countless lives she touched during her lifetime.\n\nThe analysis of the key findings reveals a number of important patterns and implications. Firstly, the Evans' marriage demonstrates the importance of partnership in ministry and the impact that can be achieved when individuals work together towards a common goal. Secondly, the legacy of Lois Evans highlights the significant impact that ministry wives can have on the lives of others and the importance of supporting their work. Finally, the findings demonstrate the enduring nature of the Evans' relationship, which was built on a foundation of shared faith and values.",
+        "citations": [
+          "https://go.tonyevans.org/about/lois-evans",
+          "https://religionnews.com/2020/01/06/funeral-of-lois-evans-wife-of-tony-evans-set-for-their-dallas-church/",
+          "https://premierchristian.news/en/news/article/dr-tony-evans-marries-his-fiance-in-private-ceremony",
+          "https://www.christianitytoday.com/2020/01/lois-evans-tony-cancer-pastors-wives-ministry/",
+          "https://faithfullymagazine.com/lois-evans-obituary/",
+          "https://www.theepochtimes.com/article/celeb-pastor-tony-evans-writes-heartfelt-post-after-wife-passes-away-to-watch-her-first-sunrise-from-heaven-3207206",
+          "https://www.dallasnews.com/news/2020/01/03/service-set-for-lois-evans-wife-of-oak-cliff-bible-fellowship-senior-pastor/"
+        ],
+        "word_count": 877,
+        "tokens_used": 2075,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2075,
+      "created_at": "2026-10-02T20:19:59.021Z"
+    }
+  }
+}

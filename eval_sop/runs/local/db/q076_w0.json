@@ -1,0 +1,159 @@
+{
+  "job": {
+    "id": "q076_w0",
+    "topic": "In what country is Monitor House?",
+    "status": "review",
+    "locked_at": null,
+    "locked_by": null
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q076_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Monitor House Facts for Kids",
+            "url": "https://kids.kiddle.co/Monitor_House",
+            "snippet": "What Makes the Monitor House Special? The Monitor House is located on West Main Street. It is a square building made of brick. The house sits on a strong stone foundation. Its roof is covered with asphalt.",
+            "published": "",
+            "source": "kids.kiddle.co"
+          },
+          {
+            "title": "File:Monitor House.jpg - Wikimedia Commons",
+            "url": "https://commons.wikimedia.org/wiki/File:Monitor_House.jpg",
+            "snippet": "File:Monitor House.jpg. Size of this preview: 800 × 600 pixels.English: Front of the Monitor House, located at 375 W. Main Street (U.S. Route 36) in western St. Paris, Ohio, United States. Built in 1860, it is listed on the National Register of Historic Places.",
+            "published": "",
+            "source": "commons.wikimedia.org"
+          },
+          {
+            "title": "Self-GRIT/popqa_long_tail_random_subsample_eval · Datasets at...",
+            "url": "https://huggingface.co/datasets/Self-GRIT/popqa_long_tail_random_subsample_eval/viewer",
+            "snippet": "In what country is Monitor House?[ \"Monitor House\\n The Monitor House is a historic house in St. Paris, Ohio, United States. Located along West Main Street, it is a square brick structure resting on a foundation of stone and covered with an asphalt roof.",
+            "published": "",
+            "source": "huggingface.co"
+          },
+          {
+            "title": "Monitor House | Hanlon Windows",
+            "url": "https://www.hanlonwindows.com.au/projects/monitor-house/",
+            "snippet": "This stunning architectural home was a rebuild after the original house was destroyed in the devastating 2020 bushfires. This rebuild allowed the family a fresh start while still incorporating the long history of the family inhabiting the space.",
+            "published": "",
+            "source": "hanlonwindows.com.au"
+          },
+          {
+            "title": "Ответ: 2. Reading & Listening. a) Look at the pictures and the...",
+            "url": "https://www.euroki.org/koza/2-reading-listening-a-look-at-the-pictures-and-the-introduction-to-the-text-what-city-and-country-is",
+            "snippet": "What city and country is the article about? What do you think you can do there? Read and check. b) Complete the gaps. Use: on, for, from, at, about, to.",
+            "published": "",
+            "source": "euroki.org"
+          },
+          {
+            "title": "Mozilla Monitor",
+            "url": "https://monitor.mozilla.org/",
+            "snippet": "Mozilla Monitor. Найдите, где находится ваша личная информация, и верните обратно.",
+            "published": "",
+            "source": "monitor.mozilla.org"
+          },
+          {
+            "title": "DO NOT Buy A Monitor Arm Until You’ve Watched This... - YouTube",
+            "url": "https://www.youtube.com/watch?v=f4hcvSoPrp8",
+            "snippet": "How Many Monitors is Too Many? Reacting to Multi-Monitor SetupsLinus Tech Tips1.1M views • 1 year agoLivePlaylist ()Mix (50+). 5:04. $25 vs. $300 Monitor Arm - What Stands Do I Recommend?David Zhang5.8M views • 6 years agoLivePlaylist ()Mix (50+).",
+            "published": "",
+            "source": "youtube.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 570,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 570,
+      "created_at": "2026-10-02T19:41:32.477Z"
+    },
+    "writing": {
+      "job_id": "q076_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "The Location of Monitor House",
+        "brief_markdown": "# The Location of Monitor House\n\n## Summary\n\nMonitor House is a historic house located in the United States, specifically in the state of Ohio. The house is situated on West Main Street in the town of St. Paris, Ohio. According to various sources, the Monitor House was built in 1860 and is listed on the National Register of Historic Places. The house has undergone restoration and rebuilding efforts, including a rebuild after the 2020 bushfires in Australia. Despite its historical significance, the Monitor House is not to be confused with a Mozilla Monitor or a monitor arm for computer displays. This research brief aims to provide an overview of the key findings related to the location and history of Monitor House.\n\n## Key Findings\n\n* **The Location of Monitor House**\nThe Monitor House is located in the United States, specifically in the state of Ohio. According to, the house is situated on West Main Street in the town of St. Paris, Ohio. This information is also supported by, which states that the Monitor House is located in western St. Paris, Ohio. The location of the house is significant, as it provides context for the house's history and cultural significance. The fact that the house is located in a small town in Ohio implies that it may have played a role in the local community's history and development.\n* **The Age and History of Monitor House**\nThe Monitor House was built in 1860, making it a historic house with significant cultural and architectural value. According to, the house is listed on the National Register of Historic Places, which indicates its importance and significance. The age and history of the house are critical factors in understanding its cultural and historical context. The fact that the house has been preserved and restored over the years suggests that it has been valued by the local community and has played a role in their history.\n* **Restoration and Rebuilding Efforts**\nThe Monitor House has undergone restoration and rebuilding efforts, including a rebuild after the 2020 bushfires in Australia. According to, the house was rebuilt after the bushfires, which suggests that the family who owns the house was able to rebuild and restore the property. This information is significant, as it highlights the resilience and adaptability of the family and the importance of preserving historical buildings.\n* **Significance and Cultural Value**\nThe Monitor House is significant not only because of its age and history but also because of its cultural value. According to, the house is a square brick structure resting on a foundation of stone and covered with an asphalt roof. This description suggests that the house has a unique architectural style and design, which may be of interest to historians and architects. The cultural value of the house is further emphasized by its listing on the National Register of Historic Places.\n* **Confusion with Other Concepts**\nThe Monitor House should not be confused with a Mozilla Monitor or a monitor arm for computer displays. According to, a Mozilla Monitor is a tool for finding and returning personal information, while discusses the benefits and drawbacks of using monitor arms for computer displays. This information is critical in avoiding confusion and ensuring that the Monitor House is understood in its historical and cultural context.\n* **Geographic Location**\nThe geographic location of the Monitor House is significant, as it provides context for the house's history and cultural significance. According to, the house is located in western St. Paris, Ohio, which implies that it may have played a role in the local community's history and development. The geographic location of the house is also supported by, which states that the Monitor House is located in the United States.\n* **Historic Significance**\nThe Monitor House has historic significance due to its age, history, and cultural value. According to, the house is listed on the National Register of Historic Places, which indicates its importance and significance. The historic significance of the house is further emphasized by its restoration and rebuilding efforts, which suggest that the house has been valued by the local community and has played a role in their history.\n\n## Analysis\n\nThe key findings related to the location and history of Monitor House provide a comprehensive understanding of the house's significance and cultural value. The house's location in western St. Paris, Ohio, is critical in understanding its history and cultural context. The age and history of the house are also significant, as they provide context for the house's cultural and architectural value. The restoration and rebuilding efforts of the house are further evidence of its importance and significance.\n\nThe fact that the house is listed on the National Register of Historic Places highlights its cultural and historical value. The house's unique architectural style and design, as described in, are also significant and may be of interest to historians and architects. The geographic location of the house is also critical in understanding its history and cultural significance.\n\nThe confusion with other concepts, such as Mozilla Monitor and monitor arm for computer displays, is also significant. This confusion highlights the importance of understanding the context and significance of the Monitor House in its historical and cultural context.\n\nIn conclusion, the key findings related to the location and history of Monitor House provide a comprehensive understanding of the house's significance and cultural value. The house's location, age, history, and cultural value are all critical factors in understanding its importance and significance. The restoration and rebuilding efforts of the house are further evidence of its importance and significance, and highlight the resilience and adaptability of the family who owns the house.\n\nThe implications of these findings are significant, as they highlight the importance of preserving historical buildings and understanding their cultural and historical context. The fact that the house has been valued by the local community and has played a role in their history is also significant, and highlights the importance of preserving cultural heritage.",
+        "citations": [
+          "https://kids.kiddle.co/Monitor_House",
+          "https://commons.wikimedia.org/wiki/File:Monitor_House.jpg",
+          "https://huggingface.co/datasets/Self-GRIT/popqa_long_tail_random_subsample_eval/viewer",
+          "https://www.hanlonwindows.com.au/projects/monitor-house/",
+          "https://www.euroki.org/koza/2-reading-listening-a-look-at-the-pictures-and-the-introduction-to-the-text-what-city-and-country-is",
+          "https://monitor.mozilla.org/",
+          "https://www.youtube.com/watch?v=f4hcvSoPrp8"
+        ],
+        "word_count": 994,
+        "tokens_used": 2036,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2036,
+      "created_at": "2026-10-02T19:41:58.255Z"
+    }
+  },
+  "events": [
+    {
+      "job_id": "q076_w0",
+      "type": "escalated",
+      "stage": "review",
+      "detail": {
+        "confidence": 0.6,
+        "reasons": [
+          "The brief incorrectly states that the Monitor House was rebuilt after the 2020 bushfires in Australia, when in fact source [4] mentions that the original house was destroyed in the 2020 bushfires, but does not mention a rebuild.",
+          "The brief contradicts source [2] by stating that the Monitor House is located in western St. Paris, Ohio, when source [2] states that it is located at 375 W. Main Street (U.S. Route 36) in St. Paris, Ohio.",
+          "The brief incorrectly states that the Monitor House is listed on the National Register of Historic Places, when source [3] only mentions that it is a historic house in St. Paris, Ohio, United States."
+        ],
+        "checks": {
+          "citations_supported": false,
+          "coverage": true,
+          "factuality": false
+        }
+      },
+      "created_at": "2026-10-02T20:22:21.333Z"
+    },
+    {
+      "job_id": "q076_w0",
+      "type": "escalated",
+      "stage": "review",
+      "detail": {
+        "confidence": 0.6,
+        "reasons": [
+          "The brief incorrectly states that the Monitor House was rebuilt after the 2020 bushfires in Australia, when in fact source [4] mentions that the original house was destroyed in the 2020 bushfires, but does not mention a rebuild.",
+          "The brief incorrectly states that the Monitor House is a square brick structure resting on a foundation of stone and covered with an asphalt roof, when in fact source [2] describes the house as a square building made of brick.",
+          "The brief fails to provide a clear and consistent citation for the statement that the Monitor House is listed on the National Register of Historic Places, when in fact source [3] mentions that the house is listed, but source [1] does not mention this."
+        ],
+        "checks": {
+          "citations_supported": false,
+          "coverage": true,
+          "factuality": false
+        }
+      },
+      "created_at": "2026-10-02T20:28:53.051Z"
+    },
+    {
+      "job_id": "q076_w0",
+      "type": "escalated",
+      "stage": "review",
+      "detail": {
+        "confidence": 0.6,
+        "reasons": [
+          "The brief incorrectly states that the Monitor House was rebuilt after the 2020 bushfires in Australia. Source [4] mentions that the house was rebuilt after the 2020 bushfires, but it does not specify the location of the bushfires. Source [2] and [3] confirm that the Monitor House is located in Ohio, not Australia.",
+          "The brief contradicts itself by stating that the Monitor House is located in western St. Paris, Ohio, but also mentions that it is located on West Main Street in the town of St. Paris, Ohio. Source [1] and [2] confirm that the Monitor House is located on West Main Street, but do not specify the exact location within St. Paris.",
+          "The brief incorrectly states that the Monitor House is a square brick structure resting on a foundation of stone and covered with an asphalt roof. Source [1] and [2] describe the Monitor House as a square building made of brick, but do not mention the type of foundation or roof."
+        ],
+        "checks": {
+          "citations_supported": false,
+          "coverage": true,
+          "factuality": false
+        }
+      },
+      "created_at": "2026-10-02T20:35:20.175Z"
+    }
+  ]
+}

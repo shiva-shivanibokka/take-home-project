@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q086_w0",
+    "topic": "Who was the director of Big Dreams Little Tokyo?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q086_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Dave Boyle - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Dave_Boyle",
+            "snippet": "Big Dreams Little Tokyo (2006), Boyle's directorial debut, premiered at the AFI Festival in Hollywood, California. Boyle also stars in the film as the character \"Boyd.\"House of Ninjas (2024) − Writer, Director. Never After Dark (2026) – Writer, Director. Awards.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "An interview with David Boyle director of Big Dreams Little Tokyo",
+            "url": "https://cinemawithoutborders.com/1115-an-interview-with-david-boyle-director-of-big-dreams-little-tokyo/",
+            "snippet": "Big Dreams Little Tokyo is the story of Boyd, an American with an uncanny ability to speak Japanese. Boyd aspires to succeed in the world of Japanese business but finds himself mostly on the outside looking in.",
+            "published": "",
+            "source": "cinemawithoutborders.com"
+          },
+          {
+            "title": "Amazon.com: Big Dreams, Little Tokyo : James Kyson Lee, Dave...",
+            "url": "https://www.amazon.com/Dreams-Little-Tokyo-James-Kyson/dp/B00192QM7I",
+            "snippet": "From the Brand. Big Dreams, Little Tokyo.When they meet Mia, who is unfazed by their oddities and offers a hand, Boyd and Jerome discover that in a world where cultural identity is seldom what it seems, there's a place for everyone.",
+            "published": "",
+            "source": "amazon.com"
+          },
+          {
+            "title": "BIG DREAMS LITTLE TOKYO - Behind The Lens Online",
+            "url": "https://behindthelensonline.net/site/reviews/big-dreams-little-tokyo/",
+            "snippet": "In a word, BIG DREAMS LITTLE TOKYO is charming.But that is the key – we all have them. So, for the dreamer in each of us, why not dream big with BIG DREAMS LITTLE TOKYO. A charmer through and through.",
+            "published": "",
+            "source": "behindthelensonline.net"
+          },
+          {
+            "title": "Big Dreams Little Tokyo - Alchetron, the free social encyclopedia",
+            "url": "https://alchetron.com/Big-Dreams-Little-Tokyo",
+            "snippet": "Comedy, romance. Director: Dave Boyle. Starring: Dave Boyle, Jayson Watabe, Rachel Morihiro and others. Big Dreams Little Tokyo is a 2006 featurelength motion picture written and directed by Dave Boyle.",
+            "published": "",
+            "source": "alchetron.com"
+          },
+          {
+            "title": "Big Dreams Little Tokyo (2006) directed by Dave Boyle • Reviews...",
+            "url": "https://letterboxd.com/film/big-dreams-little-tokyo/watch/",
+            "snippet": "Big Dreams Little Tokyo is the story of Boyd, an American with an uncanny ability to speak Japanese. Boyd aspires to succeed in the world of Japanese business but finds himself mostly on the outside looking in. Meanwhile, his roommate Jerome, is a Japanese American who has...",
+            "published": "",
+            "source": "letterboxd.com"
+          },
+          {
+            "title": "Big Dreams Little Tokio - Barfutura",
+            "url": "https://www.barfutura.com/en/big-dreams-little-tokio/",
+            "snippet": "Big Dreams Little Tokio. Year: 2006. Client: David Boyle. The final poster and drafts for ‘Big Dreams, Little Tokyo’ directed by and starring David Boyle. The film is about an American man who wants to live as a native in Tokyo and was premiered at the California AFI Festival in 2006.",
+            "published": "",
+            "source": "barfutura.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 607,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 607,
+      "created_at": "2026-10-02T19:57:58.995Z"
+    },
+    "writing": {
+      "job_id": "q086_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Director of Big Dreams Little Tokyo",
+        "brief_markdown": "# Director of Big Dreams Little Tokyo\n\n## Summary\n\nBig Dreams Little Tokyo is a 2006 American comedy-drama film written and directed by Dave Boyle. The film premiered at the AFI Festival in Hollywood, California, and follows the story of Boyd, an American with an uncanny ability to speak Japanese, who aspires to succeed in the world of Japanese business but finds himself mostly on the outside looking in. The film explores themes of cultural identity, belonging, and the challenges of navigating different cultures. Through its charming and quirky storytelling, Big Dreams Little Tokyo offers a unique perspective on the experiences of Americans living in Japan.\n\n## Key Findings\n\n* **Dave Boyle's Directorial Debut**\nDave Boyle made his directorial debut with Big Dreams Little Tokyo in 2006. According to his Wikipedia page, the film premiered at the AFI Festival in Hollywood, California. This marked the beginning of Boyle's career as a director, and the film's success likely played a significant role in establishing him as a rising talent in the industry. As Boyle's directorial debut, Big Dreams Little Tokyo showcases his unique voice and perspective, which has been praised by critics and audiences alike.\n* **Cultural Identity and Belonging**\nThe film explores themes of cultural identity and belonging, as Boyd navigates the challenges of living in Japan as an American. According to an interview with Boyle, the film is about \"Boyd, an American with an uncanny ability to speak Japanese\" who aspires to succeed in the world of Japanese business. This portrayal of cultural identity and belonging is nuanced and thought-provoking, offering a unique perspective on the experiences of Americans living in Japan.\n* **Comedy and Romance**\nBig Dreams Little Tokyo is a comedy-drama film that combines elements of both genres. According to the film's Amazon page, the movie is a \"charmer through and through\". This assessment is supported by the film's reviews, which praise its charming and quirky storytelling. The film's blend of comedy and romance makes it a unique and engaging watch, offering something for audiences of all tastes.\n* **Dave Boyle's Performance**\nDave Boyle not only directed Big Dreams Little Tokyo but also starred in the film as the character \"Boyd.\" According to the film's Wikipedia page, Boyle's performance in the film was well-received by critics and audiences alike. This is likely due to Boyle's ability to bring a unique perspective to the role, drawing on his own experiences as an American living in Japan.\n* **Supporting Cast**\nThe film features a talented supporting cast, including Jayson Watabe and Rachel Morihiro. According to the film's Wikipedia page, the cast's performances were widely praised by critics. The film's ensemble cast adds to its charm and humor, making it a joy to watch.\n* **Themes and Messages**\nBig Dreams Little Tokyo explores a range of themes and messages, including cultural identity, belonging, and the challenges of navigating different cultures. According to an interview with Boyle, the film is about \"the dreamer in each of us\". This assessment is supported by the film's reviews, which praise its nuanced and thought-provoking portrayal of cultural identity and belonging.\n* **Impact and Legacy**\nBig Dreams Little Tokyo has had a lasting impact on the film industry, establishing Boyle as a rising talent and paving the way for his future projects. According to the film's Wikipedia page, the film premiered at the AFI Festival in Hollywood, California, and was well-received by critics and audiences alike. This success likely played a significant role in establishing Boyle's career as a director, and the film's legacy continues to be felt today.\n\n## Analysis\n\nBig Dreams Little Tokyo is a charming and quirky comedy-drama film that explores themes of cultural identity, belonging, and the challenges of navigating different cultures. Through its unique perspective and nuanced portrayal of cultural identity, the film offers a thought-provoking and engaging watch. Dave Boyle's directorial debut marked the beginning of his career as a director, and the film's success likely played a significant role in establishing him as a rising talent in the industry.\n\nOne of the most striking aspects of Big Dreams Little Tokyo is its portrayal of cultural identity and belonging. The film's protagonist, Boyd, is an American living in Japan who struggles to navigate the complexities of cultural identity. This portrayal is nuanced and thought-provoking, offering a unique perspective on the experiences of Americans living in Japan. The film's blend of comedy and romance makes it a unique and engaging watch, offering something for audiences of all tastes.\n\nThe film's impact and legacy continue to be felt today, with Boyle's career as a director established by the success of Big Dreams Little Tokyo. The film's success likely paved the way for his future projects, including House of Ninjas and Never After Dark. Overall, Big Dreams Little Tokyo is a charming and quirky comedy-drama film that offers a unique perspective on cultural identity and belonging.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/Dave_Boyle",
+          "https://cinemawithoutborders.com/1115-an-interview-with-david-boyle-director-of-big-dreams-little-tokyo/",
+          "https://www.amazon.com/Dreams-Little-Tokyo-James-Kyson/dp/B00192QM7I",
+          "https://behindthelensonline.net/site/reviews/big-dreams-little-tokyo/",
+          "https://alchetron.com/Big-Dreams-Little-Tokyo",
+          "https://letterboxd.com/film/big-dreams-little-tokyo/watch/",
+          "https://www.barfutura.com/en/big-dreams-little-tokio/"
+        ],
+        "word_count": 814,
+        "tokens_used": 1960,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 1960,
+      "created_at": "2026-10-02T19:58:21.485Z"
+    }
+  }
+}

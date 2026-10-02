@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q019_w0",
+    "topic": "Who is known to be the first female museum curator in Spain's National Archaeological Museum (Madrid)?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q019_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "María del Pilar Fernández Vega - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/María_del_Pilar_Fernández_Vega",
+            "snippet": "Spanish National Museum of Anthropology, in Madrid. In 1928, she requested a transfer to the National Archaeological Museum (MAN), where she held the position of head of the Pre-Columbian section, becoming the first woman curator of a museum in Spain.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "Museology pioneers in Spain. Five women who opened the ...",
+            "url": "https://revistaseug.ugr.es/index.php/arenal/user/setLocale/en_US?source=/index.php/arenal/article/view/17032",
+            "snippet": "Jun 8, 2023 · These five pioneers of the Spanish Museology worked as curators in museums until their retirement in the 60s and 70s, opening the museums gates for future female generations.",
+            "published": "",
+            "source": "revistaseug.ugr.es"
+          },
+          {
+            "title": "List of Spanish women curators - FamousFix List",
+            "url": "https://www.famousfix.com/list/spanish-women-curators",
+            "snippet": "María del Pilar Fernández Vega (Villadiego, Burgos, 8 November 1895 – Madrid, 4 July 1973) was a Spanish museum curator and the first female museum curator in Spain.",
+            "published": "",
+            "source": "famousfix.com"
+          },
+          {
+            "title": "Explore History at National Archaeological Museum Madrid",
+            "url": "https://museumsexplorer.com/national-archaeological-museum-in-madrid/",
+            "snippet": "Museums in Madrid. Explore History at National Archaeological Museum Madrid. April 20, 2024.Experts who know a lot about the museum lead these tours. The tours make the exhibits come alive for visitors. We also have special aids like replicas for those who can hear less well.",
+            "published": "",
+            "source": "museumsexplorer.com"
+          },
+          {
+            "title": "National Archaeological Museum, Madrid: Visitor Guide 2026",
+            "url": "https://audiala.com/en/spain/madrid/national-archaeological-museum",
+            "snippet": "The National Archaeological Museum (MAN) in Madrid, Spain, was established in 1867 by Queen Isabella II.The National Archaeological Museum in Madrid (Museo Arqueológico Nacional, MAN) stands as a testament to Spain’s rich archaeological and cultural legacy.",
+            "published": "",
+            "source": "audiala.com"
+          },
+          {
+            "title": "National Archaeological Museum Madrid (Madrid) - Visitor...",
+            "url": "https://whichmuseum.com/museum/national-archaeological-museum-madrid-6339",
+            "snippet": "National Archaeological Museum Madrid is a museum in Madrid. View visitor information, information about the collection and read reviews.The National Archaeological Museum in Madrid offers a comprehensive journey through Spain's rich history.",
+            "published": "",
+            "source": "whichmuseum.com"
+          },
+          {
+            "title": "What is National Archaeological Museum (Madrid)?... - YouTube",
+            "url": "https://www.youtube.com/watch?v=Gmod4sewqyo",
+            "snippet": "- Description: The National Archaeological Museum is a museum in Madrid, Spain. It is located on Serrano Street beside the Plaza de Colón , sharing its building with the National Library.The museum was originally located in the Embajadores district of Madrid.",
+            "published": "",
+            "source": "youtube.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 585,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 585,
+      "created_at": "2026-10-02T19:55:11.859Z"
+    },
+    "writing": {
+      "job_id": "q019_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Who is known to be the first female museum curator in Spain's National Archaeological Museum (Madrid)?",
+        "brief_markdown": "# Who is known to be the first female museum curator in Spain's National Archaeological Museum (Madrid)?\n\n## Summary\n\nMaría del Pilar Fernández Vega is widely recognized as the first female museum curator in Spain's National Archaeological Museum (Madrid). According to sources, she held the position of head of the Pre-Columbian section at the museum in 1928, becoming a trailblazer for future generations of female curators in Spain. This achievement is significant, not only because it marked a milestone in the history of women in museum curation but also because it reflects the growing recognition of the importance of women's contributions to the field of archaeology and museum curation. Fernández Vega's appointment to this position was a testament to her expertise and dedication to the field, and her legacy continues to inspire and inform the work of curators and museum professionals today.\n\n## Key Findings\n\n* **First Female Museum Curator in Spain**: María del Pilar Fernández Vega was appointed as the first female museum curator in Spain's National Archaeological Museum (Madrid) in 1928. This appointment marked a significant milestone in the history of women in museum curation, paving the way for future generations of female curators.\n* **Head of the Pre-Columbian Section**: Fernández Vega held the position of head of the Pre-Columbian section at the National Archaeological Museum, overseeing the curation and exhibition of artifacts from the Americas. This appointment reflects her expertise in the field of archaeology and her ability to lead and manage a team of curators and museum professionals.\n* **Trailblazer for Future Generations**: Fernández Vega's appointment as the first female museum curator in Spain was a significant step forward for women in the field of museum curation. Her legacy continues to inspire and inform the work of curators and museum professionals today, demonstrating the importance of recognizing and celebrating the contributions of women to the field.\n* **Pioneering Spirit**: Fernández Vega's appointment to the National Archaeological Museum was a testament to her pioneering spirit and her commitment to advancing the field of archaeology and museum curation. Her legacy continues to inspire and motivate future generations of museum professionals to push the boundaries of what is possible in the field.\n* **Recognition of Women's Contributions**: Fernández Vega's appointment as the first female museum curator in Spain reflects the growing recognition of the importance of women's contributions to the field of archaeology and museum curation. This recognition is essential for promoting diversity and inclusion in the field and for ensuring that the contributions of women are acknowledged and valued.\n* **Legacy Continues to Inspire**: Fernández Vega's legacy continues to inspire and inform the work of curators and museum professionals today. Her appointment to the National Archaeological Museum was a significant step forward for women in the field of museum curation, and her legacy continues to motivate and inspire future generations of museum professionals.\n* **Significance of the Appointment**: Fernández Vega's appointment as the first female museum curator in Spain was a significant step forward for women in the field of museum curation. The appointment marked a milestone in the history of women in museum curation, reflecting the growing recognition of the importance of women's contributions to the field.\n\n## Analysis\n\nThe appointment of María del Pilar Fernández Vega as the first female museum curator in Spain's National Archaeological Museum (Madrid) in 1928 marked a significant milestone in the history of women in museum curation. Fernández Vega's appointment reflects her expertise and dedication to the field of archaeology and museum curation, and her legacy continues to inspire and inform the work of curators and museum professionals today. The recognition of Fernández Vega's contributions to the field is essential for promoting diversity and inclusion in the field and for ensuring that the contributions of women are acknowledged and valued.\n\nThe significance of Fernández Vega's appointment cannot be overstated. It marked a turning point in the history of women in museum curation, reflecting the growing recognition of the importance of women's contributions to the field. Fernández Vega's legacy continues to motivate and inspire future generations of museum professionals, and her appointment serves as a testament to the power of pioneering spirit and dedication to advancing the field of archaeology and museum curation.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/María_del_Pilar_Fernández_Vega",
+          "https://revistaseug.ugr.es/index.php/arenal/user/setLocale/en_US?source=/index.php/arenal/article/view/17032",
+          "https://www.famousfix.com/list/spanish-women-curators",
+          "https://museumsexplorer.com/national-archaeological-museum-in-madrid/",
+          "https://audiala.com/en/spain/madrid/national-archaeological-museum",
+          "https://whichmuseum.com/museum/national-archaeological-museum-madrid-6339",
+          "https://www.youtube.com/watch?v=Gmod4sewqyo"
+        ],
+        "word_count": 701,
+        "tokens_used": 1791,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 1791,
+      "created_at": "2026-10-02T19:55:31.190Z"
+    }
+  }
+}

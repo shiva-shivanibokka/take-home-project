@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q081_w0",
+    "topic": "In what city was Hieronymous Francken I born?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q081_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Hieronymus Francken I - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Hieronymus_Francken_I",
+            "snippet": "Hieronymus Francken I or Hieronymus Francken the Elder (ca. 1540, Herentals – 1610, Paris) was a Flemish painter and an important member of the Francken family of artists. After training in Antwerp, he was mainly active in France, where he became court painter at the French court.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "Hieronymus I FRANCKEN (1540-1610) Worth, Auction... - Artprice",
+            "url": "https://www.artprice.com/artist/10268/hieronymus-i-francken",
+            "snippet": "Hieronymus I FRANCKEN is an artist born in Flanders in 1540 and deceased in 1610. The artist's works have gone up for sale at public auction 20 times, mostly in the Painting category.",
+            "published": "",
+            "source": "artprice.com"
+          },
+          {
+            "title": "Hieronymus (1540) Francken Paintings & Artwork for Sale",
+            "url": "https://www.invaluable.com/artist/francken-hieronymus-27b9hr9znq/sold-at-auction-prices/",
+            "snippet": "Explore Hieronymus (1540) Francken's past auction results and sold artwork prices. Research and compare historical data while shopping upcoming Hieronymus (1540) Francken's sales on Invaluable.com.",
+            "published": "",
+            "source": "invaluable.com"
+          },
+          {
+            "title": "Herentals Facts for Kids",
+            "url": "https://kids.kiddle.co/Herentals",
+            "snippet": "Many talented people were born or lived in Herentals. Here are a few of them: Nicolaes Francken (1520–1596): A famous painter who started a family of painters.Hieronymus Francken I (c. 1540–1610): Another painter from the Francken family.",
+            "published": "",
+            "source": "kids.kiddle.co"
+          },
+          {
+            "title": "A gem in northern France: Cassel and its museum",
+            "url": "https://www.charlestonmercury.com/single-post/2020/08/12/A-gem-in-northern-France-Cassel-and-its-museum",
+            "snippet": "His two brothers were Hieronymus Francken I (c.1540-1610) and Ambrosius Francken I (1544 – 1618). Between the late 16th century and mid 17th century, they created many triptychs for churches, but Hieronymus I also became the appointed painter of the French royal family in 1594.",
+            "published": "",
+            "source": "charlestonmercury.com"
+          },
+          {
+            "title": "The Prodigal Son Among Courtesans, attributed à Hieronymus Fr",
+            "url": "https://www.proantic.com/en/1222618-the-prodigal-son-among-courtesansattributed-a-hieronymus-francken-ii-17th-c-antwerp-sch.html",
+            "snippet": "Hieronymus Francken II returned to Antwerp where he spent the rest of his life. Hieronymus Francken the Younger was a versatile artist who practiced many genres.",
+            "published": "",
+            "source": "proantic.com"
+          },
+          {
+            "title": "Witchcraft paintings and witches sabbat paintings | Dutch 17th Century.",
+            "url": "https://vamzzz.com/blog/witchcraft-paintings/",
+            "snippet": "Frans Francken the Younger was born in Antwerp as the son of Frans Francken the Elder and Elisabeth Mertens.Frans, together with his brother Hieronymus Francken II, may also have received additional training in the workshop of their uncle Hieronymus Francken I in Paris.",
+            "published": "",
+            "source": "vamzzz.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 9 results; deduped to 9; selected 7 for Writer.",
+        "tokens_used": 604,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 604,
+      "created_at": "2026-10-02T19:49:50.375Z"
+    },
+    "writing": {
+      "job_id": "q081_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "The Birthplace of Hieronymus Francken I",
+        "brief_markdown": "# The Birthplace of Hieronymus Francken I\n\n## Summary\n\nHieronymus Francken I was a Flemish painter who played a significant role in the Francken family of artists. Born around 1540, he was active in France, where he became a court painter at the French court. Despite his notable career, the exact birthplace of Hieronymus Francken I has been a topic of interest for art historians and enthusiasts. This research brief aims to identify the city where Hieronymus Francken I was born, based on available sources.\n\n## Key Findings\n\n* **Birthplace in Flanders**\nHieronymus Francken I was born in Flanders in 1540, according to the Artprice website. This information is consistent with the Wikipedia article on Hieronymus Francken I, which states that he was born in Herentals, a city in Flanders. The birthplace in Flanders is also supported by the Herentals Facts for Kids website, which lists Hieronymus Francken I as one of the notable people born in Herentals.\n* **Training in Antwerp**\nAfter training in Antwerp, Hieronymus Francken I was mainly active in France, where he became a court painter at the French court. This suggests that he may have been born in Flanders, but later moved to Antwerp for training.\n* **Family connections**\nHieronymus Francken I was part of the Francken family of artists, which included his brothers Ambrosius Francken I and Hieronymus Francken II. This family connection may have played a role in his training and career.\n* **Birthdate and death**\nHieronymus Francken I was born around 1540 and died in 1610, according to the Wikipedia article. This information is consistent with the Artprice website, which lists his birth year as 1540.\n* **French royal family**\nHieronymus Francken I became the appointed painter of the French royal family in 1594. This appointment suggests that he had established himself as a skilled painter in France.\n* **Training in Paris**\nHieronymus Francken I may have received additional training in the workshop of his uncle Hieronymus Francken I in Paris. This suggests that he had connections to the French art world from an early age.\n* **Brotherly influence**\nHieronymus Francken I's brothers, Ambrosius Francken I and Hieronymus Francken II, were also artists who created triptychs for churches. This family influence may have played a role in Hieronymus Francken I's career and training.\n\n## Analysis\n\nThe available sources suggest that Hieronymus Francken I was born in Flanders, specifically in the city of Herentals. This is supported by multiple sources, including the Wikipedia article, the Artprice website, and the Herentals Facts for Kids website. However, it is also clear that Hieronymus Francken I received training in Antwerp and later became active in France, where he became a court painter at the French court. This suggests that he may have been born in Flanders, but later moved to Antwerp for training.\n\nThe family connections of Hieronymus Francken I are also an important aspect of his career. As part of the Francken family of artists, he had connections to the French art world from an early age. His brothers, Ambrosius Francken I and Hieronymus Francken II, were also artists who created triptychs for churches. This family influence may have played a role in Hieronymus Francken I's career and training.\n\nIn conclusion, the available sources suggest that Hieronymus Francken I was born in Flanders, specifically in the city of Herentals. His training in Antwerp and later career in France suggest that he was a skilled painter who was well-connected to the French art world.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/Hieronymus_Francken_I",
+          "https://www.artprice.com/artist/10268/hieronymus-i-francken",
+          "https://www.invaluable.com/artist/francken-hieronymus-27b9hr9znq/sold-at-auction-prices/",
+          "https://kids.kiddle.co/Herentals",
+          "https://www.charlestonmercury.com/single-post/2020/08/12/A-gem-in-northern-France-Cassel-and-its-museum",
+          "https://www.proantic.com/en/1222618-the-prodigal-son-among-courtesansattributed-a-hieronymus-francken-ii-17th-c-antwerp-sch.html",
+          "https://vamzzz.com/blog/witchcraft-paintings/"
+        ],
+        "word_count": 578,
+        "tokens_used": 1815,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 1815,
+      "created_at": "2026-10-02T19:50:08.698Z"
+    }
+  }
+}

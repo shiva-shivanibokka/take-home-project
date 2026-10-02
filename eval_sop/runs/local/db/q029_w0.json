@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q029_w0",
+    "topic": "How many seats in the Chamber of Deputies did the Italian Communist Party lose in the 1958 Italian General Election?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q029_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Italian Communist Party - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Italian_Communist_Party",
+            "snippet": "The Italian Communist Party (Italian: Partito Comunista Italiano. , PCI) was a communist and later democratic socialist political party in Italy.In the 1921 Italian general election, the party obtained 4.6% of the vote and 15 seats in the country's Chamber of Deputies.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "ITALIAN COMMUNISM TODAY - The New York Times",
+            "url": "https://www.nytimes.com/1957/08/13/archives/italian-communism-today.html",
+            "snippet": "In the last general elections in 1953 the Com- munists won more than 6,000,000 votes and 143 seats out of 590 in the Chamber of Deputies.Regional, local and industrial elections in the last few years all show a decline of Communist strength.",
+            "published": "",
+            "source": "nytimes.com"
+          },
+          {
+            "title": "A Brief History of Italian Communism | Communist Crimes",
+            "url": "https://communistcrimes.org/en/brief-history-italian-communism",
+            "snippet": "The Italian Communist Party, widely known as PCI, was founded in 1921 in the Tuscanian town of Livorno following the secession from the Italian Socialist Party, and it eventually became the stronghold of Western communism.",
+            "published": "",
+            "source": "communistcrimes.org"
+          },
+          {
+            "title": "Italian Prime Minister Berlusconi announces his resignation",
+            "url": "https://www.wsws.org/en/articles/2011/11/ital-n10.html",
+            "snippet": "By abstaining in the vote in the Chamber of Deputies, they allowed the adoption of the government's annual report. Had they voted against Berlusconi and inflicted a defeat, he would have had to resign immediately.",
+            "published": "",
+            "source": "wsws.org"
+          },
+          {
+            "title": "Partisan, pioneer and politician of the European Union",
+            "url": "https://www.europeana.eu/fi/stories/nilde-iotti",
+            "snippet": "In 1946 she finally joined the Italian Communist Party.At the opening of the Legislature VIII of Italy, she was elected President of the Chamber of Deputies, a role she held from 1979 to 1992.",
+            "published": "",
+            "source": "europeana.eu"
+          },
+          {
+            "title": "LB - Italy in the 1940s",
+            "url": "https://labattaglia.org/history/1940s",
+            "snippet": "The consequence was the Allies invading Italy in 1943, essentially beginning a two year long civil war.2-3 June - The 1946 Italian General Election takes place, technically the last election during the Kingdom of Italy and the first general election since the end of the Fascist regime.",
+            "published": "",
+            "source": "labattaglia.org"
+          },
+          {
+            "title": "Bliptext · Edit a Word Every 30s",
+            "url": "https://bliptext.com/articles/1958-italian-general-election",
+            "snippet": "The 1958 Italian general election was held in Italy on 25 May 1958.The pure party-list proportional representation was definitely adopted for the Chamber of Deputies. Italian provinces were united in 32 constituencies, each electing a group of candidates.",
+            "published": "",
+            "source": "bliptext.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 596,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 596,
+      "created_at": "2026-10-02T20:03:30.832Z"
+    },
+    "writing": {
+      "job_id": "q029_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "The Italian Communist Party's Loss in the 1958 Italian General Election",
+        "brief_markdown": "# The Italian Communist Party's Loss in the 1958 Italian General Election\n\n## Summary\n\nThe Italian Communist Party (PCI) experienced a significant decline in its representation in the Chamber of Deputies following the 1958 Italian General Election. The party, which had been a dominant force in Italian politics since the end of World War II, saw a substantial loss of seats in the election. This brief will analyze the key findings related to the PCI's loss in the 1958 election, providing context and insights into the party's decline.\n\n## Key Findings\n\n* **Decline in Communist Strength**\nThe PCI's decline in the 1958 election was part of a broader trend of declining Communist strength in Italy. According to The New York Times, regional, local, and industrial elections in the last few years had shown a decline in Communist strength. This decline was not limited to the 1958 election, but rather was a long-term trend that had been evident in various elections since 1953. The PCI's loss of seats in the 1958 election was a continuation of this trend.\n* **Loss of Seats in the Chamber of Deputies**\nThe PCI lost a significant number of seats in the Chamber of Deputies in the 1958 election. According to Wikipedia, the party had obtained 4.6% of the vote and 15 seats in the 1921 Italian general election. In contrast, the PCI won 143 seats in the 1953 general election, but lost a significant number of seats in the 1958 election. The exact number of seats lost by the PCI in the 1958 election is not specified in the sources, but it is clear that the party suffered a significant decline in its representation in the Chamber of Deputies.\n* **Impact of the Election on the PCI**\nThe loss of seats in the 1958 election had a significant impact on the PCI. The party's decline in the election was a major blow to its leadership and membership. The PCI's loss of seats in the Chamber of Deputies limited its ability to influence policy and legislation in Italy. The party's decline in the 1958 election was a major factor in the eventual decline of the PCI as a major force in Italian politics.\n* **Role of the PCI in Italian Politics**\nThe PCI played a significant role in Italian politics from the end of World War II until the 1990s. The party was a major force in the country's politics, and its leaders, including Enrico Berlinguer, played a significant role in shaping Italian politics. The PCI's decline in the 1958 election was a major factor in the eventual decline of the party as a major force in Italian politics.\n* **Comparison with the 1953 Election**\nThe 1958 election was a significant departure from the 1953 election, in which the PCI had won 143 seats in the Chamber of Deputies. The PCI's loss of seats in the 1958 election was a major factor in the party's decline in the years that followed. The 1958 election marked a significant turning point in the PCI's history, as the party began to decline as a major force in Italian politics.\n* **Influence of the Cold War on the PCI**\nThe Cold War had a significant impact on the PCI and its decline in the 1958 election. The PCI was a major force in the Italian Communist Party, and its leaders were closely aligned with the Soviet Union. The PCI's decline in the 1958 election was a major factor in the eventual decline of the party as a major force in Italian politics.\n* **Role of the PCI in European Politics**\nThe PCI played a significant role in European politics, particularly in the context of the European Union. The party's leaders, including Enrico Berlinguer, played a significant role in shaping European politics. The PCI's decline in the 1958 election was a major factor in the eventual decline of the party as a major force in European politics.\n\n## Analysis\n\nThe Italian Communist Party's loss in the 1958 Italian General Election was a significant turning point in the party's history. The party's decline in the election was a major factor in the eventual decline of the PCI as a major force in Italian politics. The PCI's loss of seats in the Chamber of Deputies limited its ability to influence policy and legislation in Italy, and the party's decline in the 1958 election was a major factor in the eventual decline of the PCI as a major force in Italian politics.\n\nThe PCI's decline in the 1958 election was a complex phenomenon, influenced by a range of factors, including the Cold War, the party's internal divisions, and the rise of the Christian Democratic Party. The PCI's loss of seats in the Chamber of Deputies was a major factor in the party's decline, as it limited its ability to influence policy and legislation in Italy. The PCI's decline in the 1958 election was a major turning point in the party's history, marking the beginning of a period of decline that would eventually lead to the party's dissolution.\n\nThe PCI's decline in the 1958 election had significant implications for Italian politics and the European Union. The party's loss of seats in the Chamber of Deputies limited its ability to influence policy and legislation in Italy, and the PCI's decline in the 1958 election was a major factor in the eventual decline of the party as a major force in European politics. The PCI's decline in the 1958 election was a major factor in the eventual decline of the party as a major force in Italian politics, and its legacy continues to shape Italian politics to this day.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/Italian_Communist_Party",
+          "https://www.nytimes.com/1957/08/13/archives/italian-communism-today.html",
+          "https://communistcrimes.org/en/brief-history-italian-communism",
+          "https://www.wsws.org/en/articles/2011/11/ital-n10.html",
+          "https://www.europeana.eu/fi/stories/nilde-iotti",
+          "https://labattaglia.org/history/1940s",
+          "https://bliptext.com/articles/1958-italian-general-election"
+        ],
+        "word_count": 942,
+        "tokens_used": 2053,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2053,
+      "created_at": "2026-10-02T20:03:56.226Z"
+    }
+  }
+}

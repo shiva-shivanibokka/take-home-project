@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q033_w0",
+    "topic": "What is the name of the dedicated infrared flash used to project invisible infrared light onto the user's face to properly read the 30,000 facial points?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q033_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "iPhone Dot Projector Explained - SimplyMac",
+            "url": "https://www.simplymac.com/iphone/iphone-dot-projector-explained",
+            "snippet": "Jan 26, 2025 · The iPhone Dot Projector is a key component of Apple’s Face ID technology. This small device projects over 30,000 invisible infrared dots onto a user’s face. The dots create a detailed 3D map of facial features, enabling secure and accurate facial recognition. The Dot Projector works alongside other sensors in the TrueDepth camera sy",
+            "published": "",
+            "source": "simplymac.com"
+          },
+          {
+            "title": "Does Face ID Use Infrared Light? The Science of Secure iPhone ...",
+            "url": "https://techflare.net/does-face-id-use-infrared-light-the-science-of-secure-iphone-tech/",
+            "snippet": "Jan 6, 2026 · The Dot Projector: This is the centerpiece of the 3D mapping process. It projects more than 30,000 invisible infrared dots onto the contours of the user’s face. The Infrared Camera: This sensor reads the dot pattern reflected back from the face. It captures an infrared image and sends it to the Secure Enclave for processing.",
+            "published": "",
+            "source": "techflare.net"
+          },
+          {
+            "title": "Unmasking the Magic: How Apple's Face ID Really Works",
+            "url": "https://www.firestormcyber.com/post/unmasking-the-magic-how-apple-s-face-id-really-works",
+            "snippet": "Jul 9, 2025 · The dot projector beams over 30,000 invisible infrared dots onto your face. Think of it like a highly detailed, invisible grid. Proximity Sensor & Ambient Light Sensor: These help the system detect when your face is near the device and adjust for lighting conditions, ensuring efficient operation.",
+            "published": "",
+            "source": "firestormcyber.com"
+          },
+          {
+            "title": "Unveiling the Magic: What Does the iPhone Dot Projector Do?",
+            "url": "https://easytechsolver.com/what-does-iphone-dot-projector-do/",
+            "snippet": "Feb 24, 2024 · Understanding Dot Projector Technology Dot projector technology is a key feature in the iPhone, primarily used for facial recognition and augmented reality applications. The technology involves the emission of thousands of infrared dots onto the user’s face, enabling the iPhone to create a precise 3D map of the facial structure. This",
+            "published": "",
+            "source": "easytechsolver.com"
+          },
+          {
+            "title": "Face ID Components: TrueDepth, Flood Illuminator, IR Flash",
+            "url": "https://ifixelectronics.com.au/resources/face-id-explained",
+            "snippet": "The Ambient Light Sensor's Hidden Role The ALS does more than adjust your screen brightness. It feeds real-time ambient light data to the Face ID system, which uses it to calibrate infrared power output. In bright sunlight, IR power is increased to compete with ambient infrared. In darkness, it dials back to avoid oversaturation. When the ALS is da",
+            "published": "",
+            "source": "ifixelectronics.com.au"
+          },
+          {
+            "title": "Facial recognition | Apple Wiki | Fandom",
+            "url": "https://apple.fandom.com/wiki/Facial_recognition",
+            "snippet": "This is done by using a \"Flood Illuminator\", which is a dedicated infrared flash that throws out invisible infrared light onto the user's face to properly read the 30,000 facial points.",
+            "published": "",
+            "source": "apple.fandom.com"
+          },
+          {
+            "title": "dedicated infrared flash project invisible infrared light onto the...",
+            "url": "https://www.biometricupdate.com/?s=dedicated+infrared+flash+project+invisible+infrared+light+onto+the+user's+face+properly+read+30,000+facial+points+name",
+            "snippet": "New deepfake tool shows why face alone is no longer proof of identity.The Biometrics Institute, established in 2001, is an independent international membership organisation promoting the responsible, ethical, and effective use of biometrics.",
+            "published": "",
+            "source": "biometricupdate.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 627,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 627,
+      "created_at": "2026-10-02T20:07:33.977Z"
+    },
+    "writing": {
+      "job_id": "q033_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Infrared Flash Technology in Face ID: A Critical Component for Secure Facial Recognition",
+        "brief_markdown": "# Infrared Flash Technology in Face ID: A Critical Component for Secure Facial Recognition\n\n## Summary\n\nThe Face ID system on Apple devices relies on a complex array of sensors and technologies to provide secure and accurate facial recognition. A critical component of this system is the infrared flash, a dedicated device that projects invisible infrared light onto the user's face to enable the reading of 30,000 facial points. This technology is essential for creating a detailed 3D map of the user's facial structure, which is then used for secure authentication. The infrared flash works in conjunction with other sensors, including the TrueDepth camera and the Ambient Light Sensor, to provide a robust and reliable facial recognition system. This research brief will explore the key findings related to the infrared flash technology used in Face ID.\n\n## Key Findings\n\n* **The Infrared Flash: A Critical Component of Face ID**\nThe infrared flash is a dedicated device that projects invisible infrared light onto the user's face to enable the reading of 30,000 facial points. This technology is essential for creating a detailed 3D map of the user's facial structure, which is then used for secure authentication. The infrared flash works in conjunction with other sensors, including the TrueDepth camera and the Ambient Light Sensor, to provide a robust and reliable facial recognition system.\n* **The Dot Projector: A Key Component of the Infrared Flash**\nThe dot projector is a key component of the infrared flash, responsible for projecting over 30,000 invisible infrared dots onto the contours of the user's face. This highly detailed, invisible grid is then read by the Infrared Camera, which captures an infrared image and sends it to the Secure Enclave for processing.\n* **The Role of the Ambient Light Sensor**\nThe Ambient Light Sensor plays a critical role in the Face ID system, feeding real-time ambient light data to the Face ID system, which uses it to calibrate infrared power output. In bright sunlight, IR power is increased to compete with ambient infrared, while in darkness, it dials back to avoid oversaturation.\n* **The Importance of the Infrared Flash in Secure Authentication**\nThe infrared flash is essential for secure authentication, as it enables the creation of a detailed 3D map of the user's facial structure. This map is then used to verify the user's identity, providing a secure and reliable means of authentication.\n* **The Limitations of the Infrared Flash**\nWhile the infrared flash is a critical component of the Face ID system, it is not without its limitations. In bright sunlight, the infrared flash may struggle to provide a clear image, while in darkness, it may be overwhelmed by ambient infrared.\n* **The Role of the Flood Illuminator**\nThe Flood Illuminator is a dedicated infrared flash that throws out invisible infrared light onto the user's face to properly read the 30,000 facial points. This technology is essential for creating a detailed 3D map of the user's facial structure, which is then used for secure authentication.\n* **The Biometric Implications of the Infrared Flash**\nThe infrared flash has significant implications for biometric security, providing a secure and reliable means of authentication. However, it also raises concerns about the potential for spoofing and other forms of biometric attack.\n\n## Analysis\n\nThe infrared flash is a critical component of the Face ID system, providing a secure and reliable means of authentication. The technology relies on the projection of invisible infrared light onto the user's face, which is then read by the Infrared Camera. This process enables the creation of a detailed 3D map of the user's facial structure, which is then used to verify the user's identity. The infrared flash works in conjunction with other sensors, including the TrueDepth camera and the Ambient Light Sensor, to provide a robust and reliable facial recognition system.\n\nThe limitations of the infrared flash are significant, particularly in bright sunlight and darkness. In these conditions, the infrared flash may struggle to provide a clear image, which can compromise the security of the Face ID system. However, the infrared flash is essential for secure authentication, providing a secure and reliable means of verifying the user's identity.\n\nThe implications of the infrared flash for biometric security are significant, providing a secure and reliable means of authentication. However, it also raises concerns about the potential for spoofing and other forms of biometric attack. As biometric technology continues to evolve, it is essential that researchers and developers prioritize the development of secure and reliable biometric systems.\n\nThe use of the infrared flash in Face ID has significant implications for the security and reliability of biometric authentication. The technology provides a secure and reliable means of verifying the user's identity, but it also raises concerns about the potential for spoofing and other forms of biometric attack. As biometric technology continues to evolve, it is essential that researchers and developers prioritize the development of secure and reliable biometric systems.",
+        "citations": [
+          "https://www.simplymac.com/iphone/iphone-dot-projector-explained",
+          "https://techflare.net/does-face-id-use-infrared-light-the-science-of-secure-iphone-tech/",
+          "https://www.firestormcyber.com/post/unmasking-the-magic-how-apple-s-face-id-really-works",
+          "https://easytechsolver.com/what-does-iphone-dot-projector-do/",
+          "https://ifixelectronics.com.au/resources/face-id-explained",
+          "https://apple.fandom.com/wiki/Facial_recognition",
+          "https://www.biometricupdate.com/?s=dedicated+infrared+flash+project+invisible+infrared+light+onto+the+user's+face+properly+read+30,000+facial+points+name"
+        ],
+        "word_count": 820,
+        "tokens_used": 2047,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2047,
+      "created_at": "2026-10-02T20:07:56.415Z"
+    }
+  }
+}

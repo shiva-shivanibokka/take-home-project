@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q095_w0",
+    "topic": "In what country is Dubicze Osoczne?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q095_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Dubicze Osoczne - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Dubicze_Osoczne",
+            "snippet": "Dubicze Osoczne [duˈbʲitʂɛ ɔˈsɔtʂnɛ] is a village in the administrative district of Gmina Hajnówka, within Hajnówka County, Podlaskie Voivodeship, in north-eastern Poland, close to the border with Belarus. Country.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "Dubicze Osoczne – Wikipedia, wolna encyklopedia",
+            "url": "https://pl.wikipedia.org/wiki/Dubicze_Osoczne",
+            "snippet": "Dubicze Osoczne (gwarowe: Dúbičy Osóčny[5]) – wieś w Polsce położona w województwie podlaskim, w powiecie hajnowskim, w gminie Hajnówka [3][6]. W latach 1975–1998 miejscowość administracyjnie należała do województwa białostockiego.",
+            "published": "",
+            "source": "pl.wikipedia.org"
+          },
+          {
+            "title": "Dubicze Osoczne - Wikiwand",
+            "url": "https://www.wikiwand.com/en/articles/Dubicze_Osoczne",
+            "snippet": "Dubicze Osoczne [duˈbʲit͡ʂɛ ɔˈsɔt͡ʂnɛ] is a village in the administrative district of Gmina Hajnówka, within Hajnówka County, Podlaskie Voivodeship, in north-eastern Poland, close to the border with Belarus. [1] Quick facts Country, Voivodeship ...",
+            "published": "",
+            "source": "wikiwand.com"
+          },
+          {
+            "title": "Dubicze Osoczne Map - Village - Hajnówka, Podlaskie, Poland",
+            "url": "https://mapcarta.com/13891476",
+            "snippet": "Dubicze Osoczne is a village in the administrative district of Gmina Hajnówka, within Hajnówka County, Podlaskie Voivodeship, in north-eastern Poland, close to the border with Belarus.",
+            "published": "",
+            "source": "mapcarta.com"
+          },
+          {
+            "title": "Dubicze Osoczne, Hajnówka (Gmina), Podlaskie Voivodeship ...",
+            "url": "https://www.city-facts.com/dubicze-osoczne/population",
+            "snippet": "Dubicze Osoczne [duˈbʲit͡ʂɛ ɔˈsɔt͡ʂnɛ] is a village in the administrative district of Gmina Hajnówka, within Hajnówka County, Podlaskie Voivodeship, in north-eastern Poland, close to the border with Belarus.",
+            "published": "",
+            "source": "city-facts.com"
+          },
+          {
+            "title": "Dubicze Osoczne - Academic Dictionaries and Encyclopedias",
+            "url": "https://en-academic.com/dic.nsf/enwiki/10759834",
+            "snippet": "Dubicze Osoczne[duˈbit ͡ʂɛ ɔˈsɔt ͡ʂnɛ] is a village in the administrative district of Gmina Hajnówka, within Hajnówka County, Podlaskie Voivodeship, in north-eastern Poland, close to the border with Belarus. [1]",
+            "published": "",
+            "source": "en-academic.com"
+          },
+          {
+            "title": "satellite Dubicze Osoczne map, Poland, Podlasie region — Google",
+            "url": "https://satellites.pro/Google/Dubicze_Osoczne_map",
+            "snippet": "Region: Dubicze Osoczne. Region: gmina Hajnówka. Country: Poland. satellite Google™ map of Dubicze Osoczne: address search, weather forecast, all streets and buildings location on the satellite map of Dubicze Osoczne.",
+            "published": "",
+            "source": "satellites.pro"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 809,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 809,
+      "created_at": "2026-10-02T20:13:37.513Z"
+    },
+    "writing": {
+      "job_id": "q095_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Where is Dubicze Osoczne?",
+        "brief_markdown": "# Where is Dubicze Osoczne?\n\n## Summary\n\nDubicze Osoczne is a village located in the administrative district of Gmina Hajnówka, within Hajnówka County, Podlaskie Voivodeship, in north-eastern Poland. The village is situated close to the border with Belarus. This research brief aims to provide an in-depth analysis of the geographical location of Dubicze Osoczne, based on multiple sources.\n\n## Key Findings\n\n* **Country: Poland**\nDubicze Osoczne is a village in Poland, as stated in multiple sources, including Wikipedia, Wikiwand, and Mapcarta. The sources consistently mention that the village is located in north-eastern Poland, close to the border with Belarus. This finding is significant as it establishes the country where Dubicze Osoczne is located. The village's proximity to the border with Belarus suggests that it may be an important location for regional trade and cultural exchange.\n* **Voivodeship: Podlaskie**\nThe village is situated within the Podlaskie Voivodeship, as mentioned in Wikipedia and Wikiwand. The Podlaskie Voivodeship is one of the 16 administrative divisions of Poland, and Dubicze Osoczne's location within this region suggests that the village may be subject to the regional policies and regulations of the voivodeship.\n* **County: Hajnówka**\nDubicze Osoczne is located within Hajnówka County, as stated in Wikipedia and Mapcarta. Hajnówka County is a part of the Podlaskie Voivodeship, and the village's location within this county suggests that it may be subject to the local policies and regulations of the county.\n* **Gmina: Hajnówka**\nThe village is situated within the administrative district of Gmina Hajnówka, as mentioned in Wikipedia and Wikiwand. Gmina Hajnówka is a part of Hajnówka County, and the village's location within this gmina suggests that it may be subject to the local policies and regulations of the gmina.\n* **Border with Belarus**\nDubicze Osoczne is located close to the border with Belarus, as stated in multiple sources, including Wikipedia, Wikiwand, and Mapcarta. The village's proximity to the border with Belarus suggests that it may be an important location for regional trade and cultural exchange.\n* **Population**\nThe population of Dubicze Osoczne is not explicitly mentioned in the sources, but it is likely to be a small village, given its location in a rural area.\n* **Geographical location**\nDubicze Osoczne is situated in north-eastern Poland, as mentioned in multiple sources, including Wikipedia, Wikiwand, and Mapcarta. The village's geographical location suggests that it may be subject to the regional policies and regulations of the north-eastern region of Poland.\n\n## Analysis\n\nThe findings of this research brief suggest that Dubicze Osoczne is a village located in north-eastern Poland, within the administrative district of Gmina Hajnówka, within Hajnówka County, Podlaskie Voivodeship. The village's proximity to the border with Belarus suggests that it may be an important location for regional trade and cultural exchange. The village's location within the Podlaskie Voivodeship and Hajnówka County suggests that it may be subject to the regional policies and regulations of these administrative divisions.\n\nThe consistency of the sources in mentioning the village's location in north-eastern Poland, close to the border with Belarus, suggests that the village is indeed located in this region. The lack of explicit mention of the population of Dubicze Osoczne in the sources suggests that the village may be a small rural community.\n\nThe findings of this research brief have implications for regional trade and cultural exchange between Poland and Belarus. The village's location close to the border with Belarus suggests that it may be an important location for regional trade and cultural exchange. The village's location within the Podlaskie Voivodeship and Hajnówka County suggests that it may be subject to the regional policies and regulations of these administrative divisions.\n\nIn conclusion, the findings of this research brief suggest that Dubicze Osoczne is a village located in north-eastern Poland, within the administrative district of Gmina Hajnówka, within Hajnówka County, Podlaskie Voivodeship. The village's proximity to the border with Belarus suggests that it may be an important location for regional trade and cultural exchange. The village's location within the Podlaskie Voivodeship and Hajnówka County suggests that it may be subject to the regional policies and regulations of these administrative divisions.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/Dubicze_Osoczne",
+          "https://pl.wikipedia.org/wiki/Dubicze_Osoczne",
+          "https://www.wikiwand.com/en/articles/Dubicze_Osoczne",
+          "https://mapcarta.com/13891476",
+          "https://www.city-facts.com/dubicze-osoczne/population",
+          "https://en-academic.com/dic.nsf/enwiki/10759834",
+          "https://satellites.pro/Google/Dubicze_Osoczne_map"
+        ],
+        "word_count": 680,
+        "tokens_used": 2124,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2124,
+      "created_at": "2026-10-02T20:14:00.326Z"
+    }
+  }
+}
