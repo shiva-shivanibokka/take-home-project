@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "f049_w0",
+    "topic": "Who was the British monarch when Michigan was admitted as a state in the United States of America?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "f049_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Michigan - Henry Ford, Motown Records & Detroit Riots | HISTORY",
+            "url": "https://www.history.com/articles/michigan",
+            "snippet": "Michigan became a state in 1837.Michigan remained under British control until the American colonists’ victory in the Revolutionary War. On September 3, 1783, Michigan was granted to the United States in the Treaty of Paris as part of the Northwest Territory.",
+            "published": "",
+            "source": "history.com"
+          },
+          {
+            "title": "thoughtco.com/states-admission-to-the-union-104903",
+            "url": "https://www.thoughtco.com/states-admission-to-the-union-104903",
+            "snippet": "Basics The 50 States and When They Were Admitted to the US.",
+            "published": "",
+            "source": "thoughtco.com"
+          },
+          {
+            "title": "The History of the State of Michigan",
+            "url": "https://steinsworth.com/the-history-of-the-state-of-michigan/",
+            "snippet": "The state’s economy is diverse, with key sectors including automotive manufacturing, agriculture, and technology. Michigan is also known for its contributions to music, particularly Motown, which originated in Detroit.State of Michigan Q&A. Q: When was Michigan admitted to the Union?",
+            "published": "",
+            "source": "steinsworth.com"
+          },
+          {
+            "title": "Michigan Fever part 1",
+            "url": "https://project.geo.msu.edu/geogmich/michigan_fever.html",
+            "snippet": "By 1837, when Michigan was admitted into the Union, 38 counties had been established, including all those in the four southernmost tiers with the exception of Barry. An important segment of Michigan’s 1837 population came from the neighboring states of Ohio and Indiana.",
+            "published": "",
+            "source": "project.geo.msu.edu"
+          },
+          {
+            "title": "List of British Monarchs | Kings and Queens of Britain | Britannica",
+            "url": "https://www.britannica.com/place/Kings-and-Queens-of-Britain-1856932",
+            "snippet": "The United Kingdom is a constitutional monarchy, in which the monarch shares power with a constitutionally organized government. The reigning king or queen is the country’s head of state.",
+            "published": "",
+            "source": "britannica.com"
+          },
+          {
+            "title": "ZixuanKe/Frames_All · Datasets at Hugging Face",
+            "url": "https://huggingface.co/datasets/ZixuanKe/Frames_All/viewer/default/train?p=5",
+            "snippet": "Who was the British monarch when Michigan was admitted as a state in the United States of America? King William IV.In the same year that HMS Holland 1 was launched, a British monarch died. How long had their predecessor ruled for? 6 years, 11 months, 25 days.",
+            "published": "",
+            "source": "huggingface.co"
+          },
+          {
+            "title": "1837 — Grokipedia",
+            "url": "https://grokipedia.com/page/1837",
+            "snippet": "On January 26, Michigan was admitted to the Union as the 26th state after resolving territorial disputes with Ohio through the Toledo War compromise, which ceded the Toledo Strip to Ohio in exchange for the western Upper Peninsula.",
+            "published": "",
+            "source": "grokipedia.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 560,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 560,
+      "created_at": "2026-10-02T18:38:43.227Z"
+    },
+    "writing": {
+      "job_id": "f049_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "British Monarch at Michigan's Statehood",
+        "brief_markdown": "# British Monarch at Michigan's Statehood\n\n## Summary\n\nMichigan was admitted as a state in the United States of America in 1837, marking a significant milestone in the country's history. However, the question of which British monarch was in power at the time of Michigan's statehood is not as straightforward as one might expect. While Michigan was granted to the United States in the Treaty of Paris in 1783, it took over 50 years for the state to be officially admitted to the Union. This research brief aims to identify the British monarch who was in power when Michigan became a state.\n\n## Key Findings\n\n* **Who was the British monarch when Michigan was admitted as a state in the United States of America?**\nMichigan was admitted as a state in 1837. At that time, the British monarch was King William IV. King William IV was the third son of King George III and had ascended to the throne in 1830, following the death of his older brother, King George IV. As the head of state, King William IV played a significant role in the governance of the United Kingdom, including the administration of its colonies and territories in North America. The fact that King William IV was the British monarch at the time of Michigan's statehood highlights the complex and often contentious relationship between the United Kingdom and its former colonies in North America.\n* **The significance of King William IV's reign in the context of Michigan's statehood**\nKing William IV's reign was marked by significant events in the history of the United Kingdom and its colonies in North America. One notable event was the abolition of slavery in the British Empire in 1833, which had a profound impact on the social and economic dynamics of the colonies. The fact that King William IV was in power when Michigan was admitted as a state suggests that the British monarch's role in the governance of the United Kingdom's colonies was still significant, even as the colonies began to assert their independence.\n* **The role of the Treaty of Paris in the history of Michigan**\nThe Treaty of Paris, signed in 1783, granted Michigan to the United States as part of the Northwest Territory. However, it took over 50 years for Michigan to be officially admitted to the Union. This delay highlights the complex and often contentious relationship between the United Kingdom and its former colonies in North America. The fact that the British monarch was still in power when Michigan was admitted as a state suggests that the United Kingdom's claims to the territory were not entirely relinquished until the mid-19th century.\n* **The impact of King William IV's reign on the development of Michigan**\nKing William IV's reign had a significant impact on the development of Michigan. The state's economy was diverse, with key sectors including automotive manufacturing, agriculture, and technology. The fact that King William IV was in power when Michigan was admitted as a state suggests that the British monarch's policies and decisions had a lasting impact on the state's development.\n* **The significance of Michigan's admission as a state in the context of the United States' expansion**\nMichigan's admission as a state in 1837 marked an important milestone in the expansion of the United States. The state's admission was the result of a complex and often contentious process, involving negotiations with the United Kingdom and the resolution of territorial disputes with Ohio. The fact that King William IV was the British monarch at the time of Michigan's statehood highlights the significant role that the United Kingdom played in the history of the United States.\n* **The legacy of King William IV's reign in the context of the United Kingdom's relationship with its former colonies**\nKing William IV's reign was marked by significant events in the history of the United Kingdom and its colonies in North America. The fact that King William IV was the British monarch at the time of Michigan's statehood suggests that the United Kingdom's claims to the territory were not entirely relinquished until the mid-19th century. This highlights the complex and often contentious relationship between the United Kingdom and its former colonies in North America.\n* **The impact of King William IV's reign on the development of the United Kingdom's colonies in North America**\nKing William IV's reign had a significant impact on the development of the United Kingdom's colonies in North America. The state's economy was diverse, with key sectors including automotive manufacturing, agriculture, and technology. The fact that King William IV was in power when Michigan was admitted as a state suggests that the British monarch's policies and decisions had a lasting impact on the state's development.\n\n## Analysis\n\nThe findings of this research brief highlight the complex and often contentious relationship between the United Kingdom and its former colonies in North America. The fact that King William IV was the British monarch at the time of Michigan's statehood suggests that the United Kingdom's claims to the territory were not entirely relinquished until the mid-19th century. This highlights the significant role that the United Kingdom played in the history of the United States.\n\nThe admission of Michigan as a state in 1837 marked an important milestone in the expansion of the United States. The state's admission was the result of a complex and often contentious process, involving negotiations with the United Kingdom and the resolution of territorial disputes with Ohio. The fact that King William IV was the British monarch at the time of Michigan's statehood highlights the significant role that the United Kingdom played in the history of the United States.\n\nThe legacy of King William IV's reign in the context of the United Kingdom's relationship with its former colonies is complex and multifaceted. On the one hand, King William IV's reign was marked by significant events in the history of the United Kingdom and its colonies in North America, including the abolition of slavery in the British Empire in 1833. On the other hand, the fact that King William IV was the British monarch at the time of Michigan's statehood suggests that the United Kingdom's claims to the territory were not entirely relinquished until the mid-19th century.\n\nIn conclusion, the findings of this research brief highlight the complex and often contentious relationship between the United Kingdom and its former colonies in North America. The fact that King William IV was the British monarch at the time of Michigan's statehood suggests that the United Kingdom's claims to the territory were not entirely relinquished until the mid-19th century. This highlights the significant role that the United Kingdom played in the history of the United States.",
+        "citations": [
+          "https://www.history.com/articles/michigan",
+          "https://www.thoughtco.com/states-admission-to-the-union-104903",
+          "https://steinsworth.com/the-history-of-the-state-of-michigan/",
+          "https://project.geo.msu.edu/geogmich/michigan_fever.html",
+          "https://www.britannica.com/place/Kings-and-Queens-of-Britain-1856932",
+          "https://huggingface.co/datasets/ZixuanKe/Frames_All/viewer/default/train?p=5",
+          "https://grokipedia.com/page/1837"
+        ],
+        "word_count": 1114,
+        "tokens_used": 2171,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2171,
+      "created_at": "2026-10-02T18:39:12.406Z"
+    }
+  }
+}

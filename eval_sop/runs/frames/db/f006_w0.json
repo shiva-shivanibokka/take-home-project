@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "f006_w0",
+    "topic": "Which film, based loosely on the story of Frederick 'Fritz' Niland, won the Golden Globe for best drama at the 56th Golden Globes in 1999?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "f006_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Niland brothers - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Niland_brothers",
+            "snippet": "The Niland brothers; from left to right: Edward, Preston, Robert, and Frederick.Fritz was awarded a Bronze Star for his service.[2] This story is evidenced in Stephen Ambrose's book Band of Brothers, as well as from biographical data on Francis L. Sampson.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "The Incredible True Story Behind 'Saving Private Ryan'",
+            "url": "https://allthatsinteresting.com/saving-private-ryan-true-story",
+            "snippet": "James Ryan from the 1998 film \"Saving Private Ryan\" was loosely based on Fritz Niland, a New York paratrooper sent home after his brothers were killed in action.",
+            "published": "",
+            "source": "allthatsinteresting.com"
+          },
+          {
+            "title": "Remembering the Niland Brothers - YouTube",
+            "url": "https://www.youtube.com/watch?v=PFcqdkIKJvQ",
+            "snippet": "Remembering the Niland Brothers. Tap to unmute. 2x.The Street Gangs of Papua New Guinea (UNCENSORED). Best Documentary.",
+            "published": "",
+            "source": "youtube.com"
+          },
+          {
+            "title": "The Oscar-winning film was released 25 years ago. - syracuse.com",
+            "url": "https://www.syracuse.com/state/2023/07/saving-private-ryan-movie-inspired-by-true-story-of-upstate-ny-brothers-in-wwii.html",
+            "snippet": "“Saving Private Ryan” is loosely based on the Niland brothers’ story, which is partly why the names are changed. The film brutally depicts the Normandy invasion followed by a mission to find Private Ryan after three of his brothers are killed.",
+            "published": "",
+            "source": "syracuse.com"
+          },
+          {
+            "title": "Is “Saving Private Ryan” Based on a True Story? All About the...",
+            "url": "https://www.yahoo.com/entertainment/articles/saving-private-ryan-based-true-123000868.html",
+            "snippet": "The Oscar-winning 1998 war drama, which premiered 27 years ago, was inspired by Edward, Preston, Robert and Frederick \"Fritz\" Niland, four brothers from Upstate New York who all fought in World War II. In the film, Matt Damon portrays Private James Francis Ryan, a character...",
+            "published": "",
+            "source": "yahoo.com"
+          },
+          {
+            "title": "Saving Private Ryan: The Real-Life D-Day Back Story | HISTORY",
+            "url": "https://www.history.com/articles/saving-private-ryan-real-life-dday-back-story",
+            "snippet": "Frederick Niland’s story provided direct inspiration for Saving Private Ryan and its title character of James Francis Ryan.",
+            "published": "",
+            "source": "history.com"
+          },
+          {
+            "title": "Niland, Fredrick William “Fritz”. | WW2 Gravestone",
+            "url": "https://ww2gravestone.com/people/niland-fredrick-w-fritz/",
+            "snippet": "Death and burial ground of Niland, Fredrick William “Fritz”. Fritz Niland died 01-12-1983, in San Francisco at the age of 63. Frederick “Fritz” Niland is buried on the Fort Ricardson National Cemetery, Anchorage Borough, Alaska USA. Section G, 1599.",
+            "published": "",
+            "source": "ww2gravestone.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 637,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 637,
+      "created_at": "2026-10-02T18:47:34.265Z"
+    },
+    "writing": {
+      "job_id": "f006_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "The True Story Behind the Golden Globe Winner: \"Saving Private Ryan\"",
+        "brief_markdown": "# The True Story Behind the Golden Globe Winner: \"Saving Private Ryan\"\n\n## Summary\nThe film \"Saving Private Ryan\" won the Golden Globe for best drama at the 56th Golden Globes in 1999. The movie is loosely based on the story of Frederick \"Fritz\" Niland, one of four brothers from Upstate New York who fought in World War II. The Niland brothers' story is a poignant one, with three of the brothers being killed in action, prompting the US Army to send Fritz back home. The film's title character, James Francis Ryan, was inspired by Fritz Niland's story, and the movie's depiction of the Normandy invasion and the subsequent mission to find Private Ryan is a testament to the bravery and sacrifice of the Niland brothers.\n\n## Key Findings\n\n* **The Niland Brothers' Story: A True Account of War and Sacrifice**\nThe Niland brothers' story is a true account of war and sacrifice, with three of the brothers being killed in action. According to Wikipedia, the Niland brothers; from left to right: Edward, Preston, Robert, and Frederick. Fritz was awarded a Bronze Star for his service. This story is evidenced in Stephen Ambrose's book Band of Brothers, as well as from biographical data on Francis L. Sampson. The Niland brothers' story is a powerful reminder of the human cost of war and the sacrifices made by soldiers and their families. Their story has been immortalized in the film \"Saving Private Ryan,\" which won the Golden Globe for best drama in 1999.\n* **The Inspiration Behind \"Saving Private Ryan\"**\nThe film \"Saving Private Ryan\" was inspired by the story of Frederick \"Fritz\" Niland, one of the four Niland brothers who fought in World War II. According to an article on Allthatsinteresting, James Ryan from the 1998 film \"Saving Private Ryan\" was loosely based on Fritz Niland, a New York paratrooper sent home after his brothers were killed in action. The film's title character, James Francis Ryan, was inspired by Fritz Niland's story, and the movie's depiction of the Normandy invasion and the subsequent mission to find Private Ryan is a testament to the bravery and sacrifice of the Niland brothers.\n* **The Niland Brothers' Legacy**\nThe Niland brothers' legacy extends beyond their individual sacrifices. According to an article on syracuse.com, the film \"Saving Private Ryan\" is loosely based on the Niland brothers' story, which is partly why the names are changed. The film brutally depicts the Normandy invasion followed by a mission to find Private Ryan after three of his brothers are killed. The Niland brothers' story has been immortalized in the film, and their legacy continues to inspire and educate people about the human cost of war.\n* **The Film's Depiction of the Normandy Invasion**\nThe film \"Saving Private Ryan\" depicts the Normandy invasion in a brutal and realistic manner. According to an article on Yahoo, the film premiered 27 years ago and was inspired by the story of the Niland brothers. The film's depiction of the Normandy invasion is a testament to the bravery and sacrifice of the soldiers who fought in World War II. The film's realistic portrayal of the invasion has been praised for its accuracy and attention to detail.\n* **The Real-Life D-Day Back Story**\nThe film \"Saving Private Ryan\" is based on the real-life story of Frederick Niland, one of the four Niland brothers who fought in World War II. According to an article on History.com, Frederick Niland's story provided direct inspiration for Saving Private Ryan and its title character of James Francis Ryan. The film's title character, James Francis Ryan, was inspired by Fritz Niland's story, and the movie's depiction of the Normandy invasion and the subsequent mission to find Private Ryan is a testament to the bravery and sacrifice of the Niland brothers.\n* **The Niland Brothers' Burial Ground**\nThe Niland brothers' burial ground is a poignant reminder of the human cost of war. According to an article on WW2 Gravestone, Frederick \"Fritz\" Niland is buried on the Fort Ricardson National Cemetery, Anchorage Borough, Alaska USA. Section G, 1599. The Niland brothers' burial ground is a testament to the sacrifice and bravery of the soldiers who fought in World War II.\n\n## Analysis\n\nThe Niland brothers' story is a powerful reminder of the human cost of war and the sacrifices made by soldiers and their families. The film \"Saving Private Ryan\" is loosely based on their story, and the movie's depiction of the Normandy invasion and the subsequent mission to find Private Ryan is a testament to the bravery and sacrifice of the Niland brothers. The film's realistic portrayal of the invasion has been praised for its accuracy and attention to detail.\n\nThe Niland brothers' legacy extends beyond their individual sacrifices. Their story has been immortalized in the film, and their legacy continues to inspire and educate people about the human cost of war. The film's title character, James Francis Ryan, was inspired by Fritz Niland's story, and the movie's depiction of the Normandy invasion and the subsequent mission to find Private Ryan is a testament to the bravery and sacrifice of the Niland brothers.\n\nThe film \"Saving Private Ryan\" won the Golden Globe for best drama at the 56th Golden Globes in 1999. The movie's success is a testament to the enduring power of the Niland brothers' story and the impact it has had on people around the world. The film's depiction of the Normandy invasion and the subsequent mission to find Private Ryan is a powerful reminder of the human cost of war and the sacrifices made by soldiers and their families.\n\nThe Niland brothers' story is a true account of war and sacrifice, with three of the brothers being killed in action. Their story has been immortalized in the film \"Saving Private Ryan,\" which won the Golden Globe for best drama in 1999. The film's title character, James Francis Ryan, was inspired by Fritz Niland's story, and the movie's depiction of the Normandy invasion and the subsequent mission to find Private Ryan is a testament to the bravery and sacrifice of the Niland brothers.\n\nThe Niland brothers' legacy extends beyond their individual sacrifices. Their story has been immortalized in the film, and their legacy continues to inspire and educate people about the human cost of war. The film's title character, James Francis Ryan, was inspired by Fritz Niland's story, and the movie's depiction of the Normandy invasion and the subsequent mission to find Private Ryan is a testament to the bravery and sacrifice of the Niland brothers.\n\nThe film \"Saving Private Ryan\" is a powerful reminder of the human cost of war and the sacrifices made by soldiers and their families. The film's depiction of the Normandy invasion and the subsequent mission to find Private Ryan is a testament to the bravery and sacrifice of the Niland brothers. The film's realistic portrayal of the invasion has been praised for its accuracy and attention to detail.\n\nThe Niland brothers' story is a true account of war and sacrifice, with three of the brothers being killed in action. Their story has been immortalized in the film \"Saving Private Ryan,\" which won the Golden Globe for best drama in 1999. The film's title character, James Francis Ryan, was inspired by Fritz Niland's story, and the movie's depiction of the Normandy invasion and the subsequent mission to find Private Ryan is a testament to the bravery and sacrifice of the Niland brothers.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/Niland_brothers",
+          "https://allthatsinteresting.com/saving-private-ryan-true-story",
+          "https://www.youtube.com/watch?v=PFcqdkIKJvQ",
+          "https://www.syracuse.com/state/2023/07/saving-private-ryan-movie-inspired-by-true-story-of-upstate-ny-brothers-in-wwii.html",
+          "https://www.yahoo.com/entertainment/articles/saving-private-ryan-based-true-123000868.html",
+          "https://www.history.com/articles/saving-private-ryan-real-life-dday-back-story",
+          "https://ww2gravestone.com/people/niland-fredrick-w-fritz/"
+        ],
+        "word_count": 1238,
+        "tokens_used": 2481,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2481,
+      "created_at": "2026-10-02T18:48:08.958Z"
+    }
+  }
+}

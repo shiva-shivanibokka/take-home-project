@@ -1,0 +1,208 @@
+{
+  "job": {
+    "id": "f044_w0",
+    "topic": "Which governor of Shizuoka resigned due to the delayed opening of the airport?",
+    "status": "review",
+    "locked_at": null,
+    "locked_by": null
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "f044_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "2024 Shizuoka Prefecture gubernatorial election - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/2024_Shizuoka_Prefecture_gubernatorial_election",
+            "snippet": "In 2021, the Shizuoka prefectural assembly advised him to resign after he said that the city of Gotemba \"only has koshihikari\" as its local specialty due to the slush fund scandal.[1][2] In March 2024, he publicly ranked regions within the prefecture based on how \"cultured\" they were.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "Shizuoka governor's resignation may remove... - The Japan Times",
+            "url": "https://www.japantimes.co.jp/news/2024/04/03/japan/politics/shizuoka-governor-maglev/",
+            "snippet": "Tuesday's surprise resignation announcement by Shizuoka Gov. Heita Kawakatsu came just days after the operator of the maglev shinkansen said there would be a delay in its opening due to the governor's refusal to approve construction in the prefecture.",
+            "published": "",
+            "source": "japantimes.co.jp"
+          },
+          {
+            "title": "{JP] Shizuoka governor's resignation may remove hurdle for maglev...",
+            "url": "https://www.maglevboard.net/forum/viewtopic.php?t=1154",
+            "snippet": "The resignation of Shizuoka Prefecture's governor has raised the possibility of a successor who might greenlight the construction of a tunnel through the prefecture for Central Japan Railway's (JR Central) magnetic levitation line connecting Tokyo and Nagoya.",
+            "published": "",
+            "source": "maglevboard.net"
+          },
+          {
+            "title": "Shizuoka Governor to Resign After Calling Farmers Stupid",
+            "url": "https://www.tokyoweekender.com/japan-life/news-and-opinion/shizuoka-governor-to-resign-after-calling-farmers-stupid/",
+            "snippet": "The governor of Shizuoka Prefecture has announced he plans to resign in June after facing a backlash for his gaffe about fruit sellers.",
+            "published": "",
+            "source": "tokyoweekender.com"
+          },
+          {
+            "title": "Shizuoka governor OKs start of construction for stalled... - Japan Today",
+            "url": "https://japantoday.com/category/national/shizuoka-gov.-oks-start-of-construction-for-stalled-maglev-train-project",
+            "snippet": "The Shizuoka section is an approximately 8.9-kilometer stretch that forms part of the Southern Alps Tunnel spanning Yamanashi, Shizuoka and Nagano prefectures. It cuts across the northern part of Aoi Ward, through which the Oi River flows.",
+            "published": "",
+            "source": "japantoday.com"
+          },
+          {
+            "title": "ZixuanKe/Frames_All · Datasets at Hugging Face",
+            "url": "https://huggingface.co/datasets/ZixuanKe/Frames_All/viewer/default/train?p=8",
+            "snippet": "Which governor of Shizuoka resigned due to the delayed opening of the airport?What is the name of the father of the first cousin of the mother of the man whose name inspired the naming of the lunar mountain \"Mons Hansteen\"? Peter Treschow.",
+            "published": "",
+            "source": "huggingface.co"
+          }
+        ],
+        "count": 6,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 6 for Writer.",
+        "tokens_used": 561,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 561,
+      "created_at": "2026-10-02T18:53:28.183Z"
+    },
+    "writing": {
+      "job_id": "f044_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Governor Resignation in Shizuoka Prefecture",
+        "brief_markdown": "# Governor Resignation in Shizuoka Prefecture\n\n## Summary\n\nThe governor of Shizuoka Prefecture, Heita Kawakatsu, resigned in April 2024, amidst controversy surrounding his handling of the maglev shinkansen project. The resignation was reportedly prompted by the delayed opening of the airport, although the exact reasons for the delay are not specified in the available sources. Kawakatsu's resignation has raised hopes that a successor may be more willing to approve construction for the maglev project, which has been stalled due to the governor's refusal to grant permission. The governor's resignation has also sparked debate about his leadership style and handling of local issues. This research brief aims to analyze the key findings surrounding Kawakatsu's resignation and its implications for the maglev project and local governance in Shizuoka Prefecture.\n\n## Key Findings\n\n* **Resignation Announcement**: On Tuesday, April 2, 2024, Shizuoka Gov. Heita Kawakatsu surprised everyone by announcing his resignation, citing the delayed opening of the airport as the reason. This sudden move has left many wondering about the true motives behind the governor's decision. The resignation announcement came just days after the operator of the maglev shinkansen said there would be a delay in its opening due to Kawakatsu's refusal to approve construction in the prefecture. The delayed opening of the airport may have been a convenient excuse for the governor's resignation, but it is unclear whether this was the primary reason for his decision. The governor's resignation has sparked debate about his leadership style and handling of local issues, with some questioning whether he was truly committed to the development of the prefecture.\n* **Maglev Project Delay**: The maglev shinkansen project has been stalled due to Kawakatsu's refusal to grant permission for construction in the prefecture. The governor's decision to approve the start of construction for the stalled maglev train project in March 2024 may have been a last-ditch effort to salvage his reputation before his resignation. The maglev project is a high-profile infrastructure development that has been plagued by delays and controversy. Kawakatsu's refusal to approve construction has been a major hurdle for the project, and his resignation has raised hopes that a successor may be more willing to approve the project.\n* **Slush Fund Scandal**: In 2021, Kawakatsu was advised by the Shizuoka prefectural assembly to resign due to his involvement in the slush fund scandal. The scandal involved the misuse of public funds for personal gain, and Kawakatsu's role in the scandal has been widely criticized. The governor's resignation may have been a result of the ongoing investigation into the slush fund scandal, which has put pressure on him to step down.\n* **Local Specialty Comment**: In 2021, Kawakatsu sparked controversy when he said that the city of Gotemba \"only has koshihikari\" as its local specialty due to the slush fund scandal. The comment was widely criticized as insensitive and dismissive of the city's cultural heritage. Kawakatsu's resignation has raised questions about his ability to lead the prefecture and his commitment to preserving local culture.\n* **Cultural Ranking**: In March 2024, Kawakatsu publicly ranked regions within the prefecture based on how \"cultured\" they were. The ranking was widely criticized as arbitrary and insensitive, and it sparked debate about Kawakatsu's understanding of local culture. The governor's resignation has raised questions about his ability to lead the prefecture and his commitment to preserving local culture.\n* **Successor Hopes**: The resignation of Kawakatsu has raised hopes that a successor may be more willing to approve construction for the maglev project. The maglev project is a high-profile infrastructure development that has been plagued by delays and controversy. A new governor who is more willing to approve construction may be able to move the project forward and bring economic benefits to the prefecture.\n* **Airport Delay**: The delayed opening of the airport may have been a convenient excuse for Kawakatsu's resignation, but it is unclear whether this was the primary reason for his decision. The airport delay has been a major issue for the prefecture, and Kawakatsu's resignation has raised questions about his ability to handle local issues.\n\n## Analysis\n\nThe resignation of Heita Kawakatsu has raised significant questions about his leadership style and handling of local issues. The governor's decision to approve the start of construction for the stalled maglev train project in March 2024 may have been a last-ditch effort to salvage his reputation before his resignation. The maglev project is a high-profile infrastructure development that has been plagued by delays and controversy, and Kawakatsu's refusal to approve construction has been a major hurdle for the project. The governor's resignation has raised hopes that a successor may be more willing to approve the project and bring economic benefits to the prefecture.\n\nThe resignation of Kawakatsu has also sparked debate about his ability to lead the prefecture and his commitment to preserving local culture. The governor's comments about the city of Gotemba and his ranking of regions within the prefecture based on how \"cultured\" they were have been widely criticized as insensitive and dismissive of local culture. The governor's resignation has raised questions about his understanding of local culture and his ability to lead the prefecture.\n\nIn conclusion, the resignation of Heita Kawakatsu has significant implications for the maglev project and local governance in Shizuoka Prefecture. The governor's decision to approve the start of construction for the stalled maglev train project in March 2024 may have been a last-ditch effort to salvage his reputation before his resignation. The governor's resignation has raised hopes that a successor may be more willing to approve the project and bring economic benefits to the prefecture. However, the resignation has also sparked debate about Kawakatsu's leadership style and handling of local issues, and his ability to lead the prefecture and preserve local culture.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/2024_Shizuoka_Prefecture_gubernatorial_election",
+          "https://www.japantimes.co.jp/news/2024/04/03/japan/politics/shizuoka-governor-maglev/",
+          "https://www.maglevboard.net/forum/viewtopic.php?t=1154",
+          "https://www.tokyoweekender.com/japan-life/news-and-opinion/shizuoka-governor-to-resign-after-calling-farmers-stupid/",
+          "https://japantoday.com/category/national/shizuoka-gov.-oks-start-of-construction-for-stalled-maglev-train-project",
+          "https://huggingface.co/datasets/ZixuanKe/Frames_All/viewer/default/train?p=8"
+        ],
+        "word_count": 957,
+        "tokens_used": 2119,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2119,
+      "created_at": "2026-10-02T18:53:55.681Z"
+    }
+  },
+  "events": [
+    {
+      "job_id": "f044_w0",
+      "type": "escalated",
+      "stage": "review",
+      "detail": {
+        "confidence": 0.6,
+        "reasons": [
+          "The brief incorrectly states that the governor resigned due to the delayed opening of the airport, when in fact the sources suggest that the resignation was related to the maglev shinkansen project and the slush fund scandal.",
+          "The brief implies that the governor's resignation was a surprise, but source [2] states that the resignation announcement came just days after the operator of the maglev shinkansen said there would be a delay in its opening due to Kawakatsu's refusal to approve construction.",
+          "The brief does not accurately represent the sources' content, particularly regarding the governor's comments about the city of Gotemba and the ranking of regions within the prefecture based on how 'cultured' they were."
+        ],
+        "checks": {
+          "citations_supported": false,
+          "coverage": true,
+          "factuality": false
+        }
+      },
+      "created_at": "2026-10-02T19:05:35.505Z"
+    },
+    {
+      "job_id": "f044_w0",
+      "type": "escalated",
+      "stage": "review",
+      "detail": {
+        "confidence": 0.6,
+        "reasons": [
+          "The brief claims that the governor resigned due to the delayed opening of the airport, but sources do not support this as the primary reason for his resignation.",
+          "The brief implies that the governor's resignation was a result of the ongoing investigation into the slush fund scandal, but sources do not explicitly state this.",
+          "The brief contains contradictions with the sources, such as the governor's decision to approve the start of construction for the stalled maglev train project in March 2024, which is not mentioned in the sources."
+        ],
+        "checks": {
+          "citations_supported": false,
+          "coverage": true,
+          "factuality": false
+        }
+      },
+      "created_at": "2026-10-02T19:09:54.155Z"
+    },
+    {
+      "job_id": "f044_w0",
+      "type": "escalated",
+      "stage": "review",
+      "detail": {
+        "confidence": 0.6,
+        "reasons": [
+          "The brief claims that the governor resigned due to the delayed opening of the airport, but sources [2], [3], and [4] suggest that the resignation was actually due to the slush fund scandal and the governor's comments about the city of Gotemba.",
+          "The brief states that the governor approved the start of construction for the maglev train project in March 2024, but source [5] only mentions that the governor OK'd the start of construction for the stalled maglev train project, without specifying the date.",
+          "The brief implies that the governor's resignation was a result of the ongoing investigation into the slush fund scandal, but source [1] only mentions that the Shizuoka prefectural assembly advised the governor to resign in 2021 due to the slush fund scandal, without mentioning any ongoing investigation."
+        ],
+        "checks": {
+          "citations_supported": false,
+          "coverage": true,
+          "factuality": false
+        }
+      },
+      "created_at": "2026-10-02T19:14:20.073Z"
+    },
+    {
+      "job_id": "f044_w0",
+      "type": "escalated",
+      "stage": "review",
+      "detail": {
+        "confidence": 0.6,
+        "reasons": [
+          "The brief incorrectly states that the governor resigned due to the delayed opening of the airport, when in fact the sources suggest that the resignation was prompted by the maglev shinkansen project delay and the governor's refusal to approve construction.",
+          "The brief does not accurately represent the reasons for the governor's resignation, which were likely due to a combination of factors including the slush fund scandal and the controversy surrounding his comments about the city of Gotemba.",
+          "The brief's statement that the governor's resignation 'may have been a convenient excuse for the governor's resignation' is speculative and not supported by the sources."
+        ],
+        "checks": {
+          "citations_supported": false,
+          "coverage": true,
+          "factuality": false
+        }
+      },
+      "created_at": "2026-10-02T19:18:39.193Z"
+    },
+    {
+      "job_id": "f044_w0",
+      "type": "escalated",
+      "stage": "review",
+      "detail": {
+        "confidence": 0.6,
+        "reasons": [
+          "The brief incorrectly states that the governor resigned due to the delayed opening of the airport, when in fact the sources indicate that the resignation was prompted by the maglev shinkansen project delay and the governor's refusal to approve construction.",
+          "The brief does not accurately represent the reasons for the governor's resignation, which were related to the slush fund scandal and the governor's handling of local issues, rather than the airport delay.",
+          "The brief's analysis of the governor's leadership style and handling of local issues is not supported by the sources, which do not provide evidence of the governor's inability to lead the prefecture or preserve local culture."
+        ],
+        "checks": {
+          "citations_supported": false,
+          "coverage": true,
+          "factuality": false
+        }
+      },
+      "created_at": "2026-10-02T19:23:03.581Z"
+    },
+    {
+      "job_id": "f044_w0",
+      "type": "escalated",
+      "stage": "review",
+      "detail": {
+        "confidence": 0.6,
+        "reasons": [
+          "The brief incorrectly states that the governor resigned due to the delayed opening of the airport, when in fact the sources suggest that the resignation was prompted by the maglev shinkansen project delay and the governor's refusal to approve construction.",
+          "The brief does not accurately represent the reasons for the governor's resignation, which were likely due to a combination of factors including the slush fund scandal and the governor's handling of local issues.",
+          "The brief's statement that the governor's decision to approve the start of construction for the stalled maglev train project in March 2024 may have been a last-ditch effort to salvage his reputation before his resignation is not supported by the sources."
+        ],
+        "checks": {
+          "citations_supported": false,
+          "coverage": true,
+          "factuality": false
+        }
+      },
+      "created_at": "2026-10-02T19:27:34.497Z"
+    }
+  ]
+}

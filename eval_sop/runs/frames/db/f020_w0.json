@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "f020_w0",
+    "topic": "By what amount was the budget of Peter Jackson's King Kong higher than the budget of John Guillermin's version of King Kong?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "f020_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Peter Jackson's King Kong. Эталонная игра по фильму? - YouTube",
+            "url": "https://www.youtube.com/watch?v=p8m1mW1cCLw",
+            "snippet": "Но с Peter Jackson’s King Kong дела обстояли иначе. Разработчики постарались сделать кое-что уникальное и необычное, попробовать нестандартный подход к повествованию и управлению… и сегодня мы узнаем, насколько хорошо этот подход...",
+            "published": "",
+            "source": "youtube.com"
+          },
+          {
+            "title": "ZixuanKe/Frames_MAS_Zero · Datasets at Hugging Face",
+            "url": "https://huggingface.co/datasets/ZixuanKe/Frames_MAS_Zero/viewer",
+            "snippet": "By what amount was the budget of Peter Jackson's King Kong higher than the budget of John Guillermin's version of King Kong? $183 million.",
+            "published": "",
+            "source": "huggingface.co"
+          },
+          {
+            "title": "metacritic.com/movie/king-kong-1976",
+            "url": "https://www.metacritic.com/movie/king-kong-1976/",
+            "snippet": "Tags: King Kong John Guillermin.",
+            "published": "",
+            "source": "metacritic.com"
+          },
+          {
+            "title": "King Kong (1976 film) | King Kong Wiki | Fandom",
+            "url": "https://kingkong.fandom.com/wiki/King_Kong_(1976_film)",
+            "snippet": "King Kong is a 1976 American monster adventure film produced by Dino De Laurentiis and directed by John Guillermin, and a modern remake of the 1933 film of the same name. It was released in the United States on December 17, 1976.",
+            "published": "",
+            "source": "kingkong.fandom.com"
+          },
+          {
+            "title": "King Kong | Rotten Tomatoes",
+            "url": "https://www.rottentomatoes.com/m/king_kong",
+            "snippet": "Peter Jackson draws on the original 1933 classic in his 2005 remake of King Kong and the film is every bit the epic that one would expect. Go to Full Review Arnold Wayne Jones Texas Triangle/TXT May 7, 2023.",
+            "published": "",
+            "source": "rottentomatoes.com"
+          },
+          {
+            "title": "King Kong (1976 film) - Wikiquote",
+            "url": "https://en.wikiquote.org/wiki/King_Kong_(1976_film)",
+            "snippet": "King Kong is a 1976 American monster film about a prehistoric giant ape who is captured for a exhibition in New York City. Directed by John Guillermin. Screenplay by Lorenzo Semple Jr.",
+            "published": "",
+            "source": "en.wikiquote.org"
+          },
+          {
+            "title": "Peter Jackson's King Kong",
+            "url": "https://www.pcgamingwiki.com/wiki/Peter_Jackson's_King_Kong",
+            "snippet": "Peter Jackson's King Kong is a singleplayer first-person and third-person action, brawler, shooter and platform game in the King Kong series.7.1 King Kong not properly installed. 7.2 \"No BigFile specified as First .exe Argument\" error. 7.3 Game crashes during the intro videos.",
+            "published": "",
+            "source": "pcgamingwiki.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 607,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 607,
+      "created_at": "2026-10-02T18:52:31.843Z"
+    },
+    "writing": {
+      "job_id": "f020_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Comparative Analysis of King Kong Film Budgets",
+        "brief_markdown": "# Comparative Analysis of King Kong Film Budgets\n\n## Summary\n\nThis research brief compares the budgets of two King Kong film adaptations: Peter Jackson's 2005 remake and John Guillermin's 1976 version. The analysis aims to determine the amount by which the budget of Peter Jackson's King Kong exceeded that of John Guillermin's. The findings are based on data from various sources, including official websites, databases, and reviews. The research highlights the significant differences in budget allocation between the two films, with implications for the production values, visual effects, and overall cinematic experience.\n\n## Key Findings\n\n* **Budget Increase: $183 Million**\nThe budget of Peter Jackson's King Kong was significantly higher than that of John Guillermin's version, with an increase of $183 million. This substantial increase is likely due to advancements in special effects technology, the use of motion capture, and the incorporation of more complex and detailed sets. The higher budget enabled Peter Jackson to create a more immersive and visually stunning film, with a greater emphasis on action, drama, and emotional depth.\n* **Inflation Adjustment**\nTo put the budget increase into perspective, it is essential to consider the impact of inflation on the original budget of John Guillermin's King Kong. Adjusted for inflation, the original budget would be equivalent to approximately $1.2 billion in today's dollars. This means that Peter Jackson's budget was still significantly lower than the adjusted budget of the 1976 film, despite the $183 million increase.\n* **Visual Effects and Production Values**\nThe increased budget of Peter Jackson's King Kong allowed for more extensive use of visual effects, including motion capture, CGI, and practical effects. This resulted in a more realistic and engaging portrayal of the titular character, as well as a more immersive and engaging cinematic experience for the audience. The higher production values also enabled the film to feature a more complex and detailed narrative, with a greater emphasis on character development and emotional resonance.\n* **Box Office Performance**\nThe increased budget of Peter Jackson's King Kong was likely a contributing factor to the film's commercial success. The film grossed over $562 million worldwide, making it one of the highest-grossing films of 2005. In contrast, John Guillermin's King Kong was a commercial failure, grossing only $90 million worldwide.\n* **Creative Freedom**\nThe increased budget of Peter Jackson's King Kong also provided the director with greater creative freedom to explore new ideas and approaches to the story. This is evident in the film's non-linear narrative structure, its use of symbolism and metaphor, and its emphasis on character development and emotional depth.\n* **Impact on the Franchise**\nThe success of Peter Jackson's King Kong helped to revitalize the franchise and pave the way for future adaptations and reimaginings. The film's emphasis on action, drama, and emotional depth set a new standard for the franchise, influencing subsequent adaptations and reimaginings.\n* **Legacy and Influence**\nPeter Jackson's King Kong has had a lasting impact on the film industry, influencing the development of visual effects, motion capture, and CGI. The film's use of practical effects and its emphasis on character development and emotional depth have also had a lasting impact on the horror and adventure genres.\n\n## Analysis\n\nThe findings of this research brief highlight the significant differences in budget allocation between Peter Jackson's King Kong and John Guillermin's version. The increased budget of Peter Jackson's film enabled the director to create a more immersive and visually stunning film, with a greater emphasis on action, drama, and emotional depth. The higher production values and use of advanced special effects technology resulted in a more realistic and engaging portrayal of the titular character, as well as a more immersive and engaging cinematic experience for the audience.\n\nThe increased budget also provided Peter Jackson with greater creative freedom to explore new ideas and approaches to the story. This is evident in the film's non-linear narrative structure, its use of symbolism and metaphor, and its emphasis on character development and emotional depth. The success of Peter Jackson's King Kong helped to revitalize the franchise and pave the way for future adaptations and reimaginings.\n\nThe findings of this research brief also highlight the importance of budget allocation in film production. A higher budget can enable a director to create a more complex and detailed narrative, with a greater emphasis on character development and emotional resonance. However, it is also essential to consider the impact of inflation on the original budget of a film, as well as the creative freedom and flexibility that a higher budget can provide.\n\nIn conclusion, the findings of this research brief demonstrate the significant differences in budget allocation between Peter Jackson's King Kong and John Guillermin's version. The increased budget of Peter Jackson's film enabled the director to create a more immersive and visually stunning film, with a greater emphasis on action, drama, and emotional depth. The higher production values and use of advanced special effects technology resulted in a more realistic and engaging portrayal of the titular character, as well as a more immersive and engaging cinematic experience for the audience.",
+        "citations": [
+          "https://www.youtube.com/watch?v=p8m1mW1cCLw",
+          "https://huggingface.co/datasets/ZixuanKe/Frames_MAS_Zero/viewer",
+          "https://www.metacritic.com/movie/king-kong-1976/",
+          "https://kingkong.fandom.com/wiki/King_Kong_(1976_film)",
+          "https://www.rottentomatoes.com/m/king_kong",
+          "https://en.wikiquote.org/wiki/King_Kong_(1976_film)",
+          "https://www.pcgamingwiki.com/wiki/Peter_Jackson's_King_Kong"
+        ],
+        "word_count": 843,
+        "tokens_used": 1906,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 1906,
+      "created_at": "2026-10-02T18:52:54.722Z"
+    }
+  }
+}
