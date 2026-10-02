@@ -1,13 +1,13 @@
 """OPTIONAL question set from FRAMES (google/frames-benchmark, Apache-2.0; 824 multi-hop
-questions with human-written gold answers). NOT on this machine: downloading it needs the
-user's explicit permission. After that:
-    hf download google/frames-benchmark test.tsv --repo-type dataset --local-dir eval_sop/external/frames
+questions with human-written gold answers). Downloaded with the user's approval (2026-10-02); raw file is not committed
+(see eval_sop/external/SOURCES.md for revision + sha256). To reproduce:
+    hf download google/frames-benchmark test.tsv --repo-type dataset --revision 58d9fb6330f3ab1316d1eca12e5e8ef23dcc22ef --local-dir eval_sop/external/frames
     python eval_sop/build_questions_frames.py --n 60
     EVAL_QUESTIONS=questions_frames.json python eval_sop/search_ddg.py
     EVAL_RUN=frames EVAL_QUESTIONS=questions_frames.json node eval_sop/run_pipeline.mjs gen ...
-Strata = first listed reasoning type. Answers longer than 5 words are flagged
-`long_answer`; string-match labels are unreliable for those, so analyses report the
-short-answer subset separately."""
+Strata = first listed reasoning type (12 per type, seed 0). Only questions whose gold
+answer has <= 5 words are eligible, because string-match labels are unreliable for long
+answers (`long_answer` is therefore always false in the output)."""
 import argparse, json, os
 import pandas as pd
 

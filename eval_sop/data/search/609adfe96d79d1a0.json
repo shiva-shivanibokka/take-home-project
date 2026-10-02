@@ -1,0 +1,58 @@
+{
+ "query": "Which governor of Shizuoka resigned due to the delayed opening of the airport?",
+ "id": "f044",
+ "retrieved_at": "2026-10-02T17:22:05.873807+00:00",
+ "engine": "ddgs.text",
+ "results": [
+  {
+   "title": "2024 Shizuoka Prefecture gubernatorial election - Wikipedia",
+   "href": "https://en.wikipedia.org/wiki/2024_Shizuoka_Prefecture_gubernatorial_election",
+   "body": "In 2021, the Shizuoka prefectural assembly advised him to resign after he said that the city of Gotemba \"only has koshihikari\" as its local specialty due to the slush fund scandal.[1][2] In March 2024, he publicly ranked regions within the prefecture based on how \"cultured\" they were."
+  },
+  {
+   "title": "Shizuoka governor's resignation may remove... - The Japan Times",
+   "href": "https://www.japantimes.co.jp/news/2024/04/03/japan/politics/shizuoka-governor-maglev/",
+   "body": "Tuesday's surprise resignation announcement by Shizuoka Gov. Heita Kawakatsu came just days after the operator of the maglev shinkansen said there would be a delay in its opening due to the governor's refusal to approve construction in the prefecture."
+  },
+  {
+   "title": "{JP] Shizuoka governor's resignation may remove hurdle for maglev...",
+   "href": "https://www.maglevboard.net/forum/viewtopic.php?t=1154",
+   "body": "The resignation of Shizuoka Prefecture's governor has raised the possibility of a successor who might greenlight the construction of a tunnel through the prefecture for Central Japan Railway's (JR Central) magnetic levitation line connecting Tokyo and Nagoya."
+  },
+  {
+   "title": "Shizuoka Prefecture \u2014 Grokipedia",
+   "href": "https://grokipedia.com/page/Shizuoka_Prefecture",
+   "body": "Shizuoka Prefecture (\u9759\u5ca1\u770c, Shizuoka-ken) is one of Japan's 47 prefectures, located in the eastern Ch\u016bbu region on the southern coast of Honsh\u016b island."
+  },
+  {
+   "title": "Shizuoka Governor to Resign After Calling Farmers Stupid",
+   "href": "https://www.tokyoweekender.com/japan-life/news-and-opinion/shizuoka-governor-to-resign-after-calling-farmers-stupid/",
+   "body": "The governor of Shizuoka Prefecture has announced he plans to resign in June after facing a backlash for his gaffe about fruit sellers."
+  },
+  {
+   "title": "Shizuoka governor OKs start of construction for stalled... - Japan Today",
+   "href": "https://japantoday.com/category/national/shizuoka-gov.-oks-start-of-construction-for-stalled-maglev-train-project",
+   "body": "The Shizuoka section is an approximately 8.9-kilometer stretch that forms part of the Southern Alps Tunnel spanning Yamanashi, Shizuoka and Nagano prefectures. It cuts across the northern part of Aoi Ward, through which the Oi River flows."
+  },
+  {
+   "title": "ZixuanKe/Frames_All \u00b7 Datasets at Hugging Face",
+   "href": "https://huggingface.co/datasets/ZixuanKe/Frames_All/viewer/default/train?p=8",
+   "body": "Which governor of Shizuoka resigned due to the delayed opening of the airport?What is the name of the father of the first cousin of the mother of the man whose name inspired the naming of the lunar mountain \"Mons Hansteen\"? Peter Treschow."
+  },
+  {
+   "title": "fox8.com/news/1008883",
+   "href": "https://fox8.com/news/1008883/",
+   "body": "Cleveland Cavaliers game delayed by broken hoop."
+  },
+  {
+   "title": "tandfonline.com/doi/abs/10.1080/01431169608948714",
+   "href": "https://www.tandfonline.com/doi/abs/10.1080/01431169608948714",
+   "body": "The use of the normalized difference water index (ndwi) in the delineation of..."
+  },
+  {
+   "title": "Link to reddit.com",
+   "href": "https://www.reddit.com/r/japan/comments/1btvedt/shizuoka_governor_to_resign_after_remarking_new/",
+   "body": "The site owner hides the web page description."
+  }
+ ]
+}

@@ -1,0 +1,842 @@
+[
+ {
+  "id": "f001",
+  "source": "frames",
+  "row": 329,
+  "stratum": "frames_multiple_constraints",
+  "question": "What compass direction (of the 4 cardinal and 4 ordinal directions) is the capital city of the state which houses the Jackson Hole Mountain Resort in relation to the centre of the state?",
+  "answers": [
+   "Southeast"
+  ],
+  "meta": {
+   "reasoning_types": "Multiple constraints",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f002",
+  "source": "frames",
+  "row": 178,
+  "stratum": "frames_multiple_constraints",
+  "question": "I'm trying to show my daughter some of the movies I grew up with. There's one a really want to show her but I can't remember the name of it. I remember that the male lead also played Fred in a live action Scooby Doo movie and the main girl was in this crazy anti-drug commercial in the 90s where she used a pan to destroy a bunch of things in a kitchen and said \"This is your brain on drugs...\". The movie is about a guy who makes a bet with his friend that he can turn an unpopular girl into prom queen. Can you tell me the name of the film?",
+  "answers": [
+   "*She's All That*"
+  ],
+  "meta": {
+   "reasoning_types": "Multiple constraints | Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f003",
+  "source": "frames",
+  "row": 383,
+  "stratum": "frames_multiple_constraints",
+  "question": "This town was the original location of the tallest Christmas Tree displayed at the Rockefeller Center. This was also home to the author of a famous children's book series. What is the name of this series?",
+  "answers": [
+   "Doctor Dolittle"
+  ],
+  "meta": {
+   "reasoning_types": "Multiple constraints",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f004",
+  "source": "frames",
+  "row": 634,
+  "stratum": "frames_multiple_constraints",
+  "question": "The September Declaration has a rough equivalent in the Netherlands that takes place on the same day every year. In what century was the current name of this day (as of August 2024) chosen?",
+  "answers": [
+   "the 19th century"
+  ],
+  "meta": {
+   "reasoning_types": "Multiple constraints",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f005",
+  "source": "frames",
+  "row": 398,
+  "stratum": "frames_multiple_constraints",
+  "question": "Of the counties that Wisconsin Highway 34 runs through, what is the seat of the most populous county based on 2020 census data? ",
+  "answers": [
+   "Wausau"
+  ],
+  "meta": {
+   "reasoning_types": "Multiple constraints",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f006",
+  "source": "frames",
+  "row": 170,
+  "stratum": "frames_multiple_constraints",
+  "question": "Which film, based loosely on the story of Frederick 'Fritz' Niland, won the Golden Globe for best drama at the 56th Golden Globes in 1999?",
+  "answers": [
+   "Saving Private Ryan was loosely based on the story of Frederick 'Fritz' Niland, and won the Golden Globe for best drama at the 56th Golden Globes in 1999."
+  ],
+  "meta": {
+   "reasoning_types": "Multiple constraints",
+   "long_answer": true
+  }
+ },
+ {
+  "id": "f007",
+  "source": "frames",
+  "row": 693,
+  "stratum": "frames_multiple_constraints",
+  "question": "What is the name of the retired Swiss tennis player who made the 4th round of Wimbledon in 2002?",
+  "answers": [
+   "Michel Kratochvil"
+  ],
+  "meta": {
+   "reasoning_types": "Multiple constraints",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f008",
+  "source": "frames",
+  "row": 51,
+  "stratum": "frames_multiple_constraints",
+  "question": "What state is the home of the losing team of the World Series three years before \"Old Shufflefoot\" managed his team to victory? ",
+  "answers": [
+   "Illinois"
+  ],
+  "meta": {
+   "reasoning_types": "Multiple constraints | Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f009",
+  "source": "frames",
+  "row": 366,
+  "stratum": "frames_multiple_constraints",
+  "question": "What year was the band leader of the group who originally performed the song sampled in Kayne West's song Power born?",
+  "answers": [
+   "1946"
+  ],
+  "meta": {
+   "reasoning_types": "Multiple constraints",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f010",
+  "source": "frames",
+  "row": 387,
+  "stratum": "frames_multiple_constraints",
+  "question": "What two cities hosted the Summer Olympic Games between when the television shows featuring characters Olivia Benson and Meredith Grey started airing?",
+  "answers": [
+   "Sydney, Australia, and Athens, Greece"
+  ],
+  "meta": {
+   "reasoning_types": "Multiple constraints",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f011",
+  "source": "frames",
+  "row": 696,
+  "stratum": "frames_multiple_constraints",
+  "question": "Of the 6 main cast members of the series Friends, which have appeared in music videos?",
+  "answers": [
+   "Of the 6 main cast members of Friends, Jennifer Anniston, Courtney Cox, and Matt LeBlanc have all appeared in music videos."
+  ],
+  "meta": {
+   "reasoning_types": "Multiple constraints",
+   "long_answer": true
+  }
+ },
+ {
+  "id": "f012",
+  "source": "frames",
+  "row": 164,
+  "stratum": "frames_multiple_constraints",
+  "question": "Among the singers in the 1985 version of \"That's What Friends Are For,\" which one was born in the Peach State?",
+  "answers": [
+   "Gladys Knight"
+  ],
+  "meta": {
+   "reasoning_types": "Multiple constraints",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f013",
+  "source": "frames",
+  "row": 606,
+  "stratum": "frames_numerical_reasoning",
+  "question": "How many more knock-outs did Joe Louis have than Muhammad Ali?",
+  "answers": [
+   "15"
+  ],
+  "meta": {
+   "reasoning_types": "Numerical reasoning | Tabular reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f014",
+  "source": "frames",
+  "row": 802,
+  "stratum": "frames_numerical_reasoning",
+  "question": "The artist, MadLib, released Mind Fusion Vol. 1 as a collaboration with several other artists. The track, \"I Got A Right Ta (Madlib Remix)\" features an artist other than MadLib. This artist received a Bachelor's of Science degree from a university in Florida. How many years after the establishment of this university was the album Mind Fusion Vol. 1 released?",
+  "answers": [
+   "117"
+  ],
+  "meta": {
+   "reasoning_types": "Numerical reasoning | Multiple constraints",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f015",
+  "source": "frames",
+  "row": 548,
+  "stratum": "frames_numerical_reasoning",
+  "question": "How many years after Anton Grylewicz's date of birth was the second SpongeBob Squarepants movie released? Round down to the nearest year (e.g. January 1999 to December 2000 = 1 year, despite being closer to 2). ",
+  "answers": [
+   "130"
+  ],
+  "meta": {
+   "reasoning_types": "Numerical reasoning | Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f016",
+  "source": "frames",
+  "row": 457,
+  "stratum": "frames_numerical_reasoning",
+  "question": "What was David Fincher's most recently released feature film when Britney Spears' first feature film was released in the U.S.?",
+  "answers": [
+   "Fight Club."
+  ],
+  "meta": {
+   "reasoning_types": "Numerical reasoning | Multiple constraints | Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f017",
+  "source": "frames",
+  "row": 314,
+  "stratum": "frames_numerical_reasoning",
+  "question": "Using data from the year 2020, if you were to combine the permanent human populations of Aukland Island, Rose Island, and Budelli Island, how many total people would you have?",
+  "answers": [
+   "1"
+  ],
+  "meta": {
+   "reasoning_types": "Numerical reasoning | Multiple constraints | Post processing",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f018",
+  "source": "frames",
+  "row": 777,
+  "stratum": "frames_numerical_reasoning",
+  "question": "Which leap year happened exactly halfway between the birth of Shoghi Effendi and the founding of the college he attended?",
+  "answers": [
+   "1580"
+  ],
+  "meta": {
+   "reasoning_types": "Numerical reasoning | Multiple constraints | Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f019",
+  "source": "frames",
+  "row": 186,
+  "stratum": "frames_numerical_reasoning",
+  "question": "If you divide the number of Papuan tribes in the Sarmi and Keerom Regencies of Papua province in Indonesia as of 2024 by the number of indigenous tribes in Brazil whose names, as they are typically written, begin with letters W, X, Y, or Z as of 2024, what is the answer to the fifth decimal place, rounding up?",
+  "answers": [
+   "1.82143"
+  ],
+  "meta": {
+   "reasoning_types": "Numerical reasoning | Tabular reasoning | Multiple constraints",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f020",
+  "source": "frames",
+  "row": 422,
+  "stratum": "frames_numerical_reasoning",
+  "question": "By what amount was the budget of Peter Jackson's King Kong higher than the budget of John Guillermin's version of King Kong?",
+  "answers": [
+   "$183 million"
+  ],
+  "meta": {
+   "reasoning_types": "Numerical reasoning | Multiple constraints",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f021",
+  "source": "frames",
+  "row": 344,
+  "stratum": "frames_numerical_reasoning",
+  "question": "Which political leader of the countries where the Potsdam agreement and the Wellington Convention were signed was older on the 1st of July 1905?",
+  "answers": [
+   "Richard Seddon"
+  ],
+  "meta": {
+   "reasoning_types": "Numerical reasoning | Multiple constraints | Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f022",
+  "source": "frames",
+  "row": 108,
+  "stratum": "frames_numerical_reasoning",
+  "question": "If you take the height of the Eiffel Tower in metres, add the number of arrondissements in Paris and subtract the street number of the official residence of the French prime minister, is the final answer a prime number?",
+  "answers": [
+   "Yes"
+  ],
+  "meta": {
+   "reasoning_types": "Numerical reasoning | Post processing",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f023",
+  "source": "frames",
+  "row": 354,
+  "stratum": "frames_numerical_reasoning",
+  "question": "How old was the 31st President of the United States when the second nuclear weapon ever used in warfare was dropped?",
+  "answers": [
+   "70 years old"
+  ],
+  "meta": {
+   "reasoning_types": "Numerical reasoning | Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f024",
+  "source": "frames",
+  "row": 32,
+  "stratum": "frames_numerical_reasoning",
+  "question": "As of 2010, if you added the number of times Brazil had won the World Cup to the amount of times the Chicago Bulls had won the NBA Championship and multiplied this number by the amount of times the Dallas Cowboys had won the Super Bowl, what number are you left with?",
+  "answers": [
+   "55"
+  ],
+  "meta": {
+   "reasoning_types": "Numerical reasoning | Tabular reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f025",
+  "source": "frames",
+  "row": 413,
+  "stratum": "frames_post_processing",
+  "question": "Which of the following albums came out on a date closest to the date that Nancy Kerrigan was assaulted? What about which album was closest to the date of Harding's plea deal? Awake by Dream Theater Inside Out by Fates Warning Promised Land by Queensryche Dreamspace by Stratovarius",
+  "answers": [
+   "Dreamspace' by Stratovarius."
+  ],
+  "meta": {
+   "reasoning_types": "Post processing | Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f026",
+  "source": "frames",
+  "row": 307,
+  "stratum": "frames_post_processing",
+  "question": "This athlete was the first man to run the 100 metres in under 10 seconds at an Olympic Games. Which NFL team was he drafted by?",
+  "answers": [
+   "Miami Dolphins (Jim Hines)"
+  ],
+  "meta": {
+   "reasoning_types": "Post processing",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f027",
+  "source": "frames",
+  "row": 274,
+  "stratum": "frames_post_processing",
+  "question": "How many more letters does the name of the city that the director of \"Whiplash\" (2014) was born in have compared the name of the city in which the film first premiered?",
+  "answers": [
+   "2"
+  ],
+  "meta": {
+   "reasoning_types": "Post processing",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f028",
+  "source": "frames",
+  "row": 588,
+  "stratum": "frames_post_processing",
+  "question": "What is the nickname for the city where Mette Solli was born? Give the answer in Norwegian.",
+  "answers": [
+   "Rosenes by"
+  ],
+  "meta": {
+   "reasoning_types": "Post processing",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f029",
+  "source": "frames",
+  "row": 128,
+  "stratum": "frames_post_processing",
+  "question": "Name the teams in alphabetical order that every AL MVP from Texas Rangers retired from as of August 2024.",
+  "answers": [
+   "Cleveland Indians, New York Yankees, Texas Rangers, Toronto Blue Jays"
+  ],
+  "meta": {
+   "reasoning_types": "Post processing | Temporal reasoning",
+   "long_answer": true
+  }
+ },
+ {
+  "id": "f030",
+  "source": "frames",
+  "row": 677,
+  "stratum": "frames_post_processing",
+  "question": "Archibald Sinclair had an American mom who was a half-sister. The half-sister had a life partner who had a painting of her by Walter Sickert. How many words is the title of that painting?",
+  "answers": [
+   "5 ( Miss Hudson at Rowlandson House)"
+  ],
+  "meta": {
+   "reasoning_types": "Post processing",
+   "long_answer": true
+  }
+ },
+ {
+  "id": "f031",
+  "source": "frames",
+  "row": 415,
+  "stratum": "frames_post_processing",
+  "question": "As of August 3rd, 2024, which Moose Jaw Warrior with a retired number was born on May 29, 1967?",
+  "answers": [
+   "Mike Keane"
+  ],
+  "meta": {
+   "reasoning_types": "Post processing | Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f032",
+  "source": "frames",
+  "row": 76,
+  "stratum": "frames_post_processing",
+  "question": "A united states island that is only 90 miles away from Cuba has been the home of several famous people. In what year did the famous author who owns a book store there first start writing?",
+  "answers": [
+   "1959"
+  ],
+  "meta": {
+   "reasoning_types": "Post processing | Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f033",
+  "source": "frames",
+  "row": 315,
+  "stratum": "frames_post_processing",
+  "question": "I'm thinking of a famous zoologist who is alumni of Upsala University and is credited with formally describing the African Gray parrot. He published his first edition of a certain book with a Latin title in the Netherlands, in 1735, while attending the university. This book contained his system of classifying animals, and it was key to the book's title. What is the modern-day term for the classification system he famously wrote about?",
+  "answers": [
+   "Binomial nomenclature"
+  ],
+  "meta": {
+   "reasoning_types": "Post processing | Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f034",
+  "source": "frames",
+  "row": 494,
+  "stratum": "frames_post_processing",
+  "question": "How many years did it take after the FIFA ban was lifted for someone to wear a hijab in the World Cup?",
+  "answers": [
+   "11 years"
+  ],
+  "meta": {
+   "reasoning_types": "Post processing",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f035",
+  "source": "frames",
+  "row": 256,
+  "stratum": "frames_post_processing",
+  "question": "The name of which supernova remnant nebula spelled backwards (not including the word \"nubula\") is a homonym for a large sailing ship?",
+  "answers": [
+   "Crab Nebula (\"barc\" is a homonym for \"barque\")"
+  ],
+  "meta": {
+   "reasoning_types": "Post processing",
+   "long_answer": true
+  }
+ },
+ {
+  "id": "f036",
+  "source": "frames",
+  "row": 39,
+  "stratum": "frames_post_processing",
+  "question": "As of July 1, 2024, if I wanted to give my daughter the middle name of the American woman who is the most decorated female in the history of American gymnastics as her first name and the full first name of the American woman who holds the world record in the 800-meter freestyle as her middle name, what would I name my daughter? ",
+  "answers": [
+   "Arianne Kathleen"
+  ],
+  "meta": {
+   "reasoning_types": "Post processing",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f037",
+  "source": "frames",
+  "row": 251,
+  "stratum": "frames_tabular_reasoning",
+  "question": "I remember reading a book in elementary school that I LOVED and I want to read it to my daughter. The problem is I can't remember the title. I know that when I first read it, it had recently won a Caldecott Medal. I have another memory from around the same time period of watching the Sydney Summer Olympics. All I remember about the plot is that it was based on a true story and set in the winter time. Can you help me remember the title?",
+  "answers": [
+   "Snowflake Bentley"
+  ],
+  "meta": {
+   "reasoning_types": "Tabular reasoning | Multiple constraints",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f038",
+  "source": "frames",
+  "row": 333,
+  "stratum": "frames_tabular_reasoning",
+  "question": "Who was the United States President when Chile won their first Copa America?",
+  "answers": [
+   "Barack Obama"
+  ],
+  "meta": {
+   "reasoning_types": "Tabular reasoning | Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f039",
+  "source": "frames",
+  "row": 40,
+  "stratum": "frames_tabular_reasoning",
+  "question": "I am thinking of a Ancient Roman City.  The city was destroyed by volcanic eruption.  The eruption occurred in the year 79 AD.  The volcano was a stratovolcano.    Where was the session held where it was decided that the city would be named a UNESCO world heritage site?",
+  "answers": [
+   "Naples"
+  ],
+  "meta": {
+   "reasoning_types": "Tabular reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f040",
+  "source": "frames",
+  "row": 290,
+  "stratum": "frames_tabular_reasoning",
+  "question": "The lead actress of the television show The Good Place who played protagonist Eleanor Shellstop, is married to a man who has been in many TV series and Films in his career. What was the name of the character he provided the voice for in a 2021 animated movie? ",
+  "answers": [
+   "Ruben"
+  ],
+  "meta": {
+   "reasoning_types": "Tabular reasoning | Multiple constraints",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f041",
+  "source": "frames",
+  "row": 557,
+  "stratum": "frames_tabular_reasoning",
+  "question": "What's the name of the third track on the third studio album of the KPop girl group that started in 1997 and had 5 members.",
+  "answers": [
+   "Missing You"
+  ],
+  "meta": {
+   "reasoning_types": "Tabular reasoning | Multiple constraints | Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f042",
+  "source": "frames",
+  "row": 153,
+  "stratum": "frames_tabular_reasoning",
+  "question": "How many of Ron Hutchinson's teams won League Championships while he was on them?",
+  "answers": [
+   "Of the six hockey teams that Hutchinson played on during his career, two, the Flin Flon Bombers and the Vancouver Canucks, took home League Championships during his time on the roster. "
+  ],
+  "meta": {
+   "reasoning_types": "Tabular reasoning",
+   "long_answer": true
+  }
+ },
+ {
+  "id": "f043",
+  "source": "frames",
+  "row": 767,
+  "stratum": "frames_tabular_reasoning",
+  "question": "What team scored the most points in an NBA finals game while Ronald Reagan was president of the United States of America?",
+  "answers": [
+   "Game 1 of the Finals in 1985 the Boston Celtics scored 148 points."
+  ],
+  "meta": {
+   "reasoning_types": "Tabular reasoning",
+   "long_answer": true
+  }
+ },
+ {
+  "id": "f044",
+  "source": "frames",
+  "row": 809,
+  "stratum": "frames_tabular_reasoning",
+  "question": "Which governor of Shizuoka resigned due to the delayed opening of the airport?",
+  "answers": [
+   "Yoshinobu Ishikawa"
+  ],
+  "meta": {
+   "reasoning_types": "Tabular reasoning | Post processing",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f045",
+  "source": "frames",
+  "row": 716,
+  "stratum": "frames_tabular_reasoning",
+  "question": "What were the last names of the players selected for the Pro Bowl from the NFL team that was featured in the movie \"Ace Ventura: Pet Detective\"? Base the answer on the following specifications:  -- These players were on the team while Wayne Huizenga was the owner  -- The team that these players were on achieved a 10-6 regular season record while still making the playoffs during their Pro Bowl season",
+  "answers": [
+   "Bowens, Thomas, & Madison "
+  ],
+  "meta": {
+   "reasoning_types": "Tabular reasoning | Multiple constraints",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f046",
+  "source": "frames",
+  "row": 46,
+  "stratum": "frames_tabular_reasoning",
+  "question": "As of August 1, 2024, what is the largest city of the 9th largest country by land area in Europe?",
+  "answers": [
+   "The largest city of the 9th largest country in Europe is Warsaw."
+  ],
+  "meta": {
+   "reasoning_types": "Tabular reasoning | Multiple constraints",
+   "long_answer": true
+  }
+ },
+ {
+  "id": "f047",
+  "source": "frames",
+  "row": 657,
+  "stratum": "frames_tabular_reasoning",
+  "question": "There's an episode of a TV series that was directed by the person who won the 2011 Dorothy Arzner Directors award. The series started in 2005. The season that contains my episode included 20 episodes in total.  The episode is one word that starts with an \"M.\" ",
+  "answers": [
+   "Miracles"
+  ],
+  "meta": {
+   "reasoning_types": "Tabular reasoning | Multiple constraints",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f048",
+  "source": "frames",
+  "row": 87,
+  "stratum": "frames_tabular_reasoning",
+  "question": "Did the entomologist who first described lesticus purpurascens come from the same country as the entomologist who first described the subfamily of that species?",
+  "answers": [
+   "Yes, Stefano Ludovico Straneo and Franco Andrea Bonelli are both Italian"
+  ],
+  "meta": {
+   "reasoning_types": "Tabular reasoning",
+   "long_answer": true
+  }
+ },
+ {
+  "id": "f049",
+  "source": "frames",
+  "row": 539,
+  "stratum": "frames_temporal_reasoning",
+  "question": "Who was the British monarch when Michigan was admitted as a state in the United States of America?",
+  "answers": [
+   "King William IV."
+  ],
+  "meta": {
+   "reasoning_types": "Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f050",
+  "source": "frames",
+  "row": 300,
+  "stratum": "frames_temporal_reasoning",
+  "question": "Who lit the Olympic cauldron in the Summer Games immediately following the release of Van Halen's sixth studio album?",
+  "answers": [
+   "Rafer Johnson lit the Olympic cauldron for the 1984 Summer Olympics, which began July 28, 1984, six months after the release of 1984 (stylized in Roman numerals as MCMLXXXIV), Van Halen's sixth studio album."
+  ],
+  "meta": {
+   "reasoning_types": "Temporal reasoning",
+   "long_answer": true
+  }
+ },
+ {
+  "id": "f051",
+  "source": "frames",
+  "row": 279,
+  "stratum": "frames_temporal_reasoning",
+  "question": "How old was the author of Dragon Ball when the manga was first released?",
+  "answers": [
+   "29"
+  ],
+  "meta": {
+   "reasoning_types": "Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f052",
+  "source": "frames",
+  "row": 708,
+  "stratum": "frames_temporal_reasoning",
+  "question": "What song did Christina Aguilera release after Britney Spears released \"...Baby One More Time.\"?",
+  "answers": [
+   "Genie in a Bottle "
+  ],
+  "meta": {
+   "reasoning_types": "Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f053",
+  "source": "frames",
+  "row": 52,
+  "stratum": "frames_temporal_reasoning",
+  "question": "Was the person who served as president of the Scottish National Party from 1987 to 2005 alive when the party was founded?",
+  "answers": [
+   "Yes"
+  ],
+  "meta": {
+   "reasoning_types": "Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f054",
+  "source": "frames",
+  "row": 518,
+  "stratum": "frames_temporal_reasoning",
+  "question": "During the same year the Orlando Magic lost to the Los Angeles Lakers in their second NBA Finals appearance, what strain of flu spread into pandemic status throughout the world?",
+  "answers": [
+   "The Swine Flu."
+  ],
+  "meta": {
+   "reasoning_types": "Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f055",
+  "source": "frames",
+  "row": 682,
+  "stratum": "frames_temporal_reasoning",
+  "question": "Which happened earlier: Diageo reducing the volume of Red stripe beer bottles in the US from 12 fl. oz. to 11.2 fl. oz. or Philip Morris making a bid for the company Swedish Match?",
+  "answers": [
+   "The Red Stripe US bottle volume reduction happened earlier."
+  ],
+  "meta": {
+   "reasoning_types": "Temporal reasoning",
+   "long_answer": true
+  }
+ },
+ {
+  "id": "f056",
+  "source": "frames",
+  "row": 578,
+  "stratum": "frames_temporal_reasoning",
+  "question": "What attraction in Walt Disney World opened exactly 50 years after the theme park originally opened?",
+  "answers": [
+   "Remy's Ratatouille Adventure"
+  ],
+  "meta": {
+   "reasoning_types": "Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f057",
+  "source": "frames",
+  "row": 429,
+  "stratum": "frames_temporal_reasoning",
+  "question": "Of the Jason Statham movies that came out the year Dennis Hopper died, which could he have lived to see the premiere of?",
+  "answers": [
+   "13"
+  ],
+  "meta": {
+   "reasoning_types": "Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f058",
+  "source": "frames",
+  "row": 93,
+  "stratum": "frames_temporal_reasoning",
+  "question": "How many of Hitler's three couriers of his last will and other political documents died after 1980?",
+  "answers": [
+   "1"
+  ],
+  "meta": {
+   "reasoning_types": "Temporal reasoning",
+   "long_answer": false
+  }
+ },
+ {
+  "id": "f059",
+  "source": "frames",
+  "row": 638,
+  "stratum": "frames_temporal_reasoning",
+  "question": "How many countries were part of the commonwealth on the date Prince Charles ascended?",
+  "answers": [
+   "On 8 September 2022, there were 56 countries as part of the Commonwealth."
+  ],
+  "meta": {
+   "reasoning_types": "Temporal reasoning",
+   "long_answer": true
+  }
+ },
+ {
+  "id": "f060",
+  "source": "frames",
+  "row": 648,
+  "stratum": "frames_temporal_reasoning",
+  "question": "How old was Joel McHale the first time the Philadelphia Waterdogs won the PLL Championship?",
+  "answers": [
+   "Joel McHale was 50 years old."
+  ],
+  "meta": {
+   "reasoning_types": "Temporal reasoning",
+   "long_answer": true
+  }
+ }
+]
