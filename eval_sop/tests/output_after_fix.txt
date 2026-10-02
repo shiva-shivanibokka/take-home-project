@@ -1,0 +1,14 @@
+✔ snippet hook: default prompt is identical to explicit 150 (original behaviour preserved) (3395.4008ms)
+✔ snippet hook: default prompt is byte-identical to the original 417589b reviewer (3929.3145ms)
+✔ snippet hook: 350 exposes the full collector snippet (1567.3043ms)
+✔ verdict ignores failed checks (anyCheckFailed is dead code) - documents current behaviour (2190.7821ms)
+✔ numeric-string confidence from the LLM must not crash the reviewer (coerced to number) (1674.7919ms)
+✔ missing confidence field must not crash the reviewer (should escalate) (2106.5481ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15937.2925

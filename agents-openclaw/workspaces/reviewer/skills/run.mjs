@@ -163,7 +163,12 @@ ${brief_markdown}
   // Checks inform the LLM's score but no longer override it; the inline [n]
   // citation markers were stripped from the brief so citations_supported was
   // always false, causing false escalations regardless of confidence.
-  const { citations_supported, coverage, factuality, confidence, reasons } = evaluation;
+  const { citations_supported, coverage, factuality, reasons } = evaluation;
+  // sop-eval fix: the LLM sometimes returns confidence as a string or omits it;
+  // `confidence.toFixed` below then threw and the stage crashed. Coerce to a
+  // number; anything non-numeric becomes 0.0 (escalate), mirroring the
+  // parse-failure fallback above. See eval_sop/tests/reviewer.test.mjs.
+  const confidence = Number.isFinite(Number(evaluation.confidence)) ? Number(evaluation.confidence) : 0.0;
   const anyCheckFailed = !citations_supported || !coverage || !factuality;
   const verdict = confidence < CONFIDENCE_THRESHOLD ? "escalate" : "publish";
 
