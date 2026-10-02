@@ -40,7 +40,7 @@ def key():
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--model", required=True)
     ap.add_argument("--base", default="ollama", choices=["ollama", "groq"]); a = ap.parse_args()
-    out = os.path.join(D, f"labels_llm_{a.model.split('/')[-1]}.jsonl")
+    out = os.path.join(D, f"labels_llm_{a.model.split('/')[-1].replace(':', '-')}.jsonl")
     done = {json.loads(l)["qid"] for l in open(out, encoding="utf-8")} if os.path.exists(out) else set()
     qs = {q["id"]: q for q in json.load(open(QFILE, encoding="utf-8"))}
     H = {"Authorization": "Bearer " + key()} if a.base == "groq" else {}

@@ -5,9 +5,13 @@ questions with human-written gold answers). Downloaded with the user's approval 
     python eval_sop/build_questions_frames.py --n 60
     EVAL_QUESTIONS=questions_frames.json python eval_sop/search_ddg.py
     EVAL_RUN=frames EVAL_QUESTIONS=questions_frames.json node eval_sop/run_pipeline.mjs gen ...
-Strata = first listed reasoning type (12 per type, seed 0). Only questions whose gold
-answer has <= 5 words are eligible, because string-match labels are unreliable for long
-answers (`long_answer` is therefore always false in the output)."""
+Strata = first listed reasoning type (12 per type, seed 0).
+NOTE (2026-10-02): a filter restricting the pool to gold answers of <= 5 words was
+INTENDED but never inserted (a scripted string replacement silently failed), so
+questions_frames.json - the file actually used for the run - contains 13/60
+long-answer questions (meta.long_answer = true). This script is left as-is so that it
+reproduces that file exactly. The pre-intended restriction is applied at analysis time
+instead:  EVAL_SHORT_ONLY=1 python eval_sop/analyze.py  (n = 47). See RESULTS.md."""
 import argparse, json, os
 import pandas as pd
 

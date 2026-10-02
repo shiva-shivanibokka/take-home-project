@@ -68,6 +68,12 @@ def summarize(y_bad, conf, rng, escalate=None):
 def main():
     rng = np.random.default_rng(0)
     lab = {r["qid"]: r for r in jl(os.path.join(D, "labels_match.jsonl"))}
+    # EVAL_SHORT_ONLY=1: keep only questions whose gold answer has <= 5 words (FRAMES).
+    # Outputs then get the suffix "_short". All other questions are dropped everywhere.
+    SUF = ""
+    if os.environ.get("EVAL_SHORT_ONLY") == "1":
+        lab = {q: r for q, r in lab.items() if len(r["answers"][0].split()) <= 5}
+        SUF = "_short"
     llm = {}
     for p in glob.glob(os.path.join(D, "labels_llm_*.jsonl")):
         name = os.path.basename(p)[len("labels_llm_"):-6]
@@ -90,7 +96,7 @@ def main():
 
     label_sets = {"match": {q: int(not r["correct_match"]) for q, r in lab.items()}}
     for name, g in llm.items():
-        label_sets[f"llm_{name}"] = {q: int(v != "CORRECT") for q, v in g.items() if v != "PARSE_FAIL"}
+        label_sets[f"llm_{name}"] = {q: int(v != "CORRECT") for q, v in g.items() if v != "PARSE_FAIL" and q in lab}
 
     res = {"n_questions": len(lab), "label_agreement": {}, "conditions": {}, "baselines": {}, "diagnostics": {}, "reviewer_failures": dict(fails)}
     names = list(label_sets)
@@ -164,15 +170,31 @@ def main():
         "answer_sentence_cited": sum(r["ans_sentence_cited"] for r in L.values()),
         "answer_sentence_cites_source_containing_gold": sum(r["ans_cited_source_contains_gold"] for r in L.values()),
     }
-    json.dump(res, open(os.path.join(D, "results.json"), "w"), indent=1)
+    # paired ablation contrasts vs the primary condition (seed-mean confidence, same questions)
+    PRIM = "llama3-1-8b|snip150"
+    res["paired_vs_primary"] = {}
+    if PRIM in revs:
+        for lname, L in label_sets.items():
+            for cond in revs:
+                if cond == PRIM:
+                    continue
+                qids = sorted(set(L) & set.intersection(*[set(v) for v in list(revs[cond].values()) + list(revs[PRIM].values())]))
+                y = np.array([L[q] for q in qids])
+                ca = np.array([np.mean([revs[cond][s][q][0] for s in revs[cond]]) for q in qids])
+                cp = np.array([np.mean([revs[PRIM][s][q][0] for s in revs[PRIM]]) for q in qids])
+                d = auroc(y, -ca) - auroc(y, -cp)
+                res["paired_vs_primary"][f"{cond}|{lname}"] = {
+                    "n": len(qids), "auroc_diff": float(d),
+                    "auroc_diff_ci": boot(lambda i: auroc(y[i], -ca[i]) - auroc(y[i], -cp[i]), len(y), rng)}
+    json.dump(res, open(os.path.join(D, f"results{SUF}.json"), "w"), indent=1)
 
     # sweep + reliability for the primary condition
-    prim = next((c for c in res["conditions"] if c.endswith("snip150") and "qwen" in c), None)
+    prim = "llama3-1-8b|snip150" if "llama3-1-8b|snip150" in res["conditions"] else next((c for c in res["conditions"] if c.endswith("snip150")), None)
     if prim:
         seeds = revs[prim]; Lm = label_sets["match"]
         qids = sorted(set(Lm) & set.intersection(*[set(v) for v in seeds.values()]))
         y = np.array([Lm[q] for q in qids])
-        with open(os.path.join(D, "threshold_sweep.csv"), "w") as f:
+        with open(os.path.join(D, f"threshold_sweep{SUF}.csv"), "w") as f:
             f.write("condition,seed,threshold,esc_rate,precision,recall\n")
             for c2, sd in revs.items():
                 for s, d in sd.items():
@@ -196,7 +218,7 @@ def main():
         ax[0].set_title(f"Reliability ({prim}, n={len(y)})", fontsize=9); ax[0].legend(fontsize=7); ax[0].set_xlim(0, 1); ax[0].set_ylim(0, 1)
         ax[1].hist([mc[y == 0], mc[y == 1]], bins=np.linspace(0, 1, 21), label=["correct", "wrong"], color=["#2a6fdb", "#e67e22"])
         ax[1].set_xlabel("reviewer confidence"); ax[1].set_ylabel("briefs"); ax[1].legend(fontsize=8); ax[1].set_title("Confidence by outcome", fontsize=9)
-        fig.tight_layout(); fig.savefig(os.path.join(D, "reliability.png"), dpi=130)
+        fig.tight_layout(); fig.savefig(os.path.join(D, f"reliability{SUF}.png"), dpi=130)
     print(json.dumps({k: res[k] for k in ("n_questions", "label_agreement", "diagnostics")}, indent=1))
     for c, v in res["conditions"].items():
         e = v["match"]["seed_mean_conf"]
