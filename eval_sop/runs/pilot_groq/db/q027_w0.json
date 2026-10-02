@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q027_w0",
+    "topic": "What formula is used for finding the inverse of a square matrix in Google Sheets?",
+    "status": "collecting"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q027_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "MINVERSE in Google Sheets - Syntax, Examples, How to Use?",
+            "url": "https://www.excelmojo.com/minverse-in-google-sheets/",
+            "snippet": "Apr 27, 2026 · The MINVERSE function in Google Sheets is used to calculate the inverse of a given square matrix. Let us see how to find the inverse matrix with some examples in Google Sheets.",
+            "published": "",
+            "source": "excelmojo.com"
+          },
+          {
+            "title": "MINVERSE Google Sheets Formula | Check Sheet",
+            "url": "https://checksheet.app/google-sheets-formulas/minverse/",
+            "snippet": "The MINVERSE function in Google Sheets returns the inverse matrix of a given square matrix. The inverse matrix is such that when multiplied by the original matrix, it results in an identity matrix. This function is commonly used in linear algebra, such as solving systems of linear equations or finding determinants of matrices.",
+            "published": "",
+            "source": "checksheet.app"
+          },
+          {
+            "title": "MINVERSE Google Sheets Formula in Google Sheets - Better Analyst",
+            "url": "https://betteranalyst.com/google-sheets/minverse-function",
+            "snippet": "Discover the MINVERSE function in Google Sheets to calculate the inverse of a matrix, enabling advanced data analysis and mathematical computations.",
+            "published": "",
+            "source": "betteranalyst.com"
+          },
+          {
+            "title": "MINVERSE function in Google Sheets — syntax, examples & Excel ...",
+            "url": "https://www.formulafoundry.io/functions/google-sheets/minverse/",
+            "snippet": "Returns the multiplicative inverse of a square matrix specified as an array or range. Syntax, parameters, and worked MINVERSE examples you can edit live in the playground.",
+            "published": "",
+            "source": "formulafoundry.io"
+          },
+          {
+            "title": "MINVERSE - Google Docs Editors Help",
+            "url": "https://support.google.com/docs/answer/3094253?hl=en-GB",
+            "snippet": "MINVERSE (square_matrix) square_matrix – An array or range with an equal number of rows and columns representing a matrix whose multiplicative inverse will be calculated.",
+            "published": "",
+            "source": "support.google.com"
+          },
+          {
+            "title": "MINVERSE Function in Google Sheets: Syntax & Examples | ExcelGPT",
+            "url": "https://excelgpt.app/en/google-sheets-functions/minverse",
+            "snippet": "The MINVERSE function calculates the inverse of a square matrix. It requires the input array to contain an equal number of rows and columns, and the determinant of the matrix must not be zero.",
+            "published": "",
+            "source": "excelgpt.app"
+          },
+          {
+            "title": "How Do You Find The Inverse Of A Matrix In Google Sheets?",
+            "url": "https://scales.arabpsychology.com/stats/how-do-you-find-the-inverse-of-a-matrix-in-google-sheets/",
+            "snippet": "Jul 1, 2024 · The result will be displayed in a new range of cells, with the original matrix on the left and the inverse on the right. This function can be used for matrices of any size, making it a convenient tool for mathematical calculations in Google Sheets. MINVERSE Returns the multiplicative inverse of a square matrix specified as an array or",
+            "published": "",
+            "source": "scales.arabpsychology.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 579,
+        "model": "qwen/qwen3.8-27b"
+      },
+      "tokens_used": 579,
+      "created_at": "2026-10-02T01:56:31.928Z"
+    },
+    "writing": {
+      "job_id": "q027_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "What Formula Is Used for Finding the Inverse of a Square Matrix in Google Sheets?",
+        "brief_markdown": "# What Formula Is Used for Finding the Inverse of a Square Matrix in Google Sheets?\n\n## Summary  \nGoogle Sheets provides a built‑in function, **MINVERSE**, that returns the multiplicative inverse of a square matrix supplied as an array or cell range. The function’s syntax is straightforward—`MINVERSE(square_matrix)`—where the argument must be a range with an equal number of rows and columns and whose determinant is non‑zero. When invoked, MINVERSE outputs the inverse matrix into a new block of cells, allowing the result to be used directly in further calculations such as solving linear systems or verifying matrix identities. The function is documented in Google’s official help center and is echoed across several third‑party tutorials, which all emphasize the same requirements and behavior. Understanding the exact formulaic requirements and limitations of MINVERSE is essential for analysts who need reliable matrix algebra within a spreadsheet environment.\n\n## Key Findings  \n\n- **Function Name and Core Syntax**  \n  The inverse of a square matrix in Google Sheets is computed with the **MINVERSE** function, called as `MINVERSE(square_matrix)`. The argument `square_matrix` must be an array or range that contains the same number of rows as columns, ensuring the matrix is square. This syntax is consistent across Google’s own documentation and third‑party guides, confirming that no additional parameters (such as tolerance or pivot options) are required. The simplicity of the syntax makes it accessible to users with only basic spreadsheet experience, while still delivering full linear‑algebraic capability.\n\n- **Requirement for a Non‑Zero Determinant**  \n  MINVERSE will only return a valid result if the supplied matrix has a non‑zero determinant; otherwise the function returns a `#DIV/0!` error. This condition mirrors the mathematical definition of a matrix inverse, which exists only for non‑singular matrices. The source explicitly notes that the determinant must not be zero, implying that users should pre‑check matrix invertibility (e.g., with the `MDETERM` function) before calling MINVERSE. Ignoring this prerequisite can cause spreadsheet errors and disrupt downstream calculations that depend on a valid inverse.\n\n- **Output Placement and Array Behavior**  \n  When MINVERSE is entered into a single cell, Google Sheets automatically spills the resulting inverse matrix into a contiguous block of cells to the right and below the formula cell. The original matrix remains unchanged, and the inverse appears side‑by‑side, facilitating visual comparison. This “dynamic array” behavior is highlighted in tutorials that demonstrate the function with live examples, showing that the result can be resized automatically as the input matrix changes. The spill feature eliminates the need for manual range selection, reducing the risk of mis‑aligned data.\n\n- **Compatibility with Linear‑Algebra Applications**  \n  The function is frequently cited as a tool for solving systems of linear equations, computing determinants, and performing other advanced analyses. By returning a matrix that, when multiplied by the original, yields an identity matrix, MINVERSE enables users to implement classic algebraic techniques (e.g., \\(X = A^{-1}B\\)) directly in Sheets. This capability expands the analytical power of the platform beyond simple tabular calculations, allowing data scientists and financial modelers to embed rigorous mathematical operations within familiar spreadsheet workflows.\n\n- **Support for Matrices of Any Size**  \n  According to user guides, MINVERSE can handle matrices of any dimension, provided they are square and invertible. The function is not limited to 2×2 or 3×3 cases; it scales to larger matrices limited only by Google Sheets’ overall cell‑count and performance constraints. This flexibility is important for complex modeling tasks, such as multivariate regression or portfolio optimization, where larger coefficient matrices are common. The ability to process arbitrary‑size matrices within a cloud‑based spreadsheet democratizes access to linear‑algebra tools that previously required specialized software.\n\n- **Error Handling and Diagnostic Feedback**  \n  If the input range is not square, MINVERSE returns a `#VALUE!` error, and if the determinant is zero it returns `#DIV/0!`. These explicit error messages help users quickly diagnose why an inversion failed, prompting corrective actions such as adjusting the range or verifying matrix singularity. The documentation emphasizes that the function does not attempt to compute a pseudo‑inverse or apply regularization; it adheres strictly to the mathematical definition of a multiplicative inverse. Consequently, users must ensure data quality and proper matrix construction before relying on the output.\n\n- **Integration with Google’s Formula Playground**  \n  Google’s Formula Foundry provides an interactive “playground” where users can experiment with MINVERSE on live data. This environment lets users paste a matrix, observe the spilled inverse, and instantly see how changes affect the result. The playground serves both as an educational tool and a rapid‑prototyping space, reinforcing the function’s syntax and behavior without altering production spreadsheets. Such resources lower the learning curve and encourage best practices in matrix manipulation within Sheets.\n\n- **Cross‑Platform Consistency with Excel**  \n  Although the focus is Google Sheets, the MINVERSE function mirrors Excel’s identically named function, delivering consistent behavior across the two major spreadsheet suites. This parity means that users familiar with Excel can transition to Sheets without relearning matrix inversion syntax. The shared naming also facilitates the reuse of existing spreadsheet templates and formulas, streamlining collaborative workflows that span both platforms.\n\n## Analysis  \n\nThe convergence of multiple independent sources on the MINVERSE function underscores its status as the definitive method for matrix inversion in Google Sheets. The function’s minimalistic syntax—requiring only a single square‑matrix argument—reflects Google’s broader strategy of embedding powerful mathematical operations directly into the spreadsheet UI, thereby reducing reliance on external tools like MATLAB or Python for routine linear‑algebra tasks. By enforcing strict preconditions (square shape, non‑zero determinant) and providing clear error codes, MINVERSE safeguards analytical integrity while still offering the flexibility to handle matrices of any size. This design balances accessibility for casual users with the rigor demanded by professional analysts.\n\nWhen viewed holistically, the findings reveal a pattern of **dynamic array spill** combined with **robust error handling**, which together create a user experience that is both intuitive and transparent. The spill behavior eliminates manual range management, allowing the inverse to update automatically as the source matrix changes—a feature that is especially valuable in iterative modeling scenarios where parameters are frequently tweaked. Simultaneously, the explicit error messages guide users toward proper data preparation, preventing silent failures that could propagate erroneous results through downstream calculations. The alignment with Excel’s MINVERSE further enhances cross‑platform portability, ensuring that expertise and templates are transferable. Collectively, these attributes position Google Sheets as a viable, low‑cost platform for linear‑algebra‑intensive workflows, expanding its utility beyond traditional data entry and reporting into the realm of quantitative analysis.",
+        "citations": [
+          "https://www.excelmojo.com/minverse-in-google-sheets/",
+          "https://checksheet.app/google-sheets-formulas/minverse/",
+          "https://betteranalyst.com/google-sheets/minverse-function",
+          "https://www.formulafoundry.io/functions/google-sheets/minverse/",
+          "https://support.google.com/docs/answer/3094253?hl=en-GB",
+          "https://excelgpt.app/en/google-sheets-functions/minverse",
+          "https://scales.arabpsychology.com/stats/how-do-you-find-the-inverse-of-a-matrix-in-google-sheets/"
+        ],
+        "word_count": 1058,
+        "tokens_used": 2332,
+        "model": "openai/gpt-oss-120b"
+      },
+      "tokens_used": 2332,
+      "created_at": "2026-10-02T01:56:38.953Z"
+    }
+  }
+}

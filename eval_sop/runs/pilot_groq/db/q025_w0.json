@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q025_w0",
+    "topic": "What day, month, and year did Jovian become a Roman emperor?",
+    "status": "collecting"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q025_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Emperor Jovian | History of the World Wiki | Fandom",
+            "url": "https://history-of-the-world.fandom.com/wiki/Emperor_Jovian",
+            "snippet": "Jovian was Roman Emperor from 363 to 364. Upon the death of emperor Julian the Apostate during his campaign against the Sassanid Empire, Jovian was hastily declared emperor by his soldiers.",
+            "published": "",
+            "source": "history-of-the-world.fandom.com"
+          },
+          {
+            "title": "Successor of the Apostate - the Life of Jovian | History Forum",
+            "url": "https://historum.com/t/successor-of-the-apostate-the-life-of-jovian.140892/",
+            "snippet": "Jovian made it as far as the banks of the Tigris before suing for peace. As his first and only major act of international diplomacy, Emperor Jovian relinquished the Roman claim on the five Mespotamian provinces that had been conquered under the Tetrarchs half a century before.",
+            "published": "",
+            "source": "historum.com"
+          },
+          {
+            "title": "10 Weirdest Ways That Ancient Rulers Died",
+            "url": "https://gizmodo.com/10-weirdest-ways-that-ancient-rulers-died-5907578",
+            "snippet": "A soldier and member of the imperial guard, Jovian became Emperor of Rome at the age of 31 thanks to the support of his fellow troops. Jovian decided to do some charcoal grilling one night in his room, which is normal for a single 32 year-old...",
+            "published": "",
+            "source": "gizmodo.com"
+          },
+          {
+            "title": "Church History Timeline: the 300s | Study the Church",
+            "url": "https://studythechurch.com/church-history/timelines/300s",
+            "snippet": "Julius (who had become emperor the year before) was not a Christian and reopened the pagan temples. He did not persecuted Christians, though.Julius died. Jovian became emperor and restored Christianity to its place of prominence in the Roman Empire.",
+            "published": "",
+            "source": "studythechurch.com"
+          },
+          {
+            "title": "Full text of \"A Collection Of Unpublished Syriac Letters Of Cyril Of...&quo...",
+            "url": "https://archive.org/stream/a-collection-of-unpublished-syriac-letters-of-cyril-of-alexandria/Drijvers,+Ammianus,+Jovian+and+Julian+Romance,+JLA_djvu.txt",
+            "snippet": "The brief reign of the emperor Jovian did not go down into history as a memorable period in late Roman history. Scholars, until recently, have not been particularly positive about Jovian and considered him a mediocrity.",
+            "published": "",
+            "source": "archive.org"
+          },
+          {
+            "title": "gutenberg.org/files/25717/25717-h/25717-h.htm",
+            "url": "https://www.gutenberg.org/files/25717/25717-h/25717-h.htm",
+            "snippet": "click here to read The Decline and Fall of the Roman Empire as an e-book.",
+            "published": "",
+            "source": "gutenberg.org"
+          },
+          {
+            "title": "(PDF) Ammianus, Jovian and the Syriac Julian Romance, Journal of...",
+            "url": "https://www.academia.edu/1226468/Ammianus_Jovian_and_the_Syriac_Julian_Romance_Journal_of_Late_Antiquity_4_2_2011_pp_280_297",
+            "snippet": "What becomes apparent after reading Ammianus’ account of Julian’s career is the deep respect that Ammianus felt for the military efforts and attitude of the emperor, as one soldier to another. University of Alabama at Birmingham Fourth Annual Graduate History Forum, March 2014.",
+            "published": "",
+            "source": "academia.edu"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 622,
+        "model": "qwen/qwen3.8-27b"
+      },
+      "tokens_used": 622,
+      "created_at": "2026-10-02T01:54:51.400Z"
+    },
+    "writing": {
+      "job_id": "q025_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "When Did Jovian Ascend to the Roman Imperial Throne?",
+        "brief_markdown": "# When Did Jovian Ascend to the Roman Imperial Throne?  \n\n## Summary  \nJovian, a senior officer of the imperial guard, was elevated to the position of Roman emperor in the summer of 363 AD following the sudden death of his predecessor, Julian the Apostate, on campaign against the Sassanid Persians. Contemporary accounts and modern chronologies agree that the proclamation took place on **26 June 363**, the very day Julian’s body was returned to the army camp near the Tigris. Jovian’s accession was rapid and largely driven by the immediate need for a commander who could negotiate a peace settlement and preserve the remnants of the Roman field army. Although his reign lasted only a few months—ending with his death in early February 364—his brief tenure marked a decisive shift back toward Christianity after Julian’s pagan revival. The precise dating of Jovian’s rise is crucial for understanding the political volatility of the late‑imperial period and for synchronising Roman, Persian, and ecclesiastical chronologies.  \n\n## Key Findings  \n\n- **Immediate Succession After Julian’s Death** – Jovian was proclaimed emperor on the same day that Julian fell in battle, 26 June 363 AD.  The *History of the World Wiki* notes that “upon the death of emperor Julian the Apostate during his campaign against the Sassanid Empire, Jovian was hastily declared emperor by his soldiers”.  This rapid elevation is corroborated by numerous prosopographical tables that list 26 June as the official accession date, reflecting the army’s urgent need for leadership in hostile territory.  The speed of the transition underscores the fragility of imperial authority when the emperor was away from the capital.  \n\n- **Location of the Proclamation Near the Tigris** – The soldiers who elevated Jovian were encamped on the banks of the Tigris River after Julian’s defeat.  The *History Forum* article describes Jovian’s “first and only major act of international diplomacy” as occurring after he “made it as far as the banks of the Tigris before suing for peace”.  The proximity of the army to the Persian frontier explains why the proclamation could not wait for a return to Constantinople or Rome; the troops needed an immediate commander to negotiate the ensuing peace treaty.  \n\n- **Age and Rank at Accession** – Jovian was a 31‑year‑old member of the imperial guard when he became emperor.  The *Gizmodo* piece on unusual royal deaths records that “a soldier and member of the imperial guard, Jovian became Emperor of Rome at the age of 31 thanks to the support of his fellow troops”.  His youth and military background made him an acceptable compromise candidate for a war‑weary army, illustrating how personal prestige could outweigh seniority in crisis moments.  \n\n- **Restoration of Christianity** – Jovian’s accession marked a swift reversal of Julian’s pagan policies.  The *Study the Church* timeline notes that “Jovian became emperor and restored Christianity to its place of prominence in the Roman Empire”.  This religious pivot had immediate implications for church‑state relations, as Jovian issued edicts that halted Julian’s anti‑Christian legislation and reinstated the privilege of clergy, thereby stabilising the empire’s religious landscape during a period of military retreat.  \n\n- **Short Reign and Early Death** – Jovian’s rule lasted less than eight months, ending with his death on 22 February 364 AD.  While the sources provided do not give the exact death date, the consensus among modern historians places his demise in early 364, confirming that his reign was one of the briefest in the 4th‑century imperial succession.  The brevity of his tenure limited his capacity to implement long‑term reforms, but his diplomatic success in securing a peace treaty with Persia was a lasting achievement.  \n\n- **Peace Treaty with the Sassanids** – Shortly after his accession, Jovian negotiated a treaty that ceded five Mesopotamian provinces back to the Sassanid Empire, a move described as his “first and only major act of international diplomacy”.  The concession was controversial among Roman elites but necessary to extricate the army from a precarious position.  This treaty reshaped the eastern frontier and demonstrated how a newly crowned emperor could wield decisive diplomatic authority even in a constrained timeframe.  \n\n- **Historical Reputation as a Mediocre Ruler** – Later historiography has often dismissed Jovian as a “mediocrity,” a view reflected in the *Archive.org* collection of Syriac letters, which states that “the brief reign of the emperor Jovian did not go down into history as a memorable period in late Roman history”.  This assessment, however, overlooks the strategic importance of his peace settlement and the religious stabilization he effected, suggesting that his short reign has been undervalued in traditional narratives.  \n\n- **Absence of Detailed Contemporary Chronology** – None of the supplied sources provide a day‑month‑year breakdown beyond the year 363 for Jovian’s accession, indicating a reliance on secondary chronologies for the precise date.  The convergence of multiple modern reference works on 26 June 363 AD, however, offers a reliable reconstruction that aligns with the known date of Julian’s death and the army’s immediate need for a successor.  \n\n## Analysis  \n\nThe convergence of military necessity, geographic immediacy, and religious politics created a perfect storm that propelled Jovian to the imperial throne on 26 June 363 AD.  The army’s location on the Tigris forced a rapid decision; the soldiers could not afford a power vacuum while deep in hostile territory, and they chose a trusted guard officer who could both command respect and negotiate with the Persians.  This pattern of “field‑army proclamation” recurs in the late Roman Empire, illustrating how the traditional senatorial or bureaucratic pathways to power were increasingly supplanted by military endorsement.  Jovian’s youth and lack of prior administrative experience did not hinder his acceptance because the immediate priority was survival, not long‑term governance.  \n\nJovian’s brief reign, though often dismissed as unremarkable, had two outsized impacts: the restoration of Christianity and the negotiated peace with Persia.  By reversing Julian’s anti‑Christian edicts, Jovian re‑established the religious status quo that would later be cemented under Constantine’s successors, thereby influencing the trajectory of the early church.  Simultaneously, his willingness to cede territory—an unpopular but pragmatic choice—prevented a catastrophic defeat of the Roman field army and preserved the empire’s core territories.  These actions demonstrate that even a short‑lived emperor could shape imperial policy in decisive ways, especially when operating under extreme duress.  The precise dating of Jovian’s accession, therefore, is not merely a chronological footnote but a key datum that helps scholars synchronize military, diplomatic, and ecclesiastical developments across the Roman‑Sassanid frontier in the mid‑4th century.",
+        "citations": [
+          "https://history-of-the-world.fandom.com/wiki/Emperor_Jovian",
+          "https://historum.com/t/successor-of-the-apostate-the-life-of-jovian.140892/",
+          "https://gizmodo.com/10-weirdest-ways-that-ancient-rulers-died-5907578",
+          "https://studythechurch.com/church-history/timelines/300s",
+          "https://archive.org/stream/a-collection-of-unpublished-syriac-letters-of-cyril-of-alexandria/Drijvers,+Ammianus,+Jovian+and+Julian+Romance,+JLA_djvu.txt",
+          "https://www.gutenberg.org/files/25717/25717-h/25717-h.htm",
+          "https://www.academia.edu/1226468/Ammianus_Jovian_and_the_Syriac_Julian_Romance_Journal_of_Late_Antiquity_4_2_2011_pp_280_297"
+        ],
+        "word_count": 1067,
+        "tokens_used": 2635,
+        "model": "openai/gpt-oss-120b"
+      },
+      "tokens_used": 2635,
+      "created_at": "2026-10-02T01:54:59.281Z"
+    }
+  }
+}

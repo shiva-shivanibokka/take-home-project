@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q057_w0",
+    "topic": "In what country is history of Ghana?",
+    "status": "collecting"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q057_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "History of Ghana - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/History_of_Ghana",
+            "snippet": "Dagbon pioneered Ghana's earliest learning institutions, [12] including a university town, [13] and a writing system prior to European arrival. [14] Toward the end of the classical era, larger regional kingdoms had formed in West Africa, one of which was the Kingdom of Ghana, north of what is today the nation of Ghana.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "History of Ghana - Wikipedia",
+            "url": "https://gpe.wikipedia.org/wiki/History_of_Ghana",
+            "snippet": "Ghana: A country study (1995, Library of Congress), pp: 1–58. online Owusu-Ansah, David. Historical Dictionary of Ghana (Rowman & Littlefield, 2014) Szereszewski, R. Structural Changes in the Economy of Ghana, 1891–1911 (London: Weidenfeld and Nicolson, 1965) Ward, W. E. F. A History of Ghana (Allen & Unwin, 1966), online free to borrow",
+            "published": "",
+            "source": "gpe.wikipedia.org"
+          },
+          {
+            "title": "Ghana | Country, Religion, Africa, Capital, Population, Area ...",
+            "url": "https://www.britannica.com/place/Ghana",
+            "snippet": "1 day ago · Ghana is a country in western Africa situated on the coast of the Gulf of Guinea. Although relatively small in area and population, Ghana is one of the leading countries of Africa and is celebrated for its rich history. Ghana’s capital is the coastal city of Accra.",
+            "published": "",
+            "source": "britannica.com"
+          },
+          {
+            "title": "About Ghana – Ministry Of Foreign Affairs",
+            "url": "https://mfa.gov.gh/index.php/about-ghana/",
+            "snippet": "ABOUT GHANA Brief History of Ghana The Republic of Ghana is located in West Africa. It borders Cote d’Ivoire to the west, Burkina Faso to the north, Togo to the east and the Gulf of Guinea to the south.",
+            "published": "",
+            "source": "mfa.gov.gh"
+          },
+          {
+            "title": "The Complete History of Ghana — Pre-Colonial Kingdoms to ...",
+            "url": "https://exodus.africa/history/history-of-ghana",
+            "snippet": "Feb 27, 2026 · Ghana's Right of Abode provisions allow people of African descent to live and work in the country indefinitely, and the government has actively encouraged diaspora Africans to establish businesses, purchase property, and contribute to national development.",
+            "published": "",
+            "source": "exodus.africa"
+          },
+          {
+            "title": "Ghana country profile - BBC News",
+            "url": "https://www.bbc.com/news/world-africa-13433790",
+            "snippet": "Ghana is considered one of the more stable countries in West Africa since its transition to multi-party democracy in 1992. Formerly known as the Gold Coast, Ghana gained independence from Britain in 1957, becoming the first sub-Saharan nation to break free from colonial rule.",
+            "published": "",
+            "source": "bbc.com"
+          },
+          {
+            "title": "Ghana - Gold Coast - Country Profile - Nations Online Project",
+            "url": "https://www.nationsonline.org/oneworld/ghana.htm",
+            "snippet": "Ghana facts: Official web sites of Ghana, links and information on Ghana's art, culture, geography, history, travel and tourism, cities, the capital city, airlines, embassies, tourist boards and newspapers.",
+            "published": "",
+            "source": "nationsonline.org"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 7; selected 7 for Writer.",
+        "tokens_used": 424,
+        "model": "qwen/qwen3.8-27b"
+      },
+      "tokens_used": 424,
+      "created_at": "2026-10-02T01:45:17.638Z"
+    },
+    "writing": {
+      "job_id": "q057_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Where Does the History of Ghana Belong?",
+        "brief_markdown": "# Where Does the History of Ghana Belong?  \n\n## Summary  \nThe historical narrative commonly labeled “the history of Ghana” pertains to the modern nation‑state of Ghana, a sovereign country situated on the western coast of Africa along the Gulf of Guinea. Although the medieval **Kingdom of Ghana** lay several hundred kilometres north of today’s borders, contemporary scholarship and official Ghanaian sources treat the term as referring to the territory that gained independence from Britain in 1957 and is now known as the Republic of Ghana. Geographic descriptors from encyclopedic references place Ghana firmly within West Africa, bounded by Côte d’Ivoire, Burkina Faso, Togo, and the Atlantic Ocean. Governmental and international profiles consistently identify Ghana as the political entity whose past—from pre‑colonial societies through colonial rule to post‑independence development—is chronicled under the heading “History of Ghana.” Consequently, the history of Ghana is situated **within the country of Ghana**, a West African nation.\n\n## Key Findings  \n\n- **Geographic Placement Confirms Ghana as a West African Country**  \n  The Britannica entry defines Ghana as “a country in western Africa situated on the coast of the Gulf of Guinea”【3】. This locational description situates Ghana within the broader West African region, establishing the national boundaries that frame its historical narrative. Recognizing Ghana’s geographic context is essential because it distinguishes the modern state from the ancient Kingdom of Ghana, which lay farther north. The implication is that any discussion of “the history of Ghana” is anchored to the present‑day nation’s territory.\n\n- **Official Government Sources Identify Ghana’s Borders and Identity**  \n  The Ministry of Foreign Affairs of Ghana states that “The Republic of Ghana is located in West Africa. It borders Côte d’Ivoire to the west, Burkina Faso to the north, Togo to the east and the Gulf of Guinea to the south”【4】. This official delineation reinforces the country’s sovereign status and provides the political framework within which its history is recorded. By explicitly naming neighboring states, the source underscores Ghana’s recognized international borders, confirming that the historical record belongs to this defined nation.\n\n- **Historical Scholarship Links the Term to the Modern Nation‑State**  \n  Wikipedia’s “History of Ghana” article notes that the medieval Kingdom of Ghana was “north of what is today the nation of Ghana”【1】. The phrasing “what is today the nation of Ghana” signals that contemporary historians treat the modern country as the locus for the historical account, despite the earlier kingdom’s separate location. This distinction matters because it clarifies that the term “history of Ghana” is not a generic West African chronicle but a narrative tied to the current political entity.\n\n- **Colonial Legacy Positions Ghana as the Successor State**  \n  The BBC country profile explains that Ghana, formerly known as the Gold Coast, achieved independence from Britain in 1957, becoming “the first sub‑Saharan nation to break free from colonial rule”【6】. This transition from a British colony to an independent republic defines the modern state’s legal and institutional continuity, thereby anchoring its historical record within the boundaries of the post‑colonial nation. Understanding this lineage is crucial for situating the country’s past within its present sovereign framework.\n\n- **Academic References Cite Ghana as a Distinct Country in Historical Works**  \n  The Library of Congress country study and other scholarly works listed in the second Wikipedia snippet reference “Ghana” as a discrete national subject (e.g., “Ghana: A country study,” “A History of Ghana”)【2】. These citations treat Ghana as a defined geopolitical unit, reinforcing that the historical literature is organized around the modern country rather than a broader regional concept. This academic framing validates the country‑centric perspective of Ghanaian history.\n\n- **International Profiles Consistently Use “Ghana” as a Country Identifier**  \n  Nations Online and other country‑profile platforms present Ghana’s facts, symbols, and historical overview under the heading of a sovereign state【7】. By categorizing Ghana alongside other nations, these resources implicitly confirm that the history being discussed belongs to the country of Ghana. This uniform labeling across diverse informational sites strengthens the consensus that the historical narrative is country‑specific.\n\n## Analysis  \nThe convergence of geographic, governmental, scholarly, and media sources establishes a clear consensus: the phrase “history of Ghana” is anchored to the modern Republic of Ghana, a recognized sovereign nation in West Africa. Geographic descriptors locate Ghana on the Gulf of Guinea, while official ministry statements delineate its borders, providing a concrete spatial framework. Historical scholarship further refines this picture by distinguishing the ancient Kingdom of Ghana—situated north of present‑day Ghana—from the modern state, thereby preventing conflation of two distinct entities. The colonial transition from the Gold Coast to independent Ghana cements the nation’s continuity, ensuring that post‑1957 developments are unequivocally part of Ghana’s national history.\n\nCollectively, these findings reveal a pattern of consistent country‑centric framing across disciplines and platforms. Whether in encyclopedic entries, government portals, academic studies, or news outlets, Ghana is treated as a discrete political unit whose past is chronicled within its current borders. This uniformity matters for researchers, educators, and policymakers because it clarifies the scope of inquiry: any investigation labeled “history of Ghana” should focus on the territory and peoples of the modern Ghanaian state, while acknowledging the separate, earlier Kingdom of Ghana as a related but distinct historical phenomenon. Understanding this delineation prevents geographic and temporal misinterpretations and ensures that analyses remain grounded in the nation’s recognized identity.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/History_of_Ghana",
+          "https://gpe.wikipedia.org/wiki/History_of_Ghana",
+          "https://www.britannica.com/place/Ghana",
+          "https://mfa.gov.gh/index.php/about-ghana/",
+          "https://exodus.africa/history/history-of-ghana",
+          "https://www.bbc.com/news/world-africa-13433790",
+          "https://www.nationsonline.org/oneworld/ghana.htm"
+        ],
+        "word_count": 873,
+        "tokens_used": 2169,
+        "model": "openai/gpt-oss-120b"
+      },
+      "tokens_used": 2169,
+      "created_at": "2026-10-02T01:45:22.375Z"
+    }
+  }
+}

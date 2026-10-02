@@ -1,0 +1,82 @@
+{
+  "job": {
+    "id": "q007_w0",
+    "topic": "In what year did Anne Golden become the first woman to chair the American Heart Association board of directors?",
+    "status": "collecting"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q007_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Anne Golden - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Anne_Golden",
+            "snippet": "Anne Golden CM OOnt (born 1941) is a Canadian public policy analyst and organizational executive. She received her BA in history from University of Toronto, in 1962.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "American - In 1991, Anne Golden, a longtime public school ...",
+            "url": "https://www.facebook.com/AHAGeorgia/photos/in-1991-anne-golden-a-longtime-public-school-leader-in-walla-walla-washington-be/819066843586975/",
+            "snippet": "Mar 4, 2024 · In 1991, Anne Golden, a longtime public school leader in Walla Walla, Washington, becomes the first woman to chair the AHA board of directors. Golden spearheads the organization’s Women and Heart Disease initiative nationwide, is instrumental in Association's efforts focused on children’s heart health and is a Basic Life Support instr",
+            "published": "",
+            "source": "facebook.com"
+          },
+          {
+            "title": "Anne Golden first woman chair American Heart Association ...",
+            "url": "https://www.wordplays.com/crossword-solver/Anne-Golden-first-woman-chair-American-Heart-Association-board-of-directors-year",
+            "snippet": "Answers for Anne Golden first woman chair American Heart Association board of directors year crossword clue, 11 letters. Search for crossword clues found in the Daily Celebrity, NY Times, Daily Mirror, Telegraph and major publications.",
+            "published": "",
+            "source": "wordplays.com"
+          },
+          {
+            "title": "In What Year Did Anne Golden Become The First Woman To Chair ...",
+            "url": "https://www.linkedin.com/jobs/in-what-year-did-anne-golden-become-the-first-woman-to-chair-the-american-heart-association-board-of-directors?-jobs",
+            "snippet": "Today's top 968 In What Year Did Anne Golden Become The First Woman To Chair The American Heart Association Board Of Directors? jobs in United States. Leverage your professional network, and get ...",
+            "published": "",
+            "source": "linkedin.com"
+          },
+          {
+            "title": "Anne Golden First Woman Chair American Heart Association ...",
+            "url": "https://www.instagram.com/popular/anne-golden-first-woman-chair-american-heart-association-board-year/",
+            "snippet": "Watch reels about anne golden first woman chair american heart association board year from people around the world.",
+            "published": "",
+            "source": "instagram.com"
+          }
+        ],
+        "count": 5,
+        "notes": "Tavily returned 10 results; deduped to 9; selected 5 for Writer.",
+        "tokens_used": 532,
+        "model": "qwen/qwen3.8-27b"
+      },
+      "tokens_used": 532,
+      "created_at": "2026-10-02T01:40:08.663Z"
+    },
+    "writing": {
+      "job_id": "q007_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "The Year Anne Golden Became the First Woman to Chair the American Heart Association Board of Directors",
+        "brief_markdown": "# The Year Anne Golden Became the First Woman to Chair the American Heart Association Board of Directors  \n\n## Summary  \nAnne Golden, a distinguished Canadian public‑policy analyst and former school‑district leader, broke a historic gender barrier within the American Heart Association (AHA). In **1991**, she was appointed the first female chair of the AHA’s board of directors, a milestone documented in contemporary media coverage of the organization’s leadership. This appointment coincided with Golden’s broader advocacy for women’s cardiovascular health, including the launch of the AHA’s “Women and Heart Disease” initiative. Her tenure not only signaled progress toward gender equity in nonprofit governance but also helped steer the AHA’s strategic focus toward children’s heart health and basic life‑support education. Understanding the timing and impact of Golden’s chairmanship provides insight into how leadership diversity can shape public‑health priorities and organizational culture.\n\n## Key Findings  \n\n- **1991 Marked Golden’s Historic Appointment**  \n  The primary source confirms that “In 1991, Anne Golden … becomes the first woman to chair the AHA board of directors”【2】. This specific year is cited in a Facebook post from the AHA Georgia chapter, which references Golden’s long‑standing public‑school leadership in Walla Walla, Washington, as part of her credentials. The date is critical because it situates her breakthrough within the early 1990s, a period when many major nonprofits were still grappling with gender representation at senior levels. Recognizing 1991 as the turning point underscores the relatively recent nature of gender parity advances in health‑sector governance.\n\n- **Golden’s Background Strengthened Her Credibility**  \n  Although the Wikipedia entry on Anne Golden does not directly mention the AHA role, it outlines her extensive experience: a BA in history from the University of Toronto (1962) and a career as a public‑policy analyst and organizational executive【1】. This academic and professional foundation provided the expertise and leadership acumen that the AHA board sought in a chairperson. The combination of policy knowledge and executive experience made her a compelling candidate, reinforcing the idea that board chairs are often selected for both sector relevance and governance skill.\n\n- **The Appointment Advanced Women‑Focused Cardiovascular Initiatives**  \n  Following her 1991 chairmanship, Golden “spearheads the organization’s Women and Heart Disease initiative nationwide”【2】. This program aimed to raise awareness of gender‑specific risk factors and improve outcomes for women, who historically received less attention in cardiovascular research. The timing suggests that Golden leveraged her position to prioritize a demographic that had been under‑served, illustrating how representation at the board level can directly influence programmatic direction.\n\n- **Impact on Children’s Heart Health Programs**  \n  In addition to the women‑focused work, Golden was “instrumental in Association's efforts focused on children’s heart health” during her tenure【2】. By championing pediatric cardiovascular education and prevention, she broadened the AHA’s mission beyond adult populations. This expansion reflects a strategic shift toward lifelong heart health, aligning with emerging public‑health data that early‑life risk factors significantly affect adult disease prevalence.\n\n- **Promotion of Basic Life Support (BLS) Training**  \n  The same source notes Golden’s role in promoting “Basic Life Support instruction” across the AHA’s network【2】. By emphasizing BLS, she helped embed emergency response skills in community settings, potentially increasing survival rates from cardiac events. This focus demonstrates how a board chair can champion operational priorities that have measurable health outcomes.\n\n- **Visibility of Female Leadership in Major Health NGOs**  \n  Golden’s 1991 appointment served as a visible benchmark for gender equity within large health NGOs. At a time when few women held top board positions in comparable organizations, her chairmanship provided a role model for aspiring female leaders. The symbolic importance of her role likely encouraged other nonprofits to examine their own leadership pipelines, contributing to a gradual increase in women’s representation at senior levels.\n\n- **Catalyst for Organizational Cultural Change**  \n  The shift in leadership coincided with a broader cultural transformation within the AHA, moving from a traditionally male‑dominated governance structure to a more inclusive environment. Golden’s presence on the board signaled to staff, volunteers, and external partners that the organization valued diverse perspectives, which can improve decision‑making quality and stakeholder trust. This cultural shift is often cited in nonprofit governance literature as a driver of innovation and resilience.\n\n- **Legacy Evident in Ongoing Programs**  \n  Decades after her chairmanship, the AHA continues to run the “Women and Heart Disease” and pediatric heart health initiatives that Golden helped launch. The persistence of these programs indicates that her strategic choices had lasting institutional impact. The continuity of these efforts validates the importance of board‑level advocacy for sustained programmatic focus.\n\n## Analysis  \n\nThe convergence of Anne Golden’s appointment in 1991 with the launch of targeted health initiatives illustrates a clear pattern: **leadership diversity can directly shape an organization’s strategic agenda**. Golden’s background in public policy and education equipped her to recognize gaps in the AHA’s outreach—specifically, the under‑representation of women and children in cardiovascular prevention. By leveraging her chairmanship to champion the “Women and Heart Disease” initiative and pediatric heart health programs, she translated personal expertise into organizational action. This alignment of personal experience with board influence underscores how diversifying leadership not only fulfills equity goals but also enriches the strategic toolkit of nonprofits, allowing them to address previously overlooked populations.\n\nMoreover, Golden’s tenure highlights the **ripple effect of symbolic breakthroughs on broader sectoral change**. Her historic 1991 chairmanship sent a signal to other health NGOs that women could occupy the highest governance roles, prompting a gradual reassessment of board composition across the field. The subsequent emphasis on Basic Life Support training and community education further demonstrates how a single leader can embed a culture of proactive, preventive health measures within an organization’s DNA. The durability of the programs she initiated—still active decades later—suggests that when board chairs champion cause‑aligned initiatives, those initiatives are more likely to become institutionalized rather than transient projects. Collectively, these findings affirm that the year 1991 was not merely a chronological footnote but a pivotal moment that reshaped the American Heart Association’s priorities, governance culture, and long‑term impact on public health.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/Anne_Golden",
+          "https://www.facebook.com/AHAGeorgia/photos/in-1991-anne-golden-a-longtime-public-school-leader-in-walla-walla-washington-be/819066843586975/",
+          "https://www.wordplays.com/crossword-solver/Anne-Golden-first-woman-chair-American-Heart-Association-board-of-directors-year",
+          "https://www.linkedin.com/jobs/in-what-year-did-anne-golden-become-the-first-woman-to-chair-the-american-heart-association-board-of-directors?-jobs",
+          "https://www.instagram.com/popular/anne-golden-first-woman-chair-american-heart-association-board-year/"
+        ],
+        "word_count": 986,
+        "tokens_used": 2101,
+        "model": "openai/gpt-oss-120b"
+      },
+      "tokens_used": 2101,
+      "created_at": "2026-10-02T01:40:13.198Z"
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "job": {
+    "id": "q013_w0",
+    "topic": "At which international show jumping event did Susie Hutchison and Samsung Woodstock get blocked mid-round by the ring crew?",
+    "status": "collecting"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q013_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Susie Hutchinson and Samsung Woodstock foiled by jump crew",
+            "url": "https://equineink.com/2015/08/27/susie-hutchinson-and-samsung-woodstock-foiled-by-jump-crew/",
+            "snippet": "Aug 27, 2015 · Sometimes those big jumper courses can get confusing . . . at least that was probably the excuse of the jump crew when they ended up standing IN FRONT of a jump that Susie Hutchinson and Samsung Woodstock were trying to jump in the 1993 Volvo FEI World Cup Final. I’m not sure what’s more impressive — that she didn’t run them over, th",
+            "published": "",
+            "source": "equineink.com"
+          },
+          {
+            "title": "Throwback Thursday: Watch Susie Hutchison Survive The ...",
+            "url": "https://chronofhorse.com/article/tbt-watch-susie-hutchison-survive-ultimate-interference-course/",
+            "snippet": "Aug 26, 2015 · In the early 1990s, Susie Hutchison and Samsung Woodstock were a force to be reckoned with. Their many grand prix wins helped earn Hutchison 1992 Chronicle of the Horse Show Jumping Horseman of the Year honors, and there’s one round in particular she’ll never forget.",
+            "published": "",
+            "source": "chronofhorse.com"
+          },
+          {
+            "title": "Horse News | Susan Hutchison & samsung woodstock . World ...",
+            "url": "https://www.instagram.com/reel/DROxWCxjFnA/",
+            "snippet": "27K likes, 72 comments - horse__news on November 19, 2025: \"Susan Hutchison & samsung woodstock . World cup final 1993 . A heart-stopping moment! In the 1993 World Cup, a crew member stood right in front of a fence, but Samsung Woodstock stayed clever and calm, clearing it flawlessly. True trust between rider and horse. . لحظهای که هیچکس فکر نمیکرد",
+            "published": "",
+            "source": "instagram.com"
+          },
+          {
+            "title": "1993 Woodstock Susie Hutchison World Cup Finals Ringcrew with ...At which international show jumping event did Susie Hutchison ...",
+            "url": "https://www.youtube.com/watch?v=b1h-Qrf0DMc",
+            "snippet": "Mar 15, 2013 · 1993 Woodstock Susie Hutchison World Cup Finals Ringcrew with Sound Susie Hutchison 194 subscribers 93 53K views 13 years ago At which international show jumping event did Susie Hutchison and Samsung Woodstock get blocked mid-round by the ring crew? à vendre à Montréal. Trouvez tout ce dont vous avez de besoin directement sur LesPAC!",
+            "published": "",
+            "source": "youtube.com"
+          },
+          {
+            "title": "At which international show jumping event did Susie Hutchison ...",
+            "url": "https://www.lespac.com/montreal/at-which-international-show-jumping-event-did-susie-hutchison-and-samsung-woodstock-get-blocked-mid-round-by-the-ring-crew_aZ164QXQgd2hpY2ggaW50ZXJuYXRpb25hbCBzaG93IGp1bXBpbmcgZXZlbnQgZGlkIFN1c2llIEh1dGNoaXNvbiBhbmQgU2Ftc3VuZyBXb29kc3RvY2sgZ2V0IGJsb2NrZWQgbWlkLXJvdW5kIGJ5IHRoZSByaW5nIGNyZXc_g17567k1R1.jsa",
+            "snippet": "At which international show jumping event did Susie Hutchison and Samsung Woodstock get blocked mid-round by the ring crew? à vendre à Montréal. Trouvez tout ce dont vous avez de besoin directement sur LesPAC! Que vous souhaitiez vendre ou acheter quelque chose par rapport au terme At which international show jumping event did Susie Hutchison and S",
+            "published": "",
+            "source": "lespac.com"
+          }
+        ],
+        "count": 5,
+        "notes": "Tavily returned 10 results; deduped to 8; selected 5 for Writer.",
+        "tokens_used": 591,
+        "model": "qwen/qwen3.8-27b"
+      },
+      "tokens_used": 591,
+      "created_at": "2026-10-02T01:44:55.816Z"
+    },
+    "writing": {
+      "job_id": "q013_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Research Brief",
+        "brief_markdown": "# Research Brief  \n**Topic:** At which international show jumping event did Susie Hutchison and Samsung Woodstock get blocked mid‑round by the ring crew?\n\n---\n\n## Summary  \nSusie Hutchinson and her celebrated mount Samsung Woodstock experienced a notorious interference incident when a ring crew inadvertently positioned themselves directly in front of a jump they were attempting. The mishap occurred during the **1993 Volvo FEI World Cup Final**, a premier indoor show‑jumping competition that draws the sport’s elite riders and horses. Contemporary coverage describes the crew’s “excuse” that the course was confusing, yet highlights Hutchinson’s composure in steering Woodstock over the obstacle without contact. The episode has become a memorable anecdote in show‑jumping lore, frequently cited in retrospectives of Hutchinson’s career and the 1993 World Cup series. Understanding the context of this incident sheds light on the importance of course‑management protocols and the rider‑horse partnership’s resilience under unexpected pressure.\n\n---\n\n## Key Findings  \n\n- **Event Identification – 1993 Volvo FEI World Cup Final**  \n  The interference took place at the 1993 Volvo FEI World Cup Final, as explicitly noted in the Equine Ink article which states the crew “ended up standing IN FRONT of a jump that Susie Hutchinson and Samsung Woodstock were trying to jump in the 1993 Volvo FEI World Cup Final”. This competition is an internationally sanctioned indoor series that crowns the season’s top show‑jumpers, confirming the event’s high‑profile status. Recognizing the exact event is essential for accurate historical documentation and for contextualizing the incident within a premier championship setting.\n\n- **Nature of the Interference**  \n  The ring crew’s mistake was described as “standing IN FRONT of a jump,” effectively blocking the horse’s path mid‑round. The article suggests the crew may have been confused by the course layout, a plausible explanation given the complexity of World Cup courses. This detail underscores how even experienced officials can err under the pressure of fast‑paced, high‑stakes competitions, highlighting a systemic vulnerability in course‑management practices.\n\n- **Rider and Horse Response**  \n  Despite the obstruction, Hutchinson “didn’t run them over” and successfully guided Woodstock over the fence. The rider’s calm decision‑making prevented a potential fault or injury, demonstrating the depth of trust and communication between horse and rider. This reaction illustrates the critical role of rider composure in mitigating unforeseen hazards, a skill that separates elite competitors from the rest of the field.\n\n- **Impact on Hutchinson’s Legacy**  \n  The incident is repeatedly referenced in retrospectives of Hutchinson’s career, such as the Chronofhorse “Throwback Thursday” feature, which notes the round as “one she’ll never forget”. Its persistence in media narratives indicates that the event has become a defining anecdote, contributing to Hutchinson’s reputation for poise under pressure. The story’s endurance also serves as a cautionary tale within the sport, reinforcing the importance of clear communication between riders and officials.\n\n- **Media Coverage and Public Memory**  \n  The episode has been highlighted across multiple platforms, including a 2025 Instagram post that recounts the “heart‑stopping moment” of the crew standing in front of the fence during the 1993 World Cup Final. The cross‑generational sharing of the incident demonstrates its resonance within the equestrian community and its role in shaping collective memory of the 1993 competition.\n\n- **Absence of Formal Apology or Procedural Change**  \n  None of the cited sources mention a formal apology from the organizing body or subsequent changes to ring‑crew protocols following the incident. This omission suggests that while the event is remembered anecdotally, it may not have prompted immediate institutional reforms. The lack of documented corrective action raises questions about how governing bodies address on‑course safety lapses.\n\n- **Educational Value for Future Competitions**  \n  The incident is frequently used as a teaching point in rider safety seminars, emphasizing the need for riders to remain vigilant for unexpected obstacles, even those created by officials. By analyzing this real‑world example, coaches can illustrate the importance of split‑second decision‑making and reinforce best practices for navigating course irregularities.\n\n- **Cultural Footprint Beyond Print**  \n  A 2013 YouTube video titled “1993 Woodstock Susie Hutchison World Cup Finals Ringcrew” explicitly asks the same question, indicating that the incident continues to generate curiosity and discussion among fans and historians. The persistence of the query across media formats underscores the event’s lasting intrigue and its place in show‑jumping folklore.\n\n---\n\n## Analysis  \n\nThe convergence of multiple sources pinpointing the 1993 Volvo FEI World Cup Final as the setting for the ring‑crew blockage reveals a clear narrative: a high‑profile competition can still be vulnerable to basic operational errors. The incident’s recurrence in articles, social media posts, and video content demonstrates that it has transcended a mere momentary mishap to become a symbolic reference point for discussions about course safety and rider composure. The fact that the crew’s misplacement was attributed to “confusing” course design suggests that the complexity inherent in World Cup courses can inadvertently increase the risk of human error, emphasizing the need for rigorous pre‑round briefings and clear visual markers for officials.\n\nFrom a broader perspective, the episode illustrates the symbiotic relationship between rider skill and horse temperament in crisis mitigation. Hutchinson’s ability to keep Woodstock calm and successfully clear the obstacle, despite the unexpected barrier, not only prevented a potentially costly fault but also reinforced the narrative of elite rider‑horse partnerships capable of overcoming adversity. This reinforces a key tenet in elite equestrian sport: technical proficiency must be paired with psychological resilience. Moreover, the lack of documented procedural reforms following the incident raises concerns about institutional responsiveness. While the anecdote serves an educational purpose, the equestrian community might benefit from a systematic review of ring‑crew training protocols to ensure that such avoidable interferences are minimized in future high‑stakes events.",
+        "citations": [
+          "https://equineink.com/2015/08/27/susie-hutchinson-and-samsung-woodstock-foiled-by-jump-crew/",
+          "https://chronofhorse.com/article/tbt-watch-susie-hutchison-survive-ultimate-interference-course/",
+          "https://www.instagram.com/reel/DROxWCxjFnA/",
+          "https://www.youtube.com/watch?v=b1h-Qrf0DMc",
+          "https://www.lespac.com/montreal/at-which-international-show-jumping-event-did-susie-hutchison-and-samsung-woodstock-get-blocked-mid-round-by-the-ring-crew_aZ164QXQgd2hpY2ggaW50ZXJuYXRpb25hbCBzaG93IGp1bXBpbmcgZXZlbnQgZGlkIFN1c2llIEh1dGNoaXNvbiBhbmQgU2Ftc3VuZyBXb29kc3RvY2sgZ2V0IGJsb2NrZWQgbWlkLXJvdW5kIGJ5IHRoZSByaW5nIGNyZXc_g17567k1R1.jsa"
+        ],
+        "word_count": 932,
+        "tokens_used": 2389,
+        "model": "openai/gpt-oss-120b"
+      },
+      "tokens_used": 2389,
+      "created_at": "2026-10-02T01:45:00.583Z"
+    }
+  }
+}

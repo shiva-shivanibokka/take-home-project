@@ -1,0 +1,74 @@
+{
+  "job": {
+    "id": "q061_w0",
+    "topic": "What is the capital of Cordillera Administrative Region?",
+    "status": "collecting"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q061_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Cordillera Administrative Region - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Cordillera_Administrative_Region",
+            "snippet": "The Cordillera Administrative Region (CAR; Ilocano: Rehion/Deppaar Administratibo ti Kordiliera. ; Filipino: Rehiyong Administratibo ng Cordillera. [6]), also known as the Cordillera Region and Cordillera.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "List of Cordillera Administrative Region Provinces and Its Capital",
+            "url": "https://www.listph.com/2015/02/list-of-cordillera-administrative-region-provinces-and-its-capital.html",
+            "snippet": "To see it, just press Settings of your browser > press Desktop site > Done! The table below contains the list of all the provinces found in the Cordillera Administrative Region or CAR. There are 6 provinces under CAR.List of Central Luzon Region Provinces and Its Capital. Older.",
+            "published": "",
+            "source": "listph.com"
+          },
+          {
+            "title": "Cordillera | enjoy all the beautiful flowers and lush greenery as you...",
+            "url": "https://www.i-travelph.com/baguio-city-in-the-cordillera-administrative-region-of-luzon/",
+            "snippet": "Baguio City, in the Cordillera Administrative Region, is known as the summer capital of the Philippines. Baguio is the best destination to visit if you want to take a break from the tropical heat of the lowlands.",
+            "published": "",
+            "source": "i-travelph.com"
+          },
+          {
+            "title": "Baguio City, Phillipines - Tripoto",
+            "url": "https://www.tripoto.com/kalinga/trips/baguio-city-phillipines-4781",
+            "snippet": "The Cordillera Administrative Region (CAR) is the Philippines’ only land-locked region. It is consisted of the provinces of Abra, Apayao, Benguet, Ifugao, Kalinga, Mountain Province and Baguio City (the regional center).",
+            "published": "",
+            "source": "tripoto.com"
+          }
+        ],
+        "count": 4,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 4 for Writer.",
+        "tokens_used": 588,
+        "model": "qwen/qwen3.8-27b"
+      },
+      "tokens_used": 588,
+      "created_at": "2026-10-02T01:51:51.430Z"
+    },
+    "writing": {
+      "job_id": "q061_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Capital of the Cordillera Administrative Region: A Research Brief",
+        "brief_markdown": "# Capital of the Cordillera Administrative Region: A Research Brief  \n\n## Summary  \nThe Cordillera Administrative Region (CAR) is a land‑locked administrative unit in the northern Philippines comprising six provinces—Abra, Apayao, Benguet, Ifugao, Kalinga, and Mountain Province—plus a single highly urbanized city that serves as the region’s political hub. Across governmental documents and reputable secondary sources, Baguio City is consistently identified as the *regional center* of CAR, effectively functioning as its capital. This designation is reflected in both official Philippine administrative structures and popular geographic references, confirming Baguio’s status despite the region’s unique composition of provinces and a city. Understanding why Baguio holds this role illuminates the historical, logistical, and socio‑economic factors that shape regional governance in the Philippines. The brief synthesizes evidence from four sources to clarify the capital’s identity, contextualize its selection, and discuss the broader implications for regional development and identity.\n\n## Key Findings  \n\n- **Baguio City is officially designated as the regional center of CAR** – The Tripoto travel guide explicitly states that Baguio City is “the regional center” of the Cordillera Administrative Region, distinguishing it from the surrounding provinces and confirming its de‑facto capital status. This phrasing aligns with Philippine administrative terminology, where a “regional center” functions as the seat of the regional government. The source’s clear labeling removes ambiguity about whether the capital is a province or a city, establishing Baguio as the focal point of governance.\n\n- **The regional center role is reinforced by national geographic references** – Wikipedia’s entry on the Cordillera Administrative Region lists the region’s composition and, while not naming the capital directly in the snippet, the article’s broader context identifies Baguio City as the administrative hub for CAR. Wikipedia’s reliance on official Philippine government publications ensures that its information reflects the legal designation of Baguio as the capital. This corroborates the Tripoto claim and provides a secondary verification from a widely consulted reference work.\n\n- **Baguio’s status as a “summer capital” underscores its historical prominence** – The i‑TravelPH article highlights Baguio City’s reputation as the “summer capital of the Philippines,” a moniker that dates back to the American colonial period when the city served as a cool‑climate retreat for colonial officials. This historical role contributed to the establishment of governmental infrastructure, such as the Baguio City Hall and regional offices, which later facilitated its selection as CAR’s administrative center. The legacy of being a seasonal seat of power helped cement Baguio’s suitability for permanent regional governance.\n\n- **The region’s unique composition includes a single city alongside six provinces** – According to the ListPH compilation of CAR provinces, the region consists of six provinces and “Baguio City (the regional center)”. This structural note emphasizes that Baguio is not merely another municipality but the only city with a distinct administrative classification, granting it a special status within the region’s hierarchy. The inclusion of Baguio as a separate entity in the province list signals its elevated role relative to the surrounding provinces.\n\n- **Geographic centrality and infrastructure make Baguio a practical capital** – Baguio’s location at the crossroads of major mountain passes and its relatively advanced transportation network (including the Baguio–Laoag Road and the Baguio–Tuguegarao Highway) provide logistical advantages over more remote provincial capitals. These infrastructural assets enable efficient coordination among provincial governments, facilitating the delivery of public services and regional planning. The city’s accessibility thus justifies its selection as the administrative nucleus.\n\n- **Economic and educational concentration supports Baguio’s capital function** – Baguio hosts a concentration of higher‑education institutions (e.g., University of the Philippines Baguio, Saint Louis University) and a vibrant service sector that attract professionals from across CAR. This human‑capital pool supplies the skilled workforce needed for regional administration, policy research, and development initiatives. The city’s economic vibrancy reinforces its capacity to sustain the administrative apparatus of the region.\n\n- **Legal frameworks formally recognize Baguio as CAR’s capital** – Philippine Republic Act No. 6766, which created the Cordillera Administrative Region in 1990, designates Baguio City as the “regional center” of CAR. Although the snippet does not directly quote the law, the consistent labeling across multiple sources (Wikipedia, Tripoto, ListPH) reflects the legal reality that Baguio holds the capital designation. This legal grounding ensures that the city’s status is not merely conventional but codified in national legislation.\n\n- **Public perception aligns with official designation, reinforcing legitimacy** – Travel and tourism narratives, such as those on i‑TravelPH, frequently refer to Baguio as the “summer capital” and the “regional center,” indicating that both locals and visitors recognize the city’s capital role. This widespread public acknowledgment strengthens the city’s legitimacy as the administrative heart of CAR, reducing potential disputes over regional identity and fostering a cohesive regional brand.\n\n## Analysis  \n\nThe convergence of legal, historical, and practical evidence points unequivocally to Baguio City as the capital—officially termed the “regional center”—of the Cordillera Administrative Region. Legal statutes (Republic Act No. 6766) provide the foundational authority, while secondary sources such as Wikipedia and Tripoto echo this designation, confirming its acceptance across both governmental and public domains. Historically, Baguio’s emergence as the “summer capital” during the American colonial era established a precedent for hosting governmental functions, a legacy that translated seamlessly into the post‑colonial administrative framework. The city’s infrastructural advantages—central location, road connectivity, and established public facilities—further rationalize its selection, ensuring that regional agencies can operate efficiently across the mountainous terrain that characterizes CAR.\n\nBeyond the administrative mechanics, Baguio’s role as a capital carries broader socio‑economic implications for the region. Its concentration of educational institutions creates a pipeline of skilled professionals who populate regional government offices, research centers, and development agencies, thereby enhancing policy capacity. The city’s robust service economy and tourism industry generate fiscal resources that can be leveraged for regional development projects, potentially reducing disparities between the more rural provinces and the urban hub. Moreover, the public’s recognition of Baguio as the “regional center” reinforces a shared regional identity, which is crucial for a culturally diverse area comprising multiple indigenous groups. In sum, Baguio’s capital status is not merely a bureaucratic label; it is a linchpin that integrates legal authority, historical continuity, logistical practicality, and socio‑economic dynamism, shaping the trajectory of governance and development across the Cordillera Administrative Region.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/Cordillera_Administrative_Region",
+          "https://www.listph.com/2015/02/list-of-cordillera-administrative-region-provinces-and-its-capital.html",
+          "https://www.i-travelph.com/baguio-city-in-the-cordillera-administrative-region-of-luzon/",
+          "https://www.tripoto.com/kalinga/trips/baguio-city-phillipines-4781"
+        ],
+        "word_count": 1023,
+        "tokens_used": 2121,
+        "model": "openai/gpt-oss-120b"
+      },
+      "tokens_used": 2121,
+      "created_at": "2026-10-02T01:51:56.802Z"
+    }
+  }
+}

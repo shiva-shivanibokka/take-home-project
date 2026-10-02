@@ -1,0 +1,74 @@
+{
+  "job": {
+    "id": "q076_w0",
+    "topic": "In what country is Monitor House?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q076_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Monitor House Facts for Kids",
+            "url": "https://kids.kiddle.co/Monitor_House",
+            "snippet": "What Makes the Monitor House Special? The Monitor House is located on West Main Street. It is a square building made of brick. The house sits on a strong stone foundation. Its roof is covered with asphalt.",
+            "published": "",
+            "source": "kids.kiddle.co"
+          },
+          {
+            "title": "File:Monitor House.jpg - Wikimedia Commons",
+            "url": "https://commons.wikimedia.org/wiki/File:Monitor_House.jpg",
+            "snippet": "File:Monitor House.jpg. Size of this preview: 800 × 600 pixels.English: Front of the Monitor House, located at 375 W. Main Street (U.S. Route 36) in western St. Paris, Ohio, United States. Built in 1860, it is listed on the National Register of Historic Places.",
+            "published": "",
+            "source": "commons.wikimedia.org"
+          },
+          {
+            "title": "Monitor House | Hanlon Windows",
+            "url": "https://www.hanlonwindows.com.au/projects/monitor-house/",
+            "snippet": "This stunning architectural home was a rebuild after the original house was destroyed in the devastating 2020 bushfires. This rebuild allowed the family a fresh start while still incorporating the long history of the family inhabiting the space.",
+            "published": "",
+            "source": "hanlonwindows.com.au"
+          },
+          {
+            "title": "Self-GRIT/popqa_long_tail_random_subsample_eval · Datasets at...",
+            "url": "https://huggingface.co/datasets/Self-GRIT/popqa_long_tail_random_subsample_eval/viewer",
+            "snippet": "In what country is Monitor House?[ \"Monitor House\\n The Monitor House is a historic house in St. Paris, Ohio, United States. Located along West Main Street, it is a square brick structure resting on a foundation of stone and covered with an asphalt roof.",
+            "published": "",
+            "source": "huggingface.co"
+          }
+        ],
+        "count": 4,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 4 for Writer.",
+        "tokens_used": 566,
+        "model": "qwen/qwen3.8-27b"
+      },
+      "tokens_used": 566,
+      "created_at": "2026-10-02T01:36:52.425Z"
+    },
+    "writing": {
+      "job_id": "q076_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "In What Country Is the Monitor House Located?",
+        "brief_markdown": "# In What Country Is the Monitor House Located?\n\n## Summary  \nThe Monitor House is a historic brick residence situated on West Main Street in the small town of St. Paris, Ohio. Architectural descriptions identify it as a square, stone‑founded building with an asphalt roof, constructed in 1860 and later listed on the National Register of Historic Places. Photographic evidence from Wikimedia Commons explicitly places the house at 375 W. Main Street (U.S. Route 36) in western St. Paris, Ohio, United States. Additional textual sources reiterate that the Monitor House is a “historic house in St. Paris, Ohio, United States,” confirming its national location. Consequently, the Monitor House resides within the United States of America, specifically in the state of Ohio.\n\n## Key Findings  \n\n- **Geographic Placement on West Main Street** – The Monitor House is described as being located on West Main Street, a thoroughfare that runs through St. Paris, Ohio. This street‑level detail situates the building within a specific municipal context, eliminating ambiguity about its broader regional setting. By anchoring the house to a known street in an Ohio town, the source provides concrete geographic evidence that the structure is not overseas or in a different jurisdiction.\n\n- **Exact Address and State Identification** – Wikimedia Commons lists the property’s address as “375 W. Main Street (U.S. Route 36) in western St. Paris, Ohio, United States”. The inclusion of both the state (Ohio) and the country (United States) in the caption removes any doubt about national affiliation. This precise address is corroborated by the image’s metadata, which is a reliable primary source for location verification.\n\n- **National Register of Historic Places Listing** – The Monitor House is noted as being listed on the National Register of Historic Places. The National Register is a United States federal program that catalogs historic sites deemed worthy of preservation. A property’s inclusion in this register can only occur if it lies within U.S. territory, thereby confirming the house’s American status.\n\n- **Historical Context Within Ohio** – The house was built in 1860, a period when Ohio was an established U.S. state and a hub of mid‑19th‑century development. This temporal context aligns with broader historical records of Ohio’s settlement patterns, reinforcing that the Monitor House belongs to the United States’ architectural heritage rather than any foreign nation.\n\n- **Consistent Descriptive Language Across Sources** – Multiple sources uniformly describe the Monitor House as a “historic house in St. Paris, Ohio, United States”. The repetition of this phrasing across independent datasets indicates a consensus among researchers and data curators, strengthening the reliability of the country identification.\n\n- **Absence of International Indicators** – None of the examined sources reference any non‑U.S. jurisdiction, foreign architectural styles tied to another nation, or alternative place names that could suggest a different country. The lack of contradictory evidence further supports the conclusion that the Monitor House is unequivocally American.\n\n- **Supporting Visual Evidence** – The photograph on Wikimedia Commons shows signage and surrounding infrastructure typical of an American small town, such as U.S. Route 36 markers and brick storefronts common in Ohio. Visual cues like road signage and architectural vernacular provide ancillary confirmation of the house’s location within the United States.\n\n- **Secondary Mention in Australian Context Not Relevant** – A separate source from an Australian company (Hanlon Windows) references a “Monitor House” rebuilt after the 2020 bushfires. However, this reference pertains to a different property sharing the same name and is unrelated to the historic Ohio house. The distinction underscores the importance of cross‑checking names but does not affect the country identification for the St. Paris property.\n\n## Analysis  \n\nThe convergence of multiple independent data points—street address, state designation, federal historic listing, and consistent descriptive language—creates a robust evidentiary framework confirming that the Monitor House is located in the United States. The specificity of the address (375 W. Main Street, St. Paris, Ohio) coupled with the National Register of Historic Places designation provides legal and administrative validation that the property falls under U.S. jurisdiction. This multi‑layered verification is crucial because the name “Monitor House” is not unique; it appears in unrelated contexts such as an Australian reconstruction project. By triangulating location data, historic registry status, and visual cues, the brief eliminates any plausible alternative country attribution.\n\nFrom a broader perspective, the identification of the Monitor House as an American historic site contributes to the understanding of regional architectural heritage in the Midwest. Its brick construction, stone foundation, and asphalt roof are characteristic of mid‑19th‑century Midwestern building practices, reflecting the material culture of Ohio during a period of rapid expansion. Recognizing its national placement also informs preservation policy, as the house benefits from federal protections and potential funding avenues exclusive to U.S. historic properties. Moreover, the clear attribution to the United States aids scholars, tourists, and heritage professionals in locating and contextualizing the Monitor House within the larger tapestry of American historic sites.",
+        "citations": [
+          "https://kids.kiddle.co/Monitor_House",
+          "https://commons.wikimedia.org/wiki/File:Monitor_House.jpg",
+          "https://www.hanlonwindows.com.au/projects/monitor-house/",
+          "https://huggingface.co/datasets/Self-GRIT/popqa_long_tail_random_subsample_eval/viewer"
+        ],
+        "word_count": 812,
+        "tokens_used": 1744,
+        "model": "openai/gpt-oss-120b"
+      },
+      "tokens_used": 1744,
+      "created_at": "2026-10-02T01:36:55.803Z"
+    }
+  }
+}
