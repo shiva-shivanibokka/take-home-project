@@ -5,7 +5,7 @@ import json, hashlib, os, time, datetime
 from ddgs import DDGS
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "data", "search"); os.makedirs(OUT, exist_ok=True)
-topics = [{"id": q["id"], "topic": q["question"]} for q in json.load(open(os.path.join(HERE, "questions.json"), encoding="utf-8"))]
+topics = [{"id": q["id"], "topic": q["question"]} for q in json.load(open(os.path.join(HERE, os.environ.get("EVAL_QUESTIONS", "questions.json")), encoding="utf-8"))]
 for t in topics:
     key = hashlib.sha1(t["topic"].encode()).hexdigest()[:16]
     f = os.path.join(OUT, key + ".json")
