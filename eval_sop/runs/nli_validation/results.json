@@ -1,0 +1,65 @@
+{
+ "model": "cross-encoder/nli-deberta-v3-large",
+ "benchmark": "RAGTruth test (wandb/RAGTruth-processed), human span labels",
+ "unit": "response sentence; label 1 = supported (no overlap with a human hallucination span)",
+ "n_responses": 60,
+ "n_sentences": 397,
+ "cpu_seconds": 3239.5,
+ "threshold_from_dev": 0.1,
+ "dev": {
+  "balanced_accuracy": 0.7796610169491525,
+  "cohen_kappa": 0.07683352735739235,
+  "auroc": 0.728813559322034,
+  "n": 122,
+  "pos_rate": 0.9672131147540983
+ },
+ "test": {
+  "balanced_accuracy": 0.4576923076923077,
+  "cohen_kappa": -0.018099547511312153,
+  "auroc": 0.44076923076923075,
+  "n": 275,
+  "pos_rate": 0.9454545454545454,
+  "balanced_accuracy_ci": [
+   0.34627603973608123,
+   0.6010322653651624
+  ],
+  "cohen_kappa_ci": [
+   -0.07035145357382788,
+   0.031127163027470196
+  ],
+  "auroc_ci": [
+   0.3289937671347978,
+   0.5534585490333712
+  ]
+ },
+ "test_at_0.5": {
+  "balanced_accuracy": 0.5108974358974359,
+  "cohen_kappa": 0.004396172743729054,
+  "auroc": 0.44076923076923075,
+  "n": 275,
+  "pos_rate": 0.9454545454545454
+ },
+ "per_task_test": {
+  "Data2txt": {
+   "balanced_accuracy": 0.43956043956043955,
+   "cohen_kappa": -0.05753782925462336,
+   "auroc": 0.44270015698587123,
+   "n": 111,
+   "pos_rate": 0.8828828828828829
+  },
+  "QA": {
+   "balanced_accuracy": 0.5789473684210527,
+   "cohen_kappa": 0.0,
+   "auroc": null,
+   "n": 95,
+   "pos_rate": 1.0
+  },
+  "Summary": {
+   "balanced_accuracy": 0.6716417910447761,
+   "cohen_kappa": 0.02941176470588225,
+   "auroc": 0.5223880597014925,
+   "n": 69,
+   "pos_rate": 0.9710144927536232
+  }
+ }
+}

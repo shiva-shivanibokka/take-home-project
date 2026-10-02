@@ -1,0 +1,449 @@
+resp_id,task,split,sentence,human_supported,p_entail
+8418,Data2txt,test,"Las Aves Cafe is a restaurant located at 2220 Bath St in Santa Barbara, CA.",1,0.9802691340446472
+8418,Data2txt,test,The restaurant specializes in Mexican cuisine and is open every day of the week from 7:00 am to 9:00 pm.,1,0.0022182276006788015
+8418,Data2txt,test,"Las Aves Cafe offers perks such as outdoor seating, takeout options, and can accommodate groups.",1,0.9882461428642273
+8418,Data2txt,test,"It also provides parking in a lot, though there is no garage, street, validated, or valet parking.",1,0.00436180317774415
+8418,Data2txt,test,"However, the establishment does not offer Wi-Fi.",1,0.0017099708784371614
+8418,Data2txt,test,The ambiance of the restaurant is casual.,1,0.19912689924240112
+8418,Data2txt,test,The restaurant has a mixed review of 3.5 stars.,1,0.8954249620437622
+8418,Data2txt,test,"Some customers rave about the great staff and food, while others express disappointment in the quality and flavor of the food, as well as the portion sizes.",1,0.0008346151444129646
+6687,Data2txt,dev,"Based on the provided structured data, here is an objective overview of Campus Point Coffee:
+
+Campus Point Coffee is a popular food and beverage establishment located in Goleta, California.",1,0.9786006808280945
+6687,Data2txt,dev,"With a rating of 4.5 stars, the business offers a variety of options for coffee, tea, baked goods, and light meals.",0,0.020931776612997055
+6687,Data2txt,dev,"Customers praise the cozy atmosphere, friendly staff, and availability of vegetarian and vegan options.",0,0.07985415309667587
+6687,Data2txt,dev,"The indoor and outdoor seating areas are also appreciated, as well as the convenience of having a restroom available.",1,0.009768715128302574
+6687,Data2txt,dev,"While some customers have expressed disappointment at finding the vegan cookies sold out, the quality of the drinks and food items has been consistently high.",1,0.00039945266325958073
+6687,Data2txt,dev,"Overall, Campus Point Coffee appears to be a cozy and welcoming spot for students and locals alike.",1,0.0009575370931997895
+7579,Data2txt,dev,"Del Pueblo Cafe is a Mexican restaurant located at 5134 Hollister Ave in Santa Barbara, CA.",1,0.9864249229431152
+7579,Data2txt,dev,The restaurant offers a casual ambience and is known for its unique decor.,1,0.9710035920143127
+7579,Data2txt,dev,The business operates from 9:00 AM to 9:00 PM every day of the week.,1,0.0039717829786241055
+7579,Data2txt,dev,"They provide outdoor seating options, which can be enjoyed in a peaceful atmosphere, especially on Sundays and early evenings.",1,0.9872625470161438
+7579,Data2txt,dev,The restaurant offers free WiFi and takeout services for convenience.,1,0.0255141519010067
+7579,Data2txt,dev,Customers have shared mixed reviews about their experiences at Del Pueblo Cafe.,1,0.7928953170776367
+7579,Data2txt,dev,"One customer expressed dissatisfaction with their food, mentioning that it was cold and lacked flavor.",1,0.996049702167511
+7579,Data2txt,dev,They also mentioned that the drink tasted flat.,1,0.01391159649938345
+7579,Data2txt,dev,"On the other hand, another customer had a positive experience and praised the cozy and comfortable environment, as well as the authentic Mexican decor.",1,0.7959097623825073
+7579,Data2txt,dev,"They recommended trying the delicious Mexican dishes, including the spicy salsa, beans, and soups.",1,0.012688793241977692
+7579,Data2txt,dev,The customer also mentioned that the restaurant serves hot Mexican chocolate in hearty mugs.,1,0.9919939041137695
+7579,Data2txt,dev,"Overall, Del Pueblo Cafe has received a rating of 4.0 stars.",1,0.03586217761039734
+7579,Data2txt,dev,"While some customers have had issues with their food, others have enjoyed the unique offerings and atmosphere of the restaurant.",1,0.09650739282369614
+7579,Data2txt,dev,It is suggested to explore alternatives like Los Arroyos or Los Agaves for a potentially better and tastier Mexican dining experience.,1,0.9958256483078003
+5761,Data2txt,dev,"Goodland Kitchen is a local business located at 231 S Magnolia Ave in Goleta, CA.",1,0.9802834391593933
+5761,Data2txt,dev,"It is a multi-category establishment offering services in food, local services, farmers market, professional services, American (New), restaurants, and shopping.",1,0.9927976727485657
+5761,Data2txt,dev,"The business operates from Monday to Friday, from 7:00 AM to 2:00 PM.",1,0.003709700657054782
+5761,Data2txt,dev,Customers have left mixed reviews about Goodland Kitchen.,1,0.0006530183600261807
+5761,Data2txt,dev,"One customer mentioned that they are open for takeout and praised their great lunch menu, good chorizo, good chips, and huge salads.",1,0.9790399074554443
+5761,Data2txt,dev,They also appreciated the friendly service.,1,0.003775147022679448
+5761,Data2txt,dev,Another customer expressed their excitement about the reopening of the business and recommended visiting both Goodland Kitchen and the market next door to support the small business.,1,0.9878641963005066
+5761,Data2txt,dev,They praised the amazing service and wonderful food.,1,0.9922319650650024
+5761,Data2txt,dev,"However, there was also a negative review from a customer who felt that the quality of the food had declined.",1,0.001302744378335774
+5761,Data2txt,dev,They mentioned that the food was now standard and lacked innovation.,1,0.009435749612748623
+5761,Data2txt,dev,"They were disappointed with the BLT sandwich, which had old bread, and the limited soup options.",1,0.0007592186448164284
+5761,Data2txt,dev,"Overall, Goodland Kitchen has received a rating of 3.5 stars.",1,0.9772080779075623
+5761,Data2txt,dev,The business offers outdoor seating and takeout services.,1,0.9880315065383911
+5761,Data2txt,dev,It is also suitable for groups and has a casual and classy ambience.,1,0.018221238628029823
+5761,Data2txt,dev,"However, there is no WiFi available.",1,0.011546879075467587
+8766,Data2txt,test,"Radio Prophets is a well-regarded local business based in Santa Barbara, CA that offers a wide range of services such as music performances, event planning, and wedding planning.",0,0.9853144884109497
+8766,Data2txt,test,The business is open daily from 8:00 to 2:00 and provides free Wi-Fi for its patrons.,1,0.0033908423501998186
+8766,Data2txt,test,"It has received a perfect 5-star rating from its clients who have praised the band's musical talent, professionalism, and ability to set the tone of various events.",1,0.6421082019805908
+8766,Data2txt,test,"Customers have specifically highlighted the band's versatility, with performances ranging from piano acoustics, jazz music, to dance sets.",1,0.9939180612564087
+8766,Data2txt,test,"The band also takes pride in their efficient communication, easy planning, and their ability to make memorable events for their clients.",0,0.0028217476792633533
+8766,Data2txt,test,Street parking is available and the venue also offers outdoor seating.,1,0.9648113250732422
+8909,Data2txt,test,"Emilios Ristorante & Bar is an Italian restaurant located in Santa Barbara, CA, with a 3.5-star rating based on customer reviews.",1,0.9594828486442566
+8909,Data2txt,test,"The restaurant offers both indoor and outdoor seating, and reservations are accepted.",1,0.9456066489219666
+8909,Data2txt,test,"The menu includes a variety of dishes such as salads, risotto, chicken, and boar, and the restaurant is known for its delicious goat cheese salad.",1,0.9736841320991516
+8909,Data2txt,test,Customers have praised the staff for their excellent service and attentiveness.,1,0.07704240083694458
+8909,Data2txt,test,"The ambiance is described as romantic and intimate, making it a great spot for a special dinner or date night.",0,0.9805169701576233
+8909,Data2txt,test,"However, one reviewer noted that the atmosphere may be a bit formal for a beach town like Santa Barbara.",1,0.9932628273963928
+8909,Data2txt,test,"The restaurant does not offer takeout or Wi-Fi, but it is suitable for groups and has a validated parking lot.",0,0.12601391971111298
+8909,Data2txt,test,"Overall, Emilios Ristorante & Bar is a great choice for those looking for a fine dining experience in Santa Barbara.",1,0.9634038805961609
+11445,Data2txt,test,"Based on the provided structured data, here is an objective overview of Ca' Dario:
+
+Location: Ca' Dario is located in Santa Barbara, California at 37 E Victoria St.",1,0.9633491039276123
+11445,Data2txt,test,"Categories: Tuscan, Seafood, Wine Bars, Restaurants, Bars, Nightlife, Italian
+
+Hours: Monday - Saturday: 16:00-20:30, Sunday: 16:00-20:30
+
+Attributes: BusinessParking: Garage, street parking available; RestaurantsReservations: Yes; OutdoorSeating: Yes; WiFi: No; RestaurantsTakeOut: Yes; RestaurantsGoodForGroups: Yes; Music: DJ, live music occasionally, karaoke occasionally
+
+Ambiance: Not touristy, hipster, romantic, or divey; classy and casual
+
+Business Stars: 4.0
+
+Reviews:
+
+* Review 1 (2.0 stars): Disappointing meals with lackluster ingredients and poor service.",0,0.9728640913963318
+11445,Data2txt,test,"* Review 2 (3.0 stars): Ordinary food with overcooked pasta and unspectacular sauces, but good wine choices.",1,0.07733964174985886
+11445,Data2txt,test,"* Review 3 (5.0 stars): Delicious food, particularly the ravioli with sage and brown butter, and great service.",1,0.0003816263342741877
+11445,Data2txt,test,"Overall, Ca' Dario seems to have a mixed reputation, with some reviewers enjoying their meals and others finding them to be disappointing.",1,0.9885993003845215
+11445,Data2txt,test,"While some appreciate the restaurant's atmosphere and wine selection, others feel that the food is ordinary and overpriced.",1,0.0035565155558288097
+7449,Data2txt,test,"Based on the provided structured data, here is an objective overview of Fernando's Churros:
+
+Fernando's Churros is a popular dessert spot located in Santa Barbara, California.",1,0.9738995432853699
+7449,Data2txt,test,"With a 4.5-star rating and numerous positive reviews, this local business is known for its delicious churros, which are hot, fluffy, and crispy.",1,0.9723441004753113
+7449,Data2txt,test,"Customers rave about the generous portion sizes and high quality of the churros, with some even calling them the best they've ever had.",1,0.0031237509101629257
+7449,Data2txt,test,"The business is family-owned and operated, and the owner, Fernando, is friendly and accommodating.",1,0.8319776654243469
+7449,Data2txt,test,"Fernando's Churros offers both indoor and outdoor seating, as well as catering services for large events.",0,0.0068883830681443214
+7449,Data2txt,test,"Despite being a small, unassuming truck, Fernando's has gained a loyal following among locals and visitors alike, with many returning for their churro fix time and time again.",1,0.004207268822938204
+7510,Data2txt,test,"Here is an objective overview of Sushi GoGo based on the provided structured data:
+
+Sushi GoGo is a popular Japanese restaurant located in downtown Santa Barbara, offering a variety of sushi rolls, hand rolls, and poke bowls at reasonable prices.",1,0.07282449305057526
+7510,Data2txt,test,The restaurant has a casual ambiance with outdoor seating and takes reservations.,0,0.9740934371948242
+7510,Data2txt,test,"Customers praise the freshness and taste of the sushi, with favorites including the rainbow roll, red dragon roll, and caterpillar roll.",1,0.0023965390864759684
+7510,Data2txt,test,"Some reviewers mention that the interior of the restaurant may not be visually appealing, but the food makes up for it.",1,0.0009944410994648933
+7510,Data2txt,test,The restaurant has a 3.5-star rating and reviews mention good service and value for the price.,1,0.9501464366912842
+7510,Data2txt,test,"Overall, Sushi GoGo seems like a great option for those looking for delicious and affordable sushi in a casual setting.",1,0.9754952192306519
+7034,Data2txt,test,"Denny's is a restaurant located in Goleta, CA.",1,0.9775980710983276
+7034,Data2txt,test,"The business offers a variety of dining options, including breakfast and brunch, American cuisine, and more.",1,0.7937164306640625
+7034,Data2txt,test,"According to customer reviews, Denny's offers exceptional service and is a comfortable and affordable option for regular people and families.",1,0.9948083758354187
+7034,Data2txt,test,"However, the business has recently closed due to rising rent costs.",1,0.9778984189033508
+7034,Data2txt,test,Some customers were disappointed with the closure of the business and expressed frustration with the difficulty of contacting the restaurant by phone.,1,0.00023309572134166956
+7034,Data2txt,test,"Overall, Denny's appears to have been a beloved and valuable member of the Goleta community.",1,0.024510102346539497
+9769,Data2txt,test,"Kaptain's Firehouse BBQ is a local business located at 6543 Pardall Rd in Isla Vista, CA.",1,0.9649300575256348
+9769,Data2txt,test,"It offers food delivery services and specializes in chicken wings, sandwiches, American cuisine, and barbeque.",1,0.9840666055679321
+9769,Data2txt,test,"The restaurant operates from 11:30 am to 9:30 pm, seven days a week.",1,0.0034314393997192383
+9769,Data2txt,test,Customers have mixed experiences with the business.,1,0.15062987804412842
+9769,Data2txt,test,"One customer had a negative encounter with a staff member, resulting in disappointment and a decision to not support the business again.",1,0.9941354990005493
+9769,Data2txt,test,"On the other hand, another customer had a positive experience with the food, specifically praising the ""animal mac"" dish, which consists of macaroni and cheese, pulled pork, BBQ sauce, and tater tots.",1,0.0006054079276509583
+9769,Data2txt,test,"A third customer had a more balanced opinion, mentioning that they have returned to the restaurant multiple times.",1,0.00021793520136270672
+9769,Data2txt,test,"However, they noted that the food quality varied and expressed frustration over the unavailability of ribs during their visits.",1,0.0005512742209248245
+9769,Data2txt,test,They also believed that the quality of food depended on the staff working at the time.,1,0.0011733209248632193
+9769,Data2txt,test,The business does not offer restaurant reservations but does provide outdoor seating and takeout options.,1,0.7423186898231506
+9769,Data2txt,test,It does not have parking garages or valet services but offers street parking.,1,0.006537001114338636
+9769,Data2txt,test,"The ambiance is described as casual, and WiFi is not available.",1,0.05625921115279198
+9769,Data2txt,test,"Overall, Kaptain's Firehouse BBQ has a rating of 3.5 stars.",1,0.9306219816207886
+9769,Data2txt,test,It is important for potential customers to consider both positive and negative experiences shared in the reviews before making a decision to visit.,1,0.004870445933192968
+6048,Data2txt,dev,"Holdren's Grill, located at 6920 Market Pl Dr, Goleta, CA, offers a variety of American and seafood dishes, and is also known for nightlife and as a steakhouse.",1,0.991184413433075
+6048,Data2txt,dev,"It provides amenities like free WiFi, outdoor seating, and parking lot, also catering to group dining and takeouts.",1,0.9874078035354614
+6048,Data2txt,dev,"However, it holds an average rating of 2.5 stars.",1,0.0008580353460274637
+6048,Data2txt,dev,Customers are divided on their experiences.,1,0.028125690296292305
+6048,Data2txt,dev,"Some find the food good and service excellent, lauding the wide variety of choices on the menu, with dishes ranging from crab-cakes to artichoke dips to filet mignons.",1,0.8493378758430481
+6048,Data2txt,dev,"However, others report negative experiences, citing unattentive service, overpriced menu options, and issues with payment processing.",1,0.002392066642642021
+6048,Data2txt,dev,"There are also complaints about the quality of the food, with specific mentions of undercooked fish and burnt steaks.",1,0.9809451103210449
+6048,Data2txt,dev,"The establishment is open every day, from 4 PM to 9 or 10 PM.",1,0.016114434227347374
+7140,Data2txt,test,"""Danny's Deli Bait & Tackle"" is a versatile local business situated at 4890 Carpinteria Ave, Carpinteria, CA.",1,0.9843676686286926
+7140,Data2txt,test,"It is not just a restaurant, but also a supplier of hunting & fishing supplies, delis, sporting goods, and also offers automotive services including car wash.",1,0.507412850856781
+7140,Data2txt,test,"The business maintains consistent operation hours between 9 am to 6 pm on weekdays, 8 am to 6 pm on Saturday, and 9 am to 5 pm on Sunday.",1,0.730369508266449
+7140,Data2txt,test,"There is no WiFi available, and the ambience is casual.",1,0.5735914707183838
+7140,Data2txt,test,"Notably, the establishment is lauded for its sandwiches, with customers praising the hot pastrami, Italian, turkey, tri-tip, and all white meat albacore tuna sandwiches in particular.",1,0.8955608010292053
+7140,Data2txt,test,"Despite the lack of reservation and take-out services, the venue is favored for group outings, given its ample lot parking and outdoor seating facilities.",1,0.9655287861824036
+7140,Data2txt,test,"Overall, Danny's Deli Bait & Tackle enjoys a solid 4-star rating.",1,0.9624555110931396
+9522,Data2txt,dev,"Hustle & Grind Coffee Company is a popular coffee shop located at 11 W De La Guerra St, Santa Barbara, CA.",1,0.9538180828094482
+9522,Data2txt,dev,"They are known for their unique offerings of coffee, tea, food, ice cream, and frozen yogurt.",1,0.042315706610679626
+9522,Data2txt,dev,The business is open from 8:00 to 17:00 on weekdays and 13:00 to 18:00 on weekends.,1,0.0037063774652779102
+9522,Data2txt,dev,"They offer garage and street parking, outdoor seating, free WiFi, and takeout service.",1,0.9733215570449829
+9522,Data2txt,dev,"However, they don't take reservations.",1,0.01716090552508831
+9522,Data2txt,dev,The coffee shop has received an overall rating of 4.5 stars.,1,0.14938867092132568
+9522,Data2txt,dev,"Customers have praised its quick service, friendly staff, and variety of offerings, including a unique combination of coffee and Hawaiian shaved ice.",1,0.024519871920347214
+9522,Data2txt,dev,"However, it has been noted that they no longer offer almond milk and there were concerns about gluten-free options.",1,0.00039563883910886943
+9522,Data2txt,dev,"It's located near many cute shops, adding to the overall experience.",1,0.2704993486404419
+8462,Data2txt,test,"Ming Dynasty Restaurant is located at 290 Storke Rd, Ste G in Goleta, CA.",1,0.9765726923942566
+8462,Data2txt,test,It is categorized as a restaurant that serves Mongolian and Chinese cuisine.,1,0.993243396282196
+8462,Data2txt,test,"The restaurant operates from Monday to Sunday, with hours varying between 11am and 10pm.",1,0.001063180505298078
+8462,Data2txt,test,"Customers can make reservations and take out food, and there is outdoor seating available.",0,0.9899495840072632
+8462,Data2txt,test,"WiFi is not provided, but the restaurant offers a casual ambiance.",1,0.06874009221792221
+8462,Data2txt,test,"According to customer reviews, the food is on the salty side and oily, with some reports of being tricked by the waitstaff into ordering expensive dishes.",1,0.9960346817970276
+8462,Data2txt,test,"However, other customers highly praise the quality and variety of the food, with excellent service.",1,0.00022997632913757116
+8462,Data2txt,test,"Despite its popularity, the restaurant is closing soon, much to the disappointment of its patrons.",1,0.0006223454256542027
+7233,Data2txt,dev,"Eastside Deli is a popular restaurant located in Truckee, California, serving a variety of delicious sandwiches, desserts, and other menu items.",1,0.8696140646934509
+7233,Data2txt,dev,"With a rating of 5.0 stars, the business offers a cozy atmosphere and excellent customer service.",1,0.002057804958894849
+7233,Data2txt,dev,"According to reviews, the deli is known for its high-quality meats and cheeses, as well as its convenient location within an RV park.",0,0.01356496848165989
+7233,Data2txt,dev,"Reviewers have praised the business for its hidden gem status, great sandwiches, and friendly staff.",1,0.006549317855387926
+7233,Data2txt,dev,"While some have noted that the lack of gluten-free options may be a drawback for certain customers, overall Eastside Deli appears to be a must-visit destination for anyone in the area.",1,0.0009260051301680505
+7239,Data2txt,test,"Based on the provided structured data, Outpost is a local restaurant located in Goleta, California, with a rating of 4.0 stars.",1,0.9791032671928406
+7239,Data2txt,test,"The restaurant offers a variety of cuisines, including American (New), Bars, Nightlife, Seafood, Breakfast & Brunch, American (Traditional), Desserts, and Food.",1,0.9860817193984985
+7239,Data2txt,test,"The business hours are from 7:00 AM to 10:30 PM from Monday to Sunday, and the restaurant provides free WiFi.",0,0.9657341241836548
+7239,Data2txt,test,"The establishment has valet parking, but no garage or street parking available.",0,0.3655441403388977
+7239,Data2txt,test,"The reviews suggest that while the menu is amazing, the service needs improvement, with some customers mentioning unprofessional staff and long wait times.",0,0.9704685807228088
+7239,Data2txt,test,"However, one reviewer praised the decor and ambiance, describing it as ""divey"" but ""hipster"" and ""casual"".",0,0.022851478308439255
+7239,Data2txt,test,"Another reviewer enjoyed their meal, particularly the burger and fries, but found the menu selection to be limited.",1,0.000944324245210737
+7239,Data2txt,test,"Overall, Outpost seems to have mixed reviews, with some customers enjoying their dining experience but others feeling let down by the service.",1,0.9730793833732605
+9523,Data2txt,test,"Hustle & Grind Coffee Company is a local business located at 11 W De La Guerra St in Santa Barbara, CA.",1,0.9773120880126953
+9523,Data2txt,test,"The establishment offers a range of products and services, including coffee and tea, food, ice cream and frozen yogurt, as well as restaurant and café options.",1,0.9804390668869019
+9523,Data2txt,test,"The coffee shop operates from Monday to Friday, from 8:00 AM to 5:00 PM, and on weekends from 1:00 PM to 6:00 PM.",1,0.009403045289218426
+9523,Data2txt,test,Customers have left positive reviews about their experiences at Hustle & Grind Coffee Company.,1,0.9774840474128723
+9523,Data2txt,test,"One customer enjoyed their visit, mentioning that they ordered a vanilla latte and found it to be delicious.",1,0.9876617193222046
+9523,Data2txt,test,"They also noted that the service was quick, allowing for a convenient in-and-out experience.",1,0.0282665453851223
+9523,Data2txt,test,The reviewer also mentioned that the coffee shop is located near other charming shops.,1,0.9928224682807922
+9523,Data2txt,test,"Another customer highlighted the uniqueness of Hustle & Grind, noting that they offer Hawaiian shaved ice as well as coffee.",1,0.9952292442321777
+9523,Data2txt,test,"They found the coffee to be good, although cautioning that it was served very hot.",1,0.9882055521011353
+9523,Data2txt,test,The speedy service and friendly staff were also praised.,1,0.0013348369393497705
+9523,Data2txt,test,"The customer mentioned that while there is no indoor seating, there are outdoor tables available.",1,0.00223558465950191
+9523,Data2txt,test,"However, there was a negative review from a customer who expressed disappointment that almond milk was no longer available and that they had an allergic reaction to the gluten-free toast, despite being assured that it would be safe for them.",1,0.0013346177292987704
+9523,Data2txt,test,"Overall, Hustle & Grind Coffee Company has received positive feedback for its delicious drinks, quick service, and friendly staff.",1,0.02871551923453808
+9523,Data2txt,test,Customers appreciate the unique offerings and the convenient location near other shops.,1,0.0028770065400749445
+9523,Data2txt,test,"However, it's important to note the negative experience regarding the availability of certain ingredients and the handling of dietary restrictions.",1,0.0024386909790337086
+10210,Data2txt,dev,"Here's an objective overview of Sanba IM based on the provided structured data:
+
+Sanba IM is a food stand located within Albertsons Supermarket in Goleta, California.",1,0.5840978622436523
+10210,Data2txt,dev,"It offers a variety of menu items including bubble tea, sushi, coffee, and juice bars.",1,0.8789216876029968
+10210,Data2txt,dev,"According to customer reviews, the boba tea is a standout item, made with high-quality ingredients and available in a range of flavors.",1,0.004488200414925814
+10210,Data2txt,dev,The stand also offers outdoor seating and takeout options.,1,0.0024204212240874767
+10210,Data2txt,dev,"However, it appears that the business has moved to a different location and is no longer operating at the original address provided.",1,0.014481834135949612
+10210,Data2txt,dev,"Despite the move, customers have praised the quality of the boba tea and the value for the price.",1,0.0015145563520491123
+10210,Data2txt,dev,"Overall, Sanba IM seems to offer a unique and delicious dining experience that is conveniently located within a grocery store.",1,0.21764451265335083
+11192,Data2txt,test,"La Hacienda Mexican Restaurant is located at 298 Pine Ave in Goleta, CA.",1,0.9848824143409729
+11192,Data2txt,test,It falls under the categories of Restaurants and Mexican.,1,0.9907400608062744
+11192,Data2txt,test,The restaurant operates from Monday to Sunday from 7:00 AM to 7:00 PM.,0,0.005532757844775915
+11192,Data2txt,test,"It has lot parking available, but does not have a garage or validated parking.",1,0.21587082743644714
+11192,Data2txt,test,"The restaurant also offers reservations, outdoor seating, takeout, and is good for groups.",1,0.9884564876556396
+11192,Data2txt,test,"The ambiance is casual, with no Wi-Fi, music, or toursity vibe.",1,0.044466789811849594
+11192,Data2txt,test,"Customers can rate their experience from one to five stars, with the average rating being 4.0 out of 5.0.",1,0.004809957463294268
+11192,Data2txt,test,"One customer gave a review on October 27th, 2021, stating that the Chile Rellenos lunch special was very tasty, but the chili verde sauce was different from what they expected.",1,0.9939202070236206
+11192,Data2txt,test,"However, they praised the friendly service provided by their server, Luz.",1,0.9951449036598206
+11192,Data2txt,test,"Another customer left a review on September 21st, 2021, stating that the Chicken Tortilla Soup was absolutely delicious, and they loved the service provided by both Luz and Executive Chef Juanita.",1,0.0006271267775446177
+11192,Data2txt,test,"A third customer left a review on August 19th, 2021, praising the service they received at the restaurant and noting that they were able to accommodate off-menu orders.",1,0.0005583149031735957
+11192,Data2txt,test,They recommended the restaurant and planned to return.,1,0.002264290815219283
+11192,Data2txt,test,"Overall, customers seem to enjoy the food and service at La Hacienda Mexican Restaurant.",1,0.9881149530410767
+12620,QA,dev,"Building a lean-to shed involves preparing the site, cutting and assembling the skids, flooring, and walls.",1,0.9941495656967163
+12620,QA,dev,"To prepare the site, a 4"" layer of compacted gravel is recommended.",1,0.9937054514884949
+12620,QA,dev,"The skids are cut to 70 2/4"" and set and leveled according to the shed building plans.",1,0.9929319620132446
+12620,QA,dev,"Two 2 x 6 rim joists are cut at 7 3/4"" and six joists at 44 3/4"".",1,0.9910057783126831
+12620,QA,dev,"The floor is assembled and set on the skids, checked for square, and anchored to the skids with four joist clip angles.",1,0.9927549958229065
+12620,QA,dev,The walls are constructed separately and then raised onto the frame.,1,0.987708330154419
+12620,QA,dev,"Pressure-treated 4 by 4s are used for the skids, while 2 by 4s are used for the rim joists and flooring.",1,0.9698233008384705
+12620,QA,dev,3/4-inch tongue-and-groove plywood is attached to the frame for the flooring.,1,0.9926813244819641
+12472,QA,dev,"Based on the given passages, here are the steps to sync audiobooks from an iPhone to iTunes:
+
+1.",1,0.9722480773925781
+12472,QA,dev,Turn on the Manually manage music setting in iTunes.,1,0.9900357723236084
+12472,QA,dev,Download the audiobook you want from iTunes.,1,0.9623706936836243
+12472,QA,dev,Connect your iPhone to the computer via USB cable.,1,0.9568841457366943
+12472,QA,dev,"Click on ""Audiobooks"" on the left task pane of the iTunes window.",1,0.9576852917671204
+12472,QA,dev,Select the audiobook you want to sync by clicking on its title.,1,0.7838653326034546
+12472,QA,dev,"Click ""Sync Audiobooks"" and choose the audiobooks you want to transfer.",1,0.8763464093208313
+12472,QA,dev,"Click ""Apply"" to start the syncing process.",1,0.8816495537757874
+12472,QA,dev,"Alternatively, you can use Syncios Audiobook Transfer to transfer audiobooks from your iPhone to iTunes.",1,0.0007594563066959381
+12472,QA,dev,"The software allows two-way transfer of files, so you can not only backup files to your PC but also transfer audiobooks from your PC to your iPhone.",1,0.9947265982627869
+12472,QA,dev,"Here are the steps to use Syncios Audiobook Transfer:
+
+1.",1,0.951980471611023
+12472,QA,dev,Launch Syncios Audiobook Transfer on your computer.,1,0.986065149307251
+12472,QA,dev,Connect your iPhone to the computer via USB cable.,1,0.9568841457366943
+12472,QA,dev,"Click on ""Audiobooks"" on the top menu bar.",1,0.9396187663078308
+12472,QA,dev,"Select the audiobooks you want to transfer and click ""Export"" to save them to your computer.",1,0.07342705875635147
+12472,QA,dev,"Alternatively, you can also click ""Import"" to add new audiobooks from your computer to your iPhone.",1,0.923092246055603
+12472,QA,dev,"Click ""Apply"" to start the transfer process.",1,0.796962559223175
+12472,QA,dev,Note that the above steps are based on the assumption that you have already turned on the Manually manage music setting in iTunes.,1,0.007707006298005581
+12472,QA,dev,"If you have not done so, you will need to do so before attempting to sync your audiobooks.",1,0.04354015737771988
+16561,QA,test,"To create employee schedules, start by making a list of all employees and the tasks they can perform.",1,0.008495272137224674
+16561,QA,test,"Then, create a chart with the work days and hours for each day.",1,0.0004345740017015487
+16561,QA,test,"You can use scheduling software, a word processing program, or a sheet of paper to do this.",1,0.00041287706699222326
+16561,QA,test,"Afterward, print out copies for employees or send schedules to their email accounts.",1,0.0004119180957786739
+16561,QA,test,It's also important to maintain a master schedule for making any necessary changes.,1,0.0005225791828706861
+16561,QA,test,"Microsoft Excel can be used to create a work schedule for multiple employees, which can be modified as your business expands.",1,0.5312609672546387
+13530,QA,test,The FEHA (Fair Employment and Housing Act) and the ADA (Americans with Disabilities Act) have several differences.,1,0.9838882684707642
+13530,QA,test,"The ADA applies to all employers in the private sector that have four to fifteen employees, while the FEHA affects more employees and does not distinguish between private and public employers.",1,0.012576628476381302
+13530,QA,test,Another important difference is the requirement of disability.,1,0.9889559149742126
+13530,QA,test,"The ADA requires a physical or mental impairment to substantially limit a major life activity, while the FEHA only requires that a mental and physical disability limit a major life activity, without the need for it to be a substantial limit.",1,0.9758847951889038
+13365,QA,test,"Based on the provided passages, here are the steps to properly wash wine glasses:
+
+1.",1,0.007791897282004356
+13365,QA,test,"If hot water and mild detergent cannot remove wine residue, use baking soda to dissolve and loosen the adhesive residue (Passage 1).",1,0.005842259619385004
+13365,QA,test,"To clean the inside of a glass, use a stemware brush with soft-foam bristles and rinse thoroughly with hot water (Passage 2).",1,0.004893035162240267
+13365,QA,test,"For hand cleaning, lay a towel in the sink before filling with hot water and wash one wine glass at a time to avoid damage (Passage 3).",1,0.0025653010234236717
+13365,QA,test,Use a small amount of detergent and only in the bottom of the glass and around the rim to avoid flavoring future wine.,1,0.021501831710338593
+13365,QA,test,Cradle the bowl of the glass in one hand while washing to protect the stem.,1,0.0031889162492007017
+13365,QA,test,Unable to answer based on given passages.,1,0.0019252495840191841
+16665,QA,test,"Based on the provided passages, here are some ways technology has changed the workplace:
+
+1.",1,0.018191270530223846
+16665,QA,test,"Increased efficiency and productivity (Passage 1) - Technology has enabled workers to complete tasks faster and more accurately, leading to increased productivity and efficiency.",1,0.028572525829076767
+16665,QA,test,"Changes in the dynamics of the workplace (Passage 2) - Technology has transformed the way people work together, communicate, and collaborate, resulting in new dynamics in the workplace.",1,0.038632672280073166
+16665,QA,test,"Global connectivity (Passage 3) - With the advent of technology, employees can now work remotely and interact with a global market, expanding the reach of their work.",1,0.4309748113155365
+16665,QA,test,Unable to answer based on given passages.,1,0.0005667333607561886
+16061,QA,test,"Sure, I can help you with that!",1,0.9287148714065552
+16061,QA,test,"Based on the given passages, here's how to do skill moves on FIFA 16 for Xbox One:
+
+1.",1,0.9715909957885742
+16061,QA,test,Ball Juggle (while standing): Hold LT + tap RB.,1,0.9749709367752075
+16061,QA,test,Note that this combination works for Xbox 360 and Xbox One controllers.,1,0.9915289878845215
+16061,QA,test,"If you're playing on PC with a controller, the buttons may be different.",1,0.0021979184821248055
+16061,QA,test,"Additionally, there are tutorial videos available online that show what each skill move looks like, which can be helpful in mastering these moves.",1,0.9636477828025818
+17059,QA,test,"Based on the given passages, the benefits of drinking clove tea include soothing the senses, relieving stress, providing relief from abdominal pain and aiding digestion.",1,0.8778466582298279
+17059,QA,test,The side effects of drinking clove tea are not mentioned in the given passages.,1,0.001210597576573491
+12621,QA,test,"Here's my attempt to answer your question based on the provided passages:
+
+How do you prepare the site for building a lean-to shed?",1,0.9723725318908691
+12621,QA,test,"According to passage 1, step 1, you should prepare the site by laying down a 4"" layer of compacted gravel.",1,0.9919165968894958
+12621,QA,test,This will provide a stable base for the shed's foundation.,1,0.0028226946014910936
+12621,QA,test,"Additionally, passage 2 mentions cutting two pressure-treated 4x4s to a length of 6 feet for the skids, which will serve as the foundation for the shed.",1,0.0030177736189216375
+12621,QA,test,"Finally, passage 3 provides instructions for building the shed's floor, including cutting rim joists to a length of 6 feet.",1,0.09804730117321014
+12621,QA,test,"Based on these passages, it appears that preparing the site involves laying down a layer of gravel and setting the skids in place before constructing the floor.",1,0.9665954113006592
+15731,QA,test,"Based on the given passages, here's how raffles work:
+
+A raffle is a game of chance where participants buy tickets with a unique number, and a prize is awarded to the holder of the winning ticket drawn at random.",1,0.9914072155952454
+15731,QA,test,"In a reverse raffle, the process is similar, but the tickets are numbered from 1 to approximately 55, and tables consist of 20 individuals, constituting one complete ticket at $1000, with two $500 prizes available.",1,0.9924161434173584
+15731,QA,test,"In a 50-50 draw, tickets are sold during an event, and the gross proceeds go into a prize pool, with 50% going to the winner of the random draw and the remaining 50% going to a charitable cause.",1,0.9970698356628418
+15731,QA,test,"Therefore, raffles typically involve buying tickets with unique numbers, and a random draw determines the winner, with a percentage of the proceeds often going to a charitable cause.",1,0.9707322716712952
+17759,QA,test,"Based on the given passages, the main difference between SMS and MMS is that SMS (Short Message Service) only allows sending text-only messages, while MMS (Multimedia Messaging Service) allows sending multimedia content such as pictures, videos, audio, and text.",1,0.9871222376823425
+17759,QA,test,MMS messages can also carry a larger size of content up to 300KB in various file formats.,1,0.25394049286842346
+16059,QA,test,"Based on the provided passages, here is how to perform skill moves on FIFA 16 for Xbox One:
+
+1.",1,0.9662172198295593
+16059,QA,test,"Ball Juggle (while standing): Press and hold the LT button on the Xbox controller, followed by a quick tap of the RB button.",1,0.985460102558136
+16059,QA,test,This combination will allow you to perform the ball juggling skill move while standing on the field in FIFA 16 on Xbox One.,1,0.9761400818824768
+16154,QA,dev,"Republicans use ""winning the majority of delegates"" to allocate delegates in their presidential nominating procedure quizlet.",1,0.00014571614156011492
+16154,QA,dev,"Passage 2 and passage 3 both indicate that a candidate must win at least 1,191 delegates at the convention to become the nominee, and that winning the majority of delegates can achieve this.",1,0.00020784612570423633
+16154,QA,dev,"However, passage 1 also mentions ""proportionate allocation,"" which could suggest that delegates are allocated based on a candidate's performance in primaries rather than simply winning the popular vote.",1,0.00011213368998141959
+15686,QA,test,"Based on the given passages, tropical rainforest floors are characterized by heavy annual rainfall, with some areas receiving up to 400 inches of rain per year.",1,0.7892456650733948
+15686,QA,test,The climate is very humid due to the high levels of rainfall.,1,0.0007491246215067804
+15686,QA,test,Vines and ferns are abundant and connect the different layers of the biome.,1,0.0030845217406749725
+15686,QA,test,"Herbs, mushrooms, fruits, and nuts also grow on the floor.",1,0.0017574618104845285
+15686,QA,test,The decay of dead plants and animals provides rich nutrients for the growth of new plants.,1,0.0012894368264824152
+17756,QA,test,"Based on the given passages, SMS stands for Short Message Service and allows you to send a message of up to 160 characters to another device.",1,0.9883140325546265
+17756,QA,test,"In contrast, MMS (Multimedia Messaging Service) allows you to send a message including pictures, videos, sounds, text, or any combination of the four.",1,0.9946565628051758
+17756,QA,test,"The content of an MMS message has a maximum size of 300KB in extensions of WAV, JPEG, GIF, etc.",1,0.9934199452400208
+13428,QA,test,"To fix a lift valve in a toilet, first shut off the water supply valve to the toilet.",1,0.9821439981460571
+13428,QA,test,"Then, remove the old flapper valve by slipping it off the mounting arms.",1,0.9370014667510986
+13428,QA,test,"Also, remove the broken lift chain from the lift arm.",1,0.002833820879459381
+13428,QA,test,Push the small solid end of the toilet lift arm into the flush handle and secure it tightly with a screw if one is included.,1,0.9848405718803406
+13428,QA,test,The other end of the lift arm should hang freely.,1,0.9803644418716431
+13428,QA,test,"Connect the chain to the third hole on the lift arm, which is the hole closest to the edge of the lift arm.",1,0.9810512065887451
+13428,QA,test,Secure it with pliers.,1,0.9906400442123413
+13428,QA,test,"Once done, turn the water valve back on and test the toilet flush.",1,0.00253703142516315
+13428,QA,test,"If the flush is slow, adjust the chain to make it tighter on the lift arm.",1,0.9940661191940308
+13428,QA,test,"Lastly, open the water valve to fill the tank and flush the toilet to check for correct operation.",1,0.9397603273391724
+13428,QA,test,"If needed, readjust the lift chain by moving the metal clip up or down a few links.",1,0.945327877998352
+13428,QA,test,Cut off any excess lift chain to prevent tangling.,1,0.9836907982826233
+12105,QA,test,"Based on the provided passages, here is how to fix a door that won't lock:
+
+Passage 1 provides tips on how to repair stuck or frozen door locks, keys that don’t work, and latches that don’t latch.",1,0.028325220569968224
+12105,QA,test,"However, it does not specifically address the issue of a door that won't lock.",1,0.0028024332132190466
+12105,QA,test,Passage 2 provides instructions on how to fix a door that won't shut or lock properly by removing the door stop on the striker side of the jamb and aligning it back on.,1,0.014978731982409954
+12105,QA,test,This method might work for doors that won't lock due to a misaligned door stop.,1,0.011696787551045418
+12105,QA,test,Passage 3 provides additional troubleshooting steps for when a door latch won't catch due to misalignment with the strike plate.,1,0.0007694867672398686
+12105,QA,test,"This passage suggests enlarging the latch hole in the jamb, tightening the hinges, and moving the strike plate to align with the latch.",1,0.36539748311042786
+12105,QA,test,"In summary, there is no definitive solution in the provided passages to fix a door that won't lock directly.",1,0.00270856823772192
+12105,QA,test,"However, these passages provide general tips and troubleshooting steps that may help identify and resolve related issues such as misaligned door stops or latches.",1,0.0018394174985587597
+12105,QA,test,"If the problem persists after trying these methods, it may be best to consult a professional locksmith or carpenter.",1,0.001932642888277769
+16146,QA,test,"If your Sperrys get wet, it's usually not a big deal.",1,0.977946400642395
+16146,QA,test,"However, if they are light tan, water might stain them.",1,0.9103638529777527
+16146,QA,test,"If you washed your Sperrys with detergent, it's important to use a leather conditioner afterwards as detergent can dry the leather out.",1,0.9979686141014099
+16146,QA,test,The conditioner helps to revitalize the leather by infusing moisture back into it.,1,0.9207256436347961
+16146,QA,test,"For stains, you can use a suede bar & leather brush.",1,0.9917733073234558
+13233,QA,test,"Based on the provided passages, here are some steps for attaching multiple picture frames together:
+
+Passage 1: Table-Stand Grouping
+To join two or three frames together, you can use identical frames or one larger frame as the middle piece.",1,0.9907926321029663
+13233,QA,test,"Place the frames beside each other to see if you like the effect, and then mark the hinge placement on the connecting sides.",1,0.9803142547607422
+13233,QA,test,Attach two small hinges to the marked areas to join the frames together.,1,0.9480230808258057
+13233,QA,test,"Passage 2: Hanging Multiple Pictures Together
+Before attaching the frames together, test different arrangements of the group of multiple pictures on the floor.",1,0.011494485661387444
+13233,QA,test,"Once you have decided on the layout, screw the frames to the backer board, repeating the process for each frame.",1,0.03332649543881416
+13233,QA,test,Attach a hanging wire to the back of the frames and hang them on the wall to enjoy the finished result.,1,0.9718114137649536
+13233,QA,test,"Passage 3: Attaching Frames Together
+To attach two frames together, place them back to back and mark the hinge placement on the connecting sides.",1,0.9850932359695435
+13233,QA,test,The placement should be the same distance from the bottom edge of each frame to ensure stability when the grouped pictures are placed on a table.,1,0.979115903377533
+13233,QA,test,Attach two small hinges to the marked areas to join the frames together.,1,0.9480230808258057
+13233,QA,test,"In conclusion, the recommended method for attaching multiple picture frames together involves using identical or matching frames, marking the hinge placement on the connecting sides, and attaching small hinges to join the frames together.",1,0.9773771166801453
+13233,QA,test,"It's also important to test different arrangements of the group of pictures on the floor before attaching the frames together, and to ensure that the frames are securely attached to the backer board before hanging them on the wall.",1,0.0030638568568974733
+12456,QA,test,"The typical weather in Indiana is characterized by long, warm, humid, and wet summers.",1,0.9967494010925293
+12456,QA,test,The winters are chilly and windy with some snowfall.,1,0.9303483963012695
+12456,QA,test,The temperature typically varies from 22°F to 85°F and is rarely below 3°F or above 92°F.,1,0.9938513040542603
+12456,QA,test,"The state also experiences some rainfall, with the wettest year recording 57.65 inches of rain and the driest 24.97 inches.",1,0.0042986636981368065
+12456,QA,test,The most snowfall recorded in a season was 74.5 inches.,1,0.9925225377082825
+2454,Summary,test,"Australian cinematographer, Andrew Lesnie, who worked with Peter Jackson on ""Lord of the Rings"" and ""The Hobbit"", has died of a heart attack aged 59.",1,0.8658232092857361
+2454,Summary,test,"Lesnie won an Oscar for his work on ""The Fellowship of the Ring"" and was known for balancing technology with artistic considerations.",1,0.7024464011192322
+2454,Summary,test,"His body of work also includes ""King Kong"", ""The Lovely Bones"", ""Rise of the Planet of the Apes"", ""The Water Diviner"", ""I Am Legend"" and ""The Last Airbender"".",1,0.0020783354993909597
+2454,Summary,test,He was inducted into the Australian Cinematographers Society Hall of Fame in 2002.,1,0.9440475106239319
+591,Summary,test,"Hillary Clinton launched her 2020 presidential campaign in an unconventional manner, using a video, new logo, and a road trip to rebrand and reframe her message and image.",1,0.007061882875859737
+591,Summary,test,"Critics have dismissed her launch as ""vapid"" and ""boring,"" but her team may have successfully created an empathetic relationship with voters that eluded her in the past.",1,0.9451894164085388
+591,Summary,test,"Clinton's new logo, featuring a bold red arrow moving left to right in front of the letter ""H,"" represents the emotional connection she wants to establish with voters and her focus on supporting them.",1,0.8936722874641418
+591,Summary,test,"Her decision to break from traditional campaign norms and use unscripted moments to showcase her personality may pay off, especially if she can maintain consistency in her message and actions.",1,0.020130015909671783
+591,Summary,test,"Ultimately, the success of her campaign will depend on her ability to build a genuine connection with voters and avoid appearing hypocritical.",1,0.9749919176101685
+1891,Summary,test,"Americans on the no-fly list will now be given information about why they have been banned from commercial flights and the chance to dispute their status, according to court documents filed by the Justice Department.",1,0.0011022476246580482
+1891,Summary,test,This change comes in response to a ruling by a federal judge in June that said the old process was in violation of the Fifth Amendment's guarantee of due process.,1,0.0017795887542888522
+1891,Summary,test,"The American Civil Liberties Union (ACLU), who brought the lawsuit on behalf of 13 Americans on the list, is not satisfied with the new policy.",1,0.0044626700691878796
+1891,Summary,test,"They argue that the government's redress process does not meet constitutional requirements because it denies individuals meaningful notice, evidence, and a hearing.",1,0.0013644004939123988
+1891,Summary,test,"The no-fly list, managed by the FBI, prohibits people from boarding commercial flights into or out of the United States.",1,0.8130648732185364
+1891,Summary,test,"The number of people on the list is classified, but in 2012 it was estimated to contain about 21,000 names, including 500 Americans.",1,0.08417142182588577
+139,Summary,test,"Kanye West has settled a lawsuit with paparazzi photographer Daniel Ramos, whom he assaulted in 2013 at Los Angeles International Airport.",1,0.009216008707880974
+139,Summary,test,"West pleaded no contest to a misdemeanor count of battery and received probation, anger management sessions, and community service.",1,0.0017023624386638403
+139,Summary,test,"Ramos had filed a civil suit seeking damages, alleging that West interfered with his right to work.",1,0.003021406242623925
+139,Summary,test,"The case was set for trial, but Ramos filed a dismissal after reaching a settlement with West.",1,0.0034648601431399584
+139,Summary,test,"The settlement included an apology from West to Ramos, as shown in a picture of them shaking hands.",1,0.0013294450473040342
+139,Summary,test,This incident is not the first time West has been accused of assault.,1,0.00011147139593958855
+3144,Summary,test,"Ebony Dickens from Georgia, USA, posted a Facebook rant under a pseudonym, threatening to shoot every white policeman she saw.",1,0.9936331510543823
+3144,Summary,test,"The post was removed a day later, just before Dickens was arrested.",1,0.9737199544906616
+3144,Summary,test,She appeared in court on a charge of disseminating information related to terrorist acts.,1,0.9859814643859863
+3144,Summary,test,"A judge set a $10,000 bond for her and banned her from social media.",1,0.9639533162117004
+3611,Summary,test,"The International Committee of the Red Cross (ICRC) has called for an immediate 24-hour ceasefire in Yemen, warning that many more people will die if not tended to soon.",1,0.010388029739260674
+3611,Summary,test,"The appeal comes as Shiite rebels and external Arab air forces continue to clash, with intense fighting in the southern port city of Aden.",1,0.012738256715238094
+3611,Summary,test,"The ICRC stresses the need for food, water, medical supplies, and personnel to reach affected areas, particularly in Aden, where the wounded are in critical condition.",1,0.06471550464630127
+3611,Summary,test,"Meanwhile, residents of the capital, Sanaa, witnessed the fiercest Saudi airstrikes since the campaign began, targeting military facilities within the city limits.",1,0.0006223964737728238
+3611,Summary,test,"A draft resolution submitted by Russia to the UN Security Council calling for a halt to the airstrikes was met with skepticism, as it did not address key issues such as the Houthis stopping their fight or political talks between the warring parties.",1,0.010368523187935352
+3611,Summary,test,"Yemen has been embroiled in chaos since Houthi rebels forced President Abdu Rabu Mansour Hadi from power in January, leading to a Saudi-led coalition launching airstrikes against the rebels.",1,0.9763067364692688
+5391,Summary,dev,"Cristina Husbands, a 48-year-old woman from Dallas, Texas, was sentenced to 64 months in prison for her role in a multi-state bank fraud scheme.",1,0.011952577158808708
+5391,Summary,dev,"She stole hundreds of thousands of dollars from banks in Mississippi, Alabama, Colorado, Louisiana, Tennessee, and Texas.",1,0.41594117879867554
+5391,Summary,dev,"Husbands admitted to committing the crimes under duress, struggling with drug addiction and an abusive relationship.",1,0.0012589690741151571
+5391,Summary,dev,She was targeted by recruiters at homeless shelters and was used to carry out fraudulent activities.,1,0.0013095901813358068
+5391,Summary,dev,"The judge ordered her to pay $481,140 in restitution and face five years of supervised release after her prison sentence.",1,0.0008698885794728994
+1749,Summary,test,"Here is a summary of the article in 66 words:
+
+Canada's CF-18 Hornets have conducted their first airstrike against ISIS in Syria, hitting one of the extremist group's garrisons near Raqqa.",1,0.01797938160598278
+1749,Summary,test,"The strike was successful, according to the Canadian Department of National Defence.",1,0.008023497648537159
+1749,Summary,test,This expansion of the airstrikes into Syria demonstrates Canada's determination to combat terrorism and promote regional security.,1,0.05811236426234245
+1828,Summary,dev,"Here is a summary of the news within 77 words:
+
+Multiple births have made headlines recently, with a set of female quintuplets born in Houston and a pair of twin girls born in Florida.",1,0.9952582716941833
+1828,Summary,dev,"The Busby family, who welcomed five girls via C-section, are blogging about their experience, while the Rademacher family kept the gender of their twins a secret until they were born.",1,0.9771575331687927
+1828,Summary,dev,"Both sets of parents are sharing their joy and gratitude online, with videos of their new additions receiving hundreds of thousands of views.",1,0.04773815721273422
+1112,Summary,test,An American woman working at a medical school in Pakistan was shot by two assailants on a motorcycle while driving home to pick up her daughters.,0,0.02641262114048004
+1112,Summary,test,The attack occurred despite a recent surge in security measures.,1,0.00012308584700804204
+1112,Summary,test,Police found anti-American pamphlets near the scene of the crime.,1,0.9108690023422241
+1112,Summary,test,"The victim, Debra Lobo, is expected to survive after surgery.",1,0.0101910550147295
+4063,Summary,test,"The Miami Dolphins are considering a trade for Washington Commanders' defensive end Chase Young, according to CBS Sports' Josina Anderson.",1,0.01965647004544735
+4063,Summary,test,"The Dolphins are in need of improvement on their defensive line, as they have struggled to generate consistent pressure with their current players.",1,0.7102787494659424
+4063,Summary,test,"Young, who is five years younger than their current defensive end Emmanuel Ogbah, has already recorded five sacks this season.",1,0.023120220750570297
+4063,Summary,test,"Trading for Young would be a significant upgrade for the Dolphins, but it would also require a long-term extension for him.",1,0.8591961860656738
+4063,Summary,test,"Despite potential cap concerns, the Dolphins have shown a willingness to sign lucrative contracts, such as with running back Jonathan Taylor.",1,0.8800697326660156
+4063,Summary,test,Adding Young to their defensive line would boost their pass rush and help their playoff push.,1,0.5019438862800598
+246,Summary,dev,"Emy Afalava, a decorated veteran born in American Samoa, a US territory since 1900, has been denied the right to vote as the federal government insists he is not a citizen.",1,0.009028023108839989
+246,Summary,dev,"Despite the Fourteenth Amendment declaring that all persons born in the US are citizens, Afalava and other American Samoans have been denied this right.",1,0.012557128444314003
+246,Summary,dev,This issue is now being addressed in a federal lawsuit before the D.C.,1,0.0036869009491056204
+246,Summary,dev,"Circuit, with a decision expected soon.",1,0.0025972691364586353
+246,Summary,dev,"The situation echoes past instances of racial discrimination, such as the Dred Scott case, which declared free African-Americans were not citizens, and the case of Isabel Gonzalez, a Puerto Rican woman prevented from entering the mainland US despite it being a US territory.",1,0.10026618093252182
+246,Summary,dev,"Today, American Samoans remain the only inhabitants of US island territories yet to be granted citizenship.",1,0.9970677495002747
+1452,Summary,test,"The 100th anniversary of the massacre of Armenians under the Ottoman Empire has caused controversy in Turkey, with many of its citizens denying that the event, in which 1.5 million people died, was genocide.",1,0.013345081359148026
+1452,Summary,test,"The Turkish government also denies the occurrence of genocide, instead asserting that the deaths were the result of violence between Armenian Christians and Turkish Muslims during World War I.",1,0.0006276800413616002
+1452,Summary,test,"The government has also disputed the number of people killed, claiming it was 300,000 rather than the 1.5 million Armenians claim.",1,0.00027533090906217694
+1452,Summary,test,"This has led to widespread dispute, with scholars widely viewing the event as genocide, and the Armenian government and diaspora lobbying for international recognition of the event as such.",1,0.0009366021258756518
+1452,Summary,test,The Armenian Prime Minister has called the event a “monstrous crime” and encouraged other countries to recognise it as genocide.,1,0.0026076880749315023
+1452,Summary,test,"However, countries such as the UK and Israel do not recognise the event as genocide, and the US President refrained from using the term genocide due to fears of damaging relations with Turkey.",1,0.0010751679074019194
+1452,Summary,test,"Turkey has long maintained that the event was not genocide, associating the term with Nazis rather than the founders of modern Turkey.",1,0.00496760243549943
+1452,Summary,test,"The government has expressed condolences for the deaths of Armenians during the event, but has labelled it as a “necessary deportation” during the run-up to World War I.",1,0.0013443892821669579
+1452,Summary,test,"However, an increasing number of scholars and world leaders now believe the event should be recognised as genocide, with Germany joining the European Parliament, France, Austria, Canada and 20 other countries in labelling the event as such.",1,0.012786423787474632
+3936,Summary,dev,"In the Big Brother 25 house, the houseguests want new Head of Household Bowie Jane to backdoor Cameron Hardin, who they believe could win the competition if he isn't removed.",1,0.9615410566329956
+3936,Summary,dev,"Cameron's allies, Matt Klotz and Jag Bains, are also wary of his potential, but Bowie is undecided.",1,0.02470608800649643
+3936,Summary,dev,"Cameron wants Bowie to backdoor Cory Wurtrnberger, another strong contender, while Cory is lobbying for Cameron's removal.",1,0.10572436451911926
+3936,Summary,dev,The outcome of the week's Power of Veto competition could influence Bowie's decision.,1,0.03141023591160774
+2468,Summary,test,"Google's real-time traffic app, Waze, is being criticized for allowing users to track the location of police officers in the field.",1,0.037968214601278305
+2468,Summary,test,"The app's ""traffic cop"" feature displays whether law enforcement officers are ""visible"" or ""invisible,"" making them targets.",1,0.7842910289764404
+2468,Summary,test,Waze is the leading cause of felonious deaths of law enforcement officers in the line of duty for the past five years.,0,0.010801669210195541
+2468,Summary,test,"Google, which acquired Waze in 2013, has refused to discuss the issue with organizations representing law enforcement.",1,0.03162669390439987
+2468,Summary,test,"Many believe that Waze's technology, particularly its ability to collect and share real-time data, poses a serious threat to public safety.",1,0.005138533655554056
+1587,Summary,dev,A piece of a fiberglass boat believed to have originated from the 2011 Japan earthquake and tsunami was found off the Oregon coast and towed to shore.,1,0.996775209903717
+1587,Summary,dev,"Inside, biologists found over 4,000 miles later, yellowtail jack fish typically found in Japanese waters.",1,0.9893838763237
+1587,Summary,dev,The fish will be taken to the Oregon Coast Aquarium.,1,0.9833968281745911
+1599,Summary,test,Former Australian cricket captain and legendary broadcaster Richie Benaud has passed away at the age of 84.,1,0.9478955268859863
+1599,Summary,test,"Benaud was widely regarded as the greatest commentator in cricket history, with a career spanning over four decades with the BBC.",1,0.015896813943982124
+1599,Summary,test,"He was known for his witty one-liners and insightful analysis, and was inducted into the Sport Australia Hall of Fame in 1985.",1,0.3587987422943115
+1599,Summary,test,"Benaud was a pioneering figure in Australian cricket, leading the team as captain from 1958 to 1964 and setting an incredibly high standard on and off the field.",1,0.006315842270851135
+1599,Summary,test,"His passing has drawn tributes from around the world, including from Australian Prime Minister Tony Abbott, who described Benaud as ""cricket personified"".",1,0.03937482088804245
+1599,Summary,test,"Current Australian captain Michael Clarke and former Pakistani captain Imran Khan are among those who have paid their respects, while British Prime Minister David Cameron has also expressed his sadness at Benaud's passing.",1,0.057495683431625366
+3937,Summary,test,"In the latest episode of Big Brother 25, the houseguests want the new Head of Household, Bowie Jane, to target Cameron Hardin for eviction.",1,0.9708831310272217
+3937,Summary,test,They believe Cameron is a strong competitor and a threat to their games.,1,0.04596539959311485
+3937,Summary,test,"However, Bowie is hesitant to backdoor Cameron and instead nominated Felica Cannon and Cirie Fields.",1,0.9543184638023376
+3937,Summary,test,"Cameron, on the other hand, wants Bowie to target Cory Wurtrnberger.",1,0.004045402631163597
+3937,Summary,test,The Power of Veto competition will determine if Bowie will change her nominations and potentially take a shot at Cory or Cameron.,1,0.9671607613563538
+4480,Summary,dev,"Here's the summary within 81 words:
+
+JetBlue reduces 14 routes from major hubs, mostly in Northeast region.",1,0.9906338453292847
+4480,Summary,dev,"Affected cities include NYC, Boston, and LA.",1,0.4479478597640991
+4480,Summary,dev,"Popular destinations like Miami, Nashville, and Washington DC are cancelled.",1,0.9135842323303223
+4480,Summary,dev,Passengers with existing bookings will be offered alternative flights or refunds.,1,0.5151779055595398
+5084,Summary,dev,"On October 20th and 21st, 2023, there were reports of surprise Northern Lights sightings in the Midwest and Plains due to a weak Coronal Mass Ejection (CME).",1,0.048661597073078156
+5084,Summary,dev,"Despite the weaker nature of this CME, many were able to view the auroras, including in states like Minnesota, Michigan, and Wisconsin.",1,0.1387210488319397
+5084,Summary,dev,The best viewing times were between midnight and 4 am local time.,0,0.00019526427786331624
