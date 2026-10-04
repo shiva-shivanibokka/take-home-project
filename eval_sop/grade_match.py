@@ -63,7 +63,10 @@ def claim_sentences(md: str):
 def main():
     qs = {q["id"]: q for q in json.load(open(QFILE, encoding="utf-8"))}
     raw_writer = {}
-    for l in open(os.path.join(D, "llm_logs", "gen_w0.jsonl"), encoding="utf-8"):
+    gp = os.path.join(D, "llm_logs", "gen_w0.jsonl")
+    import gzip  # raw logs are committed gzip-compressed
+    fh = open(gp, encoding="utf-8") if os.path.exists(gp) else gzip.open(gp + ".gz", "rt", encoding="utf-8")
+    for l in fh:
         r = json.loads(l)
         if r["stage"] == "writer":
             raw_writer[r["job"]] = r["content"]  # last call wins (there is one per job)
