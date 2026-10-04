@@ -2,22 +2,24 @@
 
 Branch `sop-eval`. This file covers an evaluation of the Multi-Agent Research Desk (collector, writer, reviewer).
 
-**Status (2026-10-04, after the fix phase).** The calibration study ran locally on Ollama. An adversarial review then found label errors and benchmark leakage. **§4b reports the corrected numbers and supersedes §4**, which keeps the original-label numbers for the record. No LLM or API call was made in the fix phase; everything was recomputed from committed outputs.
+**Status (2026-10-04, after the fix phase and round-2 review).** The calibration study ran locally on Ollama. An adversarial review then found label errors and benchmark leakage. **§4b reports the corrected numbers and supersedes §4**, which keeps the original-label numbers for the record. No LLM or API call was made in the fix phase; everything was recomputed from committed outputs.
 
 **Headline (corrected; primary metric = single-call AUROC, mean over 3 reviewer seeds, 95% bootstrap CI over questions).**
 - **SimpleQA/PopQA (n = 98)**
-  - Single-call AUROC is **0.733 [0.634, 0.826]** for predicting a wrong brief.
-  - The reviewer is overconfident: ECE 0.25.
-  - At the deployed 0.70 threshold it escalates 26% of briefs and catches **31%** of the wrong ones. Precision is 0.56, against a base rate of 0.47.
-  - With the 5 answer-leaked items excluded (n = 93), AUROC is 0.761 [0.658, 0.857].
+  - Single-call AUROC is **0.778 [0.682, 0.864]** for predicting a wrong brief.
+  - The reviewer is overconfident: ECE 0.28.
+  - At the deployed 0.70 threshold it escalates 26% of briefs and catches **35%** of the wrong ones. Precision is 0.68, against a base rate of 0.50.
+  - With the 5 answer-leaked items excluded (n = 93), AUROC is 0.792 [0.696, 0.879].
 - **FRAMES (n = 59)**: the signal is weaker and depends on the label.
-  - Single-call AUROC is 0.645 [0.528, 0.753] with adjudicated labels.
+  - Single-call AUROC is 0.644 [0.517, 0.760] with adjudicated labels.
   - Under the alternative labels it ranges from 0.54 to 0.68.
-  - With the 11 answer-leaked items excluded, it is 0.668 [0.545, 0.796] (n = 48).
-- **Baselines.** Random escalation, "fewer sources is riskier" and "shorter brief is riskier" all sit at chance level, with AUROC between 0.43 and 0.51.
+  - With the 11 answer-leaked items excluded, it is 0.681 [0.547, 0.851] (n = 48).
+- **Baselines.** Random escalation, "fewer sources is riskier" and "shorter brief is riskier" all sit at chance level, with AUROC between 0.48 and 0.52.
 
 **Labels (§4b).**
 - The primary label is **adjudicated by Claude (an LLM), not by a human**. It covers all 60 FRAMES briefs and the 26 disputed SimpleQA/PopQA briefs (`eval_sop/adjudication/adjudicated_labels.csv`). Undisputed briefs keep the matcher label.
+- Five adjudications (f001, f011, q024, q065, q083) were revised to *wrong* after the round-2 review.
+- Flipping the remaining low-confidence adjudications leaves the AUROC unchanged (0.778 on SimpleQA/PopQA, 0.644 on FRAMES).
 - The original deterministic labels (v1), the improved matcher (v2) and the `qwen2.5:7b` grader are all reported alongside.
 - **No result here is validated by a human.**
 
@@ -125,7 +127,7 @@ Interpretation:
 - The probe's headers were `x-ratelimit-limit-requests: 14400` and `x-ratelimit-limit-tokens: 15000`. No billing or payment message appeared.
 - To stay inside the assigned family, **no other Groq model was used**, and no further Groq calls are planned.
 
-## 4b. Corrected results (fix phase, 2026-10-04): these supersede §4
+## 4b. Corrected results (fix phase + round-2 review, 2026-10-04): these supersede §4
 
 ### What changed and why
 
@@ -142,17 +144,18 @@ An independent adversarial review found that the deterministic matcher (v1) erre
 1. **Matcher v2** (`eval_sop/labels_v2.py`, tests in `eval_sop/tests/test_labels_v2.py`) adds:
    - number words;
    - middle initials;
-   - one-edit spelling tolerance for tokens of 5 or more letters;
+   - a doubled-letter spelling tolerance for tokens of 5 or more letters (narrowed in round 2: a general one-edit tolerance also matched Hansen/Hanson; no label changed);
    - order-free multi-part answers;
    - a positional check: the gold must appear in the title, the Summary, or a bold Key-Findings headline;
    - dropping questions whose primary gold appears in the question (f025, q057, q072);
    - dropping aliases that share a content word with the question;
    - a fix for the gold typo in q022.
 
-   The positional rule and the leak-threshold choice (below) were made **after** seeing the review's examples, so they are post hoc. The v2 matcher is *not* an improvement on FRAMES. Its agreement with the adjudicated labels is κ = 0.52, compared with 0.59 for v1, because the positional check is too strict for multi-hop briefs that answer in the body. It is reported, but it is not the primary label.
+   The positional rule and the leak-threshold choice (below) were made **after** seeing the review's examples, so they are post hoc. The v2 matcher is only marginally closer to the adjudicated FRAMES labels than v1 (κ 0.60 vs 0.57), and it degenerates on the leak-excluded FRAMES subset. It is reported, but it is not the primary label.
 2. **Adjudication** (`eval_sop/adjudication/adjudicated_labels.csv`, built by `build_adjudication_csv.py`).
    - I read and labelled every FRAMES brief (60) and every disputed SimpleQA/PopQA brief (26). A brief counts as disputed when v1, v2 and the qwen grader disagreed, or when the review flagged it.
-   - Each row has a reason and a confidence (high/low; 7 rows are low).
+   - Each row has a reason and a confidence (high/low).
+   - **Round 2:** the second reviewer flagged five rows marked correct that break my own rule (f001, f011, q024, q065, q083). I re-read all five, agreed, and relabelled them as wrong; each row's reason now says "revised after round-2 review". 4 rows remain low-confidence (f002, q003, q030, q072).
    - The rule: a brief is correct only if it *commits* to an answer equivalent to the gold. Hedged, contradicted and passing mentions are wrong.
    - **These labels are LLM-created (Claude), not human.**
    - Undisputed SimpleQA/PopQA briefs, where v1, v2 and the grader agree, keep that shared label.
@@ -173,57 +176,59 @@ An independent adversarial review found that the deterministic matcher (v1) erre
 
 | Set | n | wrong rate | single-call AUROC (± SD over seeds) | single-call ECE | @0.70: escalation rate · precision · recall | pooled AUROC (secondary) |
 |---|---|---|---|---|---|---|
-| SimpleQA/PopQA, all | 98 | 0.47 | **0.733 ± 0.006** [0.634, 0.826] | 0.253 [0.179, 0.347] | 0.26 · 0.56 [0.37, 0.75] · **0.31** [0.19, 0.44] | 0.727 |
-| SimpleQA/PopQA, leaks excluded | 93 | 0.49 | **0.761 ± 0.007** [0.658, 0.857] | 0.275 [0.190, 0.366] | 0.24 · 0.63 [0.44, 0.82] · 0.31 [0.20, 0.43] | 0.756 |
-| SimpleQA/PopQA, all exposed excluded | 84 | 0.50 | 0.786 ± 0.013 [0.685, 0.877] | 0.284 | 0.23 · 0.70 · 0.32 | 0.783 |
-| FRAMES, all | 59 | 0.76 | **0.645 ± 0.014** [0.528, 0.753] | 0.451 [0.335, 0.556] | 0.32 · 0.95 [0.83, 1.00] · 0.40 [0.27, 0.54] | 0.663 |
-| FRAMES, leaks excluded | 48 | 0.85 | **0.668 ± 0.018** [0.545, 0.796] | 0.524 [0.419, 0.624] | 0.35 · 1.00 · 0.41 [0.26, 0.55] | 0.688 |
-| FRAMES, all exposed excluded | 33 | 0.82 | 0.677 ± 0.029 [0.523, 0.819] | 0.468 | 0.35 · 1.00 · 0.43 | 0.694 |
+| SimpleQA/PopQA, all | 98 | 0.50 | **0.778 ± 0.008** [0.682, 0.864] | 0.276 [0.193, 0.368] | 0.26 · 0.68 [0.49, 0.85] · **0.35** [0.23, 0.48] | 0.775 |
+| SimpleQA/PopQA, leaks excluded | 93 | 0.52 | **0.792 ± 0.007** [0.696, 0.879] | 0.296 [0.211, 0.387] | 0.24 · 0.72 [0.54, 0.89] · 0.34 [0.22, 0.47] | 0.789 |
+| SimpleQA/PopQA, all exposed excluded | 84 | 0.51 | 0.803 ± 0.013 [0.709, 0.892] | 0.296 | 0.23 · 0.76 · 0.33 | 0.801 |
+| FRAMES, all | 59 | 0.80 | **0.644 ± 0.013** [0.517, 0.760] | 0.485 [0.372, 0.585] | 0.32 · 0.95 [0.83, 1.00] · 0.38 [0.25, 0.52] | 0.661 |
+| FRAMES, leaks excluded | 48 | 0.90 | **0.681 ± 0.017** [0.547, 0.851] | 0.565 [0.461, 0.654] | 0.35 · 1.00 · 0.39 [0.24, 0.52] | 0.700 |
+| FRAMES, all exposed excluded | 33 | 0.88 | 0.695 ± 0.025 [0.522, 0.898] | 0.528 | 0.35 · 1.00 · 0.40 | 0.711 |
+| *Sensitivity: remaining low-confidence labels flipped* — SimpleQA/PopQA | 98 | 0.50 | 0.778 [0.682, 0.865] | 0.276 | 0.26 · 0.68 · 0.35 | 0.775 |
+| *Sensitivity: remaining low-confidence labels flipped* — FRAMES | 59 | 0.78 | 0.644 [0.519, 0.755] | 0.468 | 0.32 · 0.95 · 0.39 | 0.662 |
 
 **Old vs new (primary condition)**
 
 | Set | Old (v1 label, pooled AUROC, §4) | New (adjudicated, single-call AUROC) |
 |---|---|---|
-| SimpleQA/PopQA | 0.701 [0.594, 0.801], n = 100 | 0.733 [0.634, 0.826], n = 98 |
-| FRAMES | 0.707 [0.584, 0.824], n = 60 (or 0.765 on the 47-question short subset) | 0.645 [0.528, 0.753], n = 59 |
+| SimpleQA/PopQA | 0.701 [0.594, 0.801], n = 100 | 0.778 [0.682, 0.864], n = 98 (0.733 before the round-2 relabelling) |
+| FRAMES | 0.707 [0.584, 0.824], n = 60 (or 0.765 on the 47-question short subset) | 0.644 [0.517, 0.760], n = 59 (0.645 before round 2) |
 
 **Sensitivity to the label (single-call AUROC, primary condition)**
 
 | Set | v1 matcher | v2 matcher | qwen2.5:7b grader (LLM) | adjudicated (Claude, LLM) |
 |---|---|---|---|---|
-| SimpleQA/PopQA (n = 98) | 0.718 | 0.726 | 0.735 | 0.733 |
-| FRAMES (n = 59) | 0.677 | 0.542 | 0.615 | 0.645 |
-| FRAMES, leaks excluded (n = 48) | 0.698 | 0.437 (v2 leaves only 2 correct briefs; degenerate) | 0.616 | 0.668 |
+| SimpleQA/PopQA (n = 98) | 0.718 | 0.726 | 0.735 | 0.778 |
+| FRAMES (n = 59) | 0.677 | 0.542 | 0.615 | 0.644 |
+| FRAMES, leaks excluded (n = 48) | 0.698 | 0.437 (v2 leaves only 2 correct briefs; degenerate) | 0.616 | 0.681 |
 
-The SimpleQA/PopQA result is stable across labels. **The FRAMES result is label-sensitive**: it ranges from 0.54 to 0.68 on all 59 briefs and from 0.44 to 0.70 with leaks excluded (n = 48), and several of its CIs reach close to 0.5.
+The SimpleQA/PopQA result is above chance under every label (0.72–0.78). **The FRAMES result is label-sensitive**: it ranges from 0.54 to 0.68 on all 59 briefs and from 0.44 to 0.70 with leaks excluded (n = 48), and several of its CIs reach close to 0.5.
 
 **Label agreement (Cohen's κ)**
 
 | Comparison | κ | Note |
 |---|---|---|
-| FRAMES, fully adjudicated: v1 vs adjudicated | 0.59 | |
-| FRAMES, fully adjudicated: v2 vs adjudicated | 0.52 | |
-| FRAMES, fully adjudicated: qwen grader vs adjudicated | 0.54 | |
-| SimpleQA/PopQA: v1 vs adjudicated | 0.80 | |
-| SimpleQA/PopQA: qwen vs adjudicated | 0.94 | Inflated by construction: undisputed items are ones where qwen already agreed |
+| FRAMES, fully adjudicated: v1 vs adjudicated | 0.57 | |
+| FRAMES, fully adjudicated: v2 vs adjudicated | 0.60 | |
+| FRAMES, fully adjudicated: qwen grader vs adjudicated | 0.47 | |
+| SimpleQA/PopQA: v1 vs adjudicated | 0.78 | |
+| SimpleQA/PopQA: qwen vs adjudicated | 0.92 | Inflated by construction: undisputed items are ones where qwen already agreed |
 
 **Baselines (adjudicated label; AUROC [CI])**
 
 | Set | random escalation | fewer sources = riskier | shorter brief = riskier |
 |---|---|---|---|
-| SimpleQA/PopQA (n = 98) | 0.50 (0.39–0.61); precision = base rate 0.47 | 0.51 [0.43, 0.59] | 0.50 [0.38, 0.62] |
-| FRAMES (n = 59) | 0.50 (0.33–0.67); precision = 0.76 | 0.51 [0.37, 0.66] | 0.43 [0.26, 0.61] |
+| SimpleQA/PopQA (n = 98) | 0.50 (0.39–0.61); precision = base rate 0.50 | 0.52 [0.44, 0.60] | 0.50 [0.38, 0.61] |
+| FRAMES (n = 59) | 0.50 (0.32–0.68); precision = 0.80 | 0.48 [0.31, 0.64] | 0.48 [0.29, 0.67] |
 
-The reviewer beats all three baselines on SimpleQA/PopQA. On FRAMES its CI lower bound (0.53) only just clears chance.
+The reviewer beats all three baselines on SimpleQA/PopQA. On FRAMES its CI lower bound (0.52) only just clears chance.
 
 **Ablations (FRAMES, adjudicated, single-call AUROC; paired pooled-AUROC difference vs primary [CI])**
 
 | Ablation | All (n = 59) | Leaks excluded (n = 48) |
 |---|---|---|
-| (a) 350-char snippets | 0.693, Δ +0.03 [−0.07, 0.14] | 0.738, Δ +0.04 [−0.13, 0.20] |
-| (b) 3B reviewer | 0.612, Δ −0.04 [−0.21, 0.12] | 0.542, Δ −0.14 [−0.35, 0.10] |
+| (a) 350-char snippets | 0.682, Δ +0.04 [−0.06, 0.15] | 0.734, Δ +0.05 [−0.06, 0.21] |
+| (b) 3B reviewer | 0.684, Δ +0.04 [−0.11, 0.18] | 0.664, Δ −0.02 [−0.27, 0.25] |
 
-- All CIs include 0, so neither ablation is resolved.
+- All CIs include 0, so neither ablation is resolved. The 3B difference even changed sign after the round-2 relabelling, which shows how fragile it is.
 - The 3B reviewer produced **2 unparseable JSON outputs out of 180** (seeds 0 and 2). The reviewer's own fallback scores these as confidence 0 and escalates them. They are counted in `results_v2*.json → reviewer_parse_failures`. Every other run returned valid JSON with a numeric confidence (checked in the raw logs), so the C3 and C9 coercion fixes did not change any result.
 - Ablation (c) (citations) is unchanged; see §4.
 
@@ -231,8 +236,8 @@ The reviewer beats all three baselines on SimpleQA/PopQA. On FRAMES its CI lower
 
 | Set | Gold in a selected snippet | Gold in no selected snippet |
 |---|---|---|
-| SimpleQA/PopQA (n = 93) | correct 37/43 = 0.86 | correct 10/50 = 0.20 |
-| FRAMES (n = 48) | correct 2/4 | correct 5/44 = 0.11 |
+| SimpleQA/PopQA (n = 93) | correct 37/43 = 0.86 | correct 8/50 = 0.16 |
+| FRAMES (n = 48) | correct 1/4 | correct 4/44 = 0.09 |
 
 - On FRAMES, almost every brief with the answer in a snippet was a leaked item, so the earlier "77–94% vs 14–18%" split relied heavily on leaked items. **It is withdrawn.**
 - This is an association. It does not decompose errors into retrieval vs generation causes.
@@ -241,9 +246,9 @@ The reviewer beats all three baselines on SimpleQA/PopQA. On FRAMES its CI lower
 ### What the corrected numbers support / do not support
 
 **Supported:**
-- On SimpleQA/PopQA, single-call reviewer confidence ranks wrong briefs above chance, with a CI lower bound of 0.63, robustly across all four labels and with leaks excluded.
-- It is overconfident (ECE 0.25–0.28).
-- At 0.70 it escalates only about 31% of wrong briefs.
+- On SimpleQA/PopQA, single-call reviewer confidence ranks wrong briefs above chance, with a CI lower bound of 0.68 under the adjudicated label; it stays above chance under every label and with leaks excluded.
+- It is overconfident (ECE 0.28–0.30).
+- At 0.70 it escalates only about 35% of wrong briefs.
 
 **Not supported:**
 - A FRAMES-specific claim stronger than "weaker and label-sensitive".
@@ -402,6 +407,19 @@ Every app-code change has a test. Test outputs are committed.
   - SimpleQA: MIT, per its dataset card.
   - PopQA: not stated in the cached card.
   - RAGTruth: not verified.
+- **C16 (round 2): FRAMES label-sensitivity range** corrected to 0.54–0.68 (all 59). 0.70 belongs to the leak-excluded range, 0.44–0.70 (commit 7073049).
+- **C17 (round 2): leak SOP sentence** now says "the main results" (commit cd8fc4d).
+- **C18 (round 2): adjudication.**
+  - f001, f011, q024, q065 and q083 relabelled as wrong after re-reading; I agreed with the reviewer on all five (commit 48b25b5).
+  - Added an `adjudicated_lowflip` sensitivity label (commit 0687f45).
+  - Re-ran all analyses. Effect: SimpleQA/PopQA single-call AUROC 0.733 → 0.778; FRAMES 0.645 → 0.644.
+- **C19 (round 2): test outputs.**
+  - Local paths redacted to `<WORKTREE>` in `output_before_fix*.txt` (commit 0b37910).
+  - Also in `output_fuzzy_before_fix.txt`, which I first committed unredacted in 56085f2 and fixed in 84c3fe5. The path is still present in 56085f2's history, because no history rewrite was allowed.
+- **C20 (round 2): spelling tolerance.**
+  - A new test reproduced false positives (Hansen/Hanson, Janson/Jansen, Morris/Morrie, Lakers/Bakers, Smithe/Smythe): commit 56085f2.
+  - Fix: tolerance narrowed to doubled-letter variants (commit f169730). Test passes.
+  - No label changed in either run.
 - **Verified but not changed** (design findings, see §8):
   - `anyCheckFailed` is computed but unused, so a brief with all checks false and confidence 0.95 is published. A test documents this (`reviewer.test.mjs`).
   - The writer strips `[n]` markers and `citations` is every source URL.
@@ -468,9 +486,9 @@ None of these were modified on this branch.
 
 ## 9. SOP-ready sentences (strictly true as of the fix phase; never mixing subsets in one sentence)
 
-- "On 98 SimpleQA/PopQA research briefs, the reviewer agent's self-reported confidence ranked wrong briefs above chance (single-call AUROC 0.73, 95% CI 0.63–0.83) but was overconfident (ECE 0.25); at the deployed 0.70 threshold it escalated only about 30% of wrong briefs."
+- "On 98 SimpleQA/PopQA research briefs, the reviewer agent's self-reported confidence ranked wrong briefs above chance (single-call AUROC 0.78, 95% CI 0.68–0.86) but was overconfident (ECE 0.28); at the deployed 0.70 threshold it escalated only about 35% of wrong briefs."
 - "On harder multi-hop FRAMES questions the signal was weaker and depended on how answers were labelled (single-call AUROC 0.54–0.68 across four labelings)."
 - "Before using an NLI model as an automatic support judge, I validated it against human hallucination labels (RAGTruth); it performed at chance on held-out data (AUROC 0.44), so I excluded it."
 - "I found that the web-search cache contained public copies of the benchmarks, flagged answer-revealing leaks programmatically (11 of 60 FRAMES and 5 of 100 SimpleQA/PopQA questions), and report the main results with them excluded."
-- "With leaked items excluded, SimpleQA/PopQA briefs were correct 86% of the time when a retrieved snippet contained the answer versus 20% when none did (n = 43 / 50); this is a correlation, not a causal attribution."
+- "With leaked items excluded, SimpleQA/PopQA briefs were correct 86% of the time when a retrieved snippet contained the answer versus 16% when none did (n = 43 / 50); this is a correlation, not a causal attribution."
 - Caveat to keep with any of these: correctness labels are deterministic matching plus adjudication by an LLM (Claude), not human annotation.
