@@ -67,7 +67,7 @@ function runStage(stage, jobId, env) {
       ...process.env, // NOTE: no .env is loaded; no hosted credentials reach the stages
       SUPABASE_URL: "http://mock.invalid", SUPABASE_SERVICE_ROLE_KEY: "mock",
       OLLAMA_BASE_URL: BASE, OLLAMA_API_KEY: "",
-      EVAL_KEY_FILE: "<REPOS>/take-home-project/.env",
+      EVAL_KEY_FILE: process.env.EVAL_KEY_FILE ?? "", // only needed for --base groq
       TAVILY_API_KEY: "cached-ddgs", EVAL_DB_DIR: DB,
       EVAL_SEARCH_DIR: SEARCH,
       EVAL_STAGE: stage, EVAL_JOB: jobId, ...env,

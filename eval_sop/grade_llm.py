@@ -12,7 +12,8 @@ import argparse, json, os, re, time, requests
 HERE = os.path.dirname(os.path.abspath(__file__))
 D = os.path.join(HERE, "runs", os.environ.get("EVAL_RUN", "local"))  # see run_pipeline.mjs
 QFILE = os.path.join(HERE, os.environ.get("EVAL_QUESTIONS", "questions.json"))
-ENV = r"<REPOS>/take-home-project/.env"
+# --base groq only: path to a dotenv file holding OLLAMA_API_KEY, via $EVAL_KEY_FILE (no default).
+ENV = os.environ.get("EVAL_KEY_FILE", "")
 
 PROMPT = """You are grading whether a research brief correctly answers a factual question.
 
@@ -32,6 +33,8 @@ Respond with JSON only: {{"grade": "CORRECT" | "INCORRECT" | "NOT_ATTEMPTED", "a
 
 
 def key():
+    if not ENV:
+        raise SystemExit("--base groq needs EVAL_KEY_FILE=<path to .env>")
     for l in open(ENV, encoding="utf-8"):
         if l.startswith("OLLAMA_API_KEY="):
             return l.split("=", 1)[1].split(" #")[0].strip().strip('"')
