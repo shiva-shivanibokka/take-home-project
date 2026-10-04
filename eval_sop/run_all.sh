@@ -27,4 +27,14 @@ case "$1" in
     unload qwen2.5:7b ;;
 esac
 python eval_sop/grade_match.py
+# original (v1-label) results: results.json [+ results_short.json for FRAMES]; labels_v2.jsonl is
+# moved aside for this step so analyze.py runs in its original mode
+[ -f "eval_sop/runs/$EVAL_RUN/labels_v2.jsonl" ] && mv "eval_sop/runs/$EVAL_RUN/labels_v2.jsonl" "eval_sop/runs/$EVAL_RUN/labels_v2.jsonl.hold"
 python eval_sop/analyze.py
+[ "$1" = frames ] && EVAL_SHORT_ONLY=1 python eval_sop/analyze.py
+[ -f "eval_sop/runs/$EVAL_RUN/labels_v2.jsonl.hold" ] && mv "eval_sop/runs/$EVAL_RUN/labels_v2.jsonl.hold" "eval_sop/runs/$EVAL_RUN/labels_v2.jsonl"
+# corrected labels (fix phase): v2 matcher + adjudication CSV (Claude, not human) + leak flags
+python eval_sop/labels_v2.py
+python eval_sop/analyze.py                                # results_v2.json
+EVAL_EXCLUDE_LEAKED=answer   python eval_sop/analyze.py   # results_v2_noleak.json
+EVAL_EXCLUDE_LEAKED=exposure python eval_sop/analyze.py   # results_v2_noexposure.json

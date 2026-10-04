@@ -6,7 +6,8 @@ questions, numpy seed 0, percentile 95% CIs."""
 import glob, json, os, re
 from collections import defaultdict
 import numpy as np
-from sklearn.metrics import roc_auc_score, cohen_kappa_score
+from sklearn.metrics import roc_auc_score, cohen_kappa_score  # noqa: F401
+from scipy.stats import rankdata
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 D = os.path.join(HERE, "runs", os.environ.get("EVAL_RUN", "local"))  # see run_pipeline.mjs
@@ -20,7 +21,13 @@ def jl(p):
 
 
 def auroc(y, s):
-    return float(roc_auc_score(y, s)) if 0 < y.sum() < len(y) else float("nan")
+    # Mann-Whitney form with average ranks for ties: identical to sklearn.roc_auc_score
+    # (checked in eval_sop/tests/test_analyze_auroc.py) but ~50x faster for the bootstraps.
+    y = np.asarray(y); n1 = int(y.sum()); n0 = len(y) - n1
+    if n1 == 0 or n0 == 0:
+        return float("nan")
+    r = rankdata(np.asarray(s, float))
+    return float((r[y == 1].sum() - n1 * (n1 + 1) / 2) / (n1 * n0))
 
 
 def ece(y_correct, conf, bins=10):
@@ -74,6 +81,24 @@ def main():
     if os.environ.get("EVAL_SHORT_ONLY") == "1":
         lab = {q: r for q, r in lab.items() if len(r["answers"][0].split()) <= 5}
         SUF = "_short"
+    # Fix phase (2026-10-04): corrected labels from labels_v2.py. When labels_v2.jsonl exists:
+    #  * questions whose primary gold appears in the question are dropped (EVAL_KEEP_GIQ=1 keeps them),
+    #  * EVAL_EXCLUDE_LEAKED=answer drops answer-revealing leaks, =exposure drops any mirror exposure,
+    #  * label sets "v2_match" and "adjudicated" are added; EVAL_PRIMARY picks the primary label
+    #    (default "adjudicated"), used for the sweep, reliability plot, paired contrasts and diagnostics.
+    #  * outputs get the prefix "_v2" so the original results*.json files stay untouched.
+    v2 = {}
+    p2 = os.path.join(D, "labels_v2.jsonl")
+    if os.path.exists(p2):
+        v2 = {r["qid"]: r for r in jl(p2)}
+        SUF = "_v2" + SUF
+        if os.environ.get("EVAL_KEEP_GIQ") != "1":
+            lab = {q: r for q, r in lab.items() if not v2[q]["gold_in_question"]}
+        lk = os.environ.get("EVAL_EXCLUDE_LEAKED", "")
+        if lk in ("answer", "exposure"):
+            lab = {q: r for q, r in lab.items() if not v2[q]["leak_" + lk]}
+            SUF += "_noleak" if lk == "answer" else "_noexposure"
+    PL = os.environ.get("EVAL_PRIMARY", "adjudicated" if v2 else "match")
     llm = {}
     for p in glob.glob(os.path.join(D, "labels_llm_*.jsonl")):
         name = os.path.basename(p)[len("labels_llm_"):-6]
@@ -81,6 +106,7 @@ def main():
     # reviews: cond -> seed -> qid -> (conf, checks_failed, exit)
     revs = defaultdict(dict)
     fails = defaultdict(int)
+    parse_fail = defaultdict(int)
     for p in sorted(glob.glob(os.path.join(D, "reviews", "*.jsonl"))):
         name = os.path.basename(p)[:-6]
         m = re.match(r"rev_(.+)_snip(\d+)_s(\d+)_w0", name)
@@ -91,14 +117,21 @@ def main():
             if r["exit"] != 0 or not r["review"]:
                 fails[cond] += 1; d[qid] = (0.0, True, r["exit"]); continue  # crash -> treat as escalate
             rv = r["review"]; ch = rv.get("checks", {})
+            if any("could not parse" in str(x) for x in rv.get("reasons", [])):
+                parse_fail[cond] += 1  # reviewer's own fallback: confidence 0.0 -> escalate
             d[qid] = (float(rv["confidence"]), not all(bool(ch.get(k)) for k in ("citations_supported", "coverage", "factuality")), 0)
         revs[cond][seed] = d
 
     label_sets = {"match": {q: int(not r["correct_match"]) for q, r in lab.items()}}
+    if v2:
+        label_sets["v2_match"] = {q: int(not v2[q]["correct_v2"]) for q in lab}
+        label_sets["adjudicated"] = {q: int(not v2[q]["correct_adj"]) for q in lab}
     for name, g in llm.items():
         label_sets[f"llm_{name}"] = {q: int(v != "CORRECT") for q, v in g.items() if v != "PARSE_FAIL" and q in lab}
 
-    res = {"n_questions": len(lab), "label_agreement": {}, "conditions": {}, "baselines": {}, "diagnostics": {}, "reviewer_failures": dict(fails)}
+    res = {"n_questions": len(lab), "label_agreement": {}, "conditions": {}, "baselines": {}, "diagnostics": {}, "reviewer_failures": dict(fails),
+           "reviewer_parse_failures": dict(parse_fail), "primary_label": PL,
+           "n_reviews_per_condition": {c: sum(len(v) for v in sd.values()) for c, sd in revs.items()}}
     names = list(label_sets)
     for i in range(len(names)):
         for j in range(i + 1, len(names)):
@@ -118,6 +151,13 @@ def main():
             for k in ("auroc", "ece", "esc_precision", "esc_recall", "esc_rate", "mean_conf"):
                 v = np.array([per_seed[s][k] for s in per_seed], float)
                 entry[f"{k}_mean_over_seeds"] = float(np.nanmean(v)); entry[f"{k}_std_over_seeds"] = float(np.nanstd(v, ddof=1)) if len(v) > 1 else 0.0
+            C = {s: np.array([seeds[s][q][0] for q in qids]) for s in sorted(seeds)}
+            entry["single_call_auroc"] = float(np.nanmean([auroc(y, -C[s]) for s in C]))
+            entry["single_call_auroc_ci"] = boot(lambda i: float(np.nanmean([auroc(y[i], -C[s][i]) for s in C])), len(y), rng)
+            entry["single_call_ece"] = float(np.mean([ece(1 - y, C[s]) for s in C]))
+            entry["single_call_ece_ci"] = boot(lambda i: float(np.mean([ece(1 - y[i], C[s][i]) for s in C])), len(y), rng)
+            entry["single_call_esc_precision_ci"] = boot(lambda i: float(np.nanmean([esc_stats(y[i], C[s][i] < THR)[0] for s in C])), len(y), rng)
+            entry["single_call_esc_recall_ci"] = boot(lambda i: float(np.nanmean([esc_stats(y[i], C[s][i] < THR)[1] for s in C])), len(y), rng)
             s0 = sorted(seeds)[0]
             entry["rule_conf_or_checks_seed%d" % s0] = summarize(
                 y, [seeds[s0][q][0] for q in qids], rng,
@@ -146,13 +186,15 @@ def main():
 
     # diagnostics on primary label
     L = lab
+    PLAB = label_sets[PL]
     def rate(f):
-        v = [r for r in L.values() if f(r)]
-        return {"n": len(v), "acc_match": float(np.mean([r["correct_match"] for r in v])) if v else None}
+        v = [q for q, r in L.items() if f(r)]
+        return {"n": len(v), "acc": float(np.mean([1 - PLAB[q] for q in v])) if v else None, "label": PL}
     res["diagnostics"] = {
         "acc_overall": rate(lambda r: True),
         "by_stratum": {s: rate(lambda r, s=s: r["stratum"] == s) for s in sorted({r["stratum"] for r in L.values()})},
         "gold_in_snippets": rate(lambda r: r["gold_in_snippets"]), "gold_not_in_snippets": rate(lambda r: not r["gold_in_snippets"]),
+        "note": "gold_in_snippets uses the v1 matcher on the 350-char snippets; correlational only",
         "frac_gold_in_snippets": float(np.mean([r["gold_in_snippets"] for r in L.values()])),
         "frac_gold_in_rev150": float(np.mean([r["gold_in_rev150"] for r in L.values()])),
         "strip_changed_correctness": int(sum(r["correct_match"] != r["correct_match_raw"] for r in L.values())),
@@ -191,7 +233,7 @@ def main():
     # sweep + reliability for the primary condition
     prim = "llama3-1-8b|snip150" if "llama3-1-8b|snip150" in res["conditions"] else next((c for c in res["conditions"] if c.endswith("snip150")), None)
     if prim:
-        seeds = revs[prim]; Lm = label_sets["match"]
+        seeds = revs[prim]; Lm = label_sets[PL]
         qids = sorted(set(Lm) & set.intersection(*[set(v) for v in seeds.values()]))
         y = np.array([Lm[q] for q in qids])
         with open(os.path.join(D, f"threshold_sweep{SUF}.csv"), "w") as f:
@@ -214,15 +256,15 @@ def main():
         ax[0].plot(xs, ys, "o-", color="#2a6fdb", label="reviewer (mean of seeds)")
         for x_, y_, n_ in zip(xs, ys, ns): ax[0].annotate(f"n={n_}", (x_, y_), textcoords="offset points", xytext=(4, -10), fontsize=8)
         ax[0].axvline(THR, color="#c0392b", lw=1, ls=":", label="escalation threshold 0.70")
-        ax[0].set_xlabel("reviewer confidence"); ax[0].set_ylabel("fraction of briefs correct (gold-answer match)")
+        ax[0].set_xlabel("reviewer confidence"); ax[0].set_ylabel(f"fraction of briefs correct (label: {PL})")
         ax[0].set_title(f"Reliability ({prim}, n={len(y)})", fontsize=9); ax[0].legend(fontsize=7); ax[0].set_xlim(0, 1); ax[0].set_ylim(0, 1)
         ax[1].hist([mc[y == 0], mc[y == 1]], bins=np.linspace(0, 1, 21), label=["correct", "wrong"], color=["#2a6fdb", "#e67e22"])
         ax[1].set_xlabel("reviewer confidence"); ax[1].set_ylabel("briefs"); ax[1].legend(fontsize=8); ax[1].set_title("Confidence by outcome", fontsize=9)
         fig.tight_layout(); fig.savefig(os.path.join(D, f"reliability{SUF}.png"), dpi=130)
     print(json.dumps({k: res[k] for k in ("n_questions", "label_agreement", "diagnostics")}, indent=1))
     for c, v in res["conditions"].items():
-        e = v["match"]["seed_mean_conf"]
-        print(c, "AUROC", round(e["auroc"], 3), e["auroc_ci"], "ECE", round(e["ece"], 3), "prec", round(e["esc_precision"], 3), "rec", round(e["esc_recall"], 3), "esc_rate", e["esc_rate"])
+        e = v[PL]["seed_mean_conf"]
+        print(c, PL, "n", e["n"], "single-call AUROC", round(v[PL]["single_call_auroc"], 3), v[PL]["single_call_auroc_ci"], "pooled AUROC", round(e["auroc"], 3), e["auroc_ci"], "ECE", round(e["ece"], 3), "prec", round(e["esc_precision"], 3), "rec", round(e["esc_recall"], 3), "esc_rate", e["esc_rate"])
 
 
 if __name__ == "__main__":
