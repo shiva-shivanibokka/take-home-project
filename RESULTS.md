@@ -2,14 +2,24 @@
 
 Branch `sop-eval`. This file covers an evaluation of the Multi-Agent Research Desk (collector, writer, reviewer).
 
-**Status (2026-10-02, evening): DONE. The calibration study ran locally on Ollama (§4). Every number below was measured.**
+**Status (2026-10-04, after the fix phase).** The calibration study ran locally on Ollama. An adversarial review then found label errors and benchmark leakage. **§4b reports the corrected numbers and supersedes §4**, which keeps the original-label numbers for the record. No LLM or API call was made in the fix phase; everything was recomputed from committed outputs.
 
-**Headline.** The reviewer's self-reported confidence ranks wrong briefs better than chance and better than the length and source-count baselines:
-- Pooled AUROC is 0.70–0.77 across three question sets (n = 47–100). Per-seed values are 0.67–0.73 ± ≤0.014.
-- The confidence is poorly calibrated: ECE 0.25–0.42, and it is overconfident.
-- At the production threshold of 0.70, escalation catches only 30–55% of wrong briefs.
+**Headline (corrected; primary metric = single-call AUROC, mean over 3 reviewer seeds, 95% bootstrap CI over questions).**
+- **SimpleQA/PopQA (n = 98)**
+  - Single-call AUROC is **0.733 [0.634, 0.826]** for predicting a wrong brief.
+  - The reviewer is overconfident: ECE 0.25.
+  - At the deployed 0.70 threshold it escalates 26% of briefs and catches **31%** of the wrong ones. Precision is 0.56, against a base rate of 0.47.
+  - With the 5 answer-leaked items excluded (n = 93), AUROC is 0.761 [0.658, 0.857].
+- **FRAMES (n = 59)**: the signal is weaker and depends on the label.
+  - Single-call AUROC is 0.645 [0.528, 0.753] with adjudicated labels.
+  - Under the alternative labels it ranges from 0.54 to 0.68.
+  - With the 11 answer-leaked items excluded, it is 0.668 [0.545, 0.796] (n = 48).
+- **Baselines.** Random escalation, "fewer sources is riskier" and "shorter brief is riskier" all sit at chance level, with AUROC between 0.43 and 0.51.
 
-**Labels.** The primary label is a deterministic match against the gold answer. An LLM-grader label is used only as a robustness check, and under it the FRAMES signal weakens (§4).
+**Labels (§4b).**
+- The primary label is **adjudicated by Claude (an LLM), not by a human**. It covers all 60 FRAMES briefs and the 26 disputed SimpleQA/PopQA briefs (`eval_sop/adjudication/adjudicated_labels.csv`). Undisputed briefs keep the matcher label.
+- The original deterministic labels (v1), the improved matcher (v2) and the `qwen2.5:7b` grader are all reported alongside.
+- **No result here is validated by a human.**
 
 **NLI judge.** It failed validation on human RAGTruth labels (§3a) and is not used.
 
@@ -21,6 +31,7 @@ Branch `sop-eval`. This file covers an evaluation of the Multi-Agent Research De
   - LLM calls go to local Ollama, using the native `/api/chat` with a pinned `seed` and `num_ctx`. Every call is logged raw.
 - **Objective "wrong brief" label, no human labels needed.** Each research topic is a question with a public, human-written reference answer. A brief counts as *wrong* when it does not contain the reference answer. This is a deterministic, normalised, word-boundary match of the answer or any alias (`eval_sop/grade_match.py`, unit-tested in `eval_sop/tests/test_grade_match.py`).
   - LLM graders are used only as **robustness labels**, and they are marked as LLM-created.
+  - *Fix phase:* the matcher had errors in both directions. The primary label in §4b is the Claude-adjudicated label (LLM, not human).
   - No headline depends on human labelling. The optional ~150-claim CSV for humans is **not** produced, because no human labelling is planned.
 - **Question set: `eval_sop/questions.json`, 100 questions, seed 0.** Built from datasets already cached locally:
   - **SimpleQA**: 50 questions. Human-written, single indisputable answer.
@@ -52,14 +63,15 @@ Other threats:
 
 ## 3. Pilot (Groq free tier, 2026-10-01), complete deterministic measurements only
 
-Before the user's `.env` was declared off-limits, a 60-question pilot ran on the Groq free tier. The pilot used the key already in the project `.env`, which was allowed by the original rules ("if a key already exists"). It cost $0: about 204k free-tier tokens in total. Note for the coordinator: a Groq key *does* exist in that `.env`. It is not used any further, per the new instruction.
+Before the user's `.env` was declared off-limits, a 60-question pilot ran on the Groq free tier. The pilot used the key already in the project `.env`, which was allowed by the original rules ("if a key already exists"). It cost $0: about 204k free-tier tokens in total.
 
 - Pilot models:
   - Collector: `qwen/qwen3.8-27b`
   - Writer: `openai/gpt-oss-120b`
   - Reviewer: `openai/gpt-oss-20b`, with `reasoning_effort` set by the harness (§5, C5).
 - All raw outputs are in `eval_sop/runs/pilot_groq/`.
-- **Pilot reviews (5 of 60) and LLM grades (15 of 60) are incomplete, because the processes were killed. They are not analysed and must not be cited.**
+- The pilot's reviews (5 of 60) and LLM grades (15 of 60) are incomplete, because the processes were killed. They were moved to `eval_sop/runs/pilot_groq/incomplete_not_analysed/` in the fix phase (C13), are not analysed, and must not be cited.
+- Pilot numbers below use the v1 matcher and are **not** leak-filtered. The pilot search cache contains the same benchmark mirrors as §4b, so the retrieval split is likely inflated.
 
 Complete, deterministic pilot measurements (n = 60 briefs, one writer seed, so there is no seed variance):
 
@@ -76,7 +88,7 @@ Complete, deterministic pilot measurements (n = 60 briefs, one writer seed, so t
 
 Interpretation:
 - Stripping the markers removes all explicit attribution. With markers kept, only 13% of sentences are attributable at all for this writer model.
-- Most errors happen where retrieval missed the answer: 23 of the 25 wrong briefs had no gold answer in their snippets.
+- 23 of the 25 wrong briefs had no gold answer in their snippets. This is correlational and not leak-filtered (see §4b).
 
 ## 3a. NLI-judge validation on RAGTruth (human labels): FAILED
 
@@ -113,7 +125,134 @@ Interpretation:
 - The probe's headers were `x-ratelimit-limit-requests: 14400` and `x-ratelimit-limit-tokens: 15000`. No billing or payment message appeared.
 - To stay inside the assigned family, **no other Groq model was used**, and no further Groq calls are planned.
 
-## 4. Main results (local Ollama, 2026-10-02)
+## 4b. Corrected results (fix phase, 2026-10-04): these supersede §4
+
+### What changed and why
+
+An independent adversarial review found that the deterministic matcher (v1) erred in both directions. It also found that the cached search results contained benchmark mirrors that revealed the answers.
+
+**Label errors the review reported, all of which I confirmed by reading the briefs:**
+- FRAMES false positives: f008, f016, f025, f039.
+- SimpleQA/PopQA false negatives: q010 ("eight" vs 8), q021 (Moussa/Mousa), q028 (middle initial), q036 (two parts in reverse order).
+- SimpleQA/PopQA false positives: q056, q080.
+- Gold answer contained in the question: q057, q072 (dropped), and aliases of q051 and q067.
+- A typo in the gold answer of q022.
+
+**What I did:**
+1. **Matcher v2** (`eval_sop/labels_v2.py`, tests in `eval_sop/tests/test_labels_v2.py`) adds:
+   - number words;
+   - middle initials;
+   - one-edit spelling tolerance for tokens of 5 or more letters;
+   - order-free multi-part answers;
+   - a positional check: the gold must appear in the title, the Summary, or a bold Key-Findings headline;
+   - dropping questions whose primary gold appears in the question (f025, q057, q072);
+   - dropping aliases that share a content word with the question;
+   - a fix for the gold typo in q022.
+
+   The positional rule and the leak-threshold choice (below) were made **after** seeing the review's examples, so they are post hoc. The v2 matcher is *not* an improvement on FRAMES. Its agreement with the adjudicated labels is κ = 0.52, compared with 0.59 for v1, because the positional check is too strict for multi-hop briefs that answer in the body. It is reported, but it is not the primary label.
+2. **Adjudication** (`eval_sop/adjudication/adjudicated_labels.csv`, built by `build_adjudication_csv.py`).
+   - I read and labelled every FRAMES brief (60) and every disputed SimpleQA/PopQA brief (26). A brief counts as disputed when v1, v2 and the qwen grader disagreed, or when the review flagged it.
+   - Each row has a reason and a confidence (high/low; 7 rows are low).
+   - The rule: a brief is correct only if it *commits* to an answer equivalent to the gold. Hedged, contradicted and passing mentions are wrong.
+   - **These labels are LLM-created (Claude), not human.**
+   - Undisputed SimpleQA/PopQA briefs, where v1, v2 and the grader agree, keep that shared label.
+3. **Leak detection** (`labels_v2.py`, programmatic).
+   - A selected source is *exposed* if it comes from a benchmark mirror (huggingface.co) or contains the question verbatim. The verbatim test applies only to questions of 12 or more words, because q068's 10-word question appears verbatim on an ordinary travel page.
+   - It is an **answer-revealing leak** if that exposed snippet also contains the gold answer.
+   - Results:
+
+     | Set | Answer-revealing leaks | Exposed |
+     |---|---|---|
+     | FRAMES | 11/60: f008, f009, f020, f023, f029, f033, f048, f049, f052, f053, f054 | 26/60 |
+     | SimpleQA/PopQA | 5/100: q009, q016, q038, q076, q083 | 14/100 |
+
+   - The lists match the review's exactly.
+   - **Every result below is also reported with these items excluded.**
+
+### Primary reviewer (8B, 150 chars), label = adjudicated, single-call metrics (mean over seeds 0–2) [95% bootstrap CI]
+
+| Set | n | wrong rate | single-call AUROC (± SD over seeds) | single-call ECE | @0.70: escalation rate · precision · recall | pooled AUROC (secondary) |
+|---|---|---|---|---|---|---|
+| SimpleQA/PopQA, all | 98 | 0.47 | **0.733 ± 0.006** [0.634, 0.826] | 0.253 [0.179, 0.347] | 0.26 · 0.56 [0.37, 0.75] · **0.31** [0.19, 0.44] | 0.727 |
+| SimpleQA/PopQA, leaks excluded | 93 | 0.49 | **0.761 ± 0.007** [0.658, 0.857] | 0.275 [0.190, 0.366] | 0.24 · 0.63 [0.44, 0.82] · 0.31 [0.20, 0.43] | 0.756 |
+| SimpleQA/PopQA, all exposed excluded | 84 | 0.50 | 0.786 ± 0.013 [0.685, 0.877] | 0.284 | 0.23 · 0.70 · 0.32 | 0.783 |
+| FRAMES, all | 59 | 0.76 | **0.645 ± 0.014** [0.528, 0.753] | 0.451 [0.335, 0.556] | 0.32 · 0.95 [0.83, 1.00] · 0.40 [0.27, 0.54] | 0.663 |
+| FRAMES, leaks excluded | 48 | 0.85 | **0.668 ± 0.018** [0.545, 0.796] | 0.524 [0.419, 0.624] | 0.35 · 1.00 · 0.41 [0.26, 0.55] | 0.688 |
+| FRAMES, all exposed excluded | 33 | 0.82 | 0.677 ± 0.029 [0.523, 0.819] | 0.468 | 0.35 · 1.00 · 0.43 | 0.694 |
+
+**Old vs new (primary condition)**
+
+| Set | Old (v1 label, pooled AUROC, §4) | New (adjudicated, single-call AUROC) |
+|---|---|---|
+| SimpleQA/PopQA | 0.701 [0.594, 0.801], n = 100 | 0.733 [0.634, 0.826], n = 98 |
+| FRAMES | 0.707 [0.584, 0.824], n = 60 (or 0.765 on the 47-question short subset) | 0.645 [0.528, 0.753], n = 59 |
+
+**Sensitivity to the label (single-call AUROC, primary condition)**
+
+| Set | v1 matcher | v2 matcher | qwen2.5:7b grader (LLM) | adjudicated (Claude, LLM) |
+|---|---|---|---|---|
+| SimpleQA/PopQA (n = 98) | 0.718 | 0.726 | 0.735 | 0.733 |
+| FRAMES (n = 59) | 0.677 | 0.542 | 0.615 | 0.645 |
+| FRAMES, leaks excluded (n = 48) | 0.698 | 0.437 (v2 leaves only 2 correct briefs; degenerate) | 0.616 | 0.668 |
+
+The SimpleQA/PopQA result is stable across labels. **The FRAMES result is label-sensitive**, ranging from 0.54 to 0.70, and several of its CIs reach close to 0.5.
+
+**Label agreement (Cohen's κ)**
+
+| Comparison | κ | Note |
+|---|---|---|
+| FRAMES, fully adjudicated: v1 vs adjudicated | 0.59 | |
+| FRAMES, fully adjudicated: v2 vs adjudicated | 0.52 | |
+| FRAMES, fully adjudicated: qwen grader vs adjudicated | 0.54 | |
+| SimpleQA/PopQA: v1 vs adjudicated | 0.80 | |
+| SimpleQA/PopQA: qwen vs adjudicated | 0.94 | Inflated by construction: undisputed items are ones where qwen already agreed |
+
+**Baselines (adjudicated label; AUROC [CI])**
+
+| Set | random escalation | fewer sources = riskier | shorter brief = riskier |
+|---|---|---|---|
+| SimpleQA/PopQA (n = 98) | 0.50 (0.39–0.61); precision = base rate 0.47 | 0.51 [0.43, 0.59] | 0.50 [0.38, 0.62] |
+| FRAMES (n = 59) | 0.50 (0.33–0.67); precision = 0.76 | 0.51 [0.37, 0.66] | 0.43 [0.26, 0.61] |
+
+The reviewer beats all three baselines on SimpleQA/PopQA. On FRAMES its CI lower bound (0.53) only just clears chance.
+
+**Ablations (FRAMES, adjudicated, single-call AUROC; paired pooled-AUROC difference vs primary [CI])**
+
+| Ablation | All (n = 59) | Leaks excluded (n = 48) |
+|---|---|---|
+| (a) 350-char snippets | 0.693, Δ +0.03 [−0.07, 0.14] | 0.738, Δ +0.04 [−0.13, 0.20] |
+| (b) 3B reviewer | 0.612, Δ −0.04 [−0.21, 0.12] | 0.542, Δ −0.14 [−0.35, 0.10] |
+
+- All CIs include 0, so neither ablation is resolved.
+- The 3B reviewer produced **2 unparseable JSON outputs out of 180** (seeds 0 and 2). The reviewer's own fallback scores these as confidence 0 and escalates them. They are counted in `results_v2*.json → reviewer_parse_failures`. Every other run returned valid JSON with a numeric confidence (checked in the raw logs), so the C3 and C9 coercion fixes did not change any result.
+- Ablation (c) (citations) is unchanged; see §4.
+
+### Retrieval vs correctness (correlational, leaks excluded, adjudicated label)
+
+| Set | Gold in a selected snippet | Gold in no selected snippet |
+|---|---|---|
+| SimpleQA/PopQA (n = 93) | correct 37/43 = 0.86 | correct 10/50 = 0.20 |
+| FRAMES (n = 48) | correct 2/4 | correct 5/44 = 0.11 |
+
+- On FRAMES, almost every brief with the answer in a snippet was a leaked item, so the earlier "77–94% vs 14–18%" split relied heavily on leaked items. **It is withdrawn.**
+- This is an association. It does not decompose errors into retrieval vs generation causes.
+- "Gold in snippet" uses the v1 matcher on the 350-char snippets.
+
+### What the corrected numbers support / do not support
+
+**Supported:**
+- On SimpleQA/PopQA, single-call reviewer confidence ranks wrong briefs above chance, with a CI lower bound of 0.63, robustly across all four labels and with leaks excluded.
+- It is overconfident (ECE 0.25–0.28).
+- At 0.70 it escalates only about 31% of wrong briefs.
+
+**Not supported:**
+- A FRAMES-specific claim stronger than "weaker and label-sensitive".
+- Any ablation effect.
+- Anything validated by human labels: the primary labels are Claude-adjudicated.
+
+## 4. ORIGINAL-label results (2026-10-02) - SUPERSEDED by §4b
+
+The numbers in this section use the v1 matcher and include leaked and gold-in-question items. They are kept unchanged for the record. Do not cite them; use §4b.
 
 ### Setup
 
@@ -123,7 +262,7 @@ Interpretation:
 
 **Label.** A brief is *wrong* when it does not contain the gold answer (deterministic match, no LLM).
 - As a robustness check, an LLM grader (`qwen2.5:7b`, a different model family) re-labelled every brief. Those labels are LLM-created.
-- No run failed. `reviewer_failures` is 0 in every condition.
+- No stage process failed: `reviewer_failures` is 0. *Correction (fix phase):* the 3B reviewer did return 2 unparseable JSON outputs (out of 180), which its fallback scores as confidence 0 (§4b).
 
 **Statistics.**
 - AUROC is computed with (1 − confidence) as the score for "wrong".
@@ -247,6 +386,22 @@ Every app-code change has a test. Test outputs are committed.
   - A Windows-safe grader file name (no `:`).
   - The `eval_sop/run_all.sh` driver.
   - Reviewer raw logs are gzip-compressed to keep committed data small.
+- **C9: reviewer coercion edge cases (reproduce, then fix).**
+  - `confidence: true` became 1.0 and published; `REVIEWER_SNIPPET_CHARS=""` became 0 chars.
+  - Two failing tests: commit add391c, `eval_sop/tests/output_before_fix2.txt`.
+  - Fix: commit cabb99e, 8/8 tests pass, `output_after_fix2.txt`.
+  - All raw reviewer outputs had numeric confidences, so no result changes.
+- **C10: no hardcoded `.env` paths.** `grade_llm.py` and `run_pipeline.mjs` now read `EVAL_KEY_FILE` from the environment. It has no default and is only needed for the Groq path (commit 5f55f02).
+- **C11: corrected labels.** Matcher v2, gold-in-question drop, leak flags, and the adjudication CSV (Claude, not human). Also `analyze.py` single-call metrics, parse-failure counting, `EVAL_EXCLUDE_LEAKED`, and a faster exact AUROC (equal to sklearn, `tests/test_analyze_auroc.py`). Commits 55d5318, df1b580, 3fe275f.
+  - Verification: with `EVAL_KEEP_GIQ=1`, the new code reproduces the original v1 numbers exactly (e.g. SimpleQA/PopQA pooled AUROC 0.70149, CI [0.5941, 0.8007]).
+  - The original `results*.json` files are untouched; new outputs use `_v2`.
+- **C12: `run_all.sh`** now also produces `results_short.json` (FRAMES) and the `_v2` results.
+- **C13: incomplete pilot reviews and grades** moved to `runs/pilot_groq/incomplete_not_analysed/` (commit a400d08). I chose to move them rather than delete them, to keep provenance.
+- **C14: gzip raw writer logs.** `gen_w0.jsonl` became `.gz` in all three runs. `grade_match.py` reads `.gz`, and the regenerated `labels_match.jsonl` is byte-identical (commit c819d9f).
+- **C15: `SOURCES.md` licence lines** (commit f0b10c9):
+  - SimpleQA: MIT, per its dataset card.
+  - PopQA: not stated in the cached card.
+  - RAGTruth: not verified.
 - **Verified but not changed** (design findings, see §8):
   - `anyCheckFailed` is computed but unused, so a brief with all checks false and confidence 0.95 is published. A test documents this (`reviewer.test.mjs`).
   - The writer strips `[n]` markers and `citations` is every source URL.
@@ -303,8 +458,19 @@ All runs are resumable.
 - Writer: when all 4 LLM retries return 429, `ollamaChat` returns `undefined` and the stage crashes with `Cannot destructure property 'content'` (seen on 2026-10-01 in an aborted run whose writer was `qwen/qwen3.8-27b`; log kept in the scratchpad, not committed). The orchestrator retries, so this is harmless but noisy. It is not fixed and has no test yet.
 - `05-research-desk.html` (the assignment brief) is committed to the repo. If the assignment is confidential, it probably should not be public. It was left untouched.
 
-## 9. SOP-ready sentences (strictly true as of this commit)
+## 8b. Confer material: for the user to decide (not touched)
 
-- "I evaluated whether an LLM reviewer's self-reported confidence predicts errors in a three-agent research pipeline. On 160 objectively graded briefs (60 FRAMES, 100 SimpleQA/PopQA questions), its confidence ranked wrong briefs above chance (AUROC 0.70–0.77, lower 95% bounds ≥ 0.58), but it was poorly calibrated (ECE 0.25–0.42). At the deployed 0.70 threshold it escalated only 30–55% of wrong briefs."
-- "Before using an NLI model as an automatic support judge, I validated it against human hallucination labels (RAGTruth). It performed at chance on held-out data (AUROC 0.44), so I excluded it and grounded the evaluation in reference-answer matching instead."
-- "I found that most errors traced to retrieval rather than generation: briefs were correct 77–94% of the time when a retrieved snippet contained the answer, and 14–18% of the time when none did."
+- `05-research-desk.html`: the committed assignment brief from Confer Inc. It may be confidential.
+- `README.md` line 3: the header "Confer Inc. · AI/ML Engineering Take-Home · Assignment 5 of 5".
+- `README.md` §"A+ rubric mapping" (line 440 onward): a table mapping the assignment's rubric signals.
+
+None of these were modified on this branch.
+
+## 9. SOP-ready sentences (strictly true as of the fix phase; never mixing subsets in one sentence)
+
+- "On 98 SimpleQA/PopQA research briefs, the reviewer agent's self-reported confidence ranked wrong briefs above chance (single-call AUROC 0.73, 95% CI 0.63–0.83) but was overconfident (ECE 0.25); at the deployed 0.70 threshold it escalated only about 30% of wrong briefs."
+- "On harder multi-hop FRAMES questions the signal was weaker and depended on how answers were labelled (single-call AUROC 0.54–0.70 across four labelings)."
+- "Before using an NLI model as an automatic support judge, I validated it against human hallucination labels (RAGTruth); it performed at chance on held-out data (AUROC 0.44), so I excluded it."
+- "I found that the web-search cache contained public copies of the benchmarks, flagged answer-revealing leaks programmatically (11 of 60 FRAMES and 5 of 100 SimpleQA/PopQA questions), and report every result with them excluded."
+- "With leaked items excluded, SimpleQA/PopQA briefs were correct 86% of the time when a retrieved snippet contained the answer versus 20% when none did (n = 43 / 50); this is a correlation, not a causal attribution."
+- Caveat to keep with any of these: correctness labels are deterministic matching plus adjudication by an LLM (Claude), not human annotation.
