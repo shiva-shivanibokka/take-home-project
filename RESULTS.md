@@ -471,6 +471,6 @@ None of these were modified on this branch.
 - "On 98 SimpleQA/PopQA research briefs, the reviewer agent's self-reported confidence ranked wrong briefs above chance (single-call AUROC 0.73, 95% CI 0.63–0.83) but was overconfident (ECE 0.25); at the deployed 0.70 threshold it escalated only about 30% of wrong briefs."
 - "On harder multi-hop FRAMES questions the signal was weaker and depended on how answers were labelled (single-call AUROC 0.54–0.68 across four labelings)."
 - "Before using an NLI model as an automatic support judge, I validated it against human hallucination labels (RAGTruth); it performed at chance on held-out data (AUROC 0.44), so I excluded it."
-- "I found that the web-search cache contained public copies of the benchmarks, flagged answer-revealing leaks programmatically (11 of 60 FRAMES and 5 of 100 SimpleQA/PopQA questions), and report every result with them excluded."
+- "I found that the web-search cache contained public copies of the benchmarks, flagged answer-revealing leaks programmatically (11 of 60 FRAMES and 5 of 100 SimpleQA/PopQA questions), and report the main results with them excluded."
 - "With leaked items excluded, SimpleQA/PopQA briefs were correct 86% of the time when a retrieved snippet contained the answer versus 20% when none did (n = 43 / 50); this is a correlation, not a causal attribution."
 - Caveat to keep with any of these: correctness labels are deterministic matching plus adjudication by an LLM (Claude), not human annotation.
