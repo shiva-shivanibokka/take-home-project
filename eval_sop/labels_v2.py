@@ -14,7 +14,8 @@ Writes runs/$EVAL_RUN/labels_v2.jsonl with, per question:
 Matcher v2 = v1 plus:
   * number words <-> digits ("eight" == "8"), on both sides;
   * person names: an optional single-letter middle initial between tokens ("Talbot H. Waterman");
-  * one-edit spelling tolerance for alphabetic tokens of >= 5 letters ("Moussa" ~ "Mousa");
+  * doubled-letter spelling tolerance for alphabetic tokens of >= 5 letters ("Moussa" ~ "Mousa");
+    (round 2: narrowed from any 1-edit, which matched Hansen/Hanson)
   * multi-part golds ("A and B", "A, B & C") match order-free when every part matches;
   * extra aliases (never the primary gold) that share a >= 4-letter content word with the
     question are dropped
@@ -67,8 +68,19 @@ def lev1(a, b):
     return any(b[:i] + b[i + 1:] == a for i in range(len(b)))
 
 
+def doubled_letter_variant(a, b):
+    """True if a and b differ only by one doubled letter (Moussa/Mousa, Phillips/Philips).
+    Round-2 fix: a general 1-edit tolerance also matched distinct names (Hansen/Hanson)."""
+    if abs(len(a) - len(b)) != 1:
+        return False
+    if len(a) < len(b):
+        a, b = b, a
+    return any(a[:i] + a[i + 1:] == b and ((i > 0 and a[i - 1] == a[i]) or (i + 1 < len(a) and a[i + 1] == a[i]))
+               for i in range(len(a)))
+
+
 def tok_eq(b, g, fuzzy=True):
-    return b == g or (fuzzy and len(g) >= 5 and g.isalpha() and b.isalpha() and lev1(b, g))
+    return b == g or (fuzzy and len(g) >= 5 and g.isalpha() and b.isalpha() and doubled_letter_variant(b, g))
 
 
 def seq_match(T, G, fuzzy=True):
