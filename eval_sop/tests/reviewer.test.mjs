@@ -99,3 +99,18 @@ test("missing confidence field must not crash the reviewer (should escalate)", a
   assert.equal(r.code, 0, `reviewer crashed: ${r.stderr.slice(-200)}`);
   assert.equal(r.review.verdict, "escalate");
 });
+
+// Fix phase (2026-10-04): coercion edge cases reported by the adversarial review.
+test("boolean confidence (true) must not be coerced to 1.0 - treated as non-numeric, escalate", async () => {
+  const r = await runWithStub(JSON.stringify({ citations_supported: true, coverage: true, factuality: true, confidence: true, reasons: [] }));
+  assert.equal(r.code, 0);
+  assert.equal(r.review.confidence, 0);
+  assert.equal(r.review.verdict, "escalate");
+});
+
+test("REVIEWER_SNIPPET_CHARS='' falls back to the 150-char default (not 0)", async () => {
+  const a = await runWithStub(OK, { REVIEWER_SNIPPET_CHARS: "" });
+  assert.equal(a.code, 0);
+  assert.ok(a.prompts[0].includes("A".repeat(150)), "empty env var must not hide the snippet");
+  assert.ok(!a.prompts[0].includes("§"));
+});
