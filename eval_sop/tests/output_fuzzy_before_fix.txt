@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<WORKTREE>\eval_sop\tests\test_labels_v2_fuzzy.py", line 12, in <module>
+    assert not fails, f"false positives: {fails}"
+           ^^^^^^^^^
+AssertionError: false positives: [('Peter Hanson', 'Peter Hansen'), ('born in Jansen', 'Janson'), ('Mr Morris', 'Morrie'), ('the Lakers', 'Bakers'), ('Smithe', 'Smythe')]
