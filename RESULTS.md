@@ -363,15 +363,15 @@ Every app-code change has a test. Test outputs are committed.
   - What changed: `s.snippet?.slice(0, 150)` became `slice(0, REVIEWER_SNIPPET_CHARS)`, with a default of 150.
   - Evidence: `eval_sop/tests/reviewer.test.mjs` shows that the default prompt is byte-identical to the reviewer at 417589b, and that a value of 350 exposes the full snippet.
   - Preserved: all comments and the default behaviour.
-- **C2, tests reproducing a crash** (commit e356e13).
+- **C2, tests reproducing a crash** (commit 8b7f021).
   - At 417589b, `run.mjs:168` calls `confidence.toFixed(2)`. This throws when the LLM returns `"confidence": "0.85"` (string) or omits the field. 2 tests fail: `eval_sop/tests/output_before_fix.txt`.
-- **C3, fix: coerce confidence to a number** (commit 85fad0a).
+- **C3, fix: coerce confidence to a number** (commit 2e5ca43).
   - Non-numeric values become 0.0, which escalates. This mirrors the existing parse-failure fallback.
   - 6/6 tests pass: `eval_sop/tests/output_after_fix.txt`.
   - Preserved: the original rationale comment about checks no longer overriding the verdict.
   - Effect on the eval: it only matters in runs where the LLM emits a non-numeric confidence, and those runs are counted in `results.json → reviewer_failures` / logs.
 - **C4, eval harness** (commit d578eaf, plus later commits): mock DB, cached search, seeded Ollama transport, question set. No app code.
-- **C5, harness transport** (this prep commit):
+- **C5, harness transport** (commit `a719d84`):
   - Local Ollama calls are sent with `node:http` and no client timeout. Under GPU contention, undici's 300 s header timeout made the collector fail (`fetch failed` after 1257 s on 2026-10-01; that aborted run's log is kept in the session scratchpad, not committed).
   - The Groq path adds `seed` and `reasoning_effort` (`low` for gpt-oss, `none` for qwen3). Without it, gpt-oss spent the collector's 128 `max_tokens` on hidden reasoning and returned empty content (probe on 2026-10-01). It is used for the pilot only.
   - Each run has its own directory (`EVAL_RUN`), plus an interleaved stratum order and a `list` phase.
@@ -393,33 +393,54 @@ Every app-code change has a test. Test outputs are committed.
   - Reviewer raw logs are gzip-compressed to keep committed data small.
 - **C9: reviewer coercion edge cases (reproduce, then fix).**
   - `confidence: true` became 1.0 and published; `REVIEWER_SNIPPET_CHARS=""` became 0 chars.
-  - Two failing tests: commit add391c, `eval_sop/tests/output_before_fix2.txt`.
-  - Fix: commit cabb99e, 8/8 tests pass, `output_after_fix2.txt`.
+  - Two failing tests: commit a7695a4, `eval_sop/tests/output_before_fix2.txt`.
+  - Fix: commit 7f2fa6c, 8/8 tests pass, `output_after_fix2.txt`.
   - All raw reviewer outputs had numeric confidences, so no result changes.
-- **C10: no hardcoded `.env` paths.** `grade_llm.py` and `run_pipeline.mjs` now read `EVAL_KEY_FILE` from the environment. It has no default and is only needed for the Groq path (commit 5f55f02).
-- **C11: corrected labels.** Matcher v2, gold-in-question drop, leak flags, and the adjudication CSV (Claude, not human). Also `analyze.py` single-call metrics, parse-failure counting, `EVAL_EXCLUDE_LEAKED`, and a faster exact AUROC (equal to sklearn, `tests/test_analyze_auroc.py`). Commits 55d5318, df1b580, 3fe275f.
+- **C10: no hardcoded `.env` paths.** `grade_llm.py` and `run_pipeline.mjs` now read `EVAL_KEY_FILE` from the environment. It has no default and is only needed for the Groq path (commit 941a43b).
+- **C11: corrected labels.** Matcher v2, gold-in-question drop, leak flags, and the adjudication CSV (Claude, not human). Also `analyze.py` single-call metrics, parse-failure counting, `EVAL_EXCLUDE_LEAKED`, and a faster exact AUROC (equal to sklearn, `tests/test_analyze_auroc.py`). Commits 348ebfa, e44158d, a6768d2.
   - Verification: with `EVAL_KEEP_GIQ=1`, the new code reproduces the original v1 numbers exactly (e.g. SimpleQA/PopQA pooled AUROC 0.70149, CI [0.5941, 0.8007]).
   - The original `results*.json` files are untouched; new outputs use `_v2`.
 - **C12: `run_all.sh`** now also produces `results_short.json` (FRAMES) and the `_v2` results.
-- **C13: incomplete pilot reviews and grades** moved to `runs/pilot_groq/incomplete_not_analysed/` (commit a400d08). I chose to move them rather than delete them, to keep provenance.
-- **C14: gzip raw writer logs.** `gen_w0.jsonl` became `.gz` in all three runs. `grade_match.py` reads `.gz`, and the regenerated `labels_match.jsonl` is byte-identical (commit c819d9f).
-- **C15: `SOURCES.md` licence lines** (commit f0b10c9):
+- **C13: incomplete pilot reviews and grades** moved to `runs/pilot_groq/incomplete_not_analysed/` (commit e04dec0). I chose to move them rather than delete them, to keep provenance.
+- **C14: gzip raw writer logs.** `gen_w0.jsonl` became `.gz` in all three runs. `grade_match.py` reads `.gz`, and the regenerated `labels_match.jsonl` is byte-identical (commit 7577160).
+- **C15: `SOURCES.md` licence lines** (commit 43ab78b):
   - SimpleQA: MIT, per its dataset card.
   - PopQA: not stated in the cached card.
   - RAGTruth: not verified.
-- **C16 (round 2): FRAMES label-sensitivity range** corrected to 0.54–0.68 (all 59). 0.70 belongs to the leak-excluded range, 0.44–0.70 (commit 7073049).
-- **C17 (round 2): leak SOP sentence** now says "the main results" (commit cd8fc4d).
+- **C16 (round 2): FRAMES label-sensitivity range** corrected to 0.54–0.68 (all 59). 0.70 belongs to the leak-excluded range, 0.44–0.70 (commit b28535d).
+- **C17 (round 2): leak SOP sentence** now says "the main results" (commit 1d452dc).
 - **C18 (round 2): adjudication.**
-  - f001, f011, q024, q065 and q083 relabelled as wrong after re-reading; I agreed with the reviewer on all five (commit 48b25b5).
-  - Added an `adjudicated_lowflip` sensitivity label (commit 0687f45).
+  - f001, f011, q024, q065 and q083 relabelled as wrong after re-reading; I agreed with the reviewer on all five (commit 64b929f).
+  - Added an `adjudicated_lowflip` sensitivity label (commit 0038158).
   - Re-ran all analyses. Effect: SimpleQA/PopQA single-call AUROC 0.733 → 0.778; FRAMES 0.645 → 0.644.
 - **C19 (round 2): test outputs.**
-  - Local paths redacted to `<WORKTREE>` in `output_before_fix*.txt` (commit 0b37910).
-  - Also in `output_fuzzy_before_fix.txt`, which I first committed unredacted in 56085f2 and fixed in 84c3fe5. The path is still present in 56085f2's history, because no history rewrite was allowed.
+  - Local paths redacted to `<WORKTREE>` in `output_before_fix*.txt` (commit f1ad3cd).
+  - Also in `output_fuzzy_before_fix.txt`, which was first committed unredacted and fixed in a follow-up commit. **The path is no longer present anywhere in this branch's history.** The earlier statement here ("still present in 57ce091's history, because no history rewrite was allowed") was true when written and is now false twice over: the history has since been rewritten twice, and the two commits it named no longer exist. See §C21 for the verified position.
 - **C20 (round 2): spelling tolerance.**
-  - A new test reproduced false positives (Hansen/Hanson, Janson/Jansen, Morris/Morrie, Lakers/Bakers, Smithe/Smythe): commit 56085f2.
-  - Fix: tolerance narrowed to doubled-letter variants (commit f169730). Test passes.
+  - A new test reproduced false positives (Hansen/Hanson, Janson/Jansen, Morris/Morrie, Lakers/Bakers, Smithe/Smythe): commit 57ce091.
+  - Fix: tolerance narrowed to doubled-letter variants (commit 2ac213c). Test passes.
   - No label changed in either run.
+- **C21 (post-review): the history was rewritten, and every commit hash in this document was re-derived against it.**
+  - **What happened.** This branch's history was rewritten **twice**: first a squash, then a `git filter-branch --tree-filter` over all **35** commits in `main..HEAD`, applying the same placeholder substitutions to every commit. Both passes were done by the repository owner, not here.
+  - **Verified per commit, with the pre-rewrite backup as a positive control** (a scan that finds nothing proves nothing unless it can be shown to find the thing when it is there):
+
+    | pattern | commits on `sop-eval` | commits on `backup/pre-filter-takehome2` |
+    |---|---|---|
+    | the machine's user name | **0** | 28 |
+    | the `.env` path's parent directory name | **0** | 14 |
+    | `OneDrive` | **0** | 28 |
+    | `C:/Users` | **0** | 28 |
+    | `AppData` | **0** | 28 |
+
+  - **Commit messages are clean too:** grepping all 35 messages for the user name, the `.env` path's parent directory name, `OneDrive` and `C:\Users` returns nothing.
+  - **The final tree is byte-identical.** `HEAD^{tree}`, `backup/pre-filter-takehome2^{tree}` and `backup/pre-squash-takehome^{tree}` are all `6d7aa31242c78ba6f21d0f0eb398112e37e4fd8b`. The rewrites changed history only; no tracked content at HEAD changed.
+  - **Backups are local only:** `backup/pre-filter-takehome2` and `backup/pre-squash-takehome`. Because 28 of their commits still carry the user name and 14 the `.env` path, **they must never be pushed.**
+  - **Hashes re-derived, not trusted.** 21 of the 24 cited commit hashes were stale. Each was re-resolved by matching commit *subject lines* against `git log main..HEAD`, and each replacement verified both to exist (`git cat-file -e`) **and** to be reachable from HEAD (`git merge-base --is-ancestor`). The ancestor test is the one that matters: a bare `git cat-file -e` succeeds for pre-rewrite SHAs in this clone, because the `backup/*` branches keep the old objects reachable, so existence alone would have reported zero stale hashes.
+  - **Two previously cited hashes were superseded and have no surviving equivalent of their own:**
+    - `56085f2` ("1-edit spelling tolerance creates false positives … reproduces") survives as **`57ce091`**, but with the `(round-2 fix 4b)` suffix dropped from its subject by the rewrite, so it is not an exact subject match.
+    - `84c3fe5` ("redact local path in `output_fuzzy_before_fix.txt`, missed in 56085f2") has **no counterpart at all**: the tree-filter applied that redaction to every commit, so the follow-up fix became a no-op and was absorbed. `57ce091`'s copy of `output_fuzzy_before_fix.txt` is now byte-identical to HEAD's, i.e. already redacted at the commit that introduced it. Where that work needed citing, `57ce091` is cited; no mapping was invented for `84c3fe5`.
+  - **Three cited hashes were already valid** and were left unchanged: `417589b`, `8becb11`, `d578eaf`. `58d9fb63` was also left alone — it is the FRAMES dataset revision on its source hub, not a commit in this repository.
+  - **Residual:** the rewrite is local to this clone. Any clone taken before it, and either `backup/*` branch, still contains the unscrubbed blobs.
 - **Verified but not changed** (design findings, see §8):
   - `anyCheckFailed` is computed but unused, so a brief with all checks false and confidence 0.95 is published. A test documents this (`reviewer.test.mjs`).
   - The writer strips `[n]` markers and `citations` is every source URL.
