@@ -156,6 +156,8 @@ def main():
             "correct_v2": v2,
             "correct_adj": (adj[qid]["adjudicated_correct"] == "1") if qid in adj else v2,
             "adjudicated": qid in adj,
+            # sensitivity: every remaining LOW-confidence adjudication flipped
+            "correct_adj_lowflip": ((adj[qid]["adjudicated_correct"] == "1") != (adj[qid]["confidence"] == "low")) if qid in adj else v2,
             "gold_in_question": giq, "answers_used_v2": ans,
             "leak_answer": any(contains_v1(s.get("snippet", ""), q["answers"]) for s in exposed),
             "leak_exposure": bool(exposed),

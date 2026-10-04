@@ -126,6 +126,7 @@ def main():
     if v2:
         label_sets["v2_match"] = {q: int(not v2[q]["correct_v2"]) for q in lab}
         label_sets["adjudicated"] = {q: int(not v2[q]["correct_adj"]) for q in lab}
+        label_sets["adjudicated_lowflip"] = {q: int(not v2[q]["correct_adj_lowflip"]) for q in lab}
     for name, g in llm.items():
         label_sets[f"llm_{name}"] = {q: int(v != "CORRECT") for q, v in g.items() if v != "PARSE_FAIL" and q in lab}
 
