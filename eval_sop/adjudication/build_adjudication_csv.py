@@ -6,14 +6,14 @@ confidence: high = unambiguous; low = judgment call (hedging, partial lists, num
 import csv, json, os
 HERE = os.path.dirname(os.path.abspath(__file__)); E = os.path.dirname(HERE)
 F = {  # FRAMES: all 60
- "f001": (1,"high","states Cheyenne lies in the southeast of Wyoming"),
+ "f001": (0,"high","revised after round-2 review (2026-10-04): Key Findings also answer 'east' twice - conflicting answers"),
  "f002": (0,"low","names She's All That only as 'reminiscent of'; never commits to it as the answer"),
  "f003": (0,"high","no series named"), "f004": (0,"high","answers 18th century; gold 19th"),
  "f005": (0,"high","never names Wausau"), "f006": (1,"high","Saving Private Ryan (long-form gold)"),
  "f007": (0,"high","discusses Federer; no Kratochvil"),
  "f008": (0,"high","'Illinois' appears only as 'the dataset includes the answer', not asserted (leaked item)"),
  "f009": (1,"high","1946 (leaked item)"), "f010": (0,"high","no host cities named"),
- "f011": (1,"low","names Aniston, Cox and LeBlanc as appearing in music videos; speculative extra text"),
+ "f011": (0,"high","revised after round-2 review (2026-10-04): claims 4 cast members incl. Phoebe/Kudrow vs gold 3"),
  "f012": (1,"high","Gladys Knight born in Atlanta"), "f013": (0,"high","68 vs 37 KOs (=31); gold 15"),
  "f014": (0,"high","39 years; gold 117"), "f015": (0,"high","says impossible to compute"),
  "f016": (0,"high","answers Panic Room; gold Fight Club"), "f017": (1,"high","total equals Budelli's 1 resident"),
@@ -43,16 +43,16 @@ L = {  # SQA/PopQA: disputed items only (v1 vs v2 vs qwen grader, or flagged by 
  "q003": (1,"low","reports Spotify lists 37 songs; summary says count is consistent"),
  "q010": (1,"high","'eight minutes' = 8"), "q016": (1,"high","Pacific Coast intercollegiate (leaked item)"),
  "q020": (1,"high","executive-in-charge of production"), "q021": (1,"high","Amr Moussa (spelling variant)"),
- "q022": (0,"high","says sources lack the score (gold has typo 'Geogia')"), "q024": (1,"low","'pushing a chicken in a baby carriage'"),
+ "q022": (0,"high","says sources lack the score (gold has typo 'Geogia')"), "q024": (0,"high","revised after round-2 review (2026-10-04): only 'may also contain a chicken'; concludes contents unsolved"),
  "q028": (1,"high","Talbot H. Waterman"), "q030": (0,"low","gives a range 128-2,048 KB, not 2048"),
  "q036": (1,"high","Economics and Mathematical Sciences"), "q040": (1,"high","Vale of Kashmir"),
  "q043": (0,"high","keywords given are semantic maps, challenges, new avenues, methods"),
  "q048": (1,"high","49-year marriage"), "q050": (1,"high","1827"), "q051": (1,"high","Lower Saxony"),
  "q056": (0,"high","claims David Koepp was sole screenwriter; Lindelof only as creator"),
  "q057": (1,"high","Ghana - but gold is in the question: item dropped"), "q061": (0,"high","says capital is Bontoc"),
- "q065": (1,"low","states Itagaki was director, then calls his role unclear"), "q067": (1,"high","Nouakchott"),
+ "q065": (0,"high","revised after round-2 review (2026-10-04): concludes the director is a matter of controversy / unclear"), "q067": (1,"high","Nouakchott"),
  "q072": (0,"low","never states a capital - and gold is in the question: item dropped"), "q080": (0,"high","Bern only for a different Manon; no commitment"),
- "q081": (1,"high","Herentals"), "q083": (1,"high","Antwerp (leaked item)"), "q091": (0,"high","names other directors"),
+ "q081": (1,"high","Herentals"), "q083": (0,"high","revised after round-2 review (2026-10-04): Antwerp given only with an 'accuracy uncertain' caveat (leaked item)"), "q091": (0,"high","names other directors"),
  "q098": (0,"high","Joseph Kane named as director, producer unknown"),
 }
 rows = []
