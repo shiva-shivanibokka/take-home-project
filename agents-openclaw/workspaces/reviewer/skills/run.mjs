@@ -42,7 +42,8 @@ const OLLAMA_MODEL = process.env.OLLAMA_MODEL ?? "llama3.2:3b";
 const CONFIDENCE_THRESHOLD = Number(process.env.CONFIDENCE_THRESHOLD ?? 0.70);
 // Eval hook (sop-eval branch): how many snippet characters the reviewer sees.
 // Default 150 preserves the original behaviour exactly.
-const REVIEWER_SNIPPET_CHARS = Number(process.env.REVIEWER_SNIPPET_CHARS ?? 150);
+// An empty or non-positive value falls back to 150 (Number("") would be 0).
+const REVIEWER_SNIPPET_CHARS = Number(process.env.REVIEWER_SNIPPET_CHARS) > 0 ? Number(process.env.REVIEWER_SNIPPET_CHARS) : 150;
 console.log(`[reviewer] using model: ${OLLAMA_MODEL}`);
 
 async function ollamaChat(messages, maxTokens = 512) {
@@ -168,7 +169,10 @@ ${brief_markdown}
   // `confidence.toFixed` below then threw and the stage crashed. Coerce to a
   // number; anything non-numeric becomes 0.0 (escalate), mirroring the
   // parse-failure fallback above. See eval_sop/tests/reviewer.test.mjs.
-  const confidence = Number.isFinite(Number(evaluation.confidence)) ? Number(evaluation.confidence) : 0.0;
+  // Only numbers and numeric strings count; booleans/null/"" become 0.0 (Number(true) would be 1).
+  const rawConf = evaluation.confidence;
+  const confidence = (typeof rawConf === "number" || (typeof rawConf === "string" && rawConf.trim() !== ""))
+    && Number.isFinite(Number(rawConf)) ? Number(rawConf) : 0.0;
   const anyCheckFailed = !citations_supported || !coverage || !factuality;
   const verdict = confidence < CONFIDENCE_THRESHOLD ? "escalate" : "publish";
 
