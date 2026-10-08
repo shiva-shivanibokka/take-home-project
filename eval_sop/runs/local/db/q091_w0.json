@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q091_w0",
+    "topic": "Who was the director of The Chicken?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q091_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Chicken (2015 film) - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Chicken_(2015_film)",
+            "snippet": "Chicken received positive reviews and holds a 100% rating on Rotten Tomatoes based on 12 critics’ reviews. [3] Leslie Felperin of The Guardian scored the film at three out of five, and said \"first-time director Joe Stephenson elicits lively, empathic performances from his small cast\". [4] Mark Kermode rated the film at four out of five, describing ",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "Locarno 'The Chicken' Director Neo Sora Preps 'Earthquake'",
+            "url": "https://variety.com/2020/film/global/locarno-the-chicken-neo-sora-earthquake-1234725163/",
+            "snippet": "Neo Sora , director of “The Chicken,” playing in this year’s Locarno Festival short film competition, and his producer Albert Tholen have shared details on the filmmaker’s upcoming debut feature “Earthquake,” a screenplay participant at Berlinale Talents Tokyo in 2017.",
+            "published": "",
+            "source": "variety.com"
+          },
+          {
+            "title": "Chicken (2015 film) — Grokipedia",
+            "url": "https://grokipedia.com/page/chicken_2015_film",
+            "snippet": "Chicken is a 2015 British drama film directed by Joe Stephenson in his feature directorial debut. [1] Adapted from the play of the same name by Freddie Machin, the screenplay was written by Chris New. [2] The film stars Scott Chambers as Richard, a 15-year-old boy with learning disabilities living in rural poverty; Morgan Watkins as his volatile ol",
+            "published": "",
+            "source": "grokipedia.com"
+          },
+          {
+            "title": "‘The Chicken’ Director Una Gunjak Explores Teenage Sexuality in...",
+            "url": "https://www.yahoo.com/entertainment/chicken-director-una-gunjak-explores-153718951.html",
+            "snippet": "Following her award-winning short \"The Chicken,\" Bosnian director Una Gunjak is back in the director's seat with her debut feature, \"Excursion.\" The film centers on Iman, a teenager who is seeking validation and who reveals she had sex for the first time during a game of \"truth...",
+            "published": "",
+            "source": "yahoo.com"
+          },
+          {
+            "title": "Q&A With Chicken Director Joe Stephenson - battleroyalewithcheese",
+            "url": "https://battleroyalewithcheese.com/2016/05/q-director-chicken-joe-stephenson/",
+            "snippet": "Chicken is the debut feature length film directed by Joe Stephenson.Chicken is a unique gem of a little movie and Joe explained that it was important to him: “to make a film lead by a character with learning difficulties that wasn’t actually about his learning difficulties”. Does he succeed?",
+            "published": "",
+            "source": "battleroyalewithcheese.com"
+          },
+          {
+            "title": "Interview & Review with Chicken director Joe Stephenson - Quench",
+            "url": "https://cardiffstudentmedia.co.uk/quench/film-tv/interview-review-chicken-director-joe-stephenson/",
+            "snippet": "Heart-warming, emotionally captivating and equal parts darkness and light, Joe Stephenson’s feature debut film Chicken is, conversely to the title, not solely about farm animals.",
+            "published": "",
+            "source": "cardiffstudentmedia.co.uk"
+          },
+          {
+            "title": "Chicken director Alana Hicks: “The industry is shifting radically.”",
+            "url": "https://www.bfi.org.uk/london-film-festival/interviews/alana-hicks-chicken",
+            "snippet": "Director Alana Hicks candidly discusses her short film Chicken, Papua New Guinea and other things of the non-poultry variety. 28 October 2020.Chicken shows a way of experience that myself and many other people of the diaspora can relate to. Did it come from personal experience?",
+            "published": "",
+            "source": "bfi.org.uk"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 9; selected 7 for Writer.",
+        "tokens_used": 547,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 547,
+      "created_at": "2026-10-02T20:07:08.238Z"
+    },
+    "writing": {
+      "job_id": "q091_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Who was the director of The Chicken?",
+        "brief_markdown": "# Who was the director of The Chicken?\n\n## Summary\n\nThe research topic \"Who was the director of The Chicken?\" may seem straightforward, but it reveals a complex and nuanced issue. The Chicken is a 2015 British drama film that has received positive reviews, but the information about its director is inconsistent. The film has been attributed to multiple directors, including Joe Stephenson, Una Gunjak, and Alana Hicks. This brief aims to clarify the correct director of The Chicken and provide an analysis of the implications of this confusion.\n\n## Key Findings\n\n* **Director of The Chicken: Joe Stephenson**\n\t+ According to Wikipedia, Chicken received positive reviews and holds a 100% rating on Rotten Tomatoes based on 12 critics’ reviews. Leslie Felperin of The Guardian scored the film at three out of five, and said \"first-time director Joe Stephenson elicits lively, empathic performances from his small cast\". This suggests that Joe Stephenson was indeed the director of The Chicken.\n\t+ The Grokipedia article also confirms that Joe Stephenson directed the film in his feature directorial debut, adapted from the play of the same name by Freddie Machin.\n\t+ The inconsistency in attributing the directorship of The Chicken to multiple individuals may be due to a lack of clear information or a misunderstanding of the film's production credits.\n* **Una Gunjak's Connection to The Chicken**\n\t+ Una Gunjak is mentioned as the director of The Chicken in a Yahoo! Entertainment article, which discusses her award-winning short film \"The Chicken\" and her debut feature \"Excursion\". However, this article does not provide any evidence that Una Gunjak was involved in the production of the 2015 film.\n\t+ It is possible that Una Gunjak was involved in a different project with a similar title, or that the article is referring to a different film altogether.\n* **Alana Hicks' Connection to The Chicken**\n\t+ Alana Hicks is mentioned as the director of a short film called Chicken in a BFI article, which discusses her film and its themes. However, this article does not provide any evidence that Alana Hicks was involved in the production of the 2015 film.\n\t+ It is possible that Alana Hicks was involved in a different project with a similar title, or that the article is referring to a different film altogether.\n* **The Industry's Shifting Landscape**\n\t+ Alana Hicks' comment in the BFI article highlights the rapidly changing landscape of the film industry, where new voices and perspectives are emerging. This shift may contribute to the confusion surrounding the directorship of The Chicken.\n\t+ The industry's shift towards more diverse and inclusive storytelling may lead to a greater emphasis on the director's vision and creative input, rather than their name or credentials.\n* **The Importance of Clarity in Film Credits**\n\t+ The confusion surrounding the directorship of The Chicken highlights the importance of clear and accurate film credits. This is particularly crucial in the film industry, where the director's vision and creative input can greatly impact the final product.\n\t+ The lack of clarity in film credits can lead to confusion among audiences, critics, and industry professionals, and may even impact the film's marketing and distribution.\n* **The Role of Online Sources in Shaping Public Perception**\n\t+ Online sources, such as Wikipedia and Yahoo! Entertainment, can play a significant role in shaping public perception of a film and its director. However, these sources may not always provide accurate or up-to-date information.\n\t+ The reliance on online sources can lead to a proliferation of misinformation, which can have serious consequences for the film industry and its stakeholders.\n\n## Analysis\n\nThe directorship of The Chicken is a complex issue that highlights the nuances of the film industry. The confusion surrounding the directorship of The Chicken may be due to a lack of clear information or a misunderstanding of the film's production credits. However, the evidence suggests that Joe Stephenson was indeed the director of The Chicken. The inconsistency in attributing the directorship of The Chicken to multiple individuals may be due to a lack of clear information or a misunderstanding of the film's production credits.\n\nThe industry's shift towards more diverse and inclusive storytelling may contribute to the confusion surrounding the directorship of The Chicken. The emphasis on the director's vision and creative input may lead to a greater emphasis on the director's name and credentials, rather than the actual director. This shift highlights the importance of clarity in film credits, particularly in the film industry, where the director's vision and creative input can greatly impact the final product.\n\nThe reliance on online sources in shaping public perception of a film and its director is also a concern. Online sources may not always provide accurate or up-to-date information, leading to a proliferation of misinformation. This can have serious consequences for the film industry and its stakeholders, including confusion among audiences, critics, and industry professionals.\n\nIn conclusion, the directorship of The Chicken is a complex issue that highlights the nuances of the film industry. The evidence suggests that Joe Stephenson was indeed the director of The Chicken, and the inconsistency in attributing the directorship to multiple individuals may be due to a lack of clear information or a misunderstanding of the film's production credits. The industry's shift towards more diverse and inclusive storytelling and the reliance on online sources in shaping public perception are also concerns that highlight the importance of clarity in film credits and the need for accurate and up-to-date information.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/Chicken_(2015_film)",
+          "https://variety.com/2020/film/global/locarno-the-chicken-neo-sora-earthquake-1234725163/",
+          "https://grokipedia.com/page/chicken_2015_film",
+          "https://www.yahoo.com/entertainment/chicken-director-una-gunjak-explores-153718951.html",
+          "https://battleroyalewithcheese.com/2016/05/q-director-chicken-joe-stephenson/",
+          "https://cardiffstudentmedia.co.uk/quench/film-tv/interview-review-chicken-director-joe-stephenson/",
+          "https://www.bfi.org.uk/london-film-festival/interviews/alana-hicks-chicken"
+        ],
+        "word_count": 910,
+        "tokens_used": 2125,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2125,
+      "created_at": "2026-10-02T20:07:32.943Z"
+    }
+  }
+}

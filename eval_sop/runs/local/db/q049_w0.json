@@ -1,0 +1,140 @@
+{
+  "job": {
+    "id": "q049_w0",
+    "topic": "What month and year was the Tigray People's Liberation Front removed from the list of terrorist organizations by the Ethiopian government?",
+    "status": "review",
+    "locked_at": null,
+    "locked_by": null
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q049_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Ethiopia’s peace deal: What went wrong with the Tigray... | Monitor",
+            "url": "https://www.monitor.co.ug/uganda/news/ethiopia-s-peace-deal-what-went-wrong-with-the-tigray-agreement-5614248",
+            "snippet": "Instead, the Tigray People’s Liberation Front was deregistered and Tigray was excluded from the June 2026 elections.The federal government was to help remove the front’s terrorist designation, restore essential services in Tigray and enable humanitarian access.",
+            "published": "",
+            "source": "monitor.co.ug"
+          },
+          {
+            "title": "Ethiopia makes further step for long-term peace - uGrowth",
+            "url": "https://ugrowth.co/ethiopia-makes-further-step-for-long-term-peace/",
+            "snippet": "The decision by the Ethiopian Parliament to delist the Tigray People’s Liberation Front (TPLF) as a terrorist organisation is being viewed as a positive step to help the Horn of African country recover from its two-year war.",
+            "published": "",
+            "source": "ugrowth.co"
+          },
+          {
+            "title": "Ethiopia Establishes New Tigray Interim Govt - allAfrica.com",
+            "url": "https://allafrica.com/view/group/main/main/id/00085230.html",
+            "snippet": "The Ethiopian government has also removed from Tigray from its terrorist list.Members of the Ethiopian House of Peoples Representatives (HoPR) during its 6th round, 2nd year, 1st special meeting held today de-listed the terrorist designation. According to…",
+            "published": "",
+            "source": "allafrica.com"
+          },
+          {
+            "title": "What is driving renewed fighting in Ethiopia? - The EastAfrican",
+            "url": "https://www.theeastafrican.co.ke/tea/news/eastern-africa/what-is-driving-renewed-fighting-in-ethiopia-5616382",
+            "snippet": "Its main opponent in the north is the TPLF, which was the dominant organization in Ethiopia’s ruling coalition from 1991 until Abiy became prime minister in 2018. It remains the strongest organized political and military force in Tigray.",
+            "published": "",
+            "source": "theeastafrican.co.ke"
+          },
+          {
+            "title": "New Tigray crisis: Can anyone broker peace in Ethiopia?",
+            "url": "https://www.dw.com/en/ethiopia-who-could-bring-the-warring-sides-to-the-negotiation-table/a-79475529",
+            "snippet": "Members of the Tigray People's Liberation Front (TPLF) are seen walking along a main road in Mekelle in September 2026.",
+            "published": "",
+            "source": "dw.com"
+          },
+          {
+            "title": "Arresting the Dangerous Descent Back into War in Northern Ethiopia...",
+            "url": "https://martinplaut.com/2026/09/27/arresting-the-dangerous-descent-back-into-war-in-northern-ethiopia-international-crisis-group/",
+            "snippet": "After months of building tensions, on 23 September large-scale hostilities broke out between the Tigray People’s Liberation Front (TPLF) and Amhara Fano militias, on one side, and the federal government and allied Tigrayan forces on the other.",
+            "published": "",
+            "source": "martinplaut.com"
+          },
+          {
+            "title": "FALSE: This image does not show an Eritrean soldier captured in Oromia",
+            "url": "https://pesacheck.org/false-this-image-does-not-show-an-eritrean-soldier-captured-in-oromia/",
+            "snippet": "While the Ethiopian government indeed confirmed the presence of Eritrean troops in Tigray, and escalating tension in Oromia, the post claiming to show an image of an Eritrean soldier captured in Oromia is not true.",
+            "published": "",
+            "source": "pesacheck.org"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 617,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 617,
+      "created_at": "2026-10-02T20:20:32.008Z"
+    },
+    "writing": {
+      "job_id": "q049_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Deregistration of the Tigray People's Liberation Front from Terrorist List",
+        "brief_markdown": "# Deregistration of the Tigray People's Liberation Front from Terrorist List\n\n## Summary\n\nThe Tigray People's Liberation Front (TPLF) was removed from the list of terrorist organizations by the Ethiopian government in a significant development aimed at promoting peace and stability in the region. The deregistration was a result of a peace deal reached between the Ethiopian government and the TPLF, which was intended to bring an end to the two-year conflict in the Tigray region. The decision was seen as a positive step towards long-term peace, but its implementation has been marred by renewed fighting and tensions in the region. This research brief aims to provide an analysis of the key findings surrounding the deregistration of the TPLF and its implications for the region.\n\n## Key Findings\n\n* **Deregistration of the TPLF as a Terrorist Organization**: The Ethiopian government removed the TPLF from its list of terrorist organizations, a move seen as a positive step towards peace in the region. This decision was made by the Ethiopian Parliament, which de-listed the TPLF as a terrorist organization during its 6th round, 2nd year, 1st special meeting. The deregistration was part of a broader peace deal aimed at ending the conflict in Tigray.\n* **Removal of Tigray from Terrorist List**: In addition to de-listing the TPLF, the Ethiopian government also removed Tigray from its terrorist list. This move was seen as a significant step towards promoting peace and stability in the region. The decision was intended to help the region recover from the two-year conflict and enable humanitarian access.\n* **June 2026 Elections**: The peace deal also included provisions for the June 2026 elections, which were intended to be held in Tigray. However, the elections were eventually excluded from the agreement, and the federal government was to help remove the TPLF's terrorist designation.\n* **Tensions and Renewed Fighting**: Despite the deregistration of the TPLF, tensions and renewed fighting have continued in the region. The TPLF remains the strongest organized political and military force in Tigray, and its main opponent in the north is the Ethiopian government.\n* **Humanitarian Access**: The deregistration of the TPLF was intended to enable humanitarian access to the region. However, humanitarian access has been limited, and the situation in Tigray remains dire.\n* **Peace Deal Implementation**: The implementation of the peace deal has been marred by challenges, including the presence of Eritrean troops in Tigray and escalating tension in Oromia. The peace deal was intended to bring an end to the conflict in Tigray, but its implementation has been slow and incomplete.\n* **International Community's Role**: The international community has been involved in efforts to broker peace in Ethiopia, but its role has been limited. The situation in Ethiopia remains complex, and a lasting solution will require the involvement of all stakeholders, including the TPLF, the Ethiopian government, and the international community.\n\n## Analysis\n\nThe deregistration of the TPLF from the list of terrorist organizations by the Ethiopian government was a significant development aimed at promoting peace and stability in the region. However, its implementation has been marred by challenges, including renewed fighting and tensions in the region. The peace deal aimed at ending the conflict in Tigray was intended to be a comprehensive solution, but its implementation has been slow and incomplete. The presence of Eritrean troops in Tigray and escalating tension in Oromia have contributed to the ongoing challenges in the region.\n\nThe deregistration of the TPLF was a positive step towards peace, but its impact has been limited by the ongoing tensions and renewed fighting in the region. The situation in Ethiopia remains complex, and a lasting solution will require the involvement of all stakeholders, including the TPLF, the Ethiopian government, and the international community. The international community has a role to play in brokering peace in Ethiopia, but its involvement has been limited. A more comprehensive approach is needed to address the root causes of the conflict and promote lasting peace in the region.\n\nThe deregistration of the TPLF has implications for the region and the international community. It highlights the need for a more comprehensive approach to addressing the root causes of conflict and promoting lasting peace. The situation in Ethiopia remains a concern, and the international community must continue to engage with the stakeholders to find a lasting solution. The deregistration of the TPLF was a significant development, but its impact will be limited if the underlying challenges are not addressed.",
+        "citations": [
+          "https://www.monitor.co.ug/uganda/news/ethiopia-s-peace-deal-what-went-wrong-with-the-tigray-agreement-5614248",
+          "https://ugrowth.co/ethiopia-makes-further-step-for-long-term-peace/",
+          "https://allafrica.com/view/group/main/main/id/00085230.html",
+          "https://www.theeastafrican.co.ke/tea/news/eastern-africa/what-is-driving-renewed-fighting-in-ethiopia-5616382",
+          "https://www.dw.com/en/ethiopia-who-could-bring-the-warring-sides-to-the-negotiation-table/a-79475529",
+          "https://martinplaut.com/2026/09/27/arresting-the-dangerous-descent-back-into-war-in-northern-ethiopia-international-crisis-group/",
+          "https://pesacheck.org/false-this-image-does-not-show-an-eritrean-soldier-captured-in-oromia/"
+        ],
+        "word_count": 740,
+        "tokens_used": 1968,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 1968,
+      "created_at": "2026-10-02T20:20:53.557Z"
+    }
+  },
+  "events": [
+    {
+      "job_id": "q049_w0",
+      "type": "escalated",
+      "stage": "review",
+      "detail": {
+        "confidence": 0.6,
+        "reasons": [
+          "The brief contains a fabrication: the Ethiopian Parliament de-listed the TPLF as a terrorist organization during its 6th round, 2nd year, 1st special meeting, which is not supported by any of the provided sources.",
+          "The brief contradicts the sources: the sources indicate that the TPLF was deregistered and Tigray was excluded from the June 2026 elections, but the brief states that the TPLF was removed from the list of terrorist organizations and that the federal government was to help remove the TPLF's terrorist designation.",
+          "The brief lacks clarity and precision: the sources provide a clear timeline of events, but the brief is vague and lacks specific details about the deregistration process and its implications."
+        ],
+        "checks": {
+          "citations_supported": false,
+          "coverage": true,
+          "factuality": false
+        }
+      },
+      "created_at": "2026-10-02T20:28:21.973Z"
+    },
+    {
+      "job_id": "q049_w0",
+      "type": "escalated",
+      "stage": "review",
+      "detail": {
+        "confidence": 0.6,
+        "reasons": [
+          "The brief claims that the TPLF was deregistered and Tigray was excluded from the June 2026 elections, but source [1] states that the TPLF was deregistered and Tigray was excluded from the elections, not that the TPLF was deregistered as a terrorist organization.",
+          "The brief states that the decision to de-list the TPLF was made by the Ethiopian Parliament during its 6th round, 2nd year, 1st special meeting, but this information is not present in any of the provided sources.",
+          "The brief contains contradictions with source [6], which states that the conflict between the TPLF and Amhara forces broke out on 23 September, but the brief does not provide a clear date for the deregistration of the TPLF."
+        ],
+        "checks": {
+          "citations_supported": false,
+          "coverage": true,
+          "factuality": false
+        }
+      },
+      "created_at": "2026-10-02T20:41:04.323Z"
+    }
+  ]
+}

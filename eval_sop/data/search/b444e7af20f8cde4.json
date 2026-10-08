@@ -1,0 +1,58 @@
+{
+ "query": "If you take the height of the Eiffel Tower in metres, add the number of arrondissements in Paris and subtract the street number of the official residence of the French prime minister, is the final answer a prime number?",
+ "id": "f022",
+ "retrieved_at": "2026-10-02T17:20:41.725010+00:00",
+ "engine": "ddgs.text",
+ "results": [
+  {
+   "title": "Eiffel Tower - Wikipedia",
+   "href": "https://en.wikipedia.org/wiki/Eiffel_Tower",
+   "body": "Origin. The design of the Eiffel Tower is attributed to Maurice Koechlin and \u00c9mile Nouguier, two senior engineers working for the Compagnie des \u00c9tablissements Eiffel."
+  },
+  {
+   "title": "The OFFICIAL Eiffel Tower website: tickets, news, info...",
+   "href": "https://www.toureiffel.paris/en",
+   "body": "Photo of the official rivet of the Eiffel Tower.*This data is for indicative purposes only, as a day at the Tower is never the same: it varies widely depending upon the day in the week, the season, the weather and the number of elevators available each day."
+  },
+  {
+   "title": "Paris Vlog The Most Romantic Weekend in Paris \ud83c\uddeb\ud83c\uddf7 - YouTube",
+   "href": "https://www.youtube.com/watch?v=hvbiKbpFEAA",
+   "body": "From watching the Eiffel Tower sparkle at night to walking through the charming Parisian streets, every moment felt like a dream come true. In this vlog, we\u2019re explore some of the most beautiful places in Paris, enjoy authentic French food, visit the iconic Caf\u00e9..."
+  },
+  {
+   "title": "Why do prime numbers make these spirals? | 3Blue1Brown",
+   "href": "https://www.3blue1brown.com/lessons/prime-spirals/",
+   "body": "A curious pattern in polar plots with prime numbers, together with discussion of Dirichlet's theorem."
+  },
+  {
+   "title": "Prime Minister's Office, 10 Downing Street - GOV.UK",
+   "href": "https://www.gov.uk/government/organisations/prime-ministers-office-10-downing-street",
+   "body": "The door of Number 10 Downing Street.The Prime Minister\u2019s Partnerships Unit, based in Number 10, exists to make this a reality."
+  },
+  {
+   "title": "Prime Number Calculator",
+   "href": "https://www.math.com/students/calculators/source/prime-number.htm",
+   "body": "Prime Number. Enter a number and the Prime Number Calculator will instantly tell you if it is a prime number or not."
+  },
+  {
+   "title": "Eiffel Tower Chief Resigns After Female Staff Moved for Hindu...",
+   "href": "https://www.nytimes.com/2026/09/30/world/europe/eiffel-tower-director-resigns.html",
+   "body": "The director of the company running the Eiffel Tower will step down at the end of the year, the company said, after an episode this month in which men replaced female employees while members of a prominent Hindu group visited."
+  },
+  {
+   "title": "Go behind the scenes of this amazing landmark.",
+   "href": "https://kids.nationalgeographic.com/history/article/eiffel-tower",
+   "body": "The top of the Eiffel Tower seems like the perfect spot to study stars and weather. No wonder Eiffel set up two small laboratories on the third level where astronomers and meteorologists could work. Eiffel conducted his own experiments as well."
+  },
+  {
+   "title": "tripsavvy.com/paris-arrondissements-map-and-guide-4136464",
+   "href": "https://www.tripsavvy.com/paris-arrondissements-map-and-guide-4136464",
+   "body": "A Guide to the Arrondissements of Paris: Map & Getting Around."
+  },
+  {
+   "title": "\u3010LIVE\u3011 Webcam Paris - Eiffel Tower | SkylineWebcams",
+   "href": "https://www.skylinewebcams.com/en/webcam/france/ile-de-france/paris/tour-eiffel.html",
+   "body": "Paris, stunning view of the Eiffel Tower with the D\u00f4me des Invalides.Offering one of the best vantage points to capture the Eiffel Tower in its entirety, the Trocad\u00e9ro Gardens is situated directly across the Seine from the tower."
+  }
+ ]
+}

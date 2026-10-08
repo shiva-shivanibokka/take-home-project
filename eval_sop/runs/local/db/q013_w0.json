@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q013_w0",
+    "topic": "At which international show jumping event did Susie Hutchison and Samsung Woodstock get blocked mid-round by the ring crew?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q013_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Susie Hutchison on Letting the Horse Guide You | ProEquest",
+            "url": "https://www.proequest.com/blog/susie-hutchison-letting-horse-guide-you",
+            "snippet": "Feb 9, 2021 · Susie Hutchison & Samsung Woodstock - Pennington Galleries The Horses Susie grew up riding Thoroughbreds – they were the easiest to start because they had already learned to go forward and straight. She always trained them for the hunter ring first because in those days we didn’t have the lower jumping divisions.",
+            "published": "",
+            "source": "proequest.com"
+          },
+          {
+            "title": "Susie Hutchinson and Samsung Woodstock foiled by jump crew",
+            "url": "https://equineink.com/2015/08/27/susie-hutchinson-and-samsung-woodstock-foiled-by-jump-crew/",
+            "snippet": "Aug 27, 2015 · Sometimes those big jumper courses can get confusing . . . at least that was probably the excuse of the jump crew when they ended up standing IN FRONT of a jump that Susie Hutchinson and Samsung Woodstock were trying to jump in the 1993 Volvo FEI World Cup Final. I’m not sure what’s more impressive — that she didn’t run them over, th",
+            "published": "",
+            "source": "equineink.com"
+          },
+          {
+            "title": "Horse News | Susan Hutchison & samsung woodstock . World ...",
+            "url": "https://www.instagram.com/reel/DROxWCxjFnA/",
+            "snippet": "27K likes, 72 comments - horse__news on November 19, 2025: \"Susan Hutchison & samsung woodstock . World cup final 1993 . A heart-stopping moment! In the 1993 World Cup, a crew member stood right in front of a fence, but Samsung Woodstock stayed clever and calm, clearing it flawlessly. True trust between rider and horse. . لحظهای که هیچکس فکر نمیکرد",
+            "published": "",
+            "source": "instagram.com"
+          },
+          {
+            "title": "1993 Woodstock Susie Hutchison World Cup Finals Ringcrew with ...At which international show jumping event did Susie Hutchison ...",
+            "url": "https://www.youtube.com/watch?v=b1h-Qrf0DMc",
+            "snippet": "Mar 15, 2013 · 1993 Woodstock Susie Hutchison World Cup Finals Ringcrew with Sound Susie Hutchison 194 subscribers 93 53K views 13 years ago At which international show jumping event did Susie Hutchison and Samsung Woodstock get blocked mid-round by the ring crew? à vendre à Montréal. Trouvez tout ce dont vous avez de besoin directement sur LesPAC!",
+            "published": "",
+            "source": "youtube.com"
+          },
+          {
+            "title": "At which international show jumping event did Susie Hutchison ...",
+            "url": "https://www.lespac.com/montreal/at-which-international-show-jumping-event-did-susie-hutchison-and-samsung-woodstock-get-blocked-mid-round-by-the-ring-crew_aZ164QXQgd2hpY2ggaW50ZXJuYXRpb25hbCBzaG93IGp1bXBpbmcgZXZlbnQgZGlkIFN1c2llIEh1dGNoaXNvbiBhbmQgU2Ftc3VuZyBXb29kc3RvY2sgZ2V0IGJsb2NrZWQgbWlkLXJvdW5kIGJ5IHRoZSByaW5nIGNyZXc_g17567k1R1.jsa",
+            "snippet": "At which international show jumping event did Susie Hutchison and Samsung Woodstock get blocked mid-round by the ring crew? à vendre à Montréal. Trouvez tout ce dont vous avez de besoin directement sur LesPAC! Que vous souhaitiez vendre ou acheter quelque chose par rapport au terme At which international show jumping event did Susie Hutchison and S",
+            "published": "",
+            "source": "lespac.com"
+          },
+          {
+            "title": "Susan hutchison stables",
+            "url": "https://susanhutchisonstables.com/",
+            "snippet": "Susie+Woodstock+3.jpg. Susie ASAP.jpeg.Matching riders with their perfect horse is a task I take seriously. I love to see a happy horse and rider enjoy each other and have success in their chosen discipline, whether it’s hunter/jumpers, dressage, eventing, or trail riding.",
+            "published": "",
+            "source": "susanhutchisonstables.com"
+          },
+          {
+            "title": "Susie Hutchison | Ice Horse Sponsored Riders - MacKinnon Products",
+            "url": "https://icehorse.com/pages/susie-hutchison",
+            "snippet": "Susie started riding by the age of five at the Flintridge Riding Club. As a pupil of the legendary horseman Jimmy A. Williams, Riding Master at Flintridge, Susan won all the horseman finals offered on the West Coast while she was a junior rider.",
+            "published": "",
+            "source": "icehorse.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 8; selected 7 for Writer.",
+        "tokens_used": 558,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 558,
+      "created_at": "2026-10-02T19:50:09.657Z"
+    },
+    "writing": {
+      "job_id": "q013_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "International Show Jumping Event: Susie Hutchison and Samsung Woodstock's Blockage",
+        "brief_markdown": "# International Show Jumping Event: Susie Hutchison and Samsung Woodstock's Blockage\n\n## Summary\n\nSusie Hutchison and her horse Samsung Woodstock were involved in a notable incident at an international show jumping event in 1993. The ring crew stood in front of a fence, blocking their path, but Samsung Woodstock remained calm and cleared the jump. This incident highlights the trust and partnership between a rider and their horse. The event in question is the 1993 Volvo FEI World Cup Final, where Hutchison and Woodstock were participating. The incident showcases the importance of communication and trust between a rider and their horse, as well as the skill and composure required in high-pressure situations.\n\n## Key Findings\n\n* **1993 Volvo FEI World Cup Final Incident**: Susie Hutchison and Samsung Woodstock were competing in the 1993 Volvo FEI World Cup Final when they encountered a critical moment. According to, the ring crew stood in front of a jump, blocking their path. Hutchison's horse, Samsung Woodstock, remained calm and cleared the jump flawlessly. This incident showcases the trust and partnership between a rider and their horse.\n* **Samsung Woodstock's Composure**: The fact that Samsung Woodstock remained calm and cleared the jump despite the ring crew's interference is a testament to the horse's training and Hutchison's riding skills. As states, \"Samsung Woodstock stayed clever and calm, clearing it flawlessly.\" This composure is crucial in high-pressure situations, where a horse's reaction can greatly impact the outcome of a competition.\n* **Hutchison's Experience and Training**: Susie Hutchison's experience and training played a significant role in this incident. As mentions, Hutchison grew up riding Thoroughbreds, which were known for their forward and straight movement. She trained them for the hunter ring first, which suggests that she developed a strong foundation in riding and horse handling. This experience likely contributed to her ability to remain calm and composed in the face of unexpected situations.\n* **Ring Crew's Mistake**: The ring crew's mistake in standing in front of the jump highlights the importance of attention to detail and communication in show jumping events. As shows, the incident was captured on video, and the ring crew's error is evident. This incident serves as a reminder of the need for precision and attention to detail in high-pressure situations.\n* **Hutchison and Woodstock's Partnership**: The trust and partnership between Hutchison and Samsung Woodstock are evident in this incident. As states, \"True trust between rider and horse.\" This partnership is built on a foundation of mutual respect, trust, and communication, which allows them to perform at their best even in challenging situations.\n* **Implications for Show Jumping**: This incident has implications for show jumping as a sport. It highlights the importance of attention to detail, communication, and trust between a rider and their horse. It also showcases the skill and composure required in high-pressure situations, where a horse's reaction can greatly impact the outcome of a competition.\n* **Legacy of the Incident**: The 1993 Volvo FEI World Cup Final incident has left a lasting legacy in the show jumping community. It serves as a reminder of the importance of attention to detail, communication, and trust between a rider and their horse. It also highlights the skill and composure required in high-pressure situations, where a horse's reaction can greatly impact the outcome of a competition.\n\n## Analysis\n\nThe 1993 Volvo FEI World Cup Final incident between Susie Hutchison and Samsung Woodstock highlights the importance of attention to detail, communication, and trust between a rider and their horse. The ring crew's mistake in standing in front of the jump showcases the need for precision and attention to detail in high-pressure situations. Hutchison's experience and training played a significant role in this incident, as she remained calm and composed despite the unexpected situation.\n\nThe trust and partnership between Hutchison and Samsung Woodstock are evident in this incident. Their ability to communicate and work together seamlessly allowed them to perform at their best even in challenging situations. This partnership is built on a foundation of mutual respect, trust, and communication, which allows them to excel in the show jumping arena.\n\nThe implications of this incident extend beyond the show jumping community. It highlights the importance of attention to detail, communication, and trust in any high-pressure situation. It also showcases the skill and composure required in situations where a horse's reaction can greatly impact the outcome of a competition.\n\nIn conclusion, the 1993 Volvo FEI World Cup Final incident between Susie Hutchison and Samsung Woodstock is a testament to the importance of attention to detail, communication, and trust between a rider and their horse. It highlights the skill and composure required in high-pressure situations, where a horse's reaction can greatly impact the outcome of a competition. This incident has left a lasting legacy in the show jumping community, serving as a reminder of the importance of attention to detail, communication, and trust between a rider and their horse.",
+        "citations": [
+          "https://www.proequest.com/blog/susie-hutchison-letting-horse-guide-you",
+          "https://equineink.com/2015/08/27/susie-hutchinson-and-samsung-woodstock-foiled-by-jump-crew/",
+          "https://www.instagram.com/reel/DROxWCxjFnA/",
+          "https://www.youtube.com/watch?v=b1h-Qrf0DMc",
+          "https://www.lespac.com/montreal/at-which-international-show-jumping-event-did-susie-hutchison-and-samsung-woodstock-get-blocked-mid-round-by-the-ring-crew_aZ164QXQgd2hpY2ggaW50ZXJuYXRpb25hbCBzaG93IGp1bXBpbmcgZXZlbnQgZGlkIFN1c2llIEh1dGNoaXNvbiBhbmQgU2Ftc3VuZyBXb29kc3RvY2sgZ2V0IGJsb2NrZWQgbWlkLXJvdW5kIGJ5IHRoZSByaW5nIGNyZXc_g17567k1R1.jsa",
+          "https://susanhutchisonstables.com/",
+          "https://icehorse.com/pages/susie-hutchison"
+        ],
+        "word_count": 819,
+        "tokens_used": 2302,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2302,
+      "created_at": "2026-10-02T19:50:33.189Z"
+    }
+  }
+}

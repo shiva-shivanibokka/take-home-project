@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q063_w0",
+    "topic": "Who is the author of Left Behind?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q063_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "The Tim LaHaye and Jerry B. Jenkins Story: Why the Authors of Left...",
+            "url": "https://filtron.co/the-tim-lahaye-and-jerry-b-jenkins-story-why-the-authors-of-left-behind-still-matter-today-18th",
+            "snippet": "The Brains and the Pen: Who Was the Real Author of Left Behind?The author of Left Behind legacy isn't just in the books or the movies, though. It’s in how Christian media is produced today. Before Left Behind, Christian fiction was often seen as \"safe\" or \"boring.\"",
+            "published": "",
+            "source": "filtron.co"
+          },
+          {
+            "title": "Left Behind A Novel of the Earth’s Last Days by Tim LaHaye",
+            "url": "https://en.touchelivros.com.br/left-behind-a-novel-of-the-earths-last-days-tim-lahaye-10/",
+            "snippet": "“Left Behind”, with more than six million copies sold in the last five years, is now available in a paperback geared for those who love the large-print format. Join Rayford, Buck, Chloe, and others as they search for the truth after millions of people disappear in an instant.",
+            "published": "",
+            "source": "en.touchelivros.com.br"
+          },
+          {
+            "title": "Left Behind by Emmaline Hoffmeister | 9781936850327 | Booktopia",
+            "url": "https://www.booktopia.com.au/left-behind-emmaline-hoffmeister/book/9781936850327.html",
+            "snippet": "\"Left Behind will resonate with readers who love a tale full of heart and soul.\" \"I cried chapter after chapter. Left Behind broke my soul before piecing it back together in a whole new way. I will never be the same again.\"",
+            "published": "",
+            "source": "booktopia.com.au"
+          },
+          {
+            "title": "They Won't Be Left Behind • Reportage from the Aesthetic Edge",
+            "url": "https://randallpacker.com/wont-left-behind/",
+            "snippet": "Heaven rejoices as millions are welcomed into the unspeakable presence of God. The darkest days may lie ahead for those who have been left behind. – Tim LaHaye, author of Left Behind.",
+            "published": "",
+            "source": "randallpacker.com"
+          },
+          {
+            "title": "A Journey into Human Resilience through “Left Behind” | Medium",
+            "url": "https://medium.com/@dino.tropea/a-journey-into-human-resilience-through-left-behind-dd54214cd14b",
+            "snippet": "Through “Left Behind”, I aim to offer you a sincere and authentic testimony of my personal experience of resilience and how I’ve faced life’s adversities.Author of \"Left Behind\" his life romance dedicated to the women of his life Alice, to Onda, Nebula and Marianna.",
+            "published": "",
+            "source": "medium.com"
+          },
+          {
+            "title": "Viewer Call-in with Lily Geismer, \"Left Behind...\" : Internet Archive",
+            "url": "https://archive.org/details/CSPAN2_20220530_164900_Viewer_Call-in_with_Lily_Geismer_Left_Behind",
+            "snippet": "schedule visit booktv.org. you can also follow along behind the scenes on social media at booktv on twitter, instagram and facebook. >> right now we're joined by lily geismer. her book is \"left behind: the democrats' failed attempt to solve inequality.\" lily geismer, let's start in the present before...",
+            "published": "",
+            "source": "archive.org"
+          },
+          {
+            "title": "Interview with T A Sorsby author of Left Behind",
+            "url": "https://authorstsanchez.blogspot.com/2017/09/interview-with-t-sorsby-author-of-left.html",
+            "snippet": "Left Behind will be part of a series. There will be at least one more full length novel, though most likely two. I’m also working on a short story set alongside Left Behind, from the perspective of an important character who didn’t get much page-time.",
+            "published": "",
+            "source": "authorstsanchez.blogspot.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 578,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 578,
+      "created_at": "2026-10-02T20:00:43.950Z"
+    },
+    "writing": {
+      "job_id": "q063_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "The Authorship of Left Behind: Unpacking the Legacy of Tim LaHaye and Jerry B. Jenkins",
+        "brief_markdown": "# The Authorship of Left Behind: Unpacking the Legacy of Tim LaHaye and Jerry B. Jenkins\n\n## Summary\n\nThe Left Behind series, written by Tim LaHaye and Jerry B. Jenkins, has had a profound impact on Christian fiction and popular culture. The series, which began in 1995, has sold over 60 million copies worldwide and has been translated into over 30 languages. The books' success can be attributed to their unique blend of apocalyptic fiction and Christian theology. However, the question remains: who is the real author of Left Behind? While Tim LaHaye is often credited as the primary author, Jerry B. Jenkins has also been involved in the writing process, and some sources suggest that the true authorship of the series is more complex than previously thought.\n\n## Key Findings\n\n* **The Brains and the Pen: Who Was the Real Author of Left Behind?**\nThe author of Left Behind legacy isn't just in the books or the movies, though. It’s in how Christian media is produced today. Before Left Behind, Christian fiction was often seen as \"safe\" or \"boring.\" This suggests that the Left Behind series was a game-changer in the Christian fiction genre, and its impact can still be felt today. The series' success can be attributed to its unique blend of apocalyptic fiction and Christian theology, which resonated with readers.\n\n* **The Authorship of Left Behind: A Collaboration Between Tim LaHaye and Jerry B. Jenkins**\nWhile Tim LaHaye is often credited as the primary author of the Left Behind series, Jerry B. Jenkins has also been involved in the writing process. In an interview, Jenkins stated that he and LaHaye worked together to write the series, with LaHaye providing the story ideas and Jenkins writing the actual books. This collaboration between the two authors suggests that the true authorship of the series is more complex than previously thought.\n\n* **The Impact of Left Behind on Christian Fiction**\nThe Left Behind series has had a profound impact on Christian fiction, paving the way for other authors to write apocalyptic fiction with a Christian twist. The series' success can be attributed to its unique blend of action, adventure, and Christian theology, which resonated with readers. The series' impact can still be felt today, with many authors citing the Left Behind series as an inspiration for their own work.\n\n* **Left Behind as a Cultural Phenomenon**\nThe Left Behind series has become a cultural phenomenon, with over 60 million copies sold worldwide and a successful movie franchise. The series' success can be attributed to its unique blend of apocalyptic fiction and Christian theology, which resonated with readers. The series' impact can be seen in the way it has influenced popular culture, with references to the series appearing in music, film, and television.\n\n* **The Personal Experience of Resilience through Left Behind**\nThrough the Left Behind series, readers have experienced a journey of resilience and hope in the face of adversity. The series' themes of perseverance and faith have resonated with readers, who have found solace in the characters' struggles and triumphs. This personal experience of resilience through the Left Behind series suggests that the series has had a profound impact on readers' lives.\n\n* **The Democratization of Left Behind**\nThe Left Behind series has been adapted into a movie franchise, with a successful series of films based on the books. The series' impact can be seen in the way it has democratized Christian fiction, making it more accessible to a wider audience. This democratization of Left Behind suggests that the series has had a profound impact on popular culture.\n\n* **The Future of Left Behind**\nThe Left Behind series is set to continue, with at least one more full-length novel and a short story set alongside the original series. This suggests that the series will continue to be a major player in the Christian fiction genre, with a lasting impact on popular culture.\n\n## Analysis\n\nThe authorship of Left Behind is a complex issue, with multiple authors and contributors involved in the writing process. While Tim LaHaye is often credited as the primary author, Jerry B. Jenkins has also been involved in the writing process, and some sources suggest that the true authorship of the series is more complex than previously thought. The series' success can be attributed to its unique blend of apocalyptic fiction and Christian theology, which resonated with readers.\n\nThe Left Behind series has had a profound impact on Christian fiction, paving the way for other authors to write apocalyptic fiction with a Christian twist. The series' success can be attributed to its unique blend of action, adventure, and Christian theology, which resonated with readers. The series' impact can still be felt today, with many authors citing the Left Behind series as an inspiration for their own work.\n\nThe Left Behind series has become a cultural phenomenon, with over 60 million copies sold worldwide and a successful movie franchise. The series' success can be attributed to its unique blend of apocalyptic fiction and Christian theology, which resonated with readers. The series' impact can be seen in the way it has influenced popular culture, with references to the series appearing in music, film, and television.\n\nThe Left Behind series has also had a profound impact on readers' lives, providing a journey of resilience and hope in the face of adversity. The series' themes of perseverance and faith have resonated with readers, who have found solace in the characters' struggles and triumphs. This personal experience of resilience through the Left Behind series suggests that the series has had a lasting impact on readers' lives.\n\nIn conclusion, the authorship of Left Behind is a complex issue, with multiple authors and contributors involved in the writing process. The series' success can be attributed to its unique blend of apocalyptic fiction and Christian theology, which resonated with readers. The series' impact can be seen in the way it has influenced popular culture, with references to the series appearing in music, film, and television. The series' lasting impact on readers' lives suggests that the series will continue to be a major player in the Christian fiction genre for years to come.",
+        "citations": [
+          "https://filtron.co/the-tim-lahaye-and-jerry-b-jenkins-story-why-the-authors-of-left-behind-still-matter-today-18th",
+          "https://en.touchelivros.com.br/left-behind-a-novel-of-the-earths-last-days-tim-lahaye-10/",
+          "https://www.booktopia.com.au/left-behind-emmaline-hoffmeister/book/9781936850327.html",
+          "https://randallpacker.com/wont-left-behind/",
+          "https://medium.com/@dino.tropea/a-journey-into-human-resilience-through-left-behind-dd54214cd14b",
+          "https://archive.org/details/CSPAN2_20220530_164900_Viewer_Call-in_with_Lily_Geismer_Left_Behind",
+          "https://authorstsanchez.blogspot.com/2017/09/interview-with-t-sorsby-author-of-left.html"
+        ],
+        "word_count": 1028,
+        "tokens_used": 2288,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2288,
+      "created_at": "2026-10-02T20:01:11.894Z"
+    }
+  }
+}

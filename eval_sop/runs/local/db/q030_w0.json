@@ -1,0 +1,82 @@
+{
+  "job": {
+    "id": "q030_w0",
+    "topic": "How many kilobytes of memory did the IBM 7030 Stretch have?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q030_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "IBM 7030 Stretch - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/IBM_7030_Stretch",
+            "snippet": "The IBM 7030, also known as Stretch, was IBM's first transistorized supercomputer.Each logic level has a delay of about 20 ns. To gain speed in critical areas, emitter-follower logic is used to reduce the delay to about 10 ns.[15]: 55. It uses the same core memory as the IBM 7090.[15]: 58.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "IBM 7030 Stretch — Grokipedia",
+            "url": "https://grokipedia.com/page/IBM_7030_Stretch",
+            "snippet": "The IBM 7030 Stretch employed magnetic core technology for its primary memory, utilizing IBM 7302 Core Storage units to provide high-speed access. [9] The core memory capacity ranged from 16,384 to 262,144 64-bit words, equivalent to 128 to 2,048 kilobytes of storage. [10]",
+            "published": "",
+            "source": "grokipedia.com"
+          },
+          {
+            "title": "IBM 7030 Stretch - Computer History Wiki - Gunkies",
+            "url": "https://gunkies.org/wiki/IBM_7030_Stretch",
+            "snippet": "IBM 7030 Stretch ... The IBM 7030 (a product of Project Stretch, so it was often called by some variant of that) was a ground-breaking and influential mainframe from IBM, arguably the first supercomputer. It was the fastest computer in the world from 1961 until the advent of the CDC 6600 in 1964.",
+            "published": "",
+            "source": "gunkies.org"
+          },
+          {
+            "title": "Model 7030 (“Stretch”) operator console - CHM Revolution",
+            "url": "https://www.computerhistory.org/revolution/supercomputers/10/30/53",
+            "snippet": "Stretch was among the first and most complex supercomputers, introducing dozens of groundbreaking hardware and software innovations. Los Alamos National Laboratory received the first Stretch in 1961 to design nuclear weapons. A complete Stretch occupied about 2,000 square feet.",
+            "published": "",
+            "source": "computerhistory.org"
+          },
+          {
+            "title": "The IBM 7030, aka Stretch | IBM",
+            "url": "https://www.ibm.com/history/stretch",
+            "snippet": "The IBM 7030, introduced in 1960, represented multiple breakthroughs in computer technology. It was IBM’s first supercomputer, ranking as the fastest in the world for three years after its debut. Rather than relying on bulky and often unreliable vacuum tubes, it used transistors.",
+            "published": "",
+            "source": "ibm.com"
+          }
+        ],
+        "count": 5,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 5 for Writer.",
+        "tokens_used": 614,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 614,
+      "created_at": "2026-10-02T20:04:22.454Z"
+    },
+    "writing": {
+      "job_id": "q030_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "The IBM 7030 Stretch: A Supercomputer's Memory Capacity",
+        "brief_markdown": "# The IBM 7030 Stretch: A Supercomputer's Memory Capacity\n\n## Summary\nThe IBM 7030 Stretch, also known as Stretch, was a groundbreaking supercomputer developed by IBM in the early 1960s. It was the first transistorized supercomputer and the fastest in the world from 1961 until 1964. The Stretch employed magnetic core technology for its primary memory, utilizing IBM 7302 Core Storage units to provide high-speed access. The core memory capacity of the Stretch ranged from 16,384 to 262,144 64-bit words, equivalent to 128 to 2,048 kilobytes of storage. This research brief aims to analyze the memory capacity of the IBM 7030 Stretch and provide an understanding of its significance in the context of supercomputing history.\n\n## Key Findings\n\n* **Memory Technology: Magnetic Core Memory**\nThe IBM 7030 Stretch employed magnetic core technology for its primary memory, utilizing IBM 7302 Core Storage units to provide high-speed access. This technology was a significant innovation in the field of computing, allowing for faster data transfer rates and higher storage capacities. The use of magnetic core memory was a key factor in the Stretch's ability to outperform other computers of its time.\n\n* **Memory Capacity: 128 to 2,048 Kilobytes**\nThe core memory capacity of the Stretch ranged from 16,384 to 262,144 64-bit words, equivalent to 128 to 2,048 kilobytes of storage. This range of memory capacities was significant for its time, allowing the Stretch to perform complex calculations and simulations that were previously impossible. The ability to store large amounts of data was a critical factor in the Stretch's success as a supercomputer.\n\n* **Comparison to Other Computers**\nThe IBM 7030 Stretch was the fastest computer in the world from 1961 until the advent of the CDC 6600 in 1964. This was due in part to its advanced memory technology and high storage capacities. The Stretch's memory capacity was significantly higher than that of other computers of its time, making it an essential tool for complex scientific simulations and calculations.\n\n* **Impact on Supercomputing**\nThe IBM 7030 Stretch had a significant impact on the development of supercomputing. Its innovative memory technology and high storage capacities paved the way for future generations of supercomputers. The Stretch's influence can be seen in the development of later supercomputers, such as the CDC 6600 and the Cray-1.\n\n* **Los Alamos National Laboratory**\nThe Los Alamos National Laboratory received the first Stretch in 1961 to design nuclear weapons. This marked the beginning of the Stretch's use in complex scientific simulations and calculations. The Stretch's advanced memory technology and high storage capacities made it an essential tool for scientists and engineers working on complex projects.\n\n* **Breakthroughs in Computer Technology**\nThe IBM 7030 Stretch represented multiple breakthroughs in computer technology. It was IBM's first supercomputer, ranking as the fastest in the world for three years after its debut. Rather than relying on bulky and often unreliable vacuum tubes, it used transistors. This marked a significant shift in computer design, paving the way for future generations of computers.\n\n* **Influence on Computing History**\nThe IBM 7030 Stretch was a groundbreaking computer that had a significant influence on computing history. Its innovative memory technology and high storage capacities paved the way for future generations of supercomputers. The Stretch's influence can be seen in the development of later supercomputers, such as the CDC 6600 and the Cray-1.\n\n## Analysis\n\nThe IBM 7030 Stretch was a groundbreaking supercomputer that represented multiple breakthroughs in computer technology. Its innovative memory technology and high storage capacities paved the way for future generations of supercomputers. The Stretch's influence can be seen in the development of later supercomputers, such as the CDC 6600 and the Cray-1. The Stretch's use in complex scientific simulations and calculations marked the beginning of its impact on supercomputing.\n\nThe Stretch's memory capacity was a critical factor in its success as a supercomputer. Its ability to store large amounts of data allowed it to perform complex calculations and simulations that were previously impossible. The Stretch's memory technology, which utilized magnetic core units, was a significant innovation in the field of computing. This technology allowed for faster data transfer rates and higher storage capacities, making it an essential tool for scientists and engineers working on complex projects.\n\nIn conclusion, the IBM 7030 Stretch was a groundbreaking supercomputer that had a significant influence on computing history. Its innovative memory technology and high storage capacities paved the way for future generations of supercomputers. The Stretch's impact on supercomputing can be seen in its use in complex scientific simulations and calculations, as well as its influence on the development of later supercomputers.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/IBM_7030_Stretch",
+          "https://grokipedia.com/page/IBM_7030_Stretch",
+          "https://gunkies.org/wiki/IBM_7030_Stretch",
+          "https://www.computerhistory.org/revolution/supercomputers/10/30/53",
+          "https://www.ibm.com/history/stretch"
+        ],
+        "word_count": 763,
+        "tokens_used": 1772,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 1772,
+      "created_at": "2026-10-02T20:04:44.462Z"
+    }
+  }
+}

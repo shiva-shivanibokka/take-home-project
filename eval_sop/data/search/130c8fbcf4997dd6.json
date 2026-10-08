@@ -1,0 +1,58 @@
+{
+ "query": "What is London the capital of?",
+ "id": "q073",
+ "retrieved_at": "2026-10-02T00:33:07.851905+00:00",
+ "engine": "ddgs.text",
+ "results": [
+  {
+   "title": "London - Wikipedia",
+   "href": "https://en.wikipedia.org/wiki/London",
+   "body": "London is the capital of the United Kingdom and of England by convention.[128] The capital of England was moved from Winchester as the Palace of Westminster developed in the 12th and 13th centuries to become the home of the royal court, and thus the nation's political capital..."
+  },
+  {
+   "title": "London - Simple English Wikipedia, the free encyclopedia",
+   "href": "https://simple.wikipedia.org/wiki/London",
+   "body": "London is the capital and largest city of both England and its surrounding area."
+  },
+  {
+   "title": "London - New World Encyclopedia",
+   "href": "https://www.newworldencyclopedia.org/entry/London",
+   "body": "London, situated in south-eastern England at the head of the River Thames estuary, is the largest urban area and capital of England and the United Kingdom. An important settlement for two millennia, London's history goes back to its founding by the Romans."
+  },
+  {
+   "title": "London | History, Maps, Population, Area, & Facts | Britannica",
+   "href": "https://www.britannica.com/place/London",
+   "body": "London, city, capital of the United Kingdom. It is among the oldest of the world\u2019s great cities\u2014its history spanning nearly two millennia\u2014and one of the most cosmopolitan. By far Britain\u2019s largest metropolis, it is also the country\u2019s economic, transportation, and cultural center."
+  },
+  {
+   "title": "London \u2013 English Across the Curriculum",
+   "href": "https://topics.english-online.at/london/",
+   "body": "London is the capital of the United Kingdom and one of the world\u2019s oldest and largest cities. It is Great Britain\u2019s economic , cultural and political centre. Its sights attract millions of tourists every year."
+  },
+  {
+   "title": "London - English Text for Beginners",
+   "href": "https://lingua.com/english/reading/london/",
+   "body": "It is the capital of England in the United Kingdom.The London Eye is situated along the southern shores of the Thames River. This attraction stands 135 meters high. It is one of London\u2019s most well-known spots for gaining aerial views of the city."
+  },
+  {
+   "title": "Time in United Kingdom Now (BST) - Live Clock | Time.now",
+   "href": "https://time.now/countries/united-kingdom/",
+   "body": "In the capital, London, the sun is up for 12h 08m today.The capital of United Kingdom is London, where the current local time is 16:59:23. What time is sunrise and sunset in London today?"
+  },
+  {
+   "title": "United Kingdom | National Geographic Kids",
+   "href": "https://kids.nationalgeographic.com/geography/countries/article/united-kingdom",
+   "body": "London, the capital of both England and the U.K., is home to just under nine million residents. Nearly half of the U.K\u2019s population is Christian, with most belonging to Protestant churches. The country is also home to large and growing communities of Muslims, Hindus, and Jews."
+  },
+  {
+   "title": "United Kingdom - A Country Profile - Nations Online Project",
+   "href": "https://www.nationsonline.org/oneworld/united_kingdom.htm",
+   "body": "With an area of 242,900 km\u00b2, the United Kingdom is not quite half the size of Spain, or slightly smaller than the U.S. state of Oregon. The UK has a population of 69 million people (in 2024), the capital and largest city is London."
+  },
+  {
+   "title": "England Maps & Facts - World Atlas",
+   "href": "https://www.worldatlas.com/maps/united-kingdom/england",
+   "body": "Map of England showing major cities, terrain, national parks, rivers, and surrounding countries with international borders and outline maps. Key facts about England."
+  }
+ ]
+}

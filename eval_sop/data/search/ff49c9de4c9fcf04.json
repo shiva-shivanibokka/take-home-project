@@ -1,0 +1,58 @@
+{
+ "query": "What was the final score on February 6, 2022, in the rugby match between Georgia and Portugal that was part of the 2022 Rugby Europe Championship?",
+ "id": "q022",
+ "retrieved_at": "2026-10-02T00:29:16.970017+00:00",
+ "engine": "ddgs.text",
+ "results": [
+  {
+   "title": "World Rugby - Wikipedia",
+   "href": "https://en.wikipedia.org/wiki/World_Rugby",
+   "body": "World Rugby organises the Rugby World Cup every four years, the sport's most recognised and most profitable competition. It also organises a number of other international competitions, such as the Nations Cup, the WXV Global Series, the Junior World Championship..."
+  },
+  {
+   "title": "Men's Six Nations Championship 2026 | World Rugby",
+   "href": "https://www.world.rugby/beta/en/tournaments/mens-six-nations/2026",
+   "body": "Discover the full schedule of Six Nations Rugby and follow for scores, results and fixtures for the M6N."
+  },
+  {
+   "title": "World Rugby Rankings calculator",
+   "href": "https://rawling.github.io/wr-calc/",
+   "body": "Check World Rugby's test rankings and see what effect upcoming tests might have."
+  },
+  {
+   "title": "Welcome to the home of Rugby Europe",
+   "href": "https://www.rugbyeurope.eu/",
+   "body": "Rugby Europe Snow Championship 2022.Rhino signs four-year match ball deal with Rugby Europe. Posted on: 22 Sept 2026."
+  },
+  {
+   "title": "Hurricanes bolster squad with signing of six-time Super Rugby champion",
+   "href": "https://www.rugbypass.com/news/hurricanes-bolster-2027-squad-with-signing-of-six-time-super-rugby-champion/",
+   "body": "Hall will join the defending Super Rugby Pacific champions in their 2027 title defence, which kicks off on Saturday, February 13 against the Blues in Auckland."
+  },
+  {
+   "title": "Rugby Union - latest news today, results & video - BBC Sport",
+   "href": "https://www.bbc.co.uk/sport/rugby-union",
+   "body": "The home of Rugby Union on BBC Sport online. Includes the latest news stories, results, fixtures, video and audio.Sophie de Goede, in a red short-sleeved shirt, looking dejected after the 2025 World Cup final with blurred team-mates in the background."
+  },
+  {
+   "title": "FIFA World Cup Qatar 2022 - Argentina vs France - Full Match...",
+   "href": "https://www.youtube.com/watch?v=vkyCLzUvv7c",
+   "body": "The 2022 FIFA World Cup Final was a thrilling and historic match held on December 18, 2022, at Lusail Stadium in Qatar. This final marked the culmination of the 22nd edition of FIFA's premier competition for men's national football teams."
+  },
+  {
+   "title": "oidlabs/simpleQA \u00b7 Datasets at Hugging Face",
+   "href": "https://huggingface.co/datasets/oidlabs/simpleQA/viewer/default/train?p=41",
+   "body": "What was the final score on February 6, 2022, in the rugby match between Georgia and Portugal that was part of the 2022 Rugby Europe Championship?"
+  },
+  {
+   "title": "liveabout.com/construction-6504643",
+   "href": "https://www.liveabout.com/construction-6504643",
+   "body": "Best Construction Apps of 2022 - The Balance Small Business."
+  },
+  {
+   "title": "Google",
+   "href": "https://www.google.com/",
+   "body": "\u041f\u043e\u0438\u0441\u043a \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438 \u0432 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0435: \u0432\u0435\u0431 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b, \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0438, \u0432\u0438\u0434\u0435\u043e \u0438 \u043c\u043d\u043e\u0433\u043e\u0435 \u0434\u0440\u0443\u0433\u043e\u0435."
+  }
+ ]
+}

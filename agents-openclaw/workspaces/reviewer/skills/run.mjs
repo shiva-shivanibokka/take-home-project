@@ -40,6 +40,10 @@ const db = createClient(
 const OLLAMA_BASE = process.env.OLLAMA_BASE_URL ?? "https://api.ollama.ai";
 const OLLAMA_MODEL = process.env.OLLAMA_MODEL ?? "llama3.2:3b";
 const CONFIDENCE_THRESHOLD = Number(process.env.CONFIDENCE_THRESHOLD ?? 0.70);
+// Eval hook (sop-eval branch): how many snippet characters the reviewer sees.
+// Default 150 preserves the original behaviour exactly.
+// An empty or non-positive value falls back to 150 (Number("") would be 0).
+const REVIEWER_SNIPPET_CHARS = Number(process.env.REVIEWER_SNIPPET_CHARS) > 0 ? Number(process.env.REVIEWER_SNIPPET_CHARS) : 150;
 console.log(`[reviewer] using model: ${OLLAMA_MODEL}`);
 
 async function ollamaChat(messages, maxTokens = 512) {
@@ -98,7 +102,7 @@ async function main() {
 
   // 2. Ask Ollama to evaluate the brief against the sources
   const sourceList = sources.map((s, i) =>
-    `[${i + 1}] ${s.title} — ${s.snippet?.slice(0, 150) ?? ""}`
+    `[${i + 1}] ${s.title} — ${s.snippet?.slice(0, REVIEWER_SNIPPET_CHARS) ?? ""}`
   ).join("\n");
 
   const prompt = `
@@ -160,7 +164,15 @@ ${brief_markdown}
   // Checks inform the LLM's score but no longer override it; the inline [n]
   // citation markers were stripped from the brief so citations_supported was
   // always false, causing false escalations regardless of confidence.
-  const { citations_supported, coverage, factuality, confidence, reasons } = evaluation;
+  const { citations_supported, coverage, factuality, reasons } = evaluation;
+  // sop-eval fix: the LLM sometimes returns confidence as a string or omits it;
+  // `confidence.toFixed` below then threw and the stage crashed. Coerce to a
+  // number; anything non-numeric becomes 0.0 (escalate), mirroring the
+  // parse-failure fallback above. See eval_sop/tests/reviewer.test.mjs.
+  // Only numbers and numeric strings count; booleans/null/"" become 0.0 (Number(true) would be 1).
+  const rawConf = evaluation.confidence;
+  const confidence = (typeof rawConf === "number" || (typeof rawConf === "string" && rawConf.trim() !== ""))
+    && Number.isFinite(Number(rawConf)) ? Number(rawConf) : 0.0;
   const anyCheckFailed = !citations_supported || !coverage || !factuality;
   const verdict = confidence < CONFIDENCE_THRESHOLD ? "escalate" : "publish";
 

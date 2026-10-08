@@ -1,0 +1,5 @@
+rev_openai-gpt-oss-20b_snip150_s0_w0 q001_w0 0 conf=0.3 escalate
+rev_openai-gpt-oss-20b_snip150_s0_w0 q051_w0 0 conf=0.98 publish
+rev_openai-gpt-oss-20b_snip150_s0_w0 q002_w0 0 conf=0.95 publish
+rev_openai-gpt-oss-20b_snip150_s0_w0 q076_w0 0 conf=0.95 publish
+rev_openai-gpt-oss-20b_snip150_s0_w0 q003_w0 0 conf=0.95 publish

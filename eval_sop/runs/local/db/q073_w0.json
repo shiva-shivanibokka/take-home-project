@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q073_w0",
+    "topic": "What is London the capital of?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q073_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "London - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/London",
+            "snippet": "London is the capital of the United Kingdom and of England by convention.[128] The capital of England was moved from Winchester as the Palace of Westminster developed in the 12th and 13th centuries to become the home of the royal court, and thus the nation's political capital...",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "London - New World Encyclopedia",
+            "url": "https://www.newworldencyclopedia.org/entry/London",
+            "snippet": "London, situated in south-eastern England at the head of the River Thames estuary, is the largest urban area and capital of England and the United Kingdom. An important settlement for two millennia, London's history goes back to its founding by the Romans.",
+            "published": "",
+            "source": "newworldencyclopedia.org"
+          },
+          {
+            "title": "London | History, Maps, Population, Area, & Facts | Britannica",
+            "url": "https://www.britannica.com/place/London",
+            "snippet": "London, city, capital of the United Kingdom. It is among the oldest of the world’s great cities—its history spanning nearly two millennia—and one of the most cosmopolitan. By far Britain’s largest metropolis, it is also the country’s economic, transportation, and cultural center.",
+            "published": "",
+            "source": "britannica.com"
+          },
+          {
+            "title": "London – English Across the Curriculum",
+            "url": "https://topics.english-online.at/london/",
+            "snippet": "London is the capital of the United Kingdom and one of the world’s oldest and largest cities. It is Great Britain’s economic , cultural and political centre. Its sights attract millions of tourists every year.",
+            "published": "",
+            "source": "topics.english-online.at"
+          },
+          {
+            "title": "London - English Text for Beginners",
+            "url": "https://lingua.com/english/reading/london/",
+            "snippet": "It is the capital of England in the United Kingdom.The London Eye is situated along the southern shores of the Thames River. This attraction stands 135 meters high. It is one of London’s most well-known spots for gaining aerial views of the city.",
+            "published": "",
+            "source": "lingua.com"
+          },
+          {
+            "title": "United Kingdom | National Geographic Kids",
+            "url": "https://kids.nationalgeographic.com/geography/countries/article/united-kingdom",
+            "snippet": "London, the capital of both England and the U.K., is home to just under nine million residents. Nearly half of the U.K’s population is Christian, with most belonging to Protestant churches. The country is also home to large and growing communities of Muslims, Hindus, and Jews.",
+            "published": "",
+            "source": "kids.nationalgeographic.com"
+          },
+          {
+            "title": "England Maps & Facts - World Atlas",
+            "url": "https://www.worldatlas.com/maps/united-kingdom/england",
+            "snippet": "Map of England showing major cities, terrain, national parks, rivers, and surrounding countries with international borders and outline maps. Key facts about England.",
+            "published": "",
+            "source": "worldatlas.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 529,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 529,
+      "created_at": "2026-10-02T20:17:28.405Z"
+    },
+    "writing": {
+      "job_id": "q073_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "London: The Capital of the United Kingdom and England",
+        "brief_markdown": "# London: The Capital of the United Kingdom and England\n\n## Summary\n\nLondon is a city with a rich history spanning nearly two millennia, and it is widely recognized as the capital of both the United Kingdom and England. The city's significance is not limited to its historical and cultural importance, as it is also the economic, transportation, and cultural center of the United Kingdom. With a population of nearly nine million residents, London is one of the world's largest and most cosmopolitan cities. The city's status as the capital of England and the United Kingdom is a convention that has been established over time, with the Palace of Westminster developing in the 12th and 13th centuries to become the home of the royal court and the nation's political capital. This research brief aims to provide an overview of the key findings related to London's status as the capital of the United Kingdom and England.\n\n## Key Findings\n\n* **London: A City with a Rich History**\n\t+ London's history spans nearly two millennia, with the city being an important settlement for two millennia. The city's history is marked by significant events, including its founding by the Romans. This long history has contributed to London's status as one of the world's great cities. The city's rich history is a key aspect of its significance, and it continues to attract millions of tourists every year.\n* **London: The Capital of the United Kingdom and England**\n\t+ London is widely recognized as the capital of both the United Kingdom and England by convention. This convention has been established over time, with the Palace of Westminster developing in the 12th and 13th centuries to become the home of the royal court and the nation's political capital. The city's status as the capital of England and the United Kingdom is a key aspect of its significance, and it is a convention that has been established over time.\n* **London: A Global City**\n\t+ London is one of the world's largest and most cosmopolitan cities, with a population of nearly nine million residents. The city is home to a diverse range of communities, including Christians, Muslims, Hindus, and Jews. This diversity is a key aspect of London's significance, and it contributes to the city's status as a global city.\n* **London: Economic, Transportation, and Cultural Center**\n\t+ London is the economic, transportation, and cultural center of the United Kingdom. The city is a major hub for business and finance, with many major companies having their headquarters in the city. The city's transportation network is also extensive, with several major airports and a comprehensive public transportation system.\n* **The London Eye: A Symbol of the City**\n\t+ The London Eye is a major tourist attraction in the city, standing 135 meters high. The London Eye is a symbol of the city's status as a global city, and it is a key aspect of the city's cultural significance.\n* **London's Importance to England and the United Kingdom**\n\t+ London's status as the capital of England and the United Kingdom is a key aspect of its significance, and it is a convention that has been established over time. The city's importance to England and the United Kingdom is not limited to its historical and cultural significance, as it is also the economic, transportation, and cultural center of the region.\n* **The Significance of London's Status as a Capital**\n\t+ London's status as the capital of England and the United Kingdom is a key aspect of its significance, and it is a convention that has been established over time. The city's status as a capital has contributed to its significance, and it has played a major role in the development of the United Kingdom and England.\n\n## Analysis\n\nThe key findings related to London's status as the capital of the United Kingdom and England highlight the city's significance as a global city. London's rich history, cultural significance, and economic importance make it a key aspect of the United Kingdom and England. The city's status as the capital of both countries is a convention that has been established over time, and it is a key aspect of its significance. The city's importance to England and the United Kingdom is not limited to its historical and cultural significance, as it is also the economic, transportation, and cultural center of the region.\n\nThe findings also highlight the significance of London's status as a capital. The city's status as a capital has contributed to its significance, and it has played a major role in the development of the United Kingdom and England. The city's cultural and economic significance make it a key aspect of the region, and its status as a capital has contributed to its significance. The findings also highlight the importance of London's cultural and historical significance, and the city's status as a global city.\n\nIn conclusion, the key findings related to London's status as the capital of the United Kingdom and England highlight the city's significance as a global city. The city's rich history, cultural significance, and economic importance make it a key aspect of the United Kingdom and England. The city's status as the capital of both countries is a convention that has been established over time, and it is a key aspect of its significance. The findings also highlight the significance of London's status as a capital, and the city's importance to England and the United Kingdom.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/London",
+          "https://www.newworldencyclopedia.org/entry/London",
+          "https://www.britannica.com/place/London",
+          "https://topics.english-online.at/london/",
+          "https://lingua.com/english/reading/london/",
+          "https://kids.nationalgeographic.com/geography/countries/article/united-kingdom",
+          "https://www.worldatlas.com/maps/united-kingdom/england"
+        ],
+        "word_count": 908,
+        "tokens_used": 1918,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 1918,
+      "created_at": "2026-10-02T20:17:52.487Z"
+    }
+  }
+}

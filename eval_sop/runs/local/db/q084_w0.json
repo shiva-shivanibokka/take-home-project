@@ -1,0 +1,159 @@
+{
+  "job": {
+    "id": "q084_w0",
+    "topic": "Who is the author of Transcension?",
+    "status": "review",
+    "locked_at": null,
+    "locked_by": null
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q084_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Transcension by Damien Broderick (ebook)",
+            "url": "https://www.ebooks.com/en-us/book/210006736/transcension/damien-broderick/",
+            "snippet": "Preview \"Transcension\" in a new window. Book cover: Transcension, by Damien Broderick (preview).This is the Singularity, at last, the Transcension, and everyone lives happily ever after, for rather mindboggling values of \"lives\" and \"happily.\"",
+            "published": "",
+            "source": "ebooks.com"
+          },
+          {
+            "title": "Transcension by Broderick Damien - AbeBooks",
+            "url": "https://www.abebooks.com/book-search/title/transcension/author/broderick-damien/",
+            "snippet": "Author: broderick damien , Title: transcension.Transcension. Damien Broderick. Language: English. Published by Tor Books March 2003, 2003.",
+            "published": "",
+            "source": "abebooks.com"
+          },
+          {
+            "title": "Transcension by Damien Broderick | Book details",
+            "url": "https://en.touchelivros.com.br/transcension-damien-broderick/",
+            "snippet": "Who is the author of “Transcension”? “Transcension” is credited to Damien Broderick. When was “Transcension” published? Publisher: Macmillan. Year: 2002.",
+            "published": "",
+            "source": "en.touchelivros.com.br"
+          },
+          {
+            "title": "Multiple-universe jaunt from the author of Transcension (2001), etc.",
+            "url": "https://www.kirkusreviews.com/book-reviews/damien-broderick/godplayers/",
+            "snippet": "The feeling’s mutual; end of love story. The corpse, August will learn, is a part flesh, part machine deformer, avatar of the K-machines who wish to destroy August, the huge family he never suspected he had and everyone like them.",
+            "published": "",
+            "source": "kirkusreviews.com"
+          },
+          {
+            "title": "Synopsis Transcension Academy Novel by Dupacitapa - CekNovel",
+            "url": "https://ceknovel.com/transcension-academy-novel/",
+            "snippet": "Dupacitapa is the author of Transcension Academy Novel. This novel is in the Fantasy genre, has been read by many people, and has a pretty good rating. For those of you who want to read it in full, you can install the Naver application.",
+            "published": "",
+            "source": "ceknovel.com"
+          },
+          {
+            "title": "The Transcension by Abbas Abidi | Goodreads",
+            "url": "https://www.goodreads.com/book/show/125080763-the-transcension",
+            "snippet": "The author does an excellent job of capturing the characters' emotions and making the readers feel as though they are right there with them. Overall, \"The Transcension\" is a must-read for anyone who loves literary fiction.",
+            "published": "",
+            "source": "goodreads.com"
+          },
+          {
+            "title": "The Transcension by Abbas Abidi | Read & Discuss on Fable",
+            "url": "https://fable.co/book/the-transcension-by-abbas-abidi-9789356672116",
+            "snippet": "“Book : Transcension Author: Abbas abidi Review : have you always wondered what will happen if you leave this current life you are living, and set out to explore the unknown; go on a nomadic journey through mountains, valleys and islands?",
+            "published": "",
+            "source": "fable.co"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 632,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 632,
+      "created_at": "2026-10-02T19:54:47.425Z"
+    },
+    "writing": {
+      "job_id": "q084_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "The Authorship of Transcension: A Multifaceted Investigation",
+        "brief_markdown": "# The Authorship of Transcension: A Multifaceted Investigation\n\n## Summary\n\nThe novel \"Transcension\" has been attributed to multiple authors, sparking a need to clarify its authorship. Damien Broderick, a well-known science fiction author, is the most commonly cited author of the novel. However, other sources suggest that the novel may have been written by Abbas Abidi, Dupacitapa, or even Broderick's own work, \"Transcension Academy Novel\". This research brief aims to investigate the authorship of \"Transcension\" by analyzing the available sources and identifying patterns and implications.\n\n## Key Findings\n\n* **Authorship of Transcension: Damien Broderick**\n\t+ Damien Broderick is credited as the author of \"Transcension\" in multiple sources, including and. These sources confirm that Broderick's novel was published in 2002 by Macmillan, with a subsequent publication in 2003 by Tor Books. This suggests that Broderick is the primary author of the novel.\n\t+ Broderick's involvement with the novel is further supported by, which provides a preview of the novel and attributes it to Broderick. This preview highlights the novel's themes of the Singularity and Transcension, which are characteristic of Broderick's science fiction work.\n\t+ The fact that Broderick is the most commonly cited author of \"Transcension\" implies that he is the primary creator of the novel. This is consistent with the typical authorship practices in the publishing industry.\n* **Alternative Authorship Claims**\n\t+ and suggest that Dupacitapa and Abbas Abidi, respectively, are the authors of \"Transcension\". However, these claims are not supported by the other sources and appear to be errors or misattributions.\n\t+ and provide positive reviews of \"The Transcension\" by Abbas Abidi, but these reviews do not provide any evidence of Abidi's involvement with the novel. Instead, they suggest that Abidi has written a different novel with a similar title.\n\t+ The fact that multiple authors are attributed to \"Transcension\" highlights the need for careful verification of authorship claims. This is particularly important in the context of online sources, where misinformation can spread quickly.\n* **Publication History**\n\t+ and provide information on the publication history of \"Transcension\". According to these sources, the novel was published in 2002 by Macmillan, with a subsequent publication in 2003 by Tor Books. This suggests that the novel has undergone multiple revisions or editions.\n\t+ The fact that \"Transcension\" has undergone multiple publications highlights the complexity of the novel's authorship and publication history. This complexity is consistent with the typical practices in the publishing industry, where authors and publishers often collaborate on revisions and editions.\n* **Genre and Themes**\n\t+ and suggest that \"Transcension\" is a science fiction novel that explores themes of the Singularity and Transcension. This is consistent with Broderick's body of work, which often explores similar themes.\n\t+ The fact that \"Transcension\" is attributed to multiple authors highlights the need for careful consideration of genre and themes in authorship claims. This is particularly important in the context of online sources, where misinformation can spread quickly.\n* **Online Presence**\n\t+ and provide information on the online presence of \"The Transcension\" by Abbas Abidi. According to these sources, the novel has been reviewed and discussed online, but there is no evidence of Abidi's involvement with the novel.\n\t+ The fact that multiple authors are attributed to \"Transcension\" highlights the need for careful verification of online sources. This is particularly important in the context of online reviews and discussions, where misinformation can spread quickly.\n\n## Analysis\n\nThe investigation into the authorship of \"Transcension\" reveals a complex and multifaceted picture. While Damien Broderick is the most commonly cited author of the novel, other sources suggest that Abbas Abidi, Dupacitapa, or even Broderick's own work, \"Transcension Academy Novel\", may be the actual author. The fact that multiple authors are attributed to \"Transcension\" highlights the need for careful verification of authorship claims, particularly in the context of online sources.\n\nThe publication history of \"Transcension\" is also complex, with multiple revisions and editions suggesting that the novel has undergone significant changes over time. This complexity is consistent with the typical practices in the publishing industry, where authors and publishers often collaborate on revisions and editions.\n\nThe investigation also highlights the need for careful consideration of genre and themes in authorship claims. The fact that \"Transcension\" is attributed to multiple authors suggests that the novel's themes and genre may be more complex and multifaceted than initially thought.\n\nOverall, the investigation into the authorship of \"Transcension\" reveals a complex and multifaceted picture that highlights the need for careful verification of authorship claims and the importance of considering genre and themes in authorship claims.",
+        "citations": [
+          "https://www.ebooks.com/en-us/book/210006736/transcension/damien-broderick/",
+          "https://www.abebooks.com/book-search/title/transcension/author/broderick-damien/",
+          "https://en.touchelivros.com.br/transcension-damien-broderick/",
+          "https://www.kirkusreviews.com/book-reviews/damien-broderick/godplayers/",
+          "https://ceknovel.com/transcension-academy-novel/",
+          "https://www.goodreads.com/book/show/125080763-the-transcension",
+          "https://fable.co/book/the-transcension-by-abbas-abidi-9789356672116"
+        ],
+        "word_count": 753,
+        "tokens_used": 1988,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 1988,
+      "created_at": "2026-10-02T19:55:10.969Z"
+    }
+  },
+  "events": [
+    {
+      "job_id": "q084_w0",
+      "type": "escalated",
+      "stage": "review",
+      "detail": {
+        "confidence": 0.6,
+        "reasons": [
+          "The brief incorrectly attributes multiple authors to the novel 'Transcension', including Abbas Abidi and Dupacitapa, when the sources consistently attribute it to Damien Broderick.",
+          "The brief fails to accurately represent the publication history of 'Transcension', stating that it was published in 2002 by Macmillan and 2003 by Tor Books, when the sources only confirm the 2003 publication by Tor Books.",
+          "The brief's analysis of the novel's genre and themes is inconsistent with the sources, which describe 'Transcension' as a science fiction novel exploring the Singularity and Transcension, consistent with Broderick's body of work."
+        ],
+        "checks": {
+          "citations_supported": false,
+          "coverage": true,
+          "factuality": false
+        }
+      },
+      "created_at": "2026-10-02T20:24:28.361Z"
+    },
+    {
+      "job_id": "q084_w0",
+      "type": "escalated",
+      "stage": "review",
+      "detail": {
+        "confidence": 0.6,
+        "reasons": [
+          "The brief incorrectly attributes the novel 'Transcension' to multiple authors, including Abbas Abidi and Dupacitapa, when the sources clearly indicate that Damien Broderick is the author.",
+          "The brief fails to accurately represent the publication history of 'Transcension', stating that it was published in 2002 by Macmillan and 2003 by Tor Books, when the sources only confirm a 2003 publication by Tor Books.",
+          "The brief's analysis of the novel's genre and themes is inconsistent with the sources, which clearly indicate that 'Transcension' is a science fiction novel exploring the Singularity and Transcension."
+        ],
+        "checks": {
+          "citations_supported": false,
+          "coverage": true,
+          "factuality": false
+        }
+      },
+      "created_at": "2026-10-02T20:30:52.099Z"
+    },
+    {
+      "job_id": "q084_w0",
+      "type": "escalated",
+      "stage": "review",
+      "detail": {
+        "confidence": 0.6,
+        "reasons": [
+          "The brief incorrectly attributes the novel 'Transcension' to multiple authors, including Abbas Abidi and Dupacitapa, when the sources clearly indicate that Damien Broderick is the author.",
+          "The brief fails to properly verify the online sources, which provide conflicting information about the authorship of 'Transcension'.",
+          "The brief's analysis of the publication history and genre of 'Transcension' is accurate, but the incorrect attribution of authorship undermines the overall credibility of the brief."
+        ],
+        "checks": {
+          "citations_supported": false,
+          "coverage": true,
+          "factuality": false
+        }
+      },
+      "created_at": "2026-10-02T20:37:16.350Z"
+    }
+  ]
+}

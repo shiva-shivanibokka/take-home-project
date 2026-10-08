@@ -1,0 +1,58 @@
+{
+ "query": "How many kilobytes of memory did the IBM 7030 Stretch have?",
+ "id": "q030",
+ "retrieved_at": "2026-10-02T00:29:52.819870+00:00",
+ "engine": "ddgs.text",
+ "results": [
+  {
+   "title": "IBM 7030 Stretch - Wikipedia",
+   "href": "https://en.wikipedia.org/wiki/IBM_7030_Stretch",
+   "body": "The IBM 7030, also known as Stretch, was IBM's first transistorized supercomputer.Each logic level has a delay of about 20 ns. To gain speed in critical areas, emitter-follower logic is used to reduce the delay to about 10 ns.[15]: 55. It uses the same core memory as the IBM 7090.[15]: 58."
+  },
+  {
+   "title": "IBM 7030 - \"Stretch - Ed ThelenThe IBM 7030: Stretch | Springer Nature LinkModel 7030 (\u201cStretch\u201d) operator console - CHM Revolution",
+   "href": "https://ed-thelen.org/comp-hist/vs-ibm-stretch.html",
+   "body": "I've done a bit of research and found that both the 7090 and Stretch did use the same core memory unit: IBM 7302 - IBM 7030 Core Storage (16384 - 72-bit words: 64 data bits & 8 ECC bits) In 1956 the Atomic Energy Commission contracted with IBM to build a computer system, the IBM 7030, for the Los Alamos Scientific Laboratory. This system was to be 100 times faster than existing machines. The machine was to be built using the newly available solid... Stretch was among the first and most complex supercomputers, introducing dozens of groundbreaking hardware and software innovations. Los Alamos National Laboratory received the first Stretch in 1961 to design nuclear weapons. A complete Stretch occupied about 2,000 square feet. Why did IBM lose a 7030? IBM was forced to drop its price from $13.5 million to only $7.78 million and withdrew the 7030 from sales to customers beyond those having already negotiated contracts. PC World magazine named Stretch one of the biggest project management failures in IT history. What is IBM 7030? Part of the book series: The Kluwer International Series in Engineering and Computer Science ( (SECS,volume 31)) In 1956 the Atomic Energy Commission contracted with IBM to build a computer system, the IBM 7030, for the Los Alamos Scientific Laboratory. This system was to be 100 times faster than existing machines. How much did the IBM 7030 cost in 1960? Delivery was slated for 1960. During design, it proved necessary to reduce the clock speeds, making it clear that Stretch could not meet its aggressive performance goals, but estimates of performance ranged from 60 to 100 times the IBM 704. In 1960, the price of $13.5 million was set for the IBM 7030. How many transistors did IBM 7030 use? The Standard Modular System (SMS) transistor logic was the basis for the IBM 7090 line of scientific computers, the IBM 7070 and 7080 business computers, the IBM 7040 and IBM 1400 lines, and the IBM 1620 small scientific computer; the 7030 used about 170,000 transistors."
+  },
+  {
+   "title": "IBM 7030 Stretch \u2014 Grokipedia",
+   "href": "https://grokipedia.com/page/IBM_7030_Stretch",
+   "body": "The IBM 7030 Stretch employed magnetic core technology for its primary memory, utilizing IBM 7302 Core Storage units to provide high-speed access. [9] The core memory capacity ranged from 16,384 to 262,144 64-bit words, equivalent to 128 to 2,048 kilobytes of storage. [10]"
+  },
+  {
+   "title": "IBM 7030 Stretch - Wikiwand",
+   "href": "https://www.wikiwand.com/en/articles/IBM_7030",
+   "body": "The IBM 7030, also known as Stretch, was IBM 's first transistorized supercomputer. It was the fastest computer in the world from 1961 until the first CDC 6600 became operational in 1964. [2][3] Quick facts Design, Manufacturer ..."
+  },
+  {
+   "title": "IBM 7030 Stretch - Computer History Wiki - Gunkies",
+   "href": "https://gunkies.org/wiki/IBM_7030_Stretch",
+   "body": "IBM 7030 Stretch ... The IBM 7030 (a product of Project Stretch, so it was often called by some variant of that) was a ground-breaking and influential mainframe from IBM, arguably the first supercomputer. It was the fastest computer in the world from 1961 until the advent of the CDC 6600 in 1964."
+  },
+  {
+   "title": "The IBM 7030: Stretch | Springer Nature Link",
+   "href": "https://link.springer.com/chapter/10.1007/978-1-4615-7957-1_2",
+   "body": "In 1956 the Atomic Energy Commission contracted with IBM to build a computer system, the IBM 7030, for the Los Alamos Scientific Laboratory. This system was to be 100 times faster than existing machines. The machine was to be built using the newly available solid..."
+  },
+  {
+   "title": "Model 7030 (\u201cStretch\u201d) operator console - CHM Revolution",
+   "href": "https://www.computerhistory.org/revolution/supercomputers/10/30/53",
+   "body": "Stretch was among the first and most complex supercomputers, introducing dozens of groundbreaking hardware and software innovations. Los Alamos National Laboratory received the first Stretch in 1961 to design nuclear weapons. A complete Stretch occupied about 2,000 square feet."
+  },
+  {
+   "title": "IBM 7030 Stretch: the failure that paved the way for mainframes - XORit",
+   "href": "https://xorit.ru/en/journal/ibm-7030-stretch-the-failure-that-paved-the-way-for-mainframes/",
+   "body": "IBM 7030 Stretch was IBM\u2019s attempt to create a machine a hundred times faster than the then-flagship IBM 704. The original request came from Lawrence Livermore National Laboratory, but IBM declined the initial proposal and offered a more ambitious system."
+  },
+  {
+   "title": "The IBM 7030, aka Stretch | IBM",
+   "href": "https://www.ibm.com/history/stretch",
+   "body": "The IBM 7030, introduced in 1960, represented multiple breakthroughs in computer technology. It was IBM\u2019s first supercomputer, ranking as the fastest in the world for three years after its debut. Rather than relying on bulky and often unreliable vacuum tubes, it used transistors."
+  },
+  {
+   "title": "IBM Stretch: Building the World's Fastest Computer! - YouTube",
+   "href": "https://www.youtube.com/watch?v=BL6zR3WLVLY",
+   "body": "In this video. Transcript. IBM Stretch: Building the World's Fastest Computer! Dave's Garage.Join Dave Plummer for a deep dive into the fascinating story of the IBM 7030 \"Stretch\"\u2014the revolutionary supercomputer that pushed the boundaries of technology in the 1950s and 60s."
+  }
+ ]
+}

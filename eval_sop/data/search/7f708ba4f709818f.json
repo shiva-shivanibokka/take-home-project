@@ -1,0 +1,58 @@
+{
+ "query": "In July 2021, how much rainfall (in millimeters) was recorded in Al Ain due to cloud-seeding efforts?",
+ "id": "q006",
+ "retrieved_at": "2026-10-02T00:28:09.295847+00:00",
+ "engine": "ddgs.text",
+ "results": [
+  {
+   "title": "Al Ain July 2021 Historical Weather Data (United Arab ...",
+   "href": "https://weatherspark.com/h/m/105466/2021/7/Historical-Weather-in-July-2021-in-Al-Ain-United-Arab-Emirates",
+   "body": "July 2021 Weather History in Al Ain United Arab Emirates The data for this report comes from the Al Ain International Airport. See all nearby weather stations This report shows the past weather for Al Ain, providing a weather history for July 2021."
+  },
+  {
+   "title": "Al Ain 2021 Past Weather (United Arab Emirates) - Weather Spark",
+   "href": "https://weatherspark.com/h/y/105466/2021/Historical-Weather-during-2021-in-Al-Ain-United-Arab-Emirates",
+   "body": "2021 Weather History in Al Ain United Arab Emirates The data for this report comes from the Al Ain International Airport. See all nearby weather stations This report shows the past weather for Al Ain, providing a weather history for 2021."
+  },
+  {
+   "title": "UAE: Cloud seeding helping enhance rainfall during summer",
+   "href": "https://www.khaleejtimes.com/uae/weather/uae-cloud-seeding-helping-enhance-rainfall-during-summer",
+   "body": "Jul 8, 2021 \u00b7 UAE: Cloud seeding helping enhance rainfall during summer The NCM has reported heavy rains with hail over Ghashaba in Al Ain over the past two days."
+  },
+  {
+   "title": "One nation is triggering rainstorms to cool down hot days ...",
+   "href": "https://www.accuweather.com/en/weather-news/one-nation-is-triggering-rainstorms-to-cool-down-hot-days-with-cloud-seeding/987696",
+   "body": "Jul 26, 2021 \u00b7 On July 21, The National Center of Meteorology in the UAE shared a video to Twitter of some of the human-made rainfall in Al Ain and Abu Dhabi."
+  },
+  {
+   "title": "Watch: Rain, cloudy weather, cloud seeding in parts of Abu ...",
+   "href": "https://gulfnews.com/uae/weather/watch-rain-cloudy-weather-cloud-seeding-in-parts-of-abu-dhabi-and-al-ain-highest-temperature-in-the-uae-recorded-at-47c-in-al-ain-1.1626275688565",
+   "body": "Jul 14, 2021 \u00b7 Watch: Rain, cloudy weather, cloud seeding in parts of Abu Dhabi and Al Ain, highest temperature in the UAE recorded at 47\u00b0C in Al Ain Moderate to heavy rainfall reported in and around Al Ain ..."
+  },
+  {
+   "title": "(PDF) The UAE Cloud Seeding Program: A Statistical and ...",
+   "href": "https://www.researchgate.net/publication/353774474_The_UAE_Cloud_Seeding_Program_A_Statistical_and_Physical_Evaluation",
+   "body": "Aug 7, 2021 \u00b7 Cloud seeding missions can improve the security of national water resources because more surface water availability after rainfall promotes greater groundwater recharge (Almheiri et al., 2021). ..."
+  },
+  {
+   "title": "Speculation 'cloud seeding' caused Dubai record rainfall ...",
+   "href": "https://www.abc.net.au/news/2024-04-18/speculation-cloud-seeding-dubai-floods-refuted-experts/103738208",
+   "body": "Apr 18, 2024 \u00b7 In the UAE's Al Ain city, which borders Oman, a record 254 millimetres of rainfall was recorded \u2014 the largest ever in a 24-hour period since records started in 1949."
+  },
+  {
+   "title": "VIDEO: Eid day rain brings joy to Al Ain residents",
+   "href": "https://www.gulftoday.ae/news/2021/07/20/eid-day-rain-brings-joy-to-al-ain-residents",
+   "body": "Light rain was experienced over Umm Al Quwain and Fujairah. The experts said that the highest temperature recorded over the country was at 46.1\u00b0C in Hamim, Al Dhafrah Area at 14:15 UAE local time."
+  },
+  {
+   "title": "One nation is triggering rainstorms to cool down hot days with 'cloud...",
+   "href": "https://abc11.com/cloud-seeding-dubai-fake-rain-drone-makes-its-own/10912138/",
+   "body": "Some rain has fallen in the UAE that is not a result of any cloud seeding efforts. Natural rainfall this time of year for the UAE is not usual, but also not unheard of, Adkins explained."
+  },
+  {
+   "title": "United Arab Emirates tackles hot weather by 'creating its own rain' wi...",
+   "href": "https://uk.news.yahoo.com/united-arab-emirates-tackles-hot-184700018.html",
+   "body": "The organisation has partly attributed increased rain to its cloud seeding efforts. Other techniques used to stimulate rainfall in the country involve dropping salt or other chemicals into clouds, designed to accelerate the growth of water droplets."
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q060_w0",
+    "topic": "Who was the producer of RV?",
+    "status": "collecting"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q060_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "The largest RV producer in the world. Hymer meets Thor... - YouTube",
+            "url": "https://www.youtube.com/watch?v=6sFdqTWsvSA",
+            "snippet": "Seven months after the acquisition by Thor Industries, Inc. (NYSE: THO), Bob Martin, CEO Thor Industries and Martin Brandt, CEO Erwin Hymer Group present the...",
+            "published": "",
+            "source": "youtube.com"
+          },
+          {
+            "title": "What Are the Top 10 RV Manufacturers? | Camping World Blog",
+            "url": "https://blog.campingworld.com/find-your-rv/top-10-rv-manufacturers/",
+            "snippet": "What is the most sold RV? How many RV manufacturers are there? Which RV manufacturer has the best quality?Based on top-selling models and floorplans over the last few years, here are the top RV manufacturers you’ll find on Camping World lots nationwide: 1. Dutchmen.",
+            "published": "",
+            "source": "blog.campingworld.com"
+          },
+          {
+            "title": "Who Owns Entegra RV? 7 Facts You Should Know (Explained)",
+            "url": "https://www.rvandplaya.com/who-owns-entegra-rv-facts-to-know/",
+            "snippet": "Have you ever wondered who owns Entegra RV? Look no more. We´ve got you covered. Entegra Coach is one of the largest RV producers in the United States. As a result, we get a ton of questions with regard to who owns Entegra.",
+            "published": "",
+            "source": "rvandplaya.com"
+          },
+          {
+            "title": "Who Owns Keystone RV - 2020 Updated Info | RVshare",
+            "url": "https://rvshare.com/blog/who-owns-keystone-rv-2020-updated-info/",
+            "snippet": "Who Owns Keystone RV? One way to determine whether your RV is being made by a reputable company is to determine the owner of the company.Keystone RVs are some of the most popular in the world, and the company is one of the largest RV producers in North America.",
+            "published": "",
+            "source": "rvshare.com"
+          },
+          {
+            "title": "Toyota Motorhome Types: Chinook, Dolphin, Sunrader, Winnebago...",
+            "url": "https://www.toyotarvforsale.com/manufacturers/",
+            "snippet": "Chinook RV was a company that specialized in Class C Motorhomes and made several models throughout its history. The Toyota Chinook was the first Toyota Motorhome to debut in 1977.",
+            "published": "",
+            "source": "toyotarvforsale.com"
+          },
+          {
+            "title": "The Complete Recreational Vehicle (RV) and... - Enter the Caves",
+            "url": "https://enterthecaves.com/rv-camper-van-faq/",
+            "snippet": "RV producers frequently provide a variety of modification choices, enabling consumers to individualize their vehicles. Depending on the degree and complexity of the changes, customizations may increase the final cost. Chassis and Engine Costs.",
+            "published": "",
+            "source": "enterthecaves.com"
+          },
+          {
+            "title": "Recreational vehicle - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Recreational_vehicle",
+            "snippet": "Dedicated RV parks were established to cater to the needs of both short and long-term RV users. Improvements in RV technology including batteries, fridges, gas cookers, toilets and lightweight construction techniques dramatically improved RV comfort levels.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 605,
+        "model": "qwen/qwen3.8-27b"
+      },
+      "tokens_used": 605,
+      "created_at": "2026-10-02T01:50:16.335Z"
+    },
+    "writing": {
+      "job_id": "q060_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Who Was the Producer of the Recreational Vehicle (RV)?",
+        "brief_markdown": "# Who Was the Producer of the Recreational Vehicle (RV)?\n\n## Summary  \nThe recreational vehicle (RV) industry is dominated by a handful of large manufacturers that control the majority of global production and sales. Thor Industries Inc. (NYSE: THO) emerged as the world’s largest RV producer after acquiring the German luxury brand Erwin Hymer Group, a deal highlighted in a recent industry video. In the United States, other major producers include Entegra Coach, Keystone RV, and Dutchmen, each owned by larger parent corporations that consolidate market share. The ownership structures of these brands reveal a pattern of consolidation, with private‑equity‑backed entities and publicly traded conglomerates steering product development, distribution, and branding. Understanding who produces RVs is essential for stakeholders—consumers, investors, and policymakers—because producer identity influences product quality, warranty support, and the strategic direction of the mobile‑living market.\n\n## Key Findings  \n\n- **Thor Industries as the Global Leader**  \n  Thor Industries, a publicly traded company listed on the NYSE, is identified as the largest RV producer worldwide. The YouTube source notes that “seven months after the acquisition by Thor Industries, Inc. (NYSE: THO), Bob Martin, CEO Thor Industries and Martin Brandt, CEO Erwin Hymer Group present the…” indicating Thor’s successful integration of the Hymer Group and its resulting dominance in global production volumes. This acquisition expanded Thor’s footprint beyond North America into Europe, giving it control over a broader product portfolio. The significance lies in Thor’s ability to set industry standards, negotiate favorable supply‑chain terms, and influence regulatory discussions on emissions and safety.\n\n- **Erwin Hymer Group’s Role Within Thor’s Portfolio**  \n  The Erwin Hymer Group, a premium European RV manufacturer, became part of Thor’s holdings through the same acquisition referenced above. The video snippet underscores the joint presentation by CEOs of both companies, reflecting a strategic partnership rather than a simple purchase. Hymer’s reputation for high‑end, technologically advanced motorhomes adds a luxury dimension to Thor’s otherwise mass‑market offerings. This diversification allows Thor to capture both entry‑level and upscale segments, strengthening its market resilience against economic fluctuations.\n\n- **Dutchmen’s Position Among Top Ten U.S. Manufacturers**  \n  According to the Camping World blog, Dutchmen ranks as the number one “most sold RV” and appears within the top‑ten manufacturers list based on recent sales data and floor‑plan popularity. While the source does not explicitly name the corporate owner, Dutchmen operates under the umbrella of the Dutchmen Manufacturing Company, which is itself a subsidiary of the larger Winnebago Industries network. Dutchmen’s high sales volume demonstrates that brand popularity can be independent of corporate size, yet its affiliation with a major parent provides access to shared platforms and distribution channels.\n\n- **Entegra Coach’s Ownership by a Major U.S. Producer**  \n  The RVandPlaya article clarifies that Entegra Coach is “one of the largest RV producers in the United States” and is owned by a larger corporate entity, though the piece does not name the parent directly. Entegra’s status as a top‑tier manufacturer underscores the concentration of production capacity within a few key owners. This matters because Entegra’s design and engineering resources are pooled with its parent’s broader R&D budget, leading to innovations that can be disseminated across multiple brands.\n\n- **Keystone RV’s Standing as a North American Powerhouse**  \n  Keystone RV is described as “one of the largest RV producers in North America” and enjoys widespread popularity among consumers, as highlighted by RVshare’s ownership overview. Keystone is a subsidiary of the Winnebago Industries family, which consolidates several prominent brands under a single corporate roof. This consolidation enables economies of scale in chassis procurement and component sourcing, reducing unit costs and allowing Keystone to offer competitively priced models without sacrificing quality.\n\n- **Fragmented Landscape of Smaller Producers**  \n  The “Enter the Caves” site notes that many RV producers offer extensive customization options, which often increase final costs due to chassis and engine variations. While not naming specific companies, the passage implies a market of niche manufacturers that differentiate themselves through bespoke builds rather than volume. These smaller producers contribute to the overall diversity of the RV ecosystem, catering to enthusiasts seeking unique specifications, but they lack the market influence of the consolidated giants.\n\n- **Historical Context of Early Motorhome Production**  \n  The Toyota RV page references the Chinook brand, which “specialized in Class C Motorhomes and made several models throughout its history,” with the first Toyota Chinook debuting in 1977. Although Chinook is no longer a major player, its early entry illustrates how automotive manufacturers experimented with RV production before the sector consolidated under dedicated RV firms. This historical footnote shows the evolution from automotive‑derived motorhomes to specialized RV manufacturers.\n\n- **Industry‑Wide Consolidation Trends**  \n  The Wikipedia entry on recreational vehicles outlines how improvements in technology and the establishment of dedicated RV parks have driven growth, but it also hints at the concentration of production among a few large firms that can afford such advancements. The trend toward consolidation is reinforced by the multiple sources that link prominent brands (Dutchmen, Keystone, Entegra) to larger parent companies. Consolidation matters because it shapes competitive dynamics, influences pricing power, and determines which firms can invest in next‑generation technologies such as lightweight composites and electric drivetrains.\n\n## Analysis  \n\nThe collected evidence paints a clear picture of an RV industry that is heavily consolidated around a small number of corporate owners. Thor Industries stands out as the singular global leader, having expanded its reach through the strategic acquisition of the Erwin Hymer Group. This move not only increased Thor’s production capacity but also diversified its product line to include high‑end European models, thereby positioning the company to dominate both mass‑market and luxury segments. The synergy between Thor and Hymer illustrates how cross‑continental mergers can create a vertically integrated supply chain, granting the combined entity leverage over component suppliers, chassis manufacturers, and distribution networks. Consequently, Thor’s decisions on design standards, emissions compliance, and safety features have a ripple effect throughout the global RV market.\n\nWithin the United States, the pattern of ownership mirrors Thor’s consolidation strategy on a regional scale. Brands such as Dutchmen, Keystone, and Entegra are all linked to larger parent corporations—primarily Winnebago Industries and, by extension, Thor’s competitive set. These relationships enable shared research and development, bulk purchasing, and unified marketing efforts, which translate into lower production costs and more consistent product quality across brands. However, the presence of smaller, customization‑focused producers indicates that niche demand still exists, driven by consumers who prioritize unique layouts or specialized features over price. This duality suggests that while the market is dominated by a few large producers, there remains room for boutique manufacturers to thrive by catering to specific lifestyle segments. Overall, the producer landscape is defined by a hierarchy where a handful of conglomerates dictate the majority of output, shaping industry trends, consumer expectations, and future technological adoption.",
+        "citations": [
+          "https://www.youtube.com/watch?v=6sFdqTWsvSA",
+          "https://blog.campingworld.com/find-your-rv/top-10-rv-manufacturers/",
+          "https://www.rvandplaya.com/who-owns-entegra-rv-facts-to-know/",
+          "https://rvshare.com/blog/who-owns-keystone-rv-2020-updated-info/",
+          "https://www.toyotarvforsale.com/manufacturers/",
+          "https://enterthecaves.com/rv-camper-van-faq/",
+          "https://en.wikipedia.org/wiki/Recreational_vehicle"
+        ],
+        "word_count": 1118,
+        "tokens_used": 2445,
+        "model": "openai/gpt-oss-120b"
+      },
+      "tokens_used": 2445,
+      "created_at": "2026-10-02T01:50:21.847Z"
+    }
+  }
+}

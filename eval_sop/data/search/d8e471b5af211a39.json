@@ -1,0 +1,58 @@
+{
+ "query": "Was the person who served as president of the Scottish National Party from 1987 to 2005 alive when the party was founded?",
+ "id": "f053",
+ "retrieved_at": "2026-10-02T17:22:42.132473+00:00",
+ "engine": "ddgs.text",
+ "results": [
+  {
+   "title": "Donald Trump - Wikipedia",
+   "href": "https://en.wikipedia.org/wiki/Donald_Trump",
+   "body": "A member of the Republican Party, he served as the 45th president from 2017 to 2021.Donald John Trump (born June 14, 1946) is an American politician, media personality, and businessman who is the 47th president of the United States."
+  },
+  {
+   "title": "Scottish National Party \u2014 Scotland\u2019s largest political party and party...",
+   "href": "https://www.snp.org/",
+   "body": "Scottish National Party. View All Near Me.In 2014, the anti-independence campaign told the people of Scotland that Westminster control was the only way to protect our wallets, secure low grocery bills, and guarantee our place in the European Union."
+  },
+  {
+   "title": "Leaders at Celtic summit to affirm right to seek... | The Guardian",
+   "href": "https://www.theguardian.com/politics/2026/sep/13/first-ministers-to-affirm-right-to-seek-independence-from-the-uk",
+   "body": "From left to right, the Scottish National party leader, John Swinney, the Sinn F\u00e9in vice -president, Michelle O\u2019Neill, and the Plaid Cymru leader, Rhun ap Iorwerth."
+  },
+  {
+   "title": "Another Scottish independence vote is a matter of \"when, not if...\"",
+   "href": "https://hotair.com/jazz-shaw/2021/05/11/another-scottish-independence-vote-is-a-matter-of-when-not-if-n389213",
+   "body": "Nicola Sturgeon, the leader of the Scottish National Party, recently sent a message to Prime Minister Boris Johnson, telling him that another vote to determine whether or not Scotland should leave the United Kingdom was on the way and it was only a matter of time."
+  },
+  {
+   "title": "List of U.S. Presidents in Chronological Order",
+   "href": "https://historynet.com/us-presidents/",
+   "body": "The longest-serving president was Franklin D. Roosevelt, who died shortly into his fourth term in office. (The 22nd Amendment, ratified in 1951, limited to two the number of presidential terms one person could serve.)"
+  },
+  {
+   "title": "Scotland, Wales, Northern Ireland to demand UK allow independence...",
+   "href": "https://www.jpost.com/international/article-908447",
+   "body": "The three parties will reportedly argue that they should be allowed to join the European Union. Scotland and Wales would join as new members, with Northern Ireland being included as part of the Republic of Ireland."
+  },
+  {
+   "title": "A meeting in Cardiff between the leaders of the Scottish National...",
+   "href": "https://news-pravda.com/world/2026/09/25/2619106.html",
+   "body": "...the Party of Wales, Rhyn ap Iorwerth, and the Northern Irish \"Sinn Fein\" Michelle O'Neill, who are also the first ministers of their respective regions, as well as the chairman of the Irish \"Sinn Fein\" Mary Lou MacDonald, leader of the opposition in the Parliament of the Republic."
+  },
+  {
+   "title": "The Story Of Mary Anne MacLeod Trump, The Mother Of Donald Trump",
+   "href": "https://allthatsinteresting.com/mary-anne-macleod-trump",
+   "body": "Mary Anne MacLeod Trump went from being a working-class Scottish immigrant to a New York City socialite who gave birth to the 45th President of the United States."
+  },
+  {
+   "title": "akseljoonas/agent-questions \u00b7 Datasets at Hugging Face",
+   "href": "https://huggingface.co/datasets/akseljoonas/agent-questions/viewer/default/train",
+   "body": "Was the person who served as president of the Scottish National Party from 1987 to 2005 alive when the party was founded? Yes.Who was the author of the novel whose film adaptation lead singer Mark Arm took the name of his band from? Raymond Friday Locke."
+  },
+  {
+   "title": "euppublishing.com/doi/abs/10.3366/scot.2014.0033",
+   "href": "https://www.euppublishing.com/doi/abs/10.3366/scot.2014.0033",
+   "body": "Review: History and National Identity."
+  }
+ ]
+}

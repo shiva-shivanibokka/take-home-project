@@ -1,0 +1,58 @@
+{
+ "query": "What is the KEGG ID of Hydroxyzine, an antihistamine medication?",
+ "id": "q045",
+ "retrieved_at": "2026-10-02T00:30:55.743350+00:00",
+ "engine": "ddgs.text",
+ "results": [
+  {
+   "title": "Hydroxyzine - Wikipedia",
+   "href": "https://en.wikipedia.org/wiki/Hydroxyzine",
+   "body": "Hydroxyzine, sold under the brand names Atarax and Vistaril among others, is an antihistamine medication. It is used in the treatment of itchiness, anxiety, insomnia, and nausea. It is used either by mouth or injection into a muscle."
+  },
+  {
+   "title": "KEGG DRUG: Hydroxyzine - GenomeNet",
+   "href": "https://www.genome.jp/dbget-bin/www_bget?D08054+D00672+D01096",
+   "body": "DRUG: Hydroxyzine hydrochloride Help ... \u00bb Japanese version \u00bb Back All links ... DRUG: Hydroxyzine pamoate Help ... \u00bb Japanese version \u00bb Back All links ... DBGET integrated database retrieval system"
+  },
+  {
+   "title": "KEGG DRUG: Hydroxyzine - GenomeNet",
+   "href": "https://www.genome.jp/entry/D08054",
+   "body": "D08054 Hydroxyzine Target-based classification of drugs [BR: br08310] G Protein-coupled receptors Rhodopsin family Histamine HRH1 D08054 Hydroxyzine (INN) Drug groups [BR: br08330] Anti-allergic agent DG01557 Histamine receptor antagonist DG01482 Histamine receptor H1 antagonist DG00912 Hydroxyzine BRITE hierarchy Other DBs CAS: 68-88-2 PubChem ..."
+  },
+  {
+   "title": "COMPOUND: C07045 - KEGG",
+   "href": "https://www.kegg.jp/entry/cpd:C07045",
+   "body": "N05BB01 Hydroxyzine D08054 Hydroxyzine (INN) Drug groups [BR: br08330] Anti-allergic agent DG01557 Histamine receptor antagonist DG01482 Histamine receptor H1 antagonist DG00912 Hydroxyzine D08054 Hydroxyzine Target-based classification of drugs [BR: br08310] G Protein-coupled receptors Rhodopsin family Histamine HRH1 D08054 Hydroxyzine (INN ..."
+  },
+  {
+   "title": "KEGG DRUG: Hydroxyzine hydrochloride - GenomeNet",
+   "href": "https://www.genome.jp/dbget-bin/www_bget?drug:D00672",
+   "body": "HYDROXYZINE (Henry Schein), HYDROXYZINE HCL (Advanced Rx Pharmacy of Tennessee), HYDROXYZINE HCL (Direct_rx), HYDROXYZINE HYDROCHLORIDE (A-S Medication Solutions), HYDROXYZINE HYDROCHLORIDE (A-S Medication Solutions), HYDROXYZINE HYDROCHLORIDE (A-S Medication Solutions), HYDROXYZINE HYDROCHLORIDE (A-S Medication Solutions), HYDROXYZINE ..."
+  },
+  {
+   "title": "KEGG DRUG Database - GenomeNet",
+   "href": "https://www.genome.jp/kegg/drug/",
+   "body": "Jul 28, 2026 \u00b7 KEGG DRUG is a comprehensive drug information resource for approved drugs in Japan, USA and Europe, unified based on the chemical structure and/or the chemical component of active ingredients. Each KEGG DRUG entry is identified by the D number and associated with KEGG original annotations including therapeutic targets, drug metabolism, and other molecular interaction network information."
+  },
+  {
+   "title": "KEGG COMPOUND: C07045 - GenomeNet",
+   "href": "https://www.genome.jp/dbget-bin/www_bget?cpd:C07045",
+   "body": "N05BB01 Hydroxyzine D08054 Hydroxyzine (INN) Drug groups [BR: br08330] Anti-allergic agent DG01557 Histamine receptor antagonist DG01482 Histamine receptor H1 antagonist DG00912 Hydroxyzine D08054 Hydroxyzine Target-based classification of drugs [BR: br08310] G Protein-coupled receptors Rhodopsin family Histamine HRH1 D08054 Hydroxyzine (INN ..."
+  },
+  {
+   "title": "HYDROXYZINE: Hydroxyzine kegg id antihistamine medication ...",
+   "href": "https://www.drugchatter.com/chat/2739/hydroxyzine-kegg-id-antihistamine-medication",
+   "body": "Hydroxyzine kegg id antihistamine medication? See the DrugPatentWatch profile for Hydroxyzine Hydroxyzine is a first-generation antihistamine medication [1]. It is used to treat allergic reactions, itching, and anxiety [2]. Hydroxyzine is available as a generic medication [3]."
+  },
+  {
+   "title": "Hydroxyzine (oral route) - Side effects & dosage - Mayo Clinic",
+   "href": "https://www.mayoclinic.org/drugs-supplements/hydroxyzine-oral-route/description/drg-20311434",
+   "body": "Hydroxyzine is an antihistamine. It works by preventing the effects of a substance called histamine, which is produced by the body. This medicine is available only with your doctor's prescription. This product is available in the following dosage forms"
+  },
+  {
+   "title": "Hydroxyzine: Uses, Dosage, Side Effects & Reviews - Drugs.com",
+   "href": "https://www.drugs.com/hydroxyzine.html",
+   "body": "Hydroxyzine is used to treat anxiety, tension, itching from allergic skin reactions, and sedation. Learn about doses, side effects, interactions, and uses."
+  }
+ ]
+}

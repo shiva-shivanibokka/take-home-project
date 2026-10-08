@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q042_w0",
+    "topic": "Who was Ghana's Minister of Foreign Affairs during the Kulungugu bomb attack?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q042_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Ako Adjei - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Ako_Adjei",
+            "snippet": "Ako Adjei, was a Ghanaian statesman, politician, lawyer and journalist. He was a member of the United Gold Coast Convention and one of six leaders who were detained during Ghana's struggle for political independence from Britain, a group famously called The Big Six.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "How the 1963 Kulungugu bomb blast put Ako-Adjei, Adamafio ...",
+            "url": "https://ghanaremembers.com/stories/history/how-the-1963-kulungugu-bomb-blast-put-ako-adjei-adamafio-and-hugh-horatio-cofie-crabbe-on-trial.html",
+            "snippet": "How the 1963 Kulungugu bomb blast put Ako-Adjei, Adamafio, and Hugh Horatio Cofie-Crabbe on trial Stories and facts On 9 August 1963, an assassination attempt on President Kwame Nkrumah in the northern border town of Kulungugu sent shockwaves across Ghana’s political landscape.",
+            "published": "",
+            "source": "ghanaremembers.com"
+          },
+          {
+            "title": "Today in histroy: Ebenezer Ako-Adjei, two others tried in Kulungugu...",
+            "url": "https://www.ghanaweb.com/GhanaHomePage/NewsArchive/Today-in-histroy-Ebenezer-Ako-Adjei-two-others-tried-in-Kulungugu-bomb-attack-1029256",
+            "snippet": "Following an attempt on President Kwame Nkrumah’s life in Kulungugu bomb attack, three of his close associates were arrested for the assassination attempt. They were jailed under the Preventive Detention Act.",
+            "published": "",
+            "source": "ghanaweb.com"
+          },
+          {
+            "title": "Biography of Ako Adjei, The Walking History of Ghana",
+            "url": "https://gharticles.com/biography-of-ako-adjei-the-walking-history-of-ghana/",
+            "snippet": "Oct 24, 2023 · He also became Ghana’s first Minister of Foreign Affairs when the portfolio was changed from Minister for External Affairs to Minister for Foreign Affairs in May 1961. Ako Adjei’s political career was however precluded after his detention for allegedly plotting to assassinate the then president Kwame Nkrumah in the Kulungugu bomb att",
+            "published": "",
+            "source": "gharticles.com"
+          },
+          {
+            "title": "Kwame Nkrumah Escapes Death In Kulungugu (2)",
+            "url": "https://www.modernghana.com/news/753719/kwame-nkrumah-escapes-death-in-kulungugu.html",
+            "snippet": "Dei-Anang and Ako Adjei the Foreign Affairs Minister were standing in the porch and I first went in to see the President.In spite of this, however, Tawia Adamafio was tried for complicity in the Kulungugu grenade bomb attack.",
+            "published": "",
+            "source": "modernghana.com"
+          },
+          {
+            "title": "Ebenezer Ako-Adjei: Ghana’s Unsung... - browseghana.com",
+            "url": "https://browseghana.com/ebenezer-ako-adjei-ghanas-unsung-independence-hero/",
+            "snippet": "The Kulungugu Bomb Incident and Detention In August 1962, an assassination attempt on President Nkrumah in Kulungugu led to the arrest of Ako-Adjei and two other officials under the Preventive Detention Act.",
+            "published": "",
+            "source": "browseghana.com"
+          },
+          {
+            "title": "The Kulungugu Bomb Attack on Ghana's first president... - YouTube",
+            "url": "https://www.youtube.com/watch?v=JlCGZaCEDZY",
+            "snippet": "This video gives viewers every piece of known facts concerning the bomb attack that almost killed Ghana's first president, Dr. Kwame Nkrumah at Kulungugu.",
+            "published": "",
+            "source": "youtube.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 9; selected 7 for Writer.",
+        "tokens_used": 606,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 606,
+      "created_at": "2026-10-02T20:14:41.365Z"
+    },
+    "writing": {
+      "job_id": "q042_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Who was Ghana's Minister of Foreign Affairs during the Kulungugu bomb attack?",
+        "brief_markdown": "# Who was Ghana's Minister of Foreign Affairs during the Kulungugu bomb attack?\n\n## Summary\nThe Kulungugu bomb attack occurred on August 9, 1963, when an assassination attempt was made on Ghana's President Kwame Nkrumah. The incident led to the arrest and trial of several high-ranking officials, including Ebenezer Ako-Adjei, who was Ghana's Minister of Foreign Affairs at the time. Ako-Adjei was one of the six leaders who were detained during Ghana's struggle for independence and was a member of the United Gold Coast Convention. The attack and subsequent trial had significant implications for Ghana's politics and the country's relations with its neighbors. This research brief aims to identify Ako-Adjei's role in the Ministry of Foreign Affairs during the Kulungugu bomb attack and the consequences of the incident on Ghana's political landscape.\n\n## Key Findings\n\n* **Ako-Adjei's Role in the Ministry of Foreign Affairs**\nAko-Adjei was Ghana's Minister of Foreign Affairs when the portfolio was changed from Minister for External Affairs to Minister for Foreign Affairs in May 1961. This indicates that Ako-Adjei held the position of Minister of Foreign Affairs for at least two years before the Kulungugu bomb attack. As Minister of Foreign Affairs, Ako-Adjei would have been responsible for overseeing Ghana's foreign relations and diplomatic efforts. The fact that he was in office during the attack suggests that he was a key figure in Ghana's government at the time.\n* **Ako-Adjei's Detention and Trial**\nAko-Adjei was arrested and tried for complicity in the Kulungugu grenade bomb attack. The Preventive Detention Act was used to detain Ako-Adjei and two other officials, including Tawia Adamafio, who was tried for complicity in the attack. This suggests that Ako-Adjei was suspected of being involved in the assassination attempt and was held accountable for his actions.\n* **The Impact of the Kulungugu Bomb Attack on Ghana's Politics**\nThe Kulungugu bomb attack had significant implications for Ghana's politics and the country's relations with its neighbors. The attack and subsequent trial led to a period of heightened tension and suspicion within Ghana's government, with several high-ranking officials being detained and tried for their alleged involvement in the attack.\n* **Ako-Adjei's Legacy**\nAko-Adjei's legacy as a Ghanaian statesman and politician has been largely overshadowed by the controversy surrounding the Kulungugu bomb attack. However, his contributions to Ghana's struggle for independence and his role as a member of the United Gold Coast Convention are still recognized today.\n* **The Role of the Preventive Detention Act**\nThe Preventive Detention Act was used to detain Ako-Adjei and two other officials in connection with the Kulungugu bomb attack. This raises questions about the use of emergency powers and the limits of executive authority in Ghana's government.\n* **The Significance of the Kulungugu Bomb Attack**\nThe Kulungugu bomb attack was a significant event in Ghana's history, highlighting the tensions and conflicts that existed within the country's government at the time. The attack and subsequent trial had far-reaching implications for Ghana's politics and its relations with its neighbors.\n\n## Analysis\n\nThe Kulungugu bomb attack and the subsequent trial of Ako-Adjei and two other officials had significant implications for Ghana's politics and the country's relations with its neighbors. The attack and trial highlighted the tensions and conflicts that existed within Ghana's government at the time, with several high-ranking officials being detained and tried for their alleged involvement in the attack. The use of the Preventive Detention Act to detain Ako-Adjei and two other officials raises questions about the use of emergency powers and the limits of executive authority in Ghana's government.\n\nThe legacy of Ako-Adjei as a Ghanaian statesman and politician has been largely overshadowed by the controversy surrounding the Kulungugu bomb attack. However, his contributions to Ghana's struggle for independence and his role as a member of the United Gold Coast Convention are still recognized today. The Kulungugu bomb attack was a significant event in Ghana's history, highlighting the tensions and conflicts that existed within the country's government at the time. The attack and subsequent trial had far-reaching implications for Ghana's politics and its relations with its neighbors.\n\nThe fact that Ako-Adjei was Ghana's Minister of Foreign Affairs during the Kulungugu bomb attack suggests that he was a key figure in Ghana's government at the time. As Minister of Foreign Affairs, Ako-Adjei would have been responsible for overseeing Ghana's foreign relations and diplomatic efforts. The fact that he was in office during the attack suggests that he was a key figure in Ghana's government at the time. The use of the Preventive Detention Act to detain Ako-Adjei and two other officials raises questions about the use of emergency powers and the limits of executive authority in Ghana's government.\n\nIn conclusion, the Kulungugu bomb attack and the subsequent trial of Ako-Adjei and two other officials had significant implications for Ghana's politics and the country's relations with its neighbors. The attack and trial highlighted the tensions and conflicts that existed within Ghana's government at the time, with several high-ranking officials being detained and tried for their alleged involvement in the attack. The legacy of Ako-Adjei as a Ghanaian statesman and politician has been largely overshadowed by the controversy surrounding the Kulungugu bomb attack. However, his contributions to Ghana's struggle for independence and his role as a member of the United Gold Coast Convention are still recognized today.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/Ako_Adjei",
+          "https://ghanaremembers.com/stories/history/how-the-1963-kulungugu-bomb-blast-put-ako-adjei-adamafio-and-hugh-horatio-cofie-crabbe-on-trial.html",
+          "https://www.ghanaweb.com/GhanaHomePage/NewsArchive/Today-in-histroy-Ebenezer-Ako-Adjei-two-others-tried-in-Kulungugu-bomb-attack-1029256",
+          "https://gharticles.com/biography-of-ako-adjei-the-walking-history-of-ghana/",
+          "https://www.modernghana.com/news/753719/kwame-nkrumah-escapes-death-in-kulungugu.html",
+          "https://browseghana.com/ebenezer-ako-adjei-ghanas-unsung-independence-hero/",
+          "https://www.youtube.com/watch?v=JlCGZaCEDZY"
+        ],
+        "word_count": 884,
+        "tokens_used": 2239,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2239,
+      "created_at": "2026-10-02T20:15:07.700Z"
+    }
+  }
+}

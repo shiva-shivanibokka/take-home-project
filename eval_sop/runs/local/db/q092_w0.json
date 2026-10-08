@@ -1,0 +1,90 @@
+{
+  "job": {
+    "id": "q092_w0",
+    "topic": "Who is the author of Chaotic?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q092_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Chaotic: A Dark Romance by Shantel Tessier | Goodreads",
+            "url": "https://www.goodreads.com/en/book/show/245698575-chaotic",
+            "snippet": "Dec 31, 2025 · Shantel is a USA Today & Wall Street Journal Bestselling Author. She lives in Oklahoma with her high school sweetheart, who is a wonderful, supportive husband and their two daughters. She loves to spend time cuddled up on the couch with a good book. Although she has a passion to write, her family is most important to her.",
+            "published": "",
+            "source": "goodreads.com"
+          },
+          {
+            "title": "Chaotic Summary, Characters and Themes | Shantel Tessier",
+            "url": "https://booksthatslay.com/chaotic-summary-characters-and-themes-shantel-tessier/",
+            "snippet": "May 2, 2026 · Chaotic (L.O.R.D.S. #7) by Shantel Tessier is a dark romance set inside the “Lords” world, where power is inherited, violence is ritual, and survival is treated like a privilege. At Barrington University, young men are molded through engineered fear, blood oaths, and tests meant to strip away empathy. Kashton Landon Pierce is pushed t",
+            "published": "",
+            "source": "booksthatslay.com"
+          },
+          {
+            "title": "Chaotic by Tessier, Shantel: New Soft cover (2026 ... - AbeBooks",
+            "url": "https://www.abebooks.com/Chaotic-Tessier-Shantel-Dark-Angel-Creations/32370409362/bd",
+            "snippet": "Chaotic Tessier, Shantel 4.52 34,123 ratings by Goodreads Language: English Published by Dark Angel Creations LLC, 2026 ISBN 13: 9798218908737 Series: Book 7 of 7 - The Lords",
+            "published": "",
+            "source": "abebooks.com"
+          },
+          {
+            "title": "Shantel Tessier Official: TikTok, Instagram, Facebook | Linktree",
+            "url": "https://linktr.ee/authorshanteltessier",
+            "snippet": "Shantel Tessier USA TODAY & WALL STREET JOURNAL BESTSELLING AUTHOR Amazon.com: Chaotic: A Dark Romance: 9798279008674: Shantel Tessier: Books Chaotic BLOG TOUR sign-ups",
+            "published": "",
+            "source": "linktr.ee"
+          },
+          {
+            "title": "Shantel Tessier New Releases | Books, Bio, Latest Shantel ...",
+            "url": "https://nextnewbooks.com/authors/shantel-tessier/",
+            "snippet": "Shantel Tessier - Complete author biography, bibliography, book reviews, and latest releases.",
+            "published": "",
+            "source": "nextnewbooks.com"
+          },
+          {
+            "title": "2026 Review – Chaotic by Shantel Tessier – Kay Daniels Romance",
+            "url": "https://kaydanielsromance.wordpress.com/2026/01/09/2026-review-chaotic-by-shantel-tessier/",
+            "snippet": "Jan 9, 2026 · Chaotic; The L.O.R.D.S. #7 (#7 within a series) Publication Date: January 9, 2026 Genre/Tropes: Dark/BDSM/Secret Society/Anti-Hero/Suspense Romance Author: Shantel Tessier Review Rating: 5 Gold Stars Review/Synopsis: Review: Kash was well worth the wait!! ️🥵🔥 I'm in 💯 percent deep in love with this bad boy 💋♠️Kashton Landon ...",
+            "published": "",
+            "source": "kaydanielsromance.wordpress.com"
+          }
+        ],
+        "count": 6,
+        "notes": "Tavily returned 7 results; deduped to 6; selected 6 for Writer.",
+        "tokens_used": 462,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 462,
+      "created_at": "2026-10-02T20:08:54.941Z"
+    },
+    "writing": {
+      "job_id": "q092_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Authorship of \"Chaotic\"",
+        "brief_markdown": "# Authorship of \"Chaotic\"\n\n## Summary\n\nThe authorship of \"Chaotic\", a dark romance novel, has been confirmed to be Shantel Tessier. Shantel is a USA Today & Wall Street Journal Bestselling Author, residing in Oklahoma with her family. The novel, part of the \"L.O.R.D.S.\" series, has received positive reviews from readers and critics alike. The story revolves around power, violence, and survival within a secret society, and has been praised for its complex characters and engaging plot.\n\n## Key Findings\n\n* **Confirmed Authorship**\nShantel Tessier is the confirmed author of \"Chaotic\", as stated on her official website and social media profiles. This is further supported by the publication details on AbeBooks, which lists Shantel Tessier as the author. The author's bio on Goodreads also mentions her as a USA Today & Wall Street Journal Bestselling Author. This confirms that Shantel Tessier is indeed the author of \"Chaotic\".\n\n* **Series and Publication Details**\nThe novel is part of the \"L.O.R.D.S.\" series, with \"Chaotic\" being the seventh installment. The publication details on AbeBooks list the publisher as Dark Angel Creations LLC, with an ISBN of 9798218908737. This information provides context on the novel's place within the series and its publication history.\n\n* **Plot and Themes**\nThe novel is set within a secret society, where power is inherited, violence is ritual, and survival is treated like a privilege. This dark and suspenseful plot has been praised by readers and critics for its complex characters and engaging storyline. The themes of power, violence, and survival are central to the novel, and have been well-received by readers.\n\n* **Reviews and Reception**\nThe novel has received positive reviews from readers and critics, with an average rating of 4.52 on Goodreads. The review on Kay Daniels Romance praises the novel's complex characters and engaging plot, giving it 5 gold stars. This positive reception suggests that \"Chaotic\" has been well-received by readers.\n\n* **Author's Background and Bio**\nShantel Tessier is a USA Today & Wall Street Journal Bestselling Author, residing in Oklahoma with her family. Her bio on Goodreads mentions her passion for writing and her love for spending time with her family. This provides context on the author's background and interests.\n\n* **Social Media Presence**\nShantel Tessier has an official website and social media profiles on TikTok, Instagram, and Facebook, where she engages with readers and promotes her work. This social media presence suggests that the author is active and engaged with her audience.\n\n* **New Releases and Bibliography**\nShantel Tessier's new releases and bibliography can be found on Next New Books, which provides a comprehensive overview of the author's work. This information provides context on the author's publishing history and current projects.\n\n## Analysis\n\nThe findings from this research brief provide a comprehensive overview of the authorship of \"Chaotic\". Shantel Tessier is confirmed as the author of the novel, and the publication details and series information provide context on the novel's place within the \"L.O.R.D.S.\" series. The plot and themes of the novel have been well-received by readers, and the author's background and bio provide insight into her interests and passions.\n\nThe positive reception of \"Chaotic\" suggests that the novel has resonated with readers, and the author's social media presence and new releases provide context on her current projects and publishing history. This research brief provides a thorough analysis of the authorship of \"Chaotic\", and can be used as a starting point for further research on the novel and its themes.\n\nThe confirmation of Shantel Tessier as the author of \"Chaotic\" is significant, as it provides a clear understanding of the novel's authorship and publishing history. The positive reception of the novel suggests that it has been well-received by readers, and the author's background and bio provide insight into her interests and passions. The social media presence and new releases provide context on the author's current projects and publishing history, and can be used as a starting point for further research on the novel and its themes.\n\nIn terms of implications, the confirmation of Shantel Tessier as the author of \"Chaotic\" has significant implications for readers and scholars of the novel. It provides a clear understanding of the novel's authorship and publishing history, and can be used as a starting point for further research on the novel and its themes. The positive reception of the novel suggests that it has been well-received by readers, and the author's background and bio provide insight into her interests and passions. The social media presence and new releases provide context on the author's current projects and publishing history, and can be used as a starting point for further research on the novel and its themes.",
+        "citations": [
+          "https://www.goodreads.com/en/book/show/245698575-chaotic",
+          "https://booksthatslay.com/chaotic-summary-characters-and-themes-shantel-tessier/",
+          "https://www.abebooks.com/Chaotic-Tessier-Shantel-Dark-Angel-Creations/32370409362/bd",
+          "https://linktr.ee/authorshanteltessier",
+          "https://nextnewbooks.com/authors/shantel-tessier/",
+          "https://kaydanielsromance.wordpress.com/2026/01/09/2026-review-chaotic-by-shantel-tessier/"
+        ],
+        "word_count": 775,
+        "tokens_used": 1976,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 1976,
+      "created_at": "2026-10-02T20:09:17.574Z"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+✔ snippet hook: default prompt is identical to explicit 150 (original behaviour preserved) (5670.5082ms)
+✔ snippet hook: default prompt is byte-identical to the original 417589b reviewer (2897.6654ms)
+✔ snippet hook: 350 exposes the full collector snippet (1898.5881ms)
+✔ verdict ignores failed checks (anyCheckFailed is dead code) - documents current behaviour (1568.9408ms)
+✖ numeric-string confidence from the LLM must not crash the reviewer (coerced to number) (1951.3116ms)
+✖ missing confidence field must not crash the reviewer (should escalate) (2039.8322ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 4
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 17045.3138
+
+✖ failing tests:
+
+test at eval_sop\tests\reviewer.test.mjs:91:1
+✖ numeric-string confidence from the LLM must not crash the reviewer (coerced to number) (1951.3116ms)
+  AssertionError [ERR_ASSERTION]: reviewer crashed: [reviewer] fatal: confidence.toFixed is not a function
+  
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///<WORKTREE>/eval_sop/tests/reviewer.test.mjs:93:10)
+      at async Test.run (node:internal/test_runner/test:1125:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at eval_sop\tests\reviewer.test.mjs:97:1
+✖ missing confidence field must not crash the reviewer (should escalate) (2039.8322ms)
+  AssertionError [ERR_ASSERTION]: reviewer crashed: [reviewer] fatal: Cannot read properties of undefined (reading 'toFixed')
+  
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///<WORKTREE>/eval_sop/tests/reviewer.test.mjs:99:10)
+      at async Test.run (node:internal/test_runner/test:1125:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

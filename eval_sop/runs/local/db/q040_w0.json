@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q040_w0",
+    "topic": "What is the Kashmir Valley also known as?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q040_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Kashmir Valley - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Kashmir_Valley",
+            "snippet": "The Kashmir Valley, also known as the Vale of Kashmir, is an intermontane valley or basin in the northern part of Indian-administered Jammu and Kashmir. The valley is surrounded by the ranges of the Himalayas, bounded on the southwest by the lower Himalayan Pir Panjal Range and...",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "Jammu and Kashmir District Map",
+            "url": "https://www.mapsofindia.com/maps/jammuandkashmir/jammuandkashmir-district.htm",
+            "snippet": "The Kashmir Valley, also known as Heaven on Earth, is famous for its beautiful gardens and lakes and its picturesque natural beauty. Other famous places in Jammu and Kashmir include Leh and Ladakh, known for their dizzying heights and rugged landscape.",
+            "published": "",
+            "source": "mapsofindia.com"
+          },
+          {
+            "title": "Banihal To Srinagar : Full Journey : Kashmir Valley Train... - YouTube",
+            "url": "https://www.youtube.com/watch?v=ZVBTXpnsFd0",
+            "snippet": "In the Kashmiri language, Kashmir itself is known as Kasheer. Banihal–Baramulla DEMU is a DEMU passenger train of the Indian Railways, which runs between Banihal railway station and Baramulla railway station, having 17 halts both within Jammu and Kashmir.",
+            "published": "",
+            "source": "youtube.com"
+          },
+          {
+            "title": "Why Kashmir is Famous: A Complete Overview of Nature, Culture and...",
+            "url": "https://www.himalayashelter.com/why-kashmir-is-famous",
+            "snippet": "The Kashmir Valley also known as Vale of Kashmir is an intermontane valley in the northernmost part of India in the state of Jammu and Kashmir. Being a valley, it is surrounded on the southwest by the Pir Panjal Range and on the northeast by the Greater Himalayan range.",
+            "published": "",
+            "source": "himalayashelter.com"
+          },
+          {
+            "title": "(PDF) An Insight to Article 35A and Article 370 of the Constitution of India",
+            "url": "https://www.researchgate.net/publication/334131946_An_Insight_to_Article_35A_and_Article_370_of_the_Constitution_of_India",
+            "snippet": "Introduction – Kashmir Valley, also known Switzerland of the East due to its beauty, has been a topic of controversy since the independence of India mainly due to political unrest in the State. The unrest is a result of a long history dating back to the time when India was a part of the British Empire.",
+            "published": "",
+            "source": "researchgate.net"
+          },
+          {
+            "title": "Best Jammu and Kashmir Tour Packages – Explore Now! | Zoyo Trip",
+            "url": "https://zoyotrip.in/best-jammu-and-kashmir-tour-packages-explore-now/",
+            "snippet": "The most famous is the Kashmir Valley, also known as the “Vale of Kashmir.” This valley is known for its apple orchards, saffron fields, and stunning natural beauty. Kashmir Valley Kashmir Valley is a fertile and lush area, surrounded by towering mountains.",
+            "published": "",
+            "source": "zoyotrip.in"
+          },
+          {
+            "title": "Between the Mountains | The New Yorker",
+            "url": "https://www.newyorker.com/magazine/2002/03/11/between-the-mountains",
+            "snippet": "Kashmir was also a natural crossroads. The Silk Route, with its great camel trains from China, passed to the north, and the country’s mountain passes opened routes to the Punjab, Afghanistan, and Jammu.",
+            "published": "",
+            "source": "newyorker.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 555,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 555,
+      "created_at": "2026-10-02T20:13:16.867Z"
+    },
+    "writing": {
+      "job_id": "q040_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "The Kashmir Valley: Multiple Names and Significance",
+        "brief_markdown": "# The Kashmir Valley: Multiple Names and Significance\n\n## Summary\n\nThe Kashmir Valley is a region in the northern part of Indian-administered Jammu and Kashmir, known for its natural beauty and cultural significance. It is also referred to by multiple names, including the Vale of Kashmir, Heaven on Earth, and the Switzerland of the East. This region has been a topic of controversy due to political unrest, dating back to the time when India was a part of the British Empire. The Kashmir Valley is a fertile and lush area, surrounded by towering mountains, and is famous for its apple orchards, saffron fields, and stunning natural beauty. This research brief aims to explore the various names by which the Kashmir Valley is known and their implications.\n\n## Key Findings\n\n* **The Kashmir Valley is also known as the Vale of Kashmir**\nThe Kashmir Valley is an intermontane valley or basin in the northern part of Indian-administered Jammu and Kashmir, bounded on the southwest by the lower Himalayan Pir Panjal Range. This name is used to describe the geographical location of the region. The use of this name highlights the region's unique geography, surrounded by towering mountains.\n* **The Kashmir Valley is also known as Heaven on Earth**\nThe Kashmir Valley is famous for its beautiful gardens and lakes and its picturesque natural beauty. This name is used to describe the region's natural beauty and its appeal to tourists. The use of this name emphasizes the region's beauty and its potential for tourism.\n* **The Kashmir Valley is also known as the Switzerland of the East**\nThe Kashmir Valley is also known as Switzerland of the East due to its beauty. This name is used to describe the region's natural beauty and its similarity to Switzerland. The use of this name highlights the region's potential for tourism and its appeal to visitors.\n* **The Kashmir Valley is known by different names in different languages**\nIn the Kashmiri language, Kashmir itself is known as Kasheer. This highlights the region's cultural significance and the importance of language in describing the region.\n* **The Kashmir Valley is a fertile and lush area, surrounded by towering mountains**\nThe Kashmir Valley is a fertile and lush area, surrounded on the southwest by the Pir Panjal Range and on the northeast by the Greater Himalayan range. This highlights the region's geography and its potential for agriculture and tourism.\n* **The Kashmir Valley is famous for its apple orchards, saffron fields, and stunning natural beauty**\nThe most famous is the Kashmir Valley, also known as the “Vale of Kashmir.” This valley is known for its apple orchards, saffron fields, and stunning natural beauty. This highlights the region's potential for agriculture and tourism.\n* **The Kashmir Valley has been a topic of controversy due to political unrest**\nThe unrest in the Kashmir Valley is a result of a long history dating back to the time when India was a part of the British Empire. This highlights the region's complex history and its ongoing political issues.\n\n## Analysis\n\nThe Kashmir Valley is a region with multiple names and significances. The use of different names highlights the region's cultural and geographical significance. The region's natural beauty, including its apple orchards, saffron fields, and stunning natural beauty, makes it a potential tourist destination. However, the region's complex history and ongoing political issues have made it a topic of controversy. The use of different names also highlights the region's cultural significance, with different languages using different names to describe the region.\n\nThe Kashmir Valley's geography, surrounded by towering mountains, makes it a unique region with potential for agriculture and tourism. The region's fertility and lushness make it an attractive destination for tourists. However, the region's complex history and ongoing political issues have made it a challenging region to navigate. The use of different names highlights the region's cultural significance and its potential for tourism.\n\nThe research highlights the importance of understanding the region's cultural and geographical significance. The use of different names highlights the region's complexity and its ongoing challenges. The research also highlights the potential for tourism and agriculture in the region, making it an attractive destination for visitors. However, the region's complex history and ongoing political issues make it a challenging region to navigate.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/Kashmir_Valley",
+          "https://www.mapsofindia.com/maps/jammuandkashmir/jammuandkashmir-district.htm",
+          "https://www.youtube.com/watch?v=ZVBTXpnsFd0",
+          "https://www.himalayashelter.com/why-kashmir-is-famous",
+          "https://www.researchgate.net/publication/334131946_An_Insight_to_Article_35A_and_Article_370_of_the_Constitution_of_India",
+          "https://zoyotrip.in/best-jammu-and-kashmir-tour-packages-explore-now/",
+          "https://www.newyorker.com/magazine/2002/03/11/between-the-mountains"
+        ],
+        "word_count": 713,
+        "tokens_used": 1844,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 1844,
+      "created_at": "2026-10-02T20:13:36.419Z"
+    }
+  }
+}

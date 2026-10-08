@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q074_w0",
+    "topic": "Who is the mother of Gautama Buddha?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q074_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "The Buddha - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/The_Buddha",
+            "snippet": "Siddhartha Gautama, most commonly referred to as the Buddha (lit. 'the awakened one'), was a wandering religious teacher who lived in the eastern Indo-Gangetic Plains during the 6th or 5th century BCE and founded Buddhism.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "Who was the Mother of Gautama Buddha A Yashodara B class 12...",
+            "url": "https://www.vedantu.com/question-answer/mother-of-gautama-buddha-a-yashodara-b-class-12-social-science-cbse-5ff48607330feb5742b31766",
+            "snippet": "His mother was Queen Maya, king Sudhodhana’s wife. The day of the Buddha’s birth is commonly observed as Vesak Day in Buddhist countries. Buddha was the sage on whose teachings Buddhism was founded. She was the sister of Mahapajapati Gotami.",
+            "published": "",
+            "source": "vedantu.com"
+          },
+          {
+            "title": "Who is the mother of Gautama Buddha? - Brainly.in",
+            "url": "https://brainly.in/question/52518855",
+            "snippet": "Maha Maya, also called Maya, the mother of Gautama Buddha; she was the wife of Raja Shuddhodana. Mahā Māyā dreaming of the white elephant, Gandhāra relief, 2nd century ce; in the British Museum.",
+            "published": "",
+            "source": "brainly.in"
+          },
+          {
+            "title": "(DOC) Lumbini its challenges now and then",
+            "url": "https://www.academia.edu/523789/Lumbini_its_challenges_now_and_then",
+            "snippet": "The name Lumbini is said to have been derived from that of the queen of Koli (Devadaha), whose daughter was Mahamaya, the mother of Gautama Buddha.",
+            "published": "",
+            "source": "academia.edu"
+          },
+          {
+            "title": "[Solved] What was the name of the mother of Gautama Buddha?",
+            "url": "https://testbook.com/question-answer/what-was-the-name-of-the-mother-of-gautama-buddha--625958b4431569de7988765b",
+            "snippet": "Gautama Buddha was born at Lumbini in the Sakya Kshatriya clan. He was the founder of Buddhism. His father was Suddhodhana, King of Kapilavastu, and his mother was Mahamaya.",
+            "published": "",
+            "source": "testbook.com"
+          },
+          {
+            "title": "Maya Devi Mandala | Mother of Gautama Buddha",
+            "url": "https://enlightenmentthangka.com/products/mayadevi-mandala",
+            "snippet": "Mayadevi Mandala Thangka portrays a pivotal moment in Buddhist mythology, highlighting Mayadevi, the mother of Siddhartha Gautama, who became the Buddha. In the Buddhist tradition, Mayadevi is revered as a noble and virtuous woman who gave birth to the Buddha under a bodhi tree.",
+            "published": "",
+            "source": "enlightenmentthangka.com"
+          },
+          {
+            "title": "The Birth Place of Gautam Buddha Lumbini – Tourism Development...",
+            "url": "https://tdc.lumbini.gov.np/trip/the-birth-place-of-gautam-buddha-lumbini/",
+            "snippet": "According to Buddhist tradition, Mayadevi was the mother of Gautama Buddha and gave birth to him while standing beneath a tree in Lumbini.It is considered to be the birthplace of Gautama Buddha, who is revered as the founder of Buddhism.",
+            "published": "",
+            "source": "tdc.lumbini.gov.np"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 619,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 619,
+      "created_at": "2026-10-02T20:19:07.717Z"
+    },
+    "writing": {
+      "job_id": "q074_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Who is the Mother of Gautama Buddha?",
+        "brief_markdown": "# Who is the Mother of Gautama Buddha?\n\n## Summary\n\nThe question of who the mother of Gautama Buddha was has been a topic of interest for centuries. According to Buddhist tradition, the mother of the Buddha was Queen Maya, also known as Mahamaya. She was the wife of King Sudhodhana and gave birth to the Buddha in Lumbini, a city in present-day Nepal. The birth of the Buddha is considered a significant event in Buddhist history, and the mother's role in it is revered as a symbol of devotion and virtue. This research brief aims to provide a comprehensive analysis of the sources that identify the mother of Gautama Buddha.\n\n## Key Findings\n\n* **The Mother's Identity: Queen Maya**\nThe sources consistently identify Queen Maya as the mother of Gautama Buddha. According to, Queen Maya was the wife of King Sudhodhana and the sister of Mahapajapati Gotami. This information is also supported by, which states that Maha Maya, also called Maya, was the mother of Gautama Buddha and the wife of Raja Shuddhodhana. The consistency of these sources suggests that Queen Maya is indeed the mother of the Buddha.\n* **The Birthplace: Lumbini**\nThe sources also agree that the birth of the Buddha took place in Lumbini, a city in present-day Nepal. According to, the birthplace of the Buddha is considered to be Lumbini, where Queen Maya gave birth to him while standing beneath a tree. This information is also supported by, which states that the name Lumbini is derived from the name of the queen of Koli, whose daughter was Mahamaya, the mother of the Buddha.\n* **The Significance of the Mother's Role**\nThe mother's role in the birth of the Buddha is considered significant in Buddhist tradition. According to, Mayadevi Mandala Thangka portrays a pivotal moment in Buddhist mythology, highlighting Mayadevi, the mother of Siddhartha Gautama, who became the Buddha. This suggests that the mother's role is not only important but also revered as a symbol of devotion and virtue.\n* **The Consistency of Sources**\nThe sources consistently identify Queen Maya as the mother of Gautama Buddha, with some sources providing additional information about her identity and role. According to, Gautama Buddha was born at Lumbini in the Sakya Kshatriya clan, and his father was Suddhodhana, King of Kapilavastu. This information is supported by, which states that Siddhartha Gautama, most commonly referred to as the Buddha, was a wandering religious teacher who lived in the eastern Indo-Gangetic Plains during the 6th or 5th century BCE and founded Buddhism.\n* **The Importance of the Birthplace**\nThe birthplace of the Buddha is considered significant in Buddhist tradition. According to, the birthplace of the Buddha is considered to be Lumbini, where Queen Maya gave birth to him while standing beneath a tree. This information is supported by, which states that the name Lumbini is derived from the name of the queen of Koli, whose daughter was Mahamaya, the mother of the Buddha.\n* **The Significance of the Buddha's Birth**\nThe birth of the Buddha is considered a significant event in Buddhist history. According to, the Buddha was a wandering religious teacher who lived in the eastern Indo-Gangetic Plains during the 6th or 5th century BCE and founded Buddhism. This suggests that the birth of the Buddha is not only important but also marks the beginning of Buddhism as a major world religion.\n* **The Role of the Mother in Buddhist Tradition**\nThe mother's role in the birth of the Buddha is considered significant in Buddhist tradition. According to, Mayadevi Mandala Thangka portrays a pivotal moment in Buddhist mythology, highlighting Mayadevi, the mother of Siddhartha Gautama, who became the Buddha. This suggests that the mother's role is not only important but also revered as a symbol of devotion and virtue.\n\n## Analysis\n\nThe sources consistently identify Queen Maya as the mother of Gautama Buddha, with some sources providing additional information about her identity and role. The birthplace of the Buddha is considered significant in Buddhist tradition, and the birth of the Buddha is considered a significant event in Buddhist history. The mother's role in the birth of the Buddha is considered significant in Buddhist tradition, and the mother's role is revered as a symbol of devotion and virtue.\n\nThe consistency of the sources suggests that Queen Maya is indeed the mother of the Buddha. The information provided by the sources is not only consistent but also provides additional context about the birth of the Buddha. The birthplace of the Buddha is considered significant in Buddhist tradition, and the birth of the Buddha is considered a significant event in Buddhist history. The mother's role in the birth of the Buddha is considered significant in Buddhist tradition, and the mother's role is revered as a symbol of devotion and virtue.\n\nThe analysis of the sources suggests that the mother of Gautama Buddha is Queen Maya, and the birthplace of the Buddha is Lumbini. The birth of the Buddha is considered a significant event in Buddhist history, and the mother's role in the birth of the Buddha is considered significant in Buddhist tradition. The mother's role is revered as a symbol of devotion and virtue, and the birthplace of the Buddha is considered significant in Buddhist tradition.\n\nThe implications of these findings are significant, as they provide a deeper understanding of the mother's role in the birth of the Buddha and the significance of the birthplace of the Buddha in Buddhist tradition. The findings suggest that the mother's role is not only important but also revered as a symbol of devotion and virtue, and the birthplace of the Buddha is considered significant in Buddhist tradition. The analysis of the sources provides a comprehensive understanding of the mother's role in the birth of the Buddha and the significance of the birthplace of the Buddha in Buddhist tradition.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/The_Buddha",
+          "https://www.vedantu.com/question-answer/mother-of-gautama-buddha-a-yashodara-b-class-12-social-science-cbse-5ff48607330feb5742b31766",
+          "https://brainly.in/question/52518855",
+          "https://www.academia.edu/523789/Lumbini_its_challenges_now_and_then",
+          "https://testbook.com/question-answer/what-was-the-name-of-the-mother-of-gautama-buddha--625958b4431569de7988765b",
+          "https://enlightenmentthangka.com/products/mayadevi-mandala",
+          "https://tdc.lumbini.gov.np/trip/the-birth-place-of-gautam-buddha-lumbini/"
+        ],
+        "word_count": 972,
+        "tokens_used": 2182,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2182,
+      "created_at": "2026-10-02T20:19:34.732Z"
+    }
+  }
+}

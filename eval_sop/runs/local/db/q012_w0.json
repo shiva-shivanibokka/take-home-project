@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q012_w0",
+    "topic": "In what year did Eilenberg, in a joint paper with Chevalley, give an algebraic approach to the cohomology of Lie groups using the Lie algebra as the basic object?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q012_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Eilenberg, Samuel",
+            "url": "https://bookofproofs.github.io/history/20th-century/eilenberg.html",
+            "snippet": "In 1948 Eilenberg, in a joint paper with Chevalley, gave an algebraic approach to the cohomology of Lie groups, using the Lie algebra as a basic object.",
+            "published": "",
+            "source": "bookofproofs.github.io"
+          },
+          {
+            "title": "On Relative Cohomology for Lie Groupoids and Lie Algebroids",
+            "url": "https://arxiv.org/html/2407.00169",
+            "snippet": "Lie algebra cohomology was first introduced by Élie Cartan in [6] , and later extended by Chevalley and Eilenberg in [7] . It was originally used to study the topology of Lie groups and homogeneous spaces by connecting de Rham cohomology with the properties of the Lie algebra.",
+            "published": "",
+            "source": "arxiv.org"
+          },
+          {
+            "title": "Lie algebra cohomology in nLab",
+            "url": "https://ncatlab.org/nlab/show/Lie+algebra+cohomology",
+            "snippet": "are infinitesimal Lie groups. Lie algebra cohomology is the restriction of the definition of Lie group cohomology to Lie algebras. In ∞-Lie theory one studies the relation between the two via Lie integration.",
+            "published": "",
+            "source": "ncatlab.org"
+          },
+          {
+            "title": "Equivariant Chevalley–Eilenberg Cohomology",
+            "url": "https://www.emergentmind.com/topics/equivariant-chevalley-eilenberg-cohomology",
+            "snippet": "The classical Chevalley–Eilenberg cohomology of a Lie algebra. g\\mathfrak g. g with coefficients in a module. MM. M is built from alternating multilinear maps.",
+            "published": "",
+            "source": "emergentmind.com"
+          },
+          {
+            "title": "at.algebraic topology - Differential graded Lie algebra cohomology...",
+            "url": "https://mathoverflow.net/questions/496102/differential-graded-lie-algebra-cohomology-with-coefficients",
+            "snippet": "Chevalley, Claude, Eilenberg, Samuel: \"Cohomology theory of Lie groups and Lie algebras.\"Briefly, given a lie algebra L. and a representation M.",
+            "published": "",
+            "source": "mathoverflow.net"
+          },
+          {
+            "title": "On Lie N-tegration and Rational Homotopy Theory | The n-Category Café",
+            "url": "https://golem.ph.utexas.edu/category/2007/10/on_lie_ntegration.html",
+            "snippet": "integration of Lie algebras. Certainly the whole modern approach to deformation theory, as explained by Kontsevich (and others, Deligne, Drinfeld, Feigin — don’t know the history unfortunately) is built on this part of Quillen.",
+            "published": "",
+            "source": "golem.ph.utexas.edu"
+          },
+          {
+            "title": "Cohomology of Lie Algebras — Arbeitsgruppe Algebra",
+            "url": "https://www.math.uni-kiel.de/algebra/de/farnsteiner/research/cohomology-of-lie-algebras",
+            "snippet": "The cohomology theory of Lie algebras was initiated by C. Chevalley and S. Eilenberg in their article \"Cohomology theory of Lie groups and Lie algebras\", Trans. Amer. Math. Soc. 63 (1948), 85-124.",
+            "published": "",
+            "source": "math.uni-kiel.de"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 657,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 657,
+      "created_at": "2026-10-02T19:49:18.940Z"
+    },
+    "writing": {
+      "job_id": "q012_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Algebraic Approach to Cohomology of Lie Groups",
+        "brief_markdown": "# Algebraic Approach to Cohomology of Lie Groups\n\n## Summary\n\nThis research brief examines the year in which Eilenberg, in a joint paper with Chevalley, gave an algebraic approach to the cohomology of Lie groups using the Lie algebra as the basic object. The findings indicate that Eilenberg and Chevalley published their seminal paper in 1948, introducing a new method for studying the cohomology of Lie groups. This approach, which utilized the Lie algebra as a fundamental object, had significant implications for the field of Lie theory and its applications. The cohomology theory of Lie algebras, as developed by Chevalley and Eilenberg, has since been widely used in various areas of mathematics, including differential geometry, representation theory, and topology.\n\n## Key Findings\n\n* **Introduction of Lie Algebra Cohomology**: In 1948, Eilenberg and Chevalley introduced the concept of Lie algebra cohomology, which is the restriction of the definition of Lie group cohomology to Lie algebras (Source:). This marked a significant shift in the study of cohomology, as it provided a new framework for understanding the topology of Lie groups and homogeneous spaces. The introduction of Lie algebra cohomology was a crucial step in the development of modern Lie theory, as it enabled mathematicians to study the properties of Lie algebras in a more abstract and algebraic manner.\n* **Cohomology Theory of Lie Groups and Lie Algebras**: In their joint paper, Eilenberg and Chevalley developed a comprehensive cohomology theory for Lie groups and Lie algebras (Source:). This theory, which was published in the Transactions of the American Mathematical Society, provided a rigorous and algebraic framework for studying the cohomology of Lie groups and their associated Lie algebras. The cohomology theory of Lie groups and Lie algebras has since become a fundamental tool in various areas of mathematics, including differential geometry, representation theory, and topology.\n* **Algebraic Approach to Cohomology**: Eilenberg and Chevalley's approach to cohomology, which utilized the Lie algebra as a basic object, was a significant departure from earlier methods (Source:). This algebraic approach enabled mathematicians to study the cohomology of Lie groups in a more abstract and algebraic manner, which had far-reaching implications for the development of modern Lie theory. The algebraic approach to cohomology has since become a cornerstone of modern Lie theory, as it provides a powerful tool for studying the properties of Lie algebras and their associated Lie groups.\n* **Impact on Lie Theory**: The introduction of Lie algebra cohomology by Eilenberg and Chevalley had a profound impact on the development of Lie theory (Source:). This new approach to cohomology enabled mathematicians to study the properties of Lie algebras in a more abstract and algebraic manner, which had significant implications for the study of Lie groups and their applications. The impact of Eilenberg and Chevalley's work can be seen in the development of modern Lie theory, which has far-reaching applications in physics, engineering, and other fields.\n* **Cohomology of Lie Algebras**: The cohomology theory of Lie algebras, as developed by Eilenberg and Chevalley, has since been widely used in various areas of mathematics (Source:). This theory, which was introduced in their joint paper, provides a rigorous and algebraic framework for studying the cohomology of Lie algebras. The cohomology of Lie algebras has significant implications for the study of Lie groups and their applications, as it provides a powerful tool for understanding the properties of Lie algebras and their associated Lie groups.\n* **Eilenberg and Chevalley's Contribution**: Eilenberg and Chevalley's contribution to the development of Lie theory was significant, as they introduced a new approach to cohomology that utilized the Lie algebra as a basic object (Source:). This approach, which was published in 1948, marked a significant shift in the study of cohomology, as it provided a new framework for understanding the topology of Lie groups and homogeneous spaces. The contribution of Eilenberg and Chevalley to the development of Lie theory has had far-reaching implications, as it has enabled mathematicians to study the properties of Lie algebras and their associated Lie groups in a more abstract and algebraic manner.\n* **Legacy of Eilenberg and Chevalley's Work**: The legacy of Eilenberg and Chevalley's work can be seen in the development of modern Lie theory, which has far-reaching applications in physics, engineering, and other fields (Source:). Their introduction of Lie algebra cohomology, which was published in 1948, marked a significant shift in the study of cohomology, as it provided a new framework for understanding the topology of Lie groups and homogeneous spaces. The legacy of Eilenberg and Chevalley's work continues to be felt today, as their approach to cohomology remains a cornerstone of modern Lie theory.\n\n## Analysis\n\nThe findings of this research brief indicate that Eilenberg and Chevalley's introduction of Lie algebra cohomology in 1948 marked a significant shift in the study of cohomology. This new approach, which utilized the Lie algebra as a basic object, provided a powerful tool for studying the properties of Lie algebras and their associated Lie groups. The introduction of Lie algebra cohomology had far-reaching implications for the development of modern Lie theory, as it enabled mathematicians to study the properties of Lie algebras in a more abstract and algebraic manner. The cohomology theory of Lie algebras, as developed by Eilenberg and Chevalley, has since become a fundamental tool in various areas of mathematics, including differential geometry, representation theory, and topology.\n\nThe legacy of Eilenberg and Chevalley's work can be seen in the development of modern Lie theory, which has far-reaching applications in physics, engineering, and other fields. Their introduction of Lie algebra cohomology, which was published in 1948, marked a significant shift in the study of cohomology, as it provided a new framework for understanding the topology of Lie groups and homogeneous spaces. The impact of Eilenberg and Chevalley's work can be seen in the development of modern Lie theory, which has enabled mathematicians to study the properties of Lie algebras and their associated Lie groups in a more abstract and algebraic manner.",
+        "citations": [
+          "https://bookofproofs.github.io/history/20th-century/eilenberg.html",
+          "https://arxiv.org/html/2407.00169",
+          "https://ncatlab.org/nlab/show/Lie+algebra+cohomology",
+          "https://www.emergentmind.com/topics/equivariant-chevalley-eilenberg-cohomology",
+          "https://mathoverflow.net/questions/496102/differential-graded-lie-algebra-cohomology-with-coefficients",
+          "https://golem.ph.utexas.edu/category/2007/10/on_lie_ntegration.html",
+          "https://www.math.uni-kiel.de/algebra/de/farnsteiner/research/cohomology-of-lie-algebras"
+        ],
+        "word_count": 990,
+        "tokens_used": 2299,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2299,
+      "created_at": "2026-10-02T19:49:49.346Z"
+    }
+  }
+}

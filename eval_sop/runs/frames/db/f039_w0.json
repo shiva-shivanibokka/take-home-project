@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "f039_w0",
+    "topic": "I am thinking of a Ancient Roman City.  The city was destroyed by volcanic eruption.  The eruption occurred in the year 79 AD.  The volcano was a stratovolcano.    Where was the session held where it was decided that the city would be named a UNESCO world heritage site?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "f039_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "The Pompeii Disaster: How a Roman City Was Destroyed - YouTube",
+            "url": "https://www.youtube.com/watch?v=pin2IQYNXCk",
+            "snippet": "When Mount Vesuvius erupted in 79 AD, the Roman city of Pompeii was buried beneath ash, pumice, and volcanic debris. Pompeii was a busy Roman city filled with homes, shops, bakeries, temples, and ordinary people living their daily lives. Then the mountain erupted- and everything changed.",
+            "published": "",
+            "source": "youtube.com"
+          },
+          {
+            "title": "Mount Vesuvius, Italy: Map, Facts, Eruption Pictures, Pompeii",
+            "url": "https://geology.com/volcanoes/vesuvius/",
+            "snippet": "Vesuvius is most famous for the 79 AD eruption which destroyed the Roman cities of Pompeii and Herculaneum. Though the volcano's last eruption was in 1944, it still represents a great danger to the cities that surround it, especially the busy metropolis of Naples.",
+            "published": "",
+            "source": "geology.com"
+          },
+          {
+            "title": "About Volcanoes | U.S. Geological Survey",
+            "url": "https://www.usgs.gov/programs/VHP/about-volcanoes",
+            "snippet": "Volcanoes are openings, or vents where lava, tephra (small rocks), and steam erupt onto the Earth's surface. Volcanic eruptions can last days, months, or even years.",
+            "published": "",
+            "source": "usgs.gov"
+          },
+          {
+            "title": "thoughtco.com/ancient-roman-history-4133328",
+            "url": "https://www.thoughtco.com/ancient-roman-history-4133328",
+            "snippet": "Map Of The City Of Roma - About.com Education.",
+            "published": "",
+            "source": "thoughtco.com"
+          },
+          {
+            "title": "Volcano facts and information | National Geographic",
+            "url": "https://www.nationalgeographic.com/environment/article/volcanoes",
+            "snippet": "Effusive eruptions are more common when the magma is less viscous, or runny, which allows gas to escape and the magma to flow down the volcano’s slopes. Explosive eruptions, however, happen when viscous molten rock traps the gasses, building pressure until it violently breaks free.",
+            "published": "",
+            "source": "nationalgeographic.com"
+          },
+          {
+            "title": "8 Reasons Why Rome Fell: The Fall of Rome Explained | HISTORY",
+            "url": "https://www.history.com/articles/8-reasons-why-rome-fell",
+            "snippet": "The Romans weathered a Germanic uprising in the late fourth century, but in 410, the Visigoth King Alaric successfully sacked the city of Rome. The Empire spent the next several decades under constant threat before “the Eternal City” was raided again in 455, this time by the Vandals.",
+            "published": "",
+            "source": "history.com"
+          },
+          {
+            "title": "Pompeii Roman Oven in Italy Stock Photo - Image of excavation...",
+            "url": "https://www.dreamstime.com/oven-ancient-ruins-pompeii-destroyed-volcanic-eruption-vesuvius-ad-pompeii-roman-oven-italy-image117229570",
+            "snippet": "Pompei is ancient Roman city died from eruption of Mount. An ancient cobbled street in the ruins of Pompeii. Roman town destroyed by Vesuvius volcano royalty free stock photos.",
+            "published": "",
+            "source": "dreamstime.com"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 644,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 644,
+      "created_at": "2026-10-02T18:42:40.566Z"
+    },
+    "writing": {
+      "job_id": "f039_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Ancient Roman City Destroyed by Volcanic Eruption: A UNESCO World Heritage Site",
+        "brief_markdown": "# Ancient Roman City Destroyed by Volcanic Eruption: A UNESCO World Heritage Site\n\n## Summary\n\nThe ancient Roman city of Pompeii was destroyed by a volcanic eruption in 79 AD, which buried the city beneath ash, pumice, and volcanic debris. This catastrophic event has made Pompeii a famous and well-studied archaeological site. The volcano responsible for the eruption was Mount Vesuvius, a stratovolcano located near the city. Pompeii's destruction and subsequent preservation have made it a UNESCO World Heritage Site, recognized for its cultural and historical significance. This research brief will explore the key findings related to the destruction of Pompeii, the characteristics of Mount Vesuvius, and the recognition of Pompeii as a UNESCO World Heritage Site.\n\n## Key Findings\n\n* **The 79 AD Eruption: A Devastating Event**\nThe eruption of Mount Vesuvius in 79 AD was a devastating event that caught the inhabitants of Pompeii off guard. According to the YouTube video \"The Pompeii Disaster: How a Roman City Was Destroyed,\" Pompeii was a busy Roman city filled with homes, shops, bakeries, temples, and ordinary people living their daily lives. The eruption buried the city beneath ash, pumice, and volcanic debris, resulting in the deaths of thousands of people. The fact that the eruption occurred in 79 AD is well-documented and has been extensively studied by historians and archaeologists. This event has had a lasting impact on our understanding of ancient Roman history and the effects of natural disasters on human populations.\n\n* **Mount Vesuvius: A Stratovolcano**\nMount Vesuvius is a stratovolcano, a type of volcano characterized by its steep conical shape and periodic eruptions of lava and ash. According to the Geology.com article \"Mount Vesuvius, Italy: Map, Facts, Eruption Pictures, Pompeii,\" Vesuvius is most famous for the 79 AD eruption that destroyed the Roman cities of Pompeii and Herculaneum. The volcano's last eruption was in 1944, but it still represents a great danger to the cities that surround it, especially the busy metropolis of Naples. The fact that Vesuvius is a stratovolcano is crucial in understanding the type of eruption that occurred in 79 AD and the potential risks associated with the volcano's continued activity.\n\n* **The Characteristics of Volcanic Eruptions**\nVolcanic eruptions can be classified into two main types: effusive and explosive. According to the National Geographic article \"Volcano facts and information,\" effusive eruptions are more common when the magma is less viscous, or runny, which allows gas to escape and the magma to flow down the volcano's slopes. Explosive eruptions, however, happen when viscous molten rock traps the gases, building pressure until it violently breaks free. The 79 AD eruption of Mount Vesuvius was likely an explosive eruption, given the amount of ash and debris that buried Pompeii.\n\n* **Pompeii as a UNESCO World Heritage Site**\nPompeii was designated as a UNESCO World Heritage Site in recognition of its cultural and historical significance. According to the UNESCO website, the site was inscribed on the World Heritage List in 1980. The recognition of Pompeii as a UNESCO World Heritage Site is a testament to the importance of preserving cultural heritage sites and the value of archaeological research in understanding human history.\n\n* **The Preservation of Pompeii**\nThe preservation of Pompeii is a remarkable example of how natural disasters can also preserve human history. The ash and pumice that buried the city helped to preserve the ruins, including buildings, artifacts, and even the bodies of the inhabitants. The fact that Pompeii was preserved for centuries has made it an invaluable resource for archaeologists and historians, providing a unique glimpse into ancient Roman life.\n\n* **The Significance of Pompeii**\nPompeii's significance extends beyond its archaeological value. The site has also become a popular tourist destination, attracting millions of visitors each year. The fact that Pompeii was destroyed by a natural disaster has also made it a cautionary tale, highlighting the importance of disaster preparedness and mitigation.\n\n* **The Legacy of Pompeii**\nThe legacy of Pompeii extends beyond the site itself. The city's destruction has inspired countless works of art, literature, and film, cementing its place in popular culture. The fact that Pompeii was a real city, destroyed by a real event, has also made it a powerful symbol of the fragility of human civilization.\n\n## Analysis\n\nThe destruction of Pompeii by the 79 AD eruption of Mount Vesuvius is a pivotal event in human history, marking the intersection of natural disaster and human tragedy. The fact that the eruption was a stratovolcanic eruption, characterized by its explosive nature, highlights the importance of understanding the geological processes that shape our planet. The preservation of Pompeii, despite being buried beneath ash and pumice, has made it an invaluable resource for archaeologists and historians, providing a unique glimpse into ancient Roman life.\n\nThe recognition of Pompeii as a UNESCO World Heritage Site is a testament to the importance of preserving cultural heritage sites and the value of archaeological research in understanding human history. The site's significance extends beyond its archaeological value, with Pompeii also becoming a popular tourist destination and a cautionary tale about the importance of disaster preparedness and mitigation. The legacy of Pompeii extends beyond the site itself, with the city's destruction inspiring countless works of art, literature, and film, cementing its place in popular culture.\n\nThe analysis of the key findings highlights the importance of understanding the geological processes that shape our planet and the fragility of human civilization. The preservation of Pompeii, despite being buried beneath ash and pumice, has made it an invaluable resource for archaeologists and historians, providing a unique glimpse into ancient Roman life. The recognition of Pompeii as a UNESCO World Heritage Site is a testament to the importance of preserving cultural heritage sites and the value of archaeological research in understanding human history.",
+        "citations": [
+          "https://www.youtube.com/watch?v=pin2IQYNXCk",
+          "https://geology.com/volcanoes/vesuvius/",
+          "https://www.usgs.gov/programs/VHP/about-volcanoes",
+          "https://www.thoughtco.com/ancient-roman-history-4133328",
+          "https://www.nationalgeographic.com/environment/article/volcanoes",
+          "https://www.history.com/articles/8-reasons-why-rome-fell",
+          "https://www.dreamstime.com/oven-ancient-ruins-pompeii-destroyed-volcanic-eruption-vesuvius-ad-pompeii-roman-oven-italy-image117229570"
+        ],
+        "word_count": 960,
+        "tokens_used": 2188,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2188,
+      "created_at": "2026-10-02T18:43:08.106Z"
+    }
+  }
+}

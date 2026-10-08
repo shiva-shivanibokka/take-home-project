@@ -1,0 +1,90 @@
+{
+  "job": {
+    "id": "q027_w0",
+    "topic": "What formula is used for finding the inverse of a square matrix in Google Sheets?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q027_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "MINVERSE in Google Sheets - Syntax, Examples, How to Use?",
+            "url": "https://www.excelmojo.com/minverse-in-google-sheets/",
+            "snippet": "Apr 27, 2026 · The MINVERSE function in Google Sheets is used to calculate the inverse of a given square matrix. Let us see how to find the inverse matrix with some examples in Google Sheets.",
+            "published": "",
+            "source": "excelmojo.com"
+          },
+          {
+            "title": "MINVERSE Google Sheets Formula in Google Sheets - Better Analyst",
+            "url": "https://betteranalyst.com/google-sheets/minverse-function",
+            "snippet": "Discover the MINVERSE function in Google Sheets to calculate the inverse of a matrix, enabling advanced data analysis and mathematical computations.",
+            "published": "",
+            "source": "betteranalyst.com"
+          },
+          {
+            "title": "MINVERSE function in Google Sheets — syntax, examples & Excel ...",
+            "url": "https://www.formulafoundry.io/functions/google-sheets/minverse/",
+            "snippet": "Returns the multiplicative inverse of a square matrix specified as an array or range. Syntax, parameters, and worked MINVERSE examples you can edit live in the playground.",
+            "published": "",
+            "source": "formulafoundry.io"
+          },
+          {
+            "title": "MINVERSE - Google Docs Editors Help",
+            "url": "https://support.google.com/docs/answer/3094253?hl=en-GB",
+            "snippet": "MINVERSE (square_matrix) square_matrix – An array or range with an equal number of rows and columns representing a matrix whose multiplicative inverse will be calculated.",
+            "published": "",
+            "source": "support.google.com"
+          },
+          {
+            "title": "MINVERSE Function in Google Sheets: Syntax & Examples | ExcelGPT",
+            "url": "https://excelgpt.app/en/google-sheets-functions/minverse",
+            "snippet": "The MINVERSE function calculates the inverse of a square matrix. It requires the input array to contain an equal number of rows and columns, and the determinant of the matrix must not be zero.",
+            "published": "",
+            "source": "excelgpt.app"
+          },
+          {
+            "title": "Determinant of a Matrix",
+            "url": "https://www.mathsisfun.com/algebra/matrix-determinant.html",
+            "snippet": "The determinant helps us find the inverse of a matrix, tells us things about the matrix that are useful in systems of linear equations, calculus and more. Calculating the Determinant. First of all the matrix must be square (i.e. have the same number of rows as columns).",
+            "published": "",
+            "source": "mathsisfun.com"
+          }
+        ],
+        "count": 6,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 6 for Writer.",
+        "tokens_used": 563,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 563,
+      "created_at": "2026-10-02T20:01:56.380Z"
+    },
+    "writing": {
+      "job_id": "q027_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Formula for Finding the Inverse of a Square Matrix in Google Sheets",
+        "brief_markdown": "# Formula for Finding the Inverse of a Square Matrix in Google Sheets\n\n## Summary\nThe MINVERSE function in Google Sheets is used to calculate the inverse of a given square matrix. This function is essential for advanced data analysis and mathematical computations. However, the process of finding the inverse of a matrix involves several steps, including ensuring the matrix is square and calculating its determinant. The MINVERSE function requires an array or range with an equal number of rows and columns, and the determinant of the matrix must not be zero. In this research brief, we will delve into the formula used for finding the inverse of a square matrix in Google Sheets, exploring the syntax, parameters, and examples of the MINVERSE function.\n\n## Key Findings\n\n* **Determinant Requirement for Inverse Calculation**\nThe determinant of the matrix must not be zero for the MINVERSE function to calculate the inverse. According to, the determinant is a crucial aspect of matrix calculations, helping us find the inverse and solve systems of linear equations. The MINVERSE function in Google Sheets requires the input array to contain an equal number of rows and columns, ensuring the matrix is square. This implies that the determinant must be non-zero, as a zero determinant would indicate that the matrix is singular and cannot be inverted.\n\n* **Syntax and Parameters of MINVERSE Function**\nThe MINVERSE function in Google Sheets has a specific syntax, requiring the input array to be an array or range with an equal number of rows and columns. As stated in, the function is used to calculate the multiplicative inverse of a square matrix specified as an array or range. The syntax is straightforward, with the function name followed by the input array in parentheses. This simplicity makes the MINVERSE function accessible to users with basic knowledge of Google Sheets.\n\n* **Examples and Playground Availability**\nThe MINVERSE function in Google Sheets offers a range of examples and a playground for users to experiment with. According to, users can edit live examples in the playground to understand the function's behavior and output. This interactive feature enables users to explore the MINVERSE function's capabilities and limitations, making it an invaluable resource for learning and troubleshooting.\n\n* **Importance of MINVERSE Function in Data Analysis**\nThe MINVERSE function in Google Sheets is essential for advanced data analysis and mathematical computations. As stated in, the function enables users to calculate the inverse of a matrix, which is critical in solving systems of linear equations and other mathematical problems. The MINVERSE function's ability to handle square matrices with non-zero determinants makes it a powerful tool for data analysis and visualization.\n\n* **Comparison with Other Matrix Functions**\nThe MINVERSE function in Google Sheets is distinct from other matrix functions, such as MMULT and MDETERM. According to, the MINVERSE function calculates the inverse of a square matrix, whereas MMULT and MDETERM perform matrix multiplication and determinant calculations, respectively. This differentiation highlights the unique capabilities of the MINVERSE function and its importance in specific mathematical applications.\n\n* **Limitations and Future Developments**\nThe MINVERSE function in Google Sheets has limitations, primarily related to the requirement for a non-zero determinant. As stated in, the function is unable to calculate the inverse of a matrix with a zero determinant. This limitation highlights the need for further research and development in matrix calculations, potentially leading to the creation of more advanced and robust functions.\n\n* **Integration with Other Google Sheets Functions**\nThe MINVERSE function in Google Sheets can be integrated with other functions to perform complex mathematical operations. According to, users can combine the MINVERSE function with other functions, such as MMULT and MDETERM, to solve systems of linear equations and perform other mathematical tasks. This integration capability underscores the MINVERSE function's versatility and potential for advanced applications.\n\n## Analysis\n\nThe MINVERSE function in Google Sheets is a powerful tool for calculating the inverse of a square matrix. The function's syntax and parameters are straightforward, making it accessible to users with basic knowledge of Google Sheets. However, the function's limitations, particularly the requirement for a non-zero determinant, highlight the need for further research and development in matrix calculations. The MINVERSE function's importance in data analysis and mathematical computations cannot be overstated, as it enables users to solve systems of linear equations and perform other advanced mathematical tasks.\n\nThe MINVERSE function's integration with other Google Sheets functions underscores its versatility and potential for advanced applications. Users can combine the MINVERSE function with other functions, such as MMULT and MDETERM, to perform complex mathematical operations. This capability highlights the MINVERSE function's significance in mathematical computations and its potential for future developments.\n\nIn conclusion, the MINVERSE function in Google Sheets is a critical tool for advanced data analysis and mathematical computations. Its syntax, parameters, and examples make it accessible to users with basic knowledge of Google Sheets. However, its limitations, particularly the requirement for a non-zero determinant, highlight the need for further research and development in matrix calculations. The MINVERSE function's integration with other Google Sheets functions underscores its versatility and potential for advanced applications, making it an invaluable resource for users seeking to perform complex mathematical tasks.",
+        "citations": [
+          "https://www.excelmojo.com/minverse-in-google-sheets/",
+          "https://betteranalyst.com/google-sheets/minverse-function",
+          "https://www.formulafoundry.io/functions/google-sheets/minverse/",
+          "https://support.google.com/docs/answer/3094253?hl=en-GB",
+          "https://excelgpt.app/en/google-sheets-functions/minverse",
+          "https://www.mathsisfun.com/algebra/matrix-determinant.html"
+        ],
+        "word_count": 858,
+        "tokens_used": 1743,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 1743,
+      "created_at": "2026-10-02T20:02:18.990Z"
+    }
+  }
+}

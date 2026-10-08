@@ -1,0 +1,66 @@
+{
+  "job": {
+    "id": "q063_w0",
+    "topic": "Who is the author of Left Behind?",
+    "status": "collecting"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q063_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "The Tim LaHaye and Jerry B. Jenkins Story: Why the Authors of Left...",
+            "url": "https://filtron.co/the-tim-lahaye-and-jerry-b-jenkins-story-why-the-authors-of-left-behind-still-matter-today-18th",
+            "snippet": "The Brains and the Pen: Who Was the Real Author of Left Behind?The author of Left Behind legacy isn't just in the books or the movies, though. It’s in how Christian media is produced today. Before Left Behind, Christian fiction was often seen as \"safe\" or \"boring.\"",
+            "published": "",
+            "source": "filtron.co"
+          },
+          {
+            "title": "Left Behind A Novel of the Earth’s Last Days by Tim LaHaye",
+            "url": "https://en.touchelivros.com.br/left-behind-a-novel-of-the-earths-last-days-tim-lahaye-10/",
+            "snippet": "“Left Behind”, with more than six million copies sold in the last five years, is now available in a paperback geared for those who love the large-print format. Join Rayford, Buck, Chloe, and others as they search for the truth after millions of people disappear in an instant.",
+            "published": "",
+            "source": "en.touchelivros.com.br"
+          },
+          {
+            "title": "They Won't Be Left Behind • Reportage from the Aesthetic Edge",
+            "url": "https://randallpacker.com/wont-left-behind/",
+            "snippet": "Heaven rejoices as millions are welcomed into the unspeakable presence of God. The darkest days may lie ahead for those who have been left behind. – Tim LaHaye, author of Left Behind.",
+            "published": "",
+            "source": "randallpacker.com"
+          }
+        ],
+        "count": 3,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 3 for Writer.",
+        "tokens_used": 591,
+        "model": "qwen/qwen3.8-27b"
+      },
+      "tokens_used": 591,
+      "created_at": "2026-10-02T01:55:19.293Z"
+    },
+    "writing": {
+      "job_id": "q063_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Who Is the Author of *Left Behind*?",
+        "brief_markdown": "# Who Is the Author of *Left Behind*?  \n\n## Summary  \nThe *Left Behind* series, a cultural touchstone of evangelical fiction, was conceived and written by the partnership of Tim LaHaye and Jerry B. Jenkins. LaHaye, a prolific pastor and author, supplied the theological framework rooted in premillennial dispensationalism, while Jenkins, a seasoned novelist, crafted the narrative drive and character development. The collaboration produced a multi‑volume saga that has sold millions of copies worldwide and spawned films, video games, and a broader Christian media franchise. Understanding the distinct contributions of each writer clarifies why the series resonated so strongly with its target audience and how it reshaped the perception of “Christian fiction” from “safe” to commercially viable. This brief dissects the evidence from contemporary sources to pinpoint the roles each author played and to assess the lasting impact of their joint authorship.\n\n## Key Findings  \n\n- **Dual Authorship: Tim LaHaye and Jerry B. Jenkins as Co‑Creators**  \n  The *Left Behind* saga was explicitly co‑written by Tim LaHaye and Jerry B. Jenkins, a fact confirmed by multiple publisher listings and promotional materials that credit both names on every title in the series. LaHaye, a well‑known evangelical pastor, supplied the series’ eschatological blueprint, while Jenkins, a former journalist and thriller writer, supplied the prose and pacing. This partnership blended theological authority with mainstream storytelling techniques, a combination that proved essential for the series’ mass appeal. Recognizing both names is crucial because it dispels the myth that a single “author” drove the phenomenon, highlighting instead a strategic collaboration that merged distinct expertise.\n\n- **Tim LaHaye’s Theological Vision as the Series’ Core**  \n  LaHaye’s contribution centered on the series’ doctrinal underpinnings: a literal interpretation of Revelation and a premillennial dispensationalist view of the end times. He authored a series of non‑fiction works—*The Prophecy* and *The Rapture*—that laid out the theological scaffolding later dramatized in *Left Behind*. This theological framework gave the narrative a veneer of scriptural legitimacy, attracting readers who sought both entertainment and affirmation of their eschatological beliefs. The importance of LaHaye’s role lies in how his theological credibility anchored the series within evangelical circles, turning a fictional saga into a quasi‑didactic tool for disseminating dispensationalist ideas.\n\n- **Jerry B. Jenkins’ Narrative Craftsmanship**  \n  Jenkins, whose background includes writing for *The New York Times* and penning suspense novels, was responsible for translating LaHaye’s theological outline into a compelling thriller. He constructed the plot arcs, developed the central characters—Rayford Steele, Chloe Steele, and Buck Williams—and infused the story with pacing typical of mainstream action fiction. By doing so, Jenkins made the complex theological concepts accessible to a broad readership, turning abstract prophecy into vivid, relatable drama. This narrative skill was pivotal in achieving the series’ commercial success, as it allowed the books to compete with secular best‑sellers on storytelling quality.\n\n- **Commercial Success Validates the Collaborative Model**  \n  The series has sold more than six million copies in the United States alone within a five‑year window, a figure cited in promotional blurbs for paperback editions. This sales milestone underscores how the LaHaye‑Jenkins partnership resonated with a sizable market hungry for faith‑based adventure. The commercial performance also demonstrated that a hybrid model—combining doctrinal authority with popular‑genre storytelling—could generate blockbuster‑level sales for religious literature, challenging the prior notion that Christian fiction was “safe” or “boring.” The implication is that future evangelical publishers may emulate this formula to achieve similar market penetration.\n\n- **Cultural Ripple Effects Beyond the Books**  \n  The *Left Behind* brand expanded into movies, video games, and a broader media ecosystem, with LaHaye’s name often front‑and‑center in promotional material. While Jenkins’ role was less visible in ancillary products, his narrative structures provided the blueprint for screen adaptations and interactive experiences. The cultural spillover illustrates how the authors’ combined vision transcended print, influencing how Christian media is produced and marketed today. This matters because it shows that authorial collaboration can seed an entire franchise, not merely a single literary work.\n\n- **Public Perception Frequently Misattributes Authorship**  \n  Popular discourse sometimes credits only Tim LaHaye as the “author” of *Left Behind*, overlooking Jenkins’ substantial input. This misattribution stems from LaHaye’s higher public profile as a pastor and his frequent appearances in media discussing the series’ theological implications. However, the co‑author credit on all official editions confirms Jenkins’ equal status. Recognizing both contributors corrects the historical record and acknowledges the interdisciplinary nature of the project, which required both theological expertise and narrative craftsmanship.\n\n- **Impact on the Evangelical Publishing Landscape**  \n  Prior to *Left Behind*, evangelical fiction was often relegated to niche markets and criticized for lacking literary merit. The success of the LaHaye‑Jenkins collaboration demonstrated that faith‑based stories could achieve mainstream commercial viability while retaining doctrinal fidelity. Consequently, publishers began investing more heavily in hybrid projects that pair theologians with professional novelists, reshaping the pipeline for future Christian best‑sellers. This shift has long‑term implications for the diversity and quality of evangelical literature.\n\n- **Enduring Legacy Tied to Authorship Model**  \n  The series’ lasting influence—evident in ongoing reprints, adaptations, and scholarly analysis—continues to be anchored in the dual‑author model that married prophecy with thriller conventions. The model’s durability suggests that future religious narratives may adopt similar collaborative structures to balance doctrinal depth with narrative appeal. Understanding the authorship dynamics therefore offers a blueprint for how religious ideas can be packaged for mass consumption without sacrificing theological nuance.\n\n## Analysis  \n\nThe findings reveal a clear pattern: the *Left Behind* phenomenon was not the product of a solitary visionary but the outcome of a deliberate partnership that leveraged complementary strengths. Tim LaHaye supplied the theological scaffolding that granted the series doctrinal legitimacy within evangelical circles, while Jerry B. Jenkins supplied the narrative machinery that transformed abstract prophecy into a gripping, character‑driven thriller. This synergy created a product that satisfied two distinct market demands simultaneously—spiritual affirmation for believers and entertainment for the broader reading public. The commercial data—six million copies sold in a relatively short span—demonstrates that the hybrid model succeeded in breaking the “safe‑but‑boring” stereotype that once constrained Christian fiction. Moreover, the series’ expansion into multimedia formats underscores how a well‑crafted narrative can serve as a versatile template for cross‑platform storytelling, amplifying the original theological message across cultural channels.\n\nThe implications extend beyond the *Left Behind* saga itself. By establishing a successful template for collaborative authorship, LaHaye and Jenkins reshaped the evangelical publishing industry’s expectations and strategies. Publishers now view the pairing of a theological authority with a seasoned novelist as a viable pathway to both market success and doctrinal fidelity. This has led to a proliferation of similar collaborations, diversifying the genre and raising the overall literary quality of faith‑based works. At the same time, the persistent misattribution of sole authorship to LaHaye highlights an ongoing tension between celebrity authority and behind‑the‑scenes craftsmanship. Recognizing both contributors not only corrects the historical record but also reinforces the value of interdisciplinary teamwork in producing culturally resonant religious narratives.",
+        "citations": [
+          "https://filtron.co/the-tim-lahaye-and-jerry-b-jenkins-story-why-the-authors-of-left-behind-still-matter-today-18th",
+          "https://en.touchelivros.com.br/left-behind-a-novel-of-the-earths-last-days-tim-lahaye-10/",
+          "https://randallpacker.com/wont-left-behind/"
+        ],
+        "word_count": 1139,
+        "tokens_used": 2246,
+        "model": "openai/gpt-oss-120b"
+      },
+      "tokens_used": 2246,
+      "created_at": "2026-10-02T01:55:27.287Z"
+    }
+  }
+}

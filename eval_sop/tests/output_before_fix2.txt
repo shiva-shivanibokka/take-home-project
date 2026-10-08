@@ -1,0 +1,49 @@
+✔ snippet hook: default prompt is identical to explicit 150 (original behaviour preserved) (505.1837ms)
+✔ snippet hook: default prompt is byte-identical to the original 417589b reviewer (370.6275ms)
+✔ snippet hook: 350 exposes the full collector snippet (197.506ms)
+✔ verdict ignores failed checks (anyCheckFailed is dead code) - documents current behaviour (178.8562ms)
+✔ numeric-string confidence from the LLM must not crash the reviewer (coerced to number) (196.2212ms)
+✔ missing confidence field must not crash the reviewer (should escalate) (177.8351ms)
+✖ boolean confidence (true) must not be coerced to 1.0 - treated as non-numeric, escalate (196.5326ms)
+✖ REVIEWER_SNIPPET_CHARS='' falls back to the 150-char default (not 0) (200.935ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 6
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2276.1835
+
+✖ failing tests:
+
+test at eval_sop\tests\reviewer.test.mjs:104:1
+✖ boolean confidence (true) must not be coerced to 1.0 - treated as non-numeric, escalate (196.5326ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///<WORKTREE>/eval_sop/tests/reviewer.test.mjs:107:10)
+      at async Test.run (node:internal/test_runner/test:1125:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at eval_sop\tests\reviewer.test.mjs:111:1
+✖ REVIEWER_SNIPPET_CHARS='' falls back to the 150-char default (not 0) (200.935ms)
+  AssertionError [ERR_ASSERTION]: empty env var must not hide the snippet
+      at TestContext.<anonymous> (file:///<WORKTREE>/eval_sop/tests/reviewer.test.mjs:114:10)
+      at async Test.run (node:internal/test_runner/test:1125:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

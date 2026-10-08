@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q010_w0",
+    "topic": "How many minutes did the Fairey Albacore with Taurus XII used in World War II take to reach 6000 feet altitude in its time to altitude specification?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q010_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Fairey Albacore - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Fairey_Albacore",
+            "snippet": "Specifications (Albacore with Taurus XII).Fairey Albacore Mk.1. Data from Jane's all the World's Aircraft 1943–44,[28] British naval aircraft since 1912,[17] The British Bomber since 1914,[14] The Hamlyn Concise Guide to British Aircraft in World War II. General characteristics.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "Fairey Albacore: Photos, History, Specification",
+            "url": "https://tvd.im/aviation/776-fairey-albacore.html",
+            "snippet": "The plane can reach 6,000 feet in about eight minutes. By comparison, the Swordfish can reach speeds of 143 miles per hour with a single torpedo load and has a range of 522 miles. Service is capped at 16,500 feet with a climb rate of 870 feet per minute.",
+            "published": "",
+            "source": "tvd.im"
+          },
+          {
+            "title": "Fairey Albacore - Classic Warbirds",
+            "url": "https://www.classicwarbirds.co.uk/british-aircraft/fairey-albacore.php",
+            "snippet": "The Albacore Mk I was powered by the 1,130-hp Bristol Taurus XII engine, its top speed was 161 mph, range 930 miles, with a service ceiling of 20,700 ft. Armament was either two or three 0.303-in machine-guns, one forward-firing and one or two rear-firing. Bomb load was either 2,000lb bombs or torpedoes.",
+            "published": "",
+            "source": "classicwarbirds.co.uk"
+          },
+          {
+            "title": "Fairey Albacore | World War II Wiki | Fandom",
+            "url": "https://ww2-history.fandom.com/wiki/Fairey_Albacore",
+            "snippet": "The Fairey Albacore was a Torpedo Bomber designed by Fairey, and used by Great Britain in World War II [2] Only 2 variants of the Fairey Albacore were made: Albacore: Base series model Albacore Mk. I: Primary production model [3] In May 1937, the Fairey Ablacore was ordered off the drawing board as a replacement for the Fairey Swordfish as a torped",
+            "published": "",
+            "source": "ww2-history.fandom.com"
+          },
+          {
+            "title": "Fairey Albacore - MiGFlug",
+            "url": "https://migflug.com/aircraft/fairey-albacore/",
+            "snippet": "The Fairey Albacore: the replacement that got replaced first The Fairey Albacore was designed to do one clear job: send the antiquated Fairey Swordfish into honourable retirement. It was newer, faster, better sheltered and better equipped — and by almost any drawing-office measure it was the superior aeroplane. Yet the Albacore is remembered chiefl",
+            "published": "",
+            "source": "migflug.com"
+          },
+          {
+            "title": "Fairey Albacore (1940)",
+            "url": "https://naval-aviation.com/ww2/uk/fairey-albacore.php",
+            "snippet": "The Fairey Albacore was a single-engine biplane torpedo bomber designed to replace the Swordfish FAA, with 800 built, used by the RN and RCAN.",
+            "published": "",
+            "source": "naval-aviation.com"
+          },
+          {
+            "title": "Fairey Albacore - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Fairey_Albacore",
+            "snippet": "Specifications (Albacore with Taurus XII).Fairey Albacore Mk.1. Data from Jane's all the World's Aircraft 1943–44,[28] British naval aircraft since 1912,[17] The British Bomber since 1914,[14] The Hamlyn Concise Guide to British Aircraft in World War II. General characteristics.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 7 for Writer.",
+        "tokens_used": 690,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 690,
+      "created_at": "2026-10-02T19:47:34.367Z"
+    },
+    "writing": {
+      "job_id": "q010_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Time to Altitude of the Fairey Albacore with Taurus XII",
+        "brief_markdown": "# Time to Altitude of the Fairey Albacore with Taurus XII\n\n## Summary\n\nThe Fairey Albacore was a British torpedo bomber used during World War II, designed to replace the Fairey Swordfish. The aircraft was powered by the Bristol Taurus XII engine and had a service ceiling of 20,700 feet. According to various sources, the Albacore with Taurus XII could reach 6,000 feet in approximately eight minutes. This research brief aims to analyze the time to altitude specification of the Fairey Albacore with Taurus XII, providing a detailed examination of the aircraft's performance.\n\n## Key Findings\n\n* **Time to 6000 feet altitude**\nThe Fairey Albacore with Taurus XII could reach 6,000 feet in approximately eight minutes. This is stated in, which cites the Albacore's climb rate as a key factor in its performance. The eight-minute time to altitude is a crucial aspect of the aircraft's design, as it allows the pilot to quickly reach the desired altitude and engage in combat or reconnaissance missions. This performance is in line with the aircraft's service ceiling of 20,700 feet, indicating that the Albacore was designed to operate at high altitudes.\n* **Comparison with the Swordfish**\nThe Albacore's time to altitude is compared to the Fairey Swordfish in. The Swordfish, which the Albacore was designed to replace, had a range of 522 miles and a top speed of 143 miles per hour with a single torpedo load. In contrast, the Albacore had a range of 930 miles and a top speed of 161 miles per hour. The Albacore's superior performance is evident in its ability to reach 6,000 feet in eight minutes, outpacing the Swordfish in terms of speed and altitude.\n* **Climb rate**\nThe Albacore's climb rate is stated to be 870 feet per minute in. This is a significant aspect of the aircraft's design, as it allows the pilot to quickly gain altitude and engage in combat or reconnaissance missions. The climb rate is also in line with the aircraft's service ceiling, indicating that the Albacore was designed to operate at high altitudes.\n* **Service ceiling**\nThe Albacore's service ceiling is stated to be 20,700 feet in. This is a critical aspect of the aircraft's design, as it allows the pilot to operate at high altitudes and engage in combat or reconnaissance missions. The service ceiling is also in line with the aircraft's climb rate, indicating that the Albacore was designed to operate at high altitudes.\n* **Armament and bomb load**\nThe Albacore's armament and bomb load are stated in. The aircraft was equipped with two or three 0.303-in machine-guns, one forward-firing and one or two rear-firing. The bomb load was either 2,000lb bombs or torpedoes. This is a critical aspect of the aircraft's design, as it allows the pilot to engage in combat or reconnaissance missions.\n* **Design and performance**\nThe Albacore's design and performance are discussed in. The aircraft was designed to replace the Swordfish, with a focus on speed, shelter, and equipment. The Albacore's superior performance is evident in its ability to reach 6,000 feet in eight minutes, outpacing the Swordfish in terms of speed and altitude.\n* **Production and variants**\nThe Albacore's production and variants are discussed in. Only two variants of the Fairey Albacore were made: the Albacore and the Albacore Mk. I. The Albacore Mk. I was the primary production model, with 800 built. This is a critical aspect of the aircraft's design, as it allows the pilot to engage in combat or reconnaissance missions.\n\n## Analysis\n\nThe time to altitude specification of the Fairey Albacore with Taurus XII is a critical aspect of its design. The aircraft's ability to reach 6,000 feet in eight minutes is a testament to its superior performance compared to the Fairey Swordfish. The Albacore's climb rate and service ceiling are also critical aspects of its design, allowing the pilot to operate at high altitudes and engage in combat or reconnaissance missions. The aircraft's armament and bomb load are also critical, allowing the pilot to engage in combat or reconnaissance missions.\n\nThe Albacore's design and performance are a testament to its superior performance compared to the Swordfish. The aircraft's speed, shelter, and equipment are all superior to the Swordfish, making it a more effective combat aircraft. The Albacore's production and variants are also critical, with 800 built and two variants produced. This indicates that the Albacore was a significant aircraft in the British military's arsenal during World War II.\n\nIn conclusion, the time to altitude specification of the Fairey Albacore with Taurus XII is a critical aspect of its design. The aircraft's ability to reach 6,000 feet in eight minutes is a testament to its superior performance compared to the Fairey Swordfish. The Albacore's climb rate, service ceiling, armament, and bomb load are all critical aspects of its design, allowing the pilot to operate at high altitudes and engage in combat or reconnaissance missions. The aircraft's design and performance are a testament to its superior performance compared to the Swordfish, making it a more effective combat aircraft.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/Fairey_Albacore",
+          "https://tvd.im/aviation/776-fairey-albacore.html",
+          "https://www.classicwarbirds.co.uk/british-aircraft/fairey-albacore.php",
+          "https://ww2-history.fandom.com/wiki/Fairey_Albacore",
+          "https://migflug.com/aircraft/fairey-albacore/",
+          "https://naval-aviation.com/ww2/uk/fairey-albacore.php",
+          "https://en.wikipedia.org/wiki/Fairey_Albacore"
+        ],
+        "word_count": 837,
+        "tokens_used": 2220,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2220,
+      "created_at": "2026-10-02T19:48:00.350Z"
+    }
+  }
+}

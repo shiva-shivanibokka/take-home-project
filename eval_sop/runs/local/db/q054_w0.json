@@ -1,0 +1,98 @@
+{
+  "job": {
+    "id": "q054_w0",
+    "topic": "What is the capital of Mayotte?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q054_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Mayotte - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Mayotte",
+            "snippet": "Dzaoudzi was the capital of Mayotte (and earlier the capital of all the colonial Comoros) until 1977, when the capital was relocated to Mamoudzou on the main island of Grande-Terre. It is situated on Petite-Terre (or Pamanzi), which at 10 square kilometres (4 sq mi) is the largest of several islets adjacent to Maore.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "Mayotte | Island, Cyclone Chido, Population, History, Map ...Mamoudzou | Mayotte LocationsMayotte Facts 2026: Population 347,517, Capital MamoudzouMamoudzou: The Capital of Mayotte - capital-cities.org",
+            "url": "https://www.britannica.com/place/Mayotte",
+            "snippet": "Mayotte, overseas département (department) of France comprising the two southeasternmost islands of the Comoros archipelago. It is the poorest territory in both France and the European Union. Mayotte is situated in the Mozambique Channel of the western Indian Ocean, about 190 miles (310 km) northwest of Madagascar. The capital, Mamoudzou, is locate",
+            "published": "",
+            "source": "britannica.com"
+          },
+          {
+            "title": "Mamoudzou | Mayotte Locations",
+            "url": "https://mayotte.io/mamoudzou.html",
+            "snippet": "Mamoudzou is the capital of the French overseas region and department of Mayotte, in the Indian Ocean. Mamoudzou is the most populated commune (municipality) of Mayotte. It is located on Grande-Terre (or Mahoré), the main island of Mayotte. Originally a sultanate, it is now an overseas department of France and a vibrant crossroads of African, Asian",
+            "published": "",
+            "source": "mayotte.io"
+          },
+          {
+            "title": "Mayotte Facts 2026: Population 347,517, Capital Mamoudzou",
+            "url": "https://geofactbook.com/countries/mayotte",
+            "snippet": "Mayotte is an overseas department of France located in the Indian Ocean, between Madagascar and Mozambique. This island features a diverse geography with a significant lagoon and coral reefs, contributing to its rich biodiversity. As of 2023, Mayotte has a population of approximately 300,000, characterized by a youthful demographic and a growing ur",
+            "published": "",
+            "source": "geofactbook.com"
+          },
+          {
+            "title": "Mamoudzou: The Capital of Mayotte - capital-cities.org",
+            "url": "https://capital-cities.org/mamoudzou/",
+            "snippet": "Mamoudzou is the capital of Mayotte, an overseas department and region of France. Known for its strategic location, rich culture, and diverse population, Mamoudzou serves as the political, economic, and cultural heart of Mayotte.",
+            "published": "",
+            "source": "capital-cities.org"
+          },
+          {
+            "title": "Mayotte — country data, capital, population, flag | countries.dev",
+            "url": "https://countries.dev/countries/mayotte",
+            "snippet": "Mayotte is a territory in Eastern Africa, Africa. Its capital is Mamoudzou. It has a population of about 226,915. The currency is the Euro (EUR €). The official language is French.",
+            "published": "",
+            "source": "countries.dev"
+          },
+          {
+            "title": "Mayotte Statistics | Population, GDP & Key Data",
+            "url": "https://worldstats.org/countries/mayotte",
+            "snippet": "Recent data indicates that approximately 46% of Mayotte's population resides in urban areas. The capital city, Mamoudzou, serves as the primary urban hub, hosting most of the island's administrative, economic, and educational facilities.",
+            "published": "",
+            "source": "worldstats.org"
+          }
+        ],
+        "count": 7,
+        "notes": "Tavily returned 10 results; deduped to 9; selected 7 for Writer.",
+        "tokens_used": 587,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 587,
+      "created_at": "2026-10-02T19:45:21.519Z"
+    },
+    "writing": {
+      "job_id": "q054_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "What is the Capital of Mayotte?",
+        "brief_markdown": "# What is the Capital of Mayotte?\n\n## Summary\n\nMayotte is a French overseas department and region located in the Indian Ocean, comprising two islands: Grande-Terre (or Mahoré) and Petite-Terre (or Pamanzi). The capital of Mayotte has been a subject of interest, with some sources suggesting Dzaoudzi as the former capital and others indicating Mamoudzou as the current capital. This research brief aims to clarify the current status of Mayotte's capital by analyzing the available information from various sources.\n\n## Key Findings\n\n* **Dzaoudzi: Former Capital of Mayotte**\nDzaoudzi was the capital of Mayotte (and earlier the capital of all the colonial Comoros) until 1977, when the capital was relocated to Mamoudzou on the main island of Grande-Terre. This information suggests that Dzaoudzi played a significant role in Mayotte's history, serving as the capital for an extended period. The relocation of the capital to Mamoudzou in 1977 marked a significant change in Mayotte's administrative structure. The fact that Dzaoudzi was the capital of the colonial Comoros indicates the complex history of the region, with Mayotte being part of a larger colonial entity.\n* **Mamoudzou: Current Capital of Mayotte**\nMamoudzou is the current capital of Mayotte, an overseas department and region of France. This information is consistent across multiple sources, including Wikipedia, Britannica, and capital-cities.org. The fact that Mamoudzou is the capital of Mayotte implies that it serves as the primary urban hub, hosting most of the island's administrative, economic, and educational facilities. The population of Mayotte is approximately 347,517, with Mamoudzou being the most populated commune (municipality).\n* **Location of Mamoudzou**\nMamoudzou is located on Grande-Terre (or Mahoré), the main island of Mayotte. This information suggests that Mamoudzou is situated on the largest island of the two that comprise Mayotte. The fact that Mamoudzou is on Grande-Terre implies that it has access to the island's natural resources and infrastructure.\n* **Population and Urbanization**\nApproximately 46% of Mayotte's population resides in urban areas, with the capital city, Mamoudzou, serving as the primary urban hub. This information suggests that Mayotte is experiencing urbanization, with a significant portion of the population living in cities. The fact that Mamoudzou hosts most of the island's administrative, economic, and educational facilities implies that it is the center of Mayotte's urbanization.\n* **Economic and Cultural Significance**\nMamoudzou is known for its strategic location, rich culture, and diverse population. This information suggests that Mamoudzou plays a significant role in Mayotte's economy and culture. The fact that it is the capital implies that it serves as the political, economic, and cultural heart of Mayotte.\n* **Language and Currency**\nThe official language of Mayotte is French, and the currency is the Euro (EUR €). This information suggests that Mayotte is closely tied to France, with French being the official language and the Euro being the currency.\n\n## Analysis\n\nThe findings of this research brief suggest that Mamoudzou is the current capital of Mayotte, an overseas department and region of France. The fact that Mamoudzou is the capital implies that it serves as the primary urban hub, hosting most of the island's administrative, economic, and educational facilities. The population of Mayotte is approximately 347,517, with Mamoudzou being the most populated commune (municipality). The fact that approximately 46% of Mayotte's population resides in urban areas suggests that Mayotte is experiencing urbanization, with a significant portion of the population living in cities.\n\nThe findings also suggest that Mayotte has a complex history, with Dzaoudzi serving as the former capital. The relocation of the capital to Mamoudzou in 1977 marked a significant change in Mayotte's administrative structure. The fact that Dzaoudzi was the capital of the colonial Comoros indicates the complex history of the region, with Mayotte being part of a larger colonial entity.\n\nThe economic and cultural significance of Mamoudzou cannot be overstated. As the capital, it serves as the political, economic, and cultural heart of Mayotte. The fact that it is known for its strategic location, rich culture, and diverse population implies that it plays a significant role in Mayotte's economy and culture. The official language of Mayotte being French and the currency being the Euro (EUR €) suggests that Mayotte is closely tied to France.\n\nOverall, the findings of this research brief suggest that Mamoudzou is the current capital of Mayotte, an overseas department and region of France. The fact that Mamoudzou serves as the primary urban hub, hosting most of the island's administrative, economic, and educational facilities, implies that it plays a significant role in Mayotte's economy and culture.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/Mayotte",
+          "https://www.britannica.com/place/Mayotte",
+          "https://mayotte.io/mamoudzou.html",
+          "https://geofactbook.com/countries/mayotte",
+          "https://capital-cities.org/mamoudzou/",
+          "https://countries.dev/countries/mayotte",
+          "https://worldstats.org/countries/mayotte"
+        ],
+        "word_count": 749,
+        "tokens_used": 2069,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 2069,
+      "created_at": "2026-10-02T19:45:45.800Z"
+    }
+  }
+}

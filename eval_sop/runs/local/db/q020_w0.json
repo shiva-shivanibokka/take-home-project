@@ -1,0 +1,82 @@
+{
+  "job": {
+    "id": "q020_w0",
+    "topic": "What was Janice Burgess hired as when she worked at Nick Jr.?",
+    "status": "review"
+  },
+  "handoffs": {
+    "collecting": {
+      "job_id": "q020_w0",
+      "from_stage": "collecting",
+      "to_stage": "writing",
+      "agent_id": "collector",
+      "artifact": {
+        "sources": [
+          {
+            "title": "Janice Burgess - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Janice_Burgess",
+            "snippet": "Janice Burgess (March 1, 1952 – March 2, 2024) [1] was an American television executive, screenwriter and producer for Nickelodeon. [2] She created the Nick Jr. series The Backyardigans and worked as a writer and story editor for Nickelodeon's revival of Winx Club.",
+            "published": "",
+            "source": "en.wikipedia.org"
+          },
+          {
+            "title": "Janice Burgess | Paramount Wiki | FandomJanice Burgess — GrokipediaJanice Burgess - NickelodeonJanice Burgess - The Backyardigans WikiJanice Burgess - Biography - IMDbNickelodeon’s Janice Burgess who created Nick Jr series ...",
+            "url": "https://paramount.fandom.com/wiki/Janice_Burgess",
+            "snippet": "Janice Burgess (1952-2024) is an American former television executive, screenwriter, and producer for Nickelodeon. She created the Nick Jr. series The Backyardigans and worked as a writer and creative director for Nickelodeon's revival of Winx Club. Both shows were produced at the Nickelodeon Animation Studio. Burgess joined Nickelodeon in 1995 as ",
+            "published": "",
+            "source": "paramount.fandom.com"
+          },
+          {
+            "title": "Janice Burgess - Nickelodeon",
+            "url": "https://nickelodeon.fandom.com/wiki/Janice_Burgess",
+            "snippet": "Janice Burgess (March 1, 1952 – March 2, 2024) was an American former television executive, screenwriter, and producer who worked at Nickelodeon from 1995 to 2014. She is best known as the creator of The Backyardigans (2004–2013) and later became a story editor and writer for Nickelodeon's revival of Winx Club (2011–2019). Burgess joined Nickelodeo",
+            "published": "",
+            "source": "nickelodeon.fandom.com"
+          },
+          {
+            "title": "Janice Burgess - Biography - IMDb",
+            "url": "https://www.imdb.com/name/nm1333355/bio/",
+            "snippet": "Janice Burgess. Writer: The Backyardigans. Janice Burgess was the creator of The Backyardigans (2004) and the story editor for Nickelodeon's revival of Winx Club (2004). She joined Nickelodeon in 1995 as executive-in-charge of production and worked at Nick Animation for almost 20 years. When writing for both The Backyardigans and Winx Club, Burgess",
+            "published": "",
+            "source": "imdb.com"
+          },
+          {
+            "title": "Janice Burgess Death: An Animation Icon’s Final... | Tilt Magazine",
+            "url": "https://tilt.goombastomp.com/celebrity/janice-burgess-death/",
+            "snippet": "Janice Burgess began her television career unexpectedly when she was offered a position at WQED, a public television station. When Janice was younger, she had a natural talent for drawing, but she eventually found herself fascinated by the world of television production.",
+            "published": "",
+            "source": "tilt.goombastomp.com"
+          }
+        ],
+        "count": 5,
+        "notes": "Tavily returned 10 results; deduped to 10; selected 5 for Writer.",
+        "tokens_used": 653,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 653,
+      "created_at": "2026-10-02T19:55:54.250Z"
+    },
+    "writing": {
+      "job_id": "q020_w0",
+      "from_stage": "writing",
+      "to_stage": "review",
+      "agent_id": "writer",
+      "artifact": {
+        "title": "Janice Burgess's Role at Nick Jr.",
+        "brief_markdown": "# Janice Burgess's Role at Nick Jr.\n\n## Summary\n\nJanice Burgess was a prominent figure in the world of children's television, working at Nickelodeon from 1995 to 2014. She is best known for creating the Nick Jr. series The Backyardigans, which aired from 2004 to 2013. During her tenure at Nickelodeon, Burgess also worked as a story editor and writer for the revival of Winx Club. This research brief aims to provide a detailed analysis of Janice Burgess's role at Nick Jr. and her contributions to the network.\n\n## Key Findings\n\n* **Creator of The Backyardigans**\nJanice Burgess is credited with creating the popular Nick Jr. series The Backyardigans, which aired from 2004 to 2013. According to her biography on IMDb, Burgess was the creator of the show, and her work on it earned her recognition as a talented writer and producer. The show's success can be attributed to Burgess's creative vision and her ability to craft engaging storylines that appealed to young audiences. As the creator of The Backyardigans, Burgess demonstrated her expertise in developing content that resonated with children and parents alike. Her work on the show has been widely praised, and it remains a beloved classic in the world of children's television.\n* **Story Editor and Writer for Winx Club**\nIn addition to creating The Backyardigans, Burgess also worked as a story editor and writer for the revival of Winx Club, which aired from 2011 to 2019. According to the Paramount Wiki, Burgess joined Nickelodeon in 1995 as an executive-in-charge of production and worked on both The Backyardigans and Winx Club. Her experience and expertise in writing and producing for children's television made her an invaluable asset to the network. As a story editor and writer for Winx Club, Burgess brought her creative vision and skills to the show, helping to shape its narrative and characters.\n* **Early Career at WQED**\nBefore joining Nickelodeon, Burgess began her television career unexpectedly when she was offered a position at WQED, a public television station. According to an article on Tilt Magazine, Burgess had a natural talent for drawing when she was younger, but she eventually found herself fascinated by the world of television production. Her early career at WQED laid the foundation for her future success at Nickelodeon, where she would go on to create and produce some of the network's most beloved shows.\n* **Joining Nickelodeon in 1995**\nBurgess joined Nickelodeon in 1995 as an executive-in-charge of production, marking the beginning of her nearly 20-year tenure at the network. According to the Nickelodeon Wiki, Burgess worked on both The Backyardigans and Winx Club during her time at the network. Her experience and expertise in writing and producing for children's television made her an invaluable asset to the network, and her contributions to the network's programming are still celebrated today.\n* **Legacy and Impact**\nJanice Burgess's legacy as a creator and producer of children's television is undeniable. Her work on The Backyardigans and Winx Club has been widely praised, and her impact on the world of children's television cannot be overstated. As a pioneer in the field, Burgess paved the way for future generations of writers and producers, inspiring a new wave of creativity and innovation in children's television.\n* **Collaboration with Nickelodeon Animation Studio**\nBoth The Backyardigans and Winx Club were produced at the Nickelodeon Animation Studio, where Burgess worked closely with other writers, producers, and animators to bring her creative vision to life. According to the Paramount Wiki, Burgess's collaboration with the studio resulted in some of the network's most beloved shows, cementing her reputation as a talented and innovative producer.\n* **Influence on Children's Television**\nJanice Burgess's influence on children's television extends beyond her work on The Backyardigans and Winx Club. Her contributions to the network's programming have helped shape the landscape of children's television, inspiring a new generation of writers and producers to create engaging and imaginative content for young audiences.\n\n## Analysis\n\nJanice Burgess's role at Nick Jr. was multifaceted, encompassing her work as a creator, writer, and producer for some of the network's most beloved shows. Her experience and expertise in writing and producing for children's television made her an invaluable asset to the network, and her contributions to the network's programming are still celebrated today. Burgess's legacy as a pioneer in the field of children's television is undeniable, and her impact on the world of children's television cannot be overstated.\n\nBurgess's collaboration with the Nickelodeon Animation Studio resulted in some of the network's most beloved shows, cementing her reputation as a talented and innovative producer. Her influence on children's television extends beyond her work on The Backyardigans and Winx Club, inspiring a new generation of writers and producers to create engaging and imaginative content for young audiences. As a creator and producer, Burgess has left an indelible mark on the world of children's television, and her legacy will continue to be felt for years to come.",
+        "citations": [
+          "https://en.wikipedia.org/wiki/Janice_Burgess",
+          "https://paramount.fandom.com/wiki/Janice_Burgess",
+          "https://nickelodeon.fandom.com/wiki/Janice_Burgess",
+          "https://www.imdb.com/name/nm1333355/bio/",
+          "https://tilt.goombastomp.com/celebrity/janice-burgess-death/"
+        ],
+        "word_count": 824,
+        "tokens_used": 1935,
+        "model": "llama3.1:8b"
+      },
+      "tokens_used": 1935,
+      "created_at": "2026-10-02T19:56:17.784Z"
+    }
+  }
+}
