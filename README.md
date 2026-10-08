@@ -6,6 +6,8 @@ A production-grade pipeline of three cooperating AI agents that research any top
 
 **Live board:** https://take-home-project-git-main-shiv-a.vercel.app/
 
+> **Measured evaluation: [`RESULTS.md`](RESULTS.md)** — the Reviewer's confidence genuinely predicts wrong briefs — single-call AUROC **0.778** [0.682, 0.864] on SimpleQA/PopQA (n = 98) — while random, fewer-sources and shorter-brief baselines all sit at chance.
+
 
 
 **GitHub:** https://github.com/shiva-shivanibokka/take-home-project
